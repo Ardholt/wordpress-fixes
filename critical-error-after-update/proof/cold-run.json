@@ -1,0 +1,155 @@
+{
+  "method": "Full ./run.sh in a fresh isolated Docker engine with no images, containers, volumes or build cache; all dependency images downloaded during the run.",
+  "docker_version": "28.5.2",
+  "storage_driver": "overlay2",
+  "preflight": "proof/cold-preflight.txt",
+  "run": "proof/run.json",
+  "full_output": "proof/run-output.txt",
+  "elapsed_seconds_before_cleanup": 163,
+  "elapsed_seconds_including_cleanup": 166,
+  "stages": [
+    {
+      "stage": "pull database image",
+      "seconds": 8
+    },
+    {
+      "stage": "build WordPress and image renderer (Debian packages, WP-CLI)",
+      "seconds": 52
+    },
+    {
+      "stage": "build browser (Playwright image and npm package)",
+      "seconds": 48
+    },
+    {
+      "stage": "start database and WordPress",
+      "seconds": 18
+    },
+    {
+      "stage": "WP-CLI core install",
+      "seconds": 2
+    },
+    {
+      "stage": "install plugin: src/estimate.php",
+      "seconds": 1
+    },
+    {
+      "stage": "WP-CLI plugin activate",
+      "seconds": 1
+    },
+    {
+      "stage": "WP-CLI eval-file /case/fixtures/setup.php",
+      "seconds": 0
+    },
+    {
+      "stage": "back up plugin files",
+      "seconds": 0
+    },
+    {
+      "stage": "WP-CLI db export",
+      "seconds": 1
+    },
+    {
+      "stage": "save database backup",
+      "seconds": 0
+    },
+    {
+      "stage": "browser checks: baseline",
+      "seconds": 4
+    },
+    {
+      "stage": "install plugin: fixtures/estimate-1.1.0.php",
+      "seconds": 1
+    },
+    {
+      "stage": "clear PHP log",
+      "seconds": 0
+    },
+    {
+      "stage": "browser checks: broken",
+      "seconds": 2
+    },
+    {
+      "stage": "capture PHP log",
+      "seconds": 0
+    },
+    {
+      "stage": "restore plugin backup",
+      "seconds": 0
+    },
+    {
+      "stage": "clear PHP log",
+      "seconds": 1
+    },
+    {
+      "stage": "browser checks: rollback",
+      "seconds": 3
+    },
+    {
+      "stage": "capture PHP log",
+      "seconds": 0
+    },
+    {
+      "stage": "install plugin: fixtures/estimate-1.1.0.php",
+      "seconds": 1
+    },
+    {
+      "stage": "clear PHP log",
+      "seconds": 0
+    },
+    {
+      "stage": "browser checks: broken",
+      "seconds": 2
+    },
+    {
+      "stage": "capture PHP log",
+      "seconds": 0
+    },
+    {
+      "stage": "install plugin: fix/estimate-1.1.1.php",
+      "seconds": 0
+    },
+    {
+      "stage": "clear PHP log",
+      "seconds": 0
+    },
+    {
+      "stage": "browser checks: fixed",
+      "seconds": 3
+    },
+    {
+      "stage": "capture PHP log",
+      "seconds": 0
+    },
+    {
+      "stage": "render full comparison",
+      "seconds": 3
+    },
+    {
+      "stage": "render phone comparison",
+      "seconds": 0
+    },
+    {
+      "stage": "render calculator button",
+      "seconds": 1
+    },
+    {
+      "stage": "strip image metadata",
+      "seconds": 1
+    },
+    {
+      "stage": "WP-CLI core version",
+      "seconds": 1
+    },
+    {
+      "stage": "WP-CLI cli version",
+      "seconds": 0
+    },
+    {
+      "stage": "complete reproduction (last STAGE START identifies active work)",
+      "seconds": 166
+    }
+  ],
+  "remaining_case_containers": 0,
+  "postflight": "proof/cold-containers-after.txt",
+  "date_utc": "2026-11-19T08:07:42Z"
+}

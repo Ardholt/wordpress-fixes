@@ -48,8 +48,16 @@ docker compose exec -T wordpress tar -xzf /case/.private/repair-estimate-1.0.0.t
 
 ## Dependencies and scope
 
-The build selects WordPress 6.8.3 / PHP 8.2, MariaDB 11.4.5, WP-CLI 2.12.0 and Playwright 1.56.1 with its Chromium build. The Dockerfiles and Compose file record these version pins; image tags are not immutable digest pins. `proof/versions.txt` records the executed PHP/core/CLI versions; browser versions are in each state JSON. ImageMagick 6 from the browser image's Ubuntu packages renders the shared hero with bundled OFL fonts.
+The build selects WordPress 6.8.3 / PHP 8.2, MariaDB 11.4.5, WP-CLI 2.12.0 and Playwright 1.56.1 with its Chromium build. The Dockerfiles and Compose file record these version pins; image tags are not immutable digest pins. `proof/versions.txt` records the executed PHP/core/CLI versions; browser versions are in each state JSON. ImageMagick from the WordPress image's Debian packages renders the shared hero with bundled OFL fonts; `proof/renderer-version.txt` records the tested renderer version.
 
 The local-only configuration derives the site URL from the request host so the browser container and the loopback URL can reach the same installation. It is a reproduction harness, not a production deployment configuration. Credentials are generated locally. No delivery of email or external service is part of this case.
 
 The tests use a real WordPress shortcode and server-rendered form. The £35 unit rate is the calculator setting in the source code, not a business’s advertised price. No business brand is used. Full-page and mobile screenshots use matching viewport sizes recorded in the JSON results. The scripts strip metadata from the screenshots and comparison images.
+
+## Cold builds and time limits
+
+The browser image already contains Chromium and its system libraries; its build installs only the pinned Playwright JavaScript package. Image rendering runs in the WordPress container. Debian package downloads use HTTPS, bounded retries and request timeouts; incomplete package-index downloads fail the build. WP-CLI and npm downloads also have bounded retries.
+
+`run.sh` prints each stage name, limit and elapsed time. Image builds, startup, browser checks and image rendering have separate deadlines. The complete run has a 30-minute limit, with a 40-minute workflow budget allowing runner setup, cleanup and artifact upload. On failure, the log names the failed or timed-out stage. Fresh downloads depend on network speed; the recorded run time is in `proof/run.json`.
+
+The [cold-run record](proof/cold-run.json) links the empty-cache preflight, stage timings and full output. [Timeout checks](proof/timeout-checks.txt) show a named stalled stage returning exit 124 and an ordinary failure preserving exit 7.

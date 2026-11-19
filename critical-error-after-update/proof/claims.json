@@ -183,6 +183,36 @@
           "locator": "quantity input and estimate total"
         }
       ]
+    },
+    {
+      "claim": "Cold build and full recovery sequence pass without pre-existing images or build cache",
+      "evidence": [
+        {
+          "path": "proof/cold-preflight.txt",
+          "locator": "Images and Build Cache rows"
+        },
+        {
+          "path": "proof/cold-run.json",
+          "locator": "method, stages, elapsed_seconds_including_cleanup"
+        },
+        {
+          "path": "proof/run-output.txt",
+          "locator": "STAGE PASS and PASS lines"
+        }
+      ]
+    },
+    {
+      "claim": "Timeout diagnostics name the stalled stage and preserve failure exit codes",
+      "evidence": [
+        {
+          "path": "run.sh",
+          "locator": "stage()"
+        },
+        {
+          "path": "proof/timeout-checks.txt",
+          "locator": "timeout check and exit-code check"
+        }
+      ]
     }
   ]
 }

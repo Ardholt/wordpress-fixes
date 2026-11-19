@@ -5,12 +5,12 @@ on:
     paths: ['critical-error-after-update/**', '.github/workflows/critical-error-after-update.yml']
   pull_request:
     paths: ['critical-error-after-update/**', '.github/workflows/critical-error-after-update.yml']
-  workflow_dispatch:
   workflow_call:
+  workflow_dispatch:
 jobs:
   reproduce:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - name: Reproduce and repair

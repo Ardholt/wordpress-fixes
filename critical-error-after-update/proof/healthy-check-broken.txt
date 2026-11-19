@@ -1,2 +1,4 @@
+STAGE START: browser checks: health-probe (limit 120s)
 FAIL expected HTTP 200 with estimate £105
 
+ERROR: stage 'browser checks: health-probe' failed with exit 1

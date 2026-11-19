@@ -1,0 +1,7 @@
+timeout check: exit 124
+STAGE START: deliberately stalled check (limit 1s)
+ERROR: stage 'deliberately stalled check' timed out after 1s
+
+exit-code check: exit 7
+STAGE START: deliberate failure check (limit 5s)
+ERROR: stage 'deliberate failure check' failed with exit 7
