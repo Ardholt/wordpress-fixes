@@ -1,0 +1,47 @@
+{
+  "finished_at": "2026-11-19T06:19:51.998Z",
+  "elapsed_seconds": 195,
+  "environment": {
+    "wordpress": "6.8.3",
+    "php": "8.3.28",
+    "mariadb": "11.4.5-MariaDB-ubu2404",
+    "playwright": "1.56.1",
+    "chromium": "141.0.7390.37",
+    "mailpit": "1.27.8",
+    "timezone": "Europe/London",
+    "fixture_clock": "2027-03-22T22:00:00Z",
+    "resource_capacity": 1,
+    "scope": "Disposable Docker stack; local SMTP catcher; no production inbox measurement"
+  },
+  "commands": [
+    "./scripts/stage.sh up",
+    "node tests/flow.cjs broken",
+    "node tests/acceptance.cjs (expected exit 1)",
+    "./scripts/stage.sh reset-data",
+    "./scripts/stage.sh fixed",
+    "node tests/flow.cjs fixed",
+    "node tests/acceptance.cjs (exit 0)",
+    "node tests/verify.cjs",
+    "bash scripts/media.sh",
+    "node tests/playground.cjs",
+    "./try.sh (container service URL override)",
+    "node tests/interactive.cjs"
+  ],
+  "outcomes": {
+    "before_acceptance_exit": 1,
+    "after_acceptance_exit": 0,
+    "pass": true,
+    "source": "Actual WordPress MariaDB rows exported by fixtures/inspect.php",
+    "before_active_overlap_pairs": 10,
+    "after_active_overlap_pairs": 0,
+    "chosen_service_customer_time_and_buffer_match": true,
+    "all_recipients_match_runtime_customer": true,
+    "all_mail_statuses": "sent",
+    "dst_utc_rows_match": 4,
+    "race_runs": 9,
+    "race_requests": 54,
+    "race_accepted": 9,
+    "replacement_is_only_active_booking_for_cancelled_slot": true
+  },
+  "method": "Browser form submission plus synchronized concurrent HTTP requests, followed by SQL row inspection and Mailpit message correlation. The broken fixture widens the unguarded check/insert gap by 500 ms. Fixed code has no artificial delay. The interactive helper is also exercised with the current date; see interactive.json."
+}

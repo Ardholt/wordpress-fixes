@@ -1,0 +1,374 @@
+{
+  "state": "fixed",
+  "clock": "2027-03-22T22:00:00Z",
+  "checks": [
+    {
+      "name": "Customer completes booking at 390px using a New York browser timezone",
+      "pass": true,
+      "reference": "VQ-1",
+      "service": "Cut & finish",
+      "date": "2027-03-23",
+      "time": "10:00",
+      "customer": "Booking Guest 01"
+    },
+    {
+      "name": "SMTP confirmation matches recipient, service, guest, reference and London time",
+      "pass": true
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-03-23",
+      "time": "09:45",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-03-28",
+      "time": "01:30",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-10-31",
+      "time": "01:30",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-03-21",
+      "time": "10:00",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-04-02",
+      "time": "10:00",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-03-24",
+      "time": "16:00",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-03-24",
+      "time": "08:45",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-03-24",
+      "time": "10:07",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-02-30",
+      "time": "10:00",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-03-19",
+      "time": "10:00",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2028-04-03",
+      "time": "10:00",
+      "service": "cut",
+      "status": 422
+    },
+    {
+      "name": "Reject unavailable or invalid appointment",
+      "pass": true,
+      "date": "2027-03-24",
+      "time": "10:00",
+      "service": "missing",
+      "status": 422
+    },
+    {
+      "name": "Invalid recipient and hidden-field submissions rejected",
+      "pass": true
+    },
+    {
+      "name": "Service buffer blocks 11:00 and releases exactly at 11:15",
+      "pass": true
+    },
+    {
+      "name": "Spring and autumn clock changes preserve 10:00 studio time",
+      "pass": true
+    },
+    {
+      "name": "Nine six-request races admit one appointment each",
+      "pass": true
+    },
+    {
+      "name": "Repeating owner cancellation sends no duplicate message",
+      "pass": true
+    },
+    {
+      "name": "Owner cancellation sends mail and permits one replacement booking",
+      "pass": true,
+      "cancelled": "VQ-1",
+      "replacement": "VQ-15",
+      "slot": "2027-03-23 10:00:00",
+      "rule": "Cancellation releases the slot immediately, subject to current hours, buffers and 12-hour notice."
+    },
+    {
+      "name": "Owner closes and reopens a date through saved availability",
+      "pass": true
+    },
+    {
+      "name": "Owner changes weekly days and hours; service plus buffer fits before closing",
+      "pass": true
+    },
+    {
+      "name": "Phone and desktop controls fit and remain at least 44px high",
+      "pass": true
+    }
+  ],
+  "races": [
+    {
+      "kind": "same",
+      "run": 1,
+      "date": "2027-04-06",
+      "requests": 6,
+      "accepted": 1,
+      "rejected": 5,
+      "statuses": [
+        409,
+        201,
+        409,
+        409,
+        409,
+        409
+      ],
+      "elapsed_ms": 156
+    },
+    {
+      "kind": "same",
+      "run": 2,
+      "date": "2027-04-13",
+      "requests": 6,
+      "accepted": 1,
+      "rejected": 5,
+      "statuses": [
+        409,
+        409,
+        409,
+        409,
+        409,
+        201
+      ],
+      "elapsed_ms": 162
+    },
+    {
+      "kind": "same",
+      "run": 3,
+      "date": "2027-04-20",
+      "requests": 6,
+      "accepted": 1,
+      "rejected": 5,
+      "statuses": [
+        201,
+        409,
+        409,
+        409,
+        409,
+        409
+      ],
+      "elapsed_ms": 123
+    },
+    {
+      "kind": "buffer",
+      "run": 1,
+      "date": "2027-04-07",
+      "requests": 6,
+      "accepted": 1,
+      "rejected": 5,
+      "statuses": [
+        409,
+        201,
+        409,
+        409,
+        409,
+        409
+      ],
+      "elapsed_ms": 158
+    },
+    {
+      "kind": "buffer",
+      "run": 2,
+      "date": "2027-04-14",
+      "requests": 6,
+      "accepted": 1,
+      "rejected": 5,
+      "statuses": [
+        201,
+        409,
+        409,
+        409,
+        409,
+        409
+      ],
+      "elapsed_ms": 153
+    },
+    {
+      "kind": "buffer",
+      "run": 3,
+      "date": "2027-04-21",
+      "requests": 6,
+      "accepted": 1,
+      "rejected": 5,
+      "statuses": [
+        409,
+        409,
+        409,
+        409,
+        201,
+        409
+      ],
+      "elapsed_ms": 201
+    },
+    {
+      "kind": "cross",
+      "run": 1,
+      "date": "2027-04-08",
+      "requests": 6,
+      "accepted": 1,
+      "rejected": 5,
+      "statuses": [
+        409,
+        409,
+        409,
+        409,
+        201,
+        409
+      ],
+      "elapsed_ms": 125
+    },
+    {
+      "kind": "cross",
+      "run": 2,
+      "date": "2027-04-15",
+      "requests": 6,
+      "accepted": 1,
+      "rejected": 5,
+      "statuses": [
+        409,
+        409,
+        409,
+        409,
+        201,
+        409
+      ],
+      "elapsed_ms": 199
+    },
+    {
+      "kind": "cross",
+      "run": 3,
+      "date": "2027-04-22",
+      "requests": 6,
+      "accepted": 1,
+      "rejected": 5,
+      "statuses": [
+        409,
+        409,
+        409,
+        409,
+        201,
+        409
+      ],
+      "elapsed_ms": 119
+    }
+  ],
+  "dst": [
+    {
+      "date": "2027-03-26",
+      "chosen": "10:00",
+      "displayed": "Friday 26 March 2027, 10:00 GMT",
+      "expected_utc": "2027-03-26 10:00:00",
+      "reference": "VQ-2",
+      "mail_time_matches": true,
+      "recipient_matches": true
+    },
+    {
+      "date": "2027-03-30",
+      "chosen": "10:00",
+      "displayed": "Tuesday 30 March 2027, 10:00 BST",
+      "expected_utc": "2027-03-30 09:00:00",
+      "reference": "VQ-3",
+      "mail_time_matches": true,
+      "recipient_matches": true
+    },
+    {
+      "date": "2027-10-29",
+      "chosen": "10:00",
+      "displayed": "Friday 29 October 2027, 10:00 BST",
+      "expected_utc": "2027-10-29 09:00:00",
+      "reference": "VQ-4",
+      "mail_time_matches": true,
+      "recipient_matches": true
+    },
+    {
+      "date": "2027-11-02",
+      "chosen": "10:00",
+      "displayed": "Tuesday 2 November 2027, 10:00 GMT",
+      "expected_utc": "2027-11-02 10:00:00",
+      "reference": "VQ-5",
+      "mail_time_matches": true,
+      "recipient_matches": true
+    }
+  ],
+  "browser": "141.0.7390.37",
+  "booking": {
+    "reference": "VQ-1",
+    "service": "Cut & finish",
+    "date": "2027-03-23",
+    "time": "10:00",
+    "customer": "Booking Guest 01"
+  },
+  "rebooking": {
+    "cancelled": "VQ-1",
+    "replacement": "VQ-15",
+    "slot": "2027-03-23 10:00:00",
+    "rule": "Cancellation releases the slot immediately, subject to current hours, buffers and 12-hour notice."
+  },
+  "layout": [
+    {
+      "width": 390,
+      "no_horizontal_overflow": true,
+      "minimum_control_height": 44
+    },
+    {
+      "width": 1366,
+      "no_horizontal_overflow": true,
+      "minimum_control_height": 44
+    }
+  ]
+}

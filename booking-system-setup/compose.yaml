@@ -1,0 +1,56 @@
+name: velquince-booking
+services:
+  db:
+    image: mariadb:11.4.5
+    environment:
+      MARIADB_DATABASE: booking
+      MARIADB_USER: booking
+      MARIADB_PASSWORD: ${DB_PASSWORD:-}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-}
+    volumes: [database:/var/lib/mysql]
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+  wordpress:
+    build:
+      context: .
+      dockerfile: scripts/WordPress.Dockerfile
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: booking
+      WORDPRESS_DB_USER: booking
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      CUSTOMER_ADDRESS: ${CUSTOMER_ADDRESS}
+      OWNER_ADDRESS: ${OWNER_ADDRESS}
+      BOOKING_CLOCK: ${BOOKING_CLOCK:-}
+      WORDPRESS_CONFIG_EXTRA: "define('DISABLE_WP_CRON', true);"
+    ports: ["${WEB_PORT:-8080}:80"]
+    volumes:
+      - wordpress:/var/www/html
+      - ./src:/var/www/html/wp-content/plugins/velquince-booking:ro
+      - ./fixtures:/fixtures:ro
+      - ./fix:/fix:ro
+    depends_on:
+      db: {condition: service_healthy}
+      mail: {condition: service_started}
+  mail:
+    image: axllent/mailpit:v1.27.8
+    ports: ["${MAIL_PORT:-8025}:8025"]
+  tests:
+    build:
+      context: .
+      dockerfile: tests/Dockerfile
+    profiles: [tools]
+    environment:
+      CUSTOMER_ADDRESS: ${CUSTOMER_ADDRESS}
+      OWNER_ADDRESS: ${OWNER_ADDRESS}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+    volumes: [".:/work"]
+    working_dir: /work
+    ipc: host
+volumes:
+  wordpress:
+  database:

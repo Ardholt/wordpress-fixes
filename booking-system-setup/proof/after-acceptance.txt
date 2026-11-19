@@ -1,0 +1,1 @@
+PASS: customer can choose an available time and reach the details step

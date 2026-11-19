@@ -1,0 +1,6 @@
+{
+  "source": "Mailpit HTTP API after SMTP delivery",
+  "recipient_matches_runtime_customer": true,
+  "subject": "Cancelled | VQ-1 | Cut & finish",
+  "text": "Appointment cancelled\r\nReference: VQ-1\r\nCut & finish\r\nTuesday 23 March 2027, 10:00 GMT\r\nTimezone: Europe/London\r\nGuest: Booking Guest 01\r\n\r\n"
+}

@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "command": "./try.sh",
+  "clock": "current date",
+  "browser": "141.0.7390.37",
+  "date": "2026-11-23",
+  "reference": "VQ-16",
+  "service": "Style consultation",
+  "customer": "Booking Guest 03",
+  "displayed_time": "Monday 23 November 2026, 10:00 GMT",
+  "recipient_matches": true,
+  "received_message_matches": true,
+  "host_access": "Container service URL override; public defaults are localhost ports 8080 and 8025."
+}

@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "source": "Actual WordPress MariaDB rows exported by fixtures/inspect.php",
+  "before_active_overlap_pairs": 10,
+  "after_active_overlap_pairs": 0,
+  "chosen_service_customer_time_and_buffer_match": true,
+  "all_recipients_match_runtime_customer": true,
+  "all_mail_statuses": "sent",
+  "dst_utc_rows_match": 4,
+  "race_runs": 9,
+  "race_requests": 54,
+  "race_accepted": 9,
+  "replacement_is_only_active_booking_for_cancelled_slot": true
+}

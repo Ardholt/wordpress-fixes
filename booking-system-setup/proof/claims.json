@@ -1,0 +1,254 @@
+{
+  "run_conditions": "run.json#/environment",
+  "measurement_method": "run.json#/method",
+  "claims": [
+    {
+      "claim": "The interactive start command leaves the repaired booking page and local inbox open; a booking completes and its matching message is received",
+      "evidence": [
+        {
+          "path": "interactive.json",
+          "locator": "$.command, $.pass, $.received_message_matches"
+        },
+        {
+          "path": "../try.sh",
+          "locator": "startup, public address and stop instructions"
+        }
+      ]
+    },
+    {
+      "claim": "One slot, one booking in nine simultaneous-request tests; six requests per test",
+      "evidence": [
+        {
+          "path": "after-flow.json",
+          "locator": "$.races[*] (kind, requests, accepted, rejected, statuses)"
+        },
+        {
+          "path": "persistence.json",
+          "locator": "$.race_runs, $.race_requests, $.race_accepted, $.after_active_overlap_pairs"
+        }
+      ]
+    },
+    {
+      "claim": "Broken calendar prevents selection; repaired form reaches customer details",
+      "evidence": [
+        {
+          "path": "before-acceptance.txt",
+          "locator": "FAIL line; exit 1 recorded in run.json $.outcomes.before_acceptance_exit"
+        },
+        {
+          "path": "after-acceptance.txt",
+          "locator": "PASS line; exit 0 recorded in run.json $.outcomes.after_acceptance_exit"
+        },
+        {
+          "path": "before-flow.json",
+          "locator": "$.checks[0]"
+        }
+      ]
+    },
+    {
+      "claim": "Concurrent requests could double-book the resource; repaired code prevents time and buffer overlaps",
+      "evidence": [
+        {
+          "path": "before-flow.json",
+          "locator": "$.races[0]"
+        },
+        {
+          "path": "before-database.json",
+          "locator": "$.active_overlap_pairs"
+        },
+        {
+          "path": "after-database.json",
+          "locator": "$.active_overlap_pairs"
+        },
+        {
+          "path": "after-flow.json",
+          "locator": "$.races[*].kind (same, buffer, cross)"
+        }
+      ]
+    },
+    {
+      "claim": "The old UTC conversion shifts 10:00 to 11:00 BST; both London clock changes are now correct",
+      "evidence": [
+        {
+          "path": "before-flow.json",
+          "locator": "$.dst[0]"
+        },
+        {
+          "path": "after-flow.json",
+          "locator": "$.dst[*]"
+        },
+        {
+          "path": "after-database.json",
+          "locator": "$.rows where starts is 2027-03-26 10:00:00, 2027-03-30 09:00:00, 2027-10-29 09:00:00 or 2027-11-02 10:00:00"
+        }
+      ]
+    },
+    {
+      "claim": "No confirmation before; matching confirmation received after",
+      "evidence": [
+        {
+          "path": "before-flow.json",
+          "locator": "$.checks[2].captured = 0"
+        },
+        {
+          "path": "confirmation-mail.json",
+          "locator": "$.recipient_matches_runtime_customer, $.subject, $.text"
+        },
+        {
+          "path": "mail-catcher.png",
+          "locator": "Captured SMTP message body and VQ-1 subject"
+        }
+      ]
+    },
+    {
+      "claim": "Chosen service, time, duration, buffer and customer are persisted",
+      "evidence": [
+        {
+          "path": "after-database.json",
+          "locator": "$.rows[0] (title, starts, ends, busy_until, customer, recipient_matches_runtime_customer)"
+        },
+        {
+          "path": "persistence.json",
+          "locator": "$.chosen_service_customer_time_and_buffer_match"
+        }
+      ]
+    },
+    {
+      "claim": "Owner cancellation immediately releases the slot subject to current availability; repeating cancellation sends no duplicate message",
+      "evidence": [
+        {
+          "path": "after-flow.json",
+          "locator": "$.rebooking; $.checks where name starts Repeating owner cancellation"
+        },
+        {
+          "path": "cancellation-mail.json",
+          "locator": "$.recipient_matches_runtime_customer, $.text"
+        },
+        {
+          "path": "persistence.json",
+          "locator": "$.replacement_is_only_active_booking_for_cancelled_slot"
+        }
+      ]
+    },
+    {
+      "claim": "Owner can save availability and close/reopen dates",
+      "evidence": [
+        {
+          "path": "after-flow.json",
+          "locator": "$.checks where name = Owner closes and reopens a date through saved availability"
+        },
+        {
+          "path": "owner-bookings.png",
+          "locator": "Availability controls and appointment list"
+        }
+      ]
+    },
+    {
+      "claim": "Phone and desktop forms fit at 390 and 1366 pixels; controls are at least 44 pixels high",
+      "evidence": [
+        {
+          "path": "after-flow.json",
+          "locator": "$.layout[*]"
+        }
+      ]
+    },
+    {
+      "claim": "GIF shows the complete customer flow and matching captured confirmation",
+      "evidence": [
+        {
+          "path": "../media/booking-flow.gif",
+          "locator": "0–1.5s time choice; 1.5–3.0s details; 3.0–5.0s confirmation; 5.0–8.0s received mail"
+        },
+        {
+          "path": "after-flow.json",
+          "locator": "$.booking"
+        },
+        {
+          "path": "confirmation-mail.json",
+          "locator": "$.reference"
+        }
+      ]
+    },
+    {
+      "claim": "Opening hours, closed dates, service buffers, 12-hour notice, 365-day horizon and quarter-hour starts are enforced",
+      "evidence": [
+        {
+          "path": "../src/velquince-booking.php",
+          "locator": "vq_services, vq_time, vq_overlap"
+        },
+        {
+          "path": "../fixtures/setup.php",
+          "locator": "vq_availability option"
+        },
+        {
+          "path": "after-flow.json",
+          "locator": "$.checks where name = Reject unavailable or invalid appointment; Service buffer blocks 11:00 and releases exactly at 11:15"
+        }
+      ]
+    },
+    {
+      "claim": "Temporary access settings and isolated containers are removed after the run; booking checks use a fixed clock",
+      "evidence": [
+        {
+          "path": "../scripts/stage.sh",
+          "locator": "up and down branches"
+        },
+        {
+          "path": "../run.sh",
+          "locator": "cleanup EXIT trap and final cleanup output"
+        },
+        {
+          "path": "run.json",
+          "locator": "$.environment.fixture_clock"
+        }
+      ]
+    },
+    {
+      "claim": "Dependencies, run duration and observed environment",
+      "evidence": [
+        {
+          "path": "run.json",
+          "locator": "$.environment, $.elapsed_seconds"
+        },
+        {
+          "path": "run-output.txt",
+          "locator": "Final PASS: clean run completed line (total before cleanup)"
+        },
+        {
+          "path": "../REPRODUCE.md",
+          "locator": "Pinned components table"
+        }
+      ]
+    },
+    {
+      "claim": "Playground is not advertised as a working full booking or mail flow",
+      "evidence": [
+        {
+          "path": "demo.json",
+          "locator": "$.verified, $.observed, $.supported_interaction"
+        }
+      ]
+    },
+    {
+      "claim": "The first-screen image shows the broken page, saved appointment and matching received mail",
+      "evidence": [
+        {
+          "path": "before-desktop.png",
+          "locator": "1280px capture, unavailable calendar"
+        },
+        {
+          "path": "after-desktop.png",
+          "locator": "1280px capture, VQ-1 confirmed"
+        },
+        {
+          "path": "confirmation-mail.json",
+          "locator": "$.reference and $.text"
+        },
+        {
+          "path": "../scripts/media.sh",
+          "locator": "Captures used to build the first-screen image"
+        }
+      ]
+    }
+  ]
+}

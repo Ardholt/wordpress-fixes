@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Compact booking and received-mail proof, using unaltered browser crops.
+set -euo pipefail
+font=design/fonts/Inter-SemiBold.ttf
+bg='#0b0a0a'
+ink='#f1ece6'
+work=$(mktemp -d)
+trap 'rm -r "$work"' EXIT
+label() { convert -size 1104x48 "xc:$bg" -font "$font" -pointsize 38 -fill "$ink" -gravity west -annotate +0+0 "$1" "$2"; }
+label 'BEFORE  No calendar to book from' "$work/b-label.png"
+convert proof/before-desktop.png -crop 600x28+630+315 +repage -resize 1104x52! -strip "$work/b.png"
+label 'BOOKED  Appointment VQ-1 saved' "$work/a-label.png"
+convert proof/after-desktop.png -crop 600x100+630+412 +repage -resize 1104x184! -strip "$work/a.png"
+label 'RECEIVED  VQ-1 in the local inbox' "$work/m-label.png"
+convert proof/mail-catcher.png -crop 600x100+0+265 +repage -resize 1104x184! -strip "$work/m.png"
+convert "$work/b-label.png" "$work/b.png" -size 1104x16 "xc:$bg" \
+ "$work/a-label.png" "$work/a.png" -size 1104x16 "xc:$bg" \
+ "$work/m-label.png" "$work/m.png" -append -bordercolor "$bg" -border 48x24 -strip media/hero.png

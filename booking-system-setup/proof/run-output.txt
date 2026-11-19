@@ -1,0 +1,334 @@
+Starting clean booking proof
+#1 [internal] load local bake definitions
+#1 reading from stdin 717B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from WordPress.Dockerfile
+#2 transferring dockerfile:
+#2 transferring dockerfile: 174B done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/wordpress:6.8.3-php8.3-apache
+#3 DONE 0.1s
+
+#4 [internal] load metadata for docker.io/library/wordpress:cli-2.12.0-php8.3
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 71B done
+#5 DONE 0.1s
+
+#6 [cli 1/1] FROM docker.io/library/wordpress:cli-2.12.0-php8.3@sha256:e4980e3ef763ce7535049c05a54e906d95b16370f28ca02fa329a079eebf3f65
+#6 resolve docker.io/library/wordpress:cli-2.12.0-php8.3@sha256:e4980e3ef763ce7535049c05a54e906d95b16370f28ca02fa329a079eebf3f65 0.1s done
+#6 DONE 3.7s
+
+#7 [stage-1 1/2] FROM docker.io/library/wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4
+#7 resolve docker.io/library/wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4 0.1s done
+#7 DONE 5.1s
+
+#8 [stage-1 2/2] COPY --from=cli /usr/local/bin/wp /usr/local/bin/wp
+#8 DONE 1.0s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 0.7s done
+#9 exporting manifest sha256:1b0a1e2338d4c78fa87965f116ebd5e29f252f23b3cd9878c3f46fde8349e3e2
+#9 exporting manifest sha256:1b0a1e2338d4c78fa87965f116ebd5e29f252f23b3cd9878c3f46fde8349e3e2 0.0s done
+#9 exporting config sha256:ba1da3c3c4f02131d16ed996d7c86054d650f9246ba34406a25560b000148534 0.0s done
+#9 exporting attestation manifest sha256:a81962616a9dbc1e2403ff4633410aeecd0b3a43e488a1047688ea263caee185
+#9 exporting attestation manifest sha256:a81962616a9dbc1e2403ff4633410aeecd0b3a43e488a1047688ea263caee185 0.1s done
+#9 exporting manifest list sha256:71dfe8066c2ad00232b17ce3f3d2c451cf400b74100e65f8d5cc51fdde40bc58 0.0s done
+#9 naming to docker.io/library/velquince-booking-wordpress:latest
+#9 naming to docker.io/library/velquince-booking-wordpress:latest done
+#9 unpacking to docker.io/library/velquince-booking-wordpress:latest
+#9 unpacking to docker.io/library/velquince-booking-wordpress:latest 0.3s done
+#9 DONE 1.4s
+
+#10 resolving provenance for metadata file
+#10 DONE 0.0s
+ velquince-booking-wordpress  Built
+ Network velquince-booking_default  Creating
+ Network velquince-booking_default  Created
+ Volume velquince-booking_database  Creating
+ Volume velquince-booking_database  Created
+ Volume velquince-booking_wordpress  Creating
+ Volume velquince-booking_wordpress  Created
+ Container velquince-booking-db-1  Creating
+ Container velquince-booking-mail-1  Creating
+ Container velquince-booking-db-1  Created
+ Container velquince-booking-mail-1  Created
+ Container velquince-booking-wordpress-1  Creating
+ Container velquince-booking-wordpress-1  Created
+ Container velquince-booking-mail-1  Starting
+ Container velquince-booking-db-1  Starting
+ Container velquince-booking-mail-1  Started
+ Container velquince-booking-db-1  Started
+ Container velquince-booking-db-1  Waiting
+ Container velquince-booking-db-1  Healthy
+ Container velquince-booking-wordpress-1  Starting
+ Container velquince-booking-wordpress-1  Started
+ Container velquince-booking-mail-1  Waiting
+ Container velquince-booking-db-1  Waiting
+ Container velquince-booking-wordpress-1  Waiting
+ Container velquince-booking-mail-1  Healthy
+ Container velquince-booking-wordpress-1  Healthy
+ Container velquince-booking-db-1  Healthy
+Success: WordPress installed successfully.
+Success: Rewrite structure set.
+Warning: Regenerating a .htaccess file requires special configuration. See usage docs.
+Warning: Regenerating a .htaccess file requires special configuration. See usage docs.
+Success: Rewrite rules flushed.
+Plugin 'velquince-booking' activated.
+Success: Activated 1 of 1 plugins.
+Broken state installed: retired shortcode, UTC labels, unlocked booking writes.
+#1 [internal] load local bake definitions
+#1 reading from stdin 689B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 330B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for mcr.microsoft.com/playwright:v1.56.1-noble
+#3 DONE 0.1s
+
+#4 [1/4] FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#4 resolve mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a 0.1s done
+#4 CACHED
+
+#5 [internal] load .dockerignore
+#5 transferring context: 71B done
+#5 DONE 0.0s
+
+#6 [2/2] RUN mkdir /tools && cd /tools && npm init -y >/dev/null && npm install --save-exact playwright@1.56.1 && apt-get update && apt-get install -y --no-install-recommends imagemagick && rm -rf /var/lib/apt/lists/*
+#6 3.851 
+#6 3.851 added 2 packages, and audited 3 packages in 3s
+#6 3.852 
+#6 3.852 found 0 vulnerabilities
+#6 4.140 Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+#6 4.174 Get:2 https://deb.nodesource.com/node_22.x nodistro InRelease [12.1 kB]
+#6 4.383 Get:3 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1475 kB]
+#6 4.471 Get:4 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1560 kB]
+#6 4.524 Get:5 https://deb.nodesource.com/node_22.x nodistro/main amd64 Packages [13.3 kB]
+#6 4.529 Get:6 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [55.6 kB]
+#6 4.529 Get:7 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2216 kB]
+#6 5.673 Get:8 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+#6 8.957 Get:9 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+#6 40.55 Get:10 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+#6 40.59 Get:11 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+#6 41.05 Get:12 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+#6 41.05 Get:13 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+#6 41.10 Get:14 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+#6 41.12 Get:15 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [2184 kB]
+#6 41.18 Get:16 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2329 kB]
+#6 41.24 Get:17 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [61.7 kB]
+#6 41.24 Get:18 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1800 kB]
+#6 41.29 Get:19 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [669 B]
+#6 41.30 Get:20 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.0 kB]
+#6 41.30 Get:21 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [36.0 kB]
+#6 42.41 Fetched 34.0 MB in 38s (887 kB/s)
+#6 42.41 Reading package lists...
+#6 44.05 Reading package lists...
+#6 45.75 Building dependency tree...
+#6 46.03 Reading state information...
+#6 46.35 The following additional packages will be installed:
+#6 46.35   imagemagick-6-common imagemagick-6.q16 libheif-plugin-aomdec libheif1
+#6 46.35   liblqr-1-0 libltdl7 libmagickcore-6.q16-7t64 libmagickwand-6.q16-7t64
+#6 46.35   libraw23t64
+#6 46.35 Suggested packages:
+#6 46.35   imagemagick-6-doc autotrace cups-bsd | lpr | lprng enscript ffmpeg gimp
+#6 46.35   gnuplot grads graphviz groff-base hp2xx html2ps libwmf-bin mplayer povray
+#6 46.35   radiance sane-utils texlive-base-bin transfig libraw-bin xdg-utils
+#6 46.35   libheif-plugin-libde265 libheif-plugin-x265 libheif-plugin-ffmpegdec
+#6 46.35   libheif-plugin-jpegdec libheif-plugin-jpegenc libheif-plugin-j2kdec
+#6 46.35   libheif-plugin-j2kenc libheif-plugin-rav1e libheif-plugin-svtenc
+#6 46.35   libmagickcore-6.q16-7-extra
+#6 46.35 Recommended packages:
+#6 46.35   libmagickcore-6.q16-7-extra ghostscript netpbm libheif-plugin-aomenc
+#6 46.35   fonts-urw-base35
+#6 46.49 The following NEW packages will be installed:
+#6 46.49   imagemagick imagemagick-6-common imagemagick-6.q16 libheif-plugin-aomdec
+#6 46.49   libheif1 liblqr-1-0 libltdl7 libmagickcore-6.q16-7t64
+#6 46.49   libmagickwand-6.q16-7t64 libraw23t64
+#6 47.34 0 upgraded, 10 newly installed, 0 to remove and 160 not upgraded.
+#6 47.34 Need to get 3205 kB of archives.
+#6 47.34 After this operation, 13.1 MB of additional disk space will be used.
+#6 47.34 Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libheif-plugin-aomdec amd64 1.17.6-1ubuntu4.9 [11.9 kB]
+#6 47.82 Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libheif1 amd64 1.17.6-1ubuntu4.9 [277 kB]
+#6 49.28 Get:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 liblqr-1-0 amd64 0.4.2-2.1build2 [28.5 kB]
+#6 49.33 Get:4 http://archive.ubuntu.com/ubuntu noble/main amd64 libltdl7 amd64 2.4.7-7build1 [40.3 kB]
+#6 49.40 Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libraw23t64 amd64 0.21.2-2.1ubuntu0.24.04.2 [379 kB]
+#6 49.76 Get:6 http://archive.ubuntu.com/ubuntu noble/universe amd64 imagemagick-6-common all 8:6.9.12.98+dfsg1-5.2build2 [69.5 kB]
+#6 49.80 Get:7 http://archive.ubuntu.com/ubuntu noble/universe amd64 libmagickcore-6.q16-7t64 amd64 8:6.9.12.98+dfsg1-5.2build2 [1811 kB]
+#6 50.38 Get:8 http://archive.ubuntu.com/ubuntu noble/universe amd64 libmagickwand-6.q16-7t64 amd64 8:6.9.12.98+dfsg1-5.2build2 [318 kB]
+#6 50.43 Get:9 http://archive.ubuntu.com/ubuntu noble/universe amd64 imagemagick-6.q16 amd64 8:6.9.12.98+dfsg1-5.2build2 [254 kB]
+#6 50.48 Get:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 imagemagick amd64 8:6.9.12.98+dfsg1-5.2build2 [14.2 kB]
+#6 50.99 debconf: delaying package configuration, since apt-utils is not installed
+#6 51.07 Fetched 3205 kB in 4s (806 kB/s)
+#6 51.18 Selecting previously unselected package libheif-plugin-aomdec:amd64.
+#6 51.18 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 35216 files and directories currently installed.)
+#6 51.46 Preparing to unpack .../0-libheif-plugin-aomdec_1.17.6-1ubuntu4.9_amd64.deb ...
+#6 51.47 Unpacking libheif-plugin-aomdec:amd64 (1.17.6-1ubuntu4.9) ...
+#6 51.65 Selecting previously unselected package libheif1:amd64.
+#6 51.66 Preparing to unpack .../1-libheif1_1.17.6-1ubuntu4.9_amd64.deb ...
+#6 51.69 Unpacking libheif1:amd64 (1.17.6-1ubuntu4.9) ...
+#6 51.80 Selecting previously unselected package liblqr-1-0:amd64.
+#6 51.81 Preparing to unpack .../2-liblqr-1-0_0.4.2-2.1build2_amd64.deb ...
+#6 51.83 Unpacking liblqr-1-0:amd64 (0.4.2-2.1build2) ...
+#6 51.96 Selecting previously unselected package libltdl7:amd64.
+#6 51.97 Preparing to unpack .../3-libltdl7_2.4.7-7build1_amd64.deb ...
+#6 51.99 Unpacking libltdl7:amd64 (2.4.7-7build1) ...
+#6 52.12 Selecting previously unselected package libraw23t64:amd64.
+#6 52.12 Preparing to unpack .../4-libraw23t64_0.21.2-2.1ubuntu0.24.04.2_amd64.deb ...
+#6 52.14 Unpacking libraw23t64:amd64 (0.21.2-2.1ubuntu0.24.04.2) ...
+#6 52.36 Selecting previously unselected package imagemagick-6-common.
+#6 52.37 Preparing to unpack .../5-imagemagick-6-common_8%3a6.9.12.98+dfsg1-5.2build2_all.deb ...
+#6 52.43 Unpacking imagemagick-6-common (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 52.61 Selecting previously unselected package libmagickcore-6.q16-7t64:amd64.
+#6 52.61 Preparing to unpack .../6-libmagickcore-6.q16-7t64_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+#6 52.62 Unpacking libmagickcore-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 52.95 Selecting previously unselected package libmagickwand-6.q16-7t64:amd64.
+#6 52.95 Preparing to unpack .../7-libmagickwand-6.q16-7t64_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+#6 52.96 Unpacking libmagickwand-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 53.08 Selecting previously unselected package imagemagick-6.q16.
+#6 53.08 Preparing to unpack .../8-imagemagick-6.q16_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+#6 53.10 Unpacking imagemagick-6.q16 (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 53.45 Selecting previously unselected package imagemagick.
+#6 53.46 Preparing to unpack .../9-imagemagick_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+#6 53.49 Unpacking imagemagick (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 53.63 Setting up imagemagick-6-common (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 54.03 Setting up libltdl7:amd64 (2.4.7-7build1) ...
+#6 54.07 Setting up libraw23t64:amd64 (0.21.2-2.1ubuntu0.24.04.2) ...
+#6 54.11 Setting up liblqr-1-0:amd64 (0.4.2-2.1build2) ...
+#6 54.17 Setting up libheif-plugin-aomdec:amd64 (1.17.6-1ubuntu4.9) ...
+#6 54.22 Setting up libheif1:amd64 (1.17.6-1ubuntu4.9) ...
+#6 54.27 Setting up libmagickcore-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 54.30 Setting up libmagickwand-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 54.34 Setting up imagemagick-6.q16 (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 54.41 update-alternatives: using /usr/bin/compare-im6.q16 to provide /usr/bin/compare (compare) in auto mode
+#6 54.41 update-alternatives: warning: skip creation of /usr/share/man/man1/compare.1.gz because associated file /usr/share/man/man1/compare-im6.q16.1.gz (of link group compare) doesn't exist
+#6 54.44 update-alternatives: using /usr/bin/compare-im6.q16 to provide /usr/bin/compare-im6 (compare-im6) in auto mode
+#6 54.44 update-alternatives: warning: skip creation of /usr/share/man/man1/compare-im6.1.gz because associated file /usr/share/man/man1/compare-im6.q16.1.gz (of link group compare-im6) doesn't exist
+#6 54.46 update-alternatives: using /usr/bin/animate-im6.q16 to provide /usr/bin/animate (animate) in auto mode
+#6 54.46 update-alternatives: warning: skip creation of /usr/share/man/man1/animate.1.gz because associated file /usr/share/man/man1/animate-im6.q16.1.gz (of link group animate) doesn't exist
+#6 54.47 update-alternatives: using /usr/bin/animate-im6.q16 to provide /usr/bin/animate-im6 (animate-im6) in auto mode
+#6 54.47 update-alternatives: warning: skip creation of /usr/share/man/man1/animate-im6.1.gz because associated file /usr/share/man/man1/animate-im6.q16.1.gz (of link group animate-im6) doesn't exist
+#6 54.48 update-alternatives: using /usr/bin/convert-im6.q16 to provide /usr/bin/convert (convert) in auto mode
+#6 54.48 update-alternatives: warning: skip creation of /usr/share/man/man1/convert.1.gz because associated file /usr/share/man/man1/convert-im6.q16.1.gz (of link group convert) doesn't exist
+#6 54.49 update-alternatives: using /usr/bin/convert-im6.q16 to provide /usr/bin/convert-im6 (convert-im6) in auto mode
+#6 54.49 update-alternatives: warning: skip creation of /usr/share/man/man1/convert-im6.1.gz because associated file /usr/share/man/man1/convert-im6.q16.1.gz (of link group convert-im6) doesn't exist
+#6 54.50 update-alternatives: using /usr/bin/composite-im6.q16 to provide /usr/bin/composite (composite) in auto mode
+#6 54.50 update-alternatives: warning: skip creation of /usr/share/man/man1/composite.1.gz because associated file /usr/share/man/man1/composite-im6.q16.1.gz (of link group composite) doesn't exist
+#6 54.51 update-alternatives: using /usr/bin/composite-im6.q16 to provide /usr/bin/composite-im6 (composite-im6) in auto mode
+#6 54.51 update-alternatives: warning: skip creation of /usr/share/man/man1/composite-im6.1.gz because associated file /usr/share/man/man1/composite-im6.q16.1.gz (of link group composite-im6) doesn't exist
+#6 54.53 update-alternatives: using /usr/bin/conjure-im6.q16 to provide /usr/bin/conjure (conjure) in auto mode
+#6 54.54 update-alternatives: warning: skip creation of /usr/share/man/man1/conjure.1.gz because associated file /usr/share/man/man1/conjure-im6.q16.1.gz (of link group conjure) doesn't exist
+#6 54.54 update-alternatives: using /usr/bin/conjure-im6.q16 to provide /usr/bin/conjure-im6 (conjure-im6) in auto mode
+#6 54.54 update-alternatives: warning: skip creation of /usr/share/man/man1/conjure-im6.1.gz because associated file /usr/share/man/man1/conjure-im6.q16.1.gz (of link group conjure-im6) doesn't exist
+#6 54.57 update-alternatives: using /usr/bin/import-im6.q16 to provide /usr/bin/import (import) in auto mode
+#6 54.57 update-alternatives: warning: skip creation of /usr/share/man/man1/import.1.gz because associated file /usr/share/man/man1/import-im6.q16.1.gz (of link group import) doesn't exist
+#6 54.59 update-alternatives: using /usr/bin/import-im6.q16 to provide /usr/bin/import-im6 (import-im6) in auto mode
+#6 54.59 update-alternatives: warning: skip creation of /usr/share/man/man1/import-im6.1.gz because associated file /usr/share/man/man1/import-im6.q16.1.gz (of link group import-im6) doesn't exist
+#6 54.61 update-alternatives: using /usr/bin/identify-im6.q16 to provide /usr/bin/identify (identify) in auto mode
+#6 54.61 update-alternatives: warning: skip creation of /usr/share/man/man1/identify.1.gz because associated file /usr/share/man/man1/identify-im6.q16.1.gz (of link group identify) doesn't exist
+#6 54.61 update-alternatives: using /usr/bin/identify-im6.q16 to provide /usr/bin/identify-im6 (identify-im6) in auto mode
+#6 54.61 update-alternatives: warning: skip creation of /usr/share/man/man1/identify-im6.1.gz because associated file /usr/share/man/man1/identify-im6.q16.1.gz (of link group identify-im6) doesn't exist
+#6 54.62 update-alternatives: using /usr/bin/stream-im6.q16 to provide /usr/bin/stream (stream) in auto mode
+#6 54.63 update-alternatives: warning: skip creation of /usr/share/man/man1/stream.1.gz because associated file /usr/share/man/man1/stream-im6.q16.1.gz (of link group stream) doesn't exist
+#6 54.63 update-alternatives: using /usr/bin/stream-im6.q16 to provide /usr/bin/stream-im6 (stream-im6) in auto mode
+#6 54.63 update-alternatives: warning: skip creation of /usr/share/man/man1/stream-im6.1.gz because associated file /usr/share/man/man1/stream-im6.q16.1.gz (of link group stream-im6) doesn't exist
+#6 54.65 update-alternatives: using /usr/bin/display-im6.q16 to provide /usr/bin/display (display) in auto mode
+#6 54.65 update-alternatives: warning: skip creation of /usr/share/man/man1/display.1.gz because associated file /usr/share/man/man1/display-im6.q16.1.gz (of link group display) doesn't exist
+#6 54.67 update-alternatives: using /usr/bin/display-im6.q16 to provide /usr/bin/display-im6 (display-im6) in auto mode
+#6 54.67 update-alternatives: warning: skip creation of /usr/share/man/man1/display-im6.1.gz because associated file /usr/share/man/man1/display-im6.q16.1.gz (of link group display-im6) doesn't exist
+#6 54.68 update-alternatives: using /usr/bin/montage-im6.q16 to provide /usr/bin/montage (montage) in auto mode
+#6 54.68 update-alternatives: warning: skip creation of /usr/share/man/man1/montage.1.gz because associated file /usr/share/man/man1/montage-im6.q16.1.gz (of link group montage) doesn't exist
+#6 54.71 update-alternatives: using /usr/bin/montage-im6.q16 to provide /usr/bin/montage-im6 (montage-im6) in auto mode
+#6 54.71 update-alternatives: warning: skip creation of /usr/share/man/man1/montage-im6.1.gz because associated file /usr/share/man/man1/montage-im6.q16.1.gz (of link group montage-im6) doesn't exist
+#6 54.71 update-alternatives: using /usr/bin/mogrify-im6.q16 to provide /usr/bin/mogrify (mogrify) in auto mode
+#6 54.71 update-alternatives: warning: skip creation of /usr/share/man/man1/mogrify.1.gz because associated file /usr/share/man/man1/mogrify-im6.q16.1.gz (of link group mogrify) doesn't exist
+#6 54.73 update-alternatives: using /usr/bin/mogrify-im6.q16 to provide /usr/bin/mogrify-im6 (mogrify-im6) in auto mode
+#6 54.73 update-alternatives: warning: skip creation of /usr/share/man/man1/mogrify-im6.1.gz because associated file /usr/share/man/man1/mogrify-im6.q16.1.gz (of link group mogrify-im6) doesn't exist
+#6 54.75 Setting up imagemagick (8:6.9.12.98+dfsg1-5.2build2) ...
+#6 54.77 Processing triggers for hicolor-icon-theme (0.17-2) ...
+#6 54.91 Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+#6 DONE 55.4s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 5.9s done
+#7 exporting manifest sha256:c0b6faca6078f562a367179d17b09f763b76d02a5914b42070f2bd5918d392d9
+#7 exporting manifest sha256:c0b6faca6078f562a367179d17b09f763b76d02a5914b42070f2bd5918d392d9 0.0s done
+#7 exporting config sha256:038c4b17fdd59e409de716a528e587f620118d7ed4fb83e600c69936f02c5f58 0.0s done
+#7 exporting attestation manifest sha256:366c9c16b2093e5b47e6e929f77b277a9fdc6a8281ffd0c783897a0d24671a1b
+#7 exporting attestation manifest sha256:366c9c16b2093e5b47e6e929f77b277a9fdc6a8281ffd0c783897a0d24671a1b 0.1s done
+#7 exporting manifest list sha256:9f6c09129165f03af57a3c0ba6cffac6d80f12d3281d4f53f627b4bcecabcbfc 0.1s done
+#7 naming to docker.io/library/velquince-booking-tests:latest
+#7 naming to docker.io/library/velquince-booking-tests:latest 0.0s done
+#7 unpacking to docker.io/library/velquince-booking-tests:latest
+#7 unpacking to docker.io/library/velquince-booking-tests:latest 2.4s done
+#7 DONE 8.7s
+
+#8 resolving provenance for metadata file
+#8 DONE 0.3s
+ velquince-booking-tests  Built
+PASS: Broken shortcode prevents customer booking
+PASS: Fixed UTC offset shifts the chosen summer appointment by one hour
+PASS: No confirmation reaches local catcher
+PASS: customer acceptance check fails on the broken page (exit 1)
+Repair applied: live form, London conversion, serialized availability check and insert, confirmation mail.
+PASS: Customer completes booking at 390px using a New York browser timezone
+PASS: SMTP confirmation matches recipient, service, guest, reference and London time
+PASS: Invalid recipient and hidden-field submissions rejected
+PASS: Service buffer blocks 11:00 and releases exactly at 11:15
+PASS: Spring and autumn clock changes preserve 10:00 studio time
+PASS: Nine six-request races admit one appointment each
+PASS: Repeating owner cancellation sends no duplicate message
+PASS: Owner cancellation sends mail and permits one replacement booking
+PASS: Owner closes and reopens a date through saved availability
+PASS: Owner changes weekly days and hours; service plus buffer fits before closing
+PASS: Phone and desktop controls fit and remain at least 44px high
+PASS: database persistence, UTC conversions, recipient equality and zero active overlaps
+make-hero: wrote media/before-after.png (1200x1178, 328 KB)
+Media: hero.png 1200x644
+Playground: unverified; Docker and captured media are the supported fallback
+ velquince-booking-wordpress  Built
+ Container velquince-booking-db-1  Running
+ Container velquince-booking-mail-1  Running
+ Container velquince-booking-wordpress-1  Recreate
+ Container velquince-booking-wordpress-1  Recreated
+ Container velquince-booking-db-1  Waiting
+ Container velquince-booking-db-1  Healthy
+ Container velquince-booking-wordpress-1  Starting
+ Container velquince-booking-wordpress-1  Started
+ Container velquince-booking-db-1  Waiting
+ Container velquince-booking-wordpress-1  Waiting
+ Container velquince-booking-mail-1  Waiting
+ Container velquince-booking-wordpress-1  Healthy
+ Container velquince-booking-mail-1  Healthy
+ Container velquince-booking-db-1  Healthy
+Warning: Regenerating a .htaccess file requires special configuration. See usage docs.
+Warning: Regenerating a .htaccess file requires special configuration. See usage docs.
+Warning: Plugin 'velquince-booking' is already active.
+ Container velquince-booking-mail-1  Running
+ Container velquince-booking-db-1  Running
+ Container velquince-booking-wordpress-1  Recreate
+ Container velquince-booking-wordpress-1  Recreated
+ Container velquince-booking-db-1  Waiting
+ Container velquince-booking-db-1  Healthy
+ Container velquince-booking-wordpress-1  Starting
+ Container velquince-booking-wordpress-1  Started
+ Container velquince-booking-db-1  Waiting
+ Container velquince-booking-wordpress-1  Waiting
+ Container velquince-booking-mail-1  Waiting
+ Container velquince-booking-db-1  Healthy
+ Container velquince-booking-wordpress-1  Healthy
+ Container velquince-booking-mail-1  Healthy
+PASS: interactive start command opens the booking flow and matching local inbox
+PASS: broken page reproduced; repaired booking completed
+PASS: concurrent same-slot, buffer and cross-service conflicts rejected
+PASS: London DST, availability, persistence, cancellation and rebooking
+PASS: confirmation and cancellation mail captured and correlated
+PASS: desktop and phone captures, flow GIF and hero regenerated
+PASS: clean run completed in 196 seconds
+Cleaning up WordPress, database and mail containers

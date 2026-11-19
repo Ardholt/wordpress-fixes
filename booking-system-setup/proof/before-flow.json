@@ -1,0 +1,48 @@
+{
+  "state": "broken",
+  "clock": "2027-03-22T22:00:00Z",
+  "checks": [
+    {
+      "name": "Broken shortcode prevents customer booking",
+      "pass": true
+    },
+    {
+      "name": "Fixed UTC offset shifts the chosen summer appointment by one hour",
+      "pass": true
+    },
+    {
+      "name": "No confirmation reaches local catcher",
+      "pass": true,
+      "captured": 0
+    }
+  ],
+  "races": [
+    {
+      "kind": "same",
+      "run": 1,
+      "date": "2027-03-23",
+      "requests": 6,
+      "accepted": 5,
+      "rejected": 1,
+      "statuses": [
+        201,
+        201,
+        201,
+        201,
+        409,
+        201
+      ],
+      "elapsed_ms": 1002
+    }
+  ],
+  "dst": [
+    {
+      "date": "2027-03-30",
+      "chosen": "10:00",
+      "displayed": "Tuesday 30 March 2027, 11:00 BST",
+      "expected_utc": "2027-03-30 09:00:00",
+      "reference": "VQ-6"
+    }
+  ],
+  "browser": "141.0.7390.37"
+}

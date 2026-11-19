@@ -1,0 +1,23 @@
+{
+  "verified": false,
+  "url": null,
+  "candidate": "https://playground.wordpress.net/",
+  "checked_at": "2026-11-19T06:19:20.899Z",
+  "browser": "Chromium 141.0.7390.37",
+  "supported_interaction": [
+    "Booking form renders",
+    "Available times can be listed"
+  ],
+  "fallback": "Run ./run.sh for MariaDB booking, owner management, local SMTP and browser proof.",
+  "capability_requirement": "The booking guard uses MariaDB GET_LOCK; SMTP capture uses a separate Mailpit container. Neither capability is claimed for Playground.",
+  "http_status": 200,
+  "capability_probe": {
+    "availability_status": 200,
+    "available_slots": 28,
+    "booking_status": 503,
+    "booking_message": "The calendar is busy. Please try again."
+  },
+  "page_title": "WordPress Playground",
+  "observed": "The form and available times loaded; submitting an appointment returned HTTP 503 because the required database lock was unavailable. No persisted booking or mail delivery is claimed.",
+  "script_errors": []
+}

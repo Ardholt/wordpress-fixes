@@ -1,0 +1,2 @@
+FAIL: customer cannot choose an appointment; booking form is missing
+
