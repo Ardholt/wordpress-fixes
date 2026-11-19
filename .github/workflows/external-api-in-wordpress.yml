@@ -1,0 +1,20 @@
+name: External API in WordPress
+on:
+  push:
+    branches: [main]
+    paths: ['external-api-in-wordpress/**', '.github/workflows/external-api-in-wordpress.yml']
+  pull_request:
+    paths: ['external-api-in-wordpress/**', '.github/workflows/external-api-in-wordpress.yml']
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: cd external-api-in-wordpress && ./run.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: external-api-proof
+          path: external-api-in-wordpress/proof/

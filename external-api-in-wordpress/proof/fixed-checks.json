@@ -1,0 +1,283 @@
+[
+    {
+        "check": "Parsed EUR and USD values appear on real WordPress page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Rate date, capture time and local source are visible",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Three fresh page views use one upstream request",
+        "pass": true,
+        "details": {
+            "page_views": 3,
+            "upstream_requests": 1
+        }
+    },
+    {
+        "check": "Fresh cache keeps previous value",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Expired cache refreshes to changed upstream value",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "down: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "down: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "down: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "down: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "malformed: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "malformed: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "malformed: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "malformed: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "partial: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "partial: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "partial: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "partial: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "hostile: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "hostile: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "hostile: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "hostile: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "bad-date: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "bad-date: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "bad-date: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "bad-date: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "negative: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "negative: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "negative: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "negative: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "wrong-base: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "wrong-base: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "wrong-base: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "wrong-base: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "duplicate: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "duplicate: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "duplicate: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "duplicate: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "future: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "future: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "future: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "future: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "oversized: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "oversized: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "oversized: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "oversized: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "timeout: labelled last-good fallback on page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "timeout: failed response cannot replace cache",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "timeout: unsafe markup never reaches the page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Timeout request is bounded below four seconds",
+        "pass": true,
+        "details": {
+            "seconds": 2.278,
+            "configured_timeout_seconds": 2
+        }
+    },
+    {
+        "check": "timeout: retry backoff avoids another upstream request",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Empty-cache timeout shows guidance within four seconds",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Empty-cache outage gives an actionable source link",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Rates saved more than seven days ago are hidden",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Expired refresh lock is recovered",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Provider recovery restores fresh rates",
+        "pass": true,
+        "details": null
+    }
+]

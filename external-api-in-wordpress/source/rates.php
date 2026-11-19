@@ -1,0 +1,82 @@
+<?php
+/**
+ * Plugin Name: Reference Rates
+ * Description: Validated Frankfurter rates with a last-good cache and clear outage states.
+ * Version: 1.0.0
+ * License: MIT
+ */
+if (!defined('ABSPATH')) { exit; }
+function rr_endpoint() {
+    return defined('RR_FIXTURE') && RR_FIXTURE ? 'http://fixture:8000/rates' : 'https://api.frankfurter.dev/v2/rates?base=GBP&quotes=EUR,USD';
+}
+function rr_valid($rows) {
+    if (!is_array($rows) || count($rows) !== 2) { return false; }
+    $out = [];
+    foreach ($rows as $row) {
+        if (!is_array($row) || ($row['base'] ?? '') !== 'GBP' || !in_array($row['quote'] ?? '', ['EUR','USD'], true)) { return false; }
+        $date = $row['date'] ?? '';
+        if (!is_string($date) || !preg_match('/^\d{4}-\d{2}-\d{2}$/D', $date)) { return false; }
+        [$y,$m,$d] = array_map('intval', explode('-', $date));
+        $rate = $row['rate'] ?? null;
+        if (!checkdate($m,$d,$y) || $date > gmdate('Y-m-d') || (!is_int($rate) && !is_float($rate)) || !is_finite((float)$rate) || $rate <= 0 || $rate > 1000 || isset($out[$row['quote']])) { return false; }
+        $out[$row['quote']] = ['rate' => $rate, 'date' => $date];
+    }
+    return $out;
+}
+function rr_unlock($owner) {
+    global $wpdb;
+    // Compare-and-delete: a delayed worker cannot remove a newer visitor's lock.
+    $removed = $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->options} WHERE option_name = %s AND option_value = %s", 'rr_lock', (string)$owner));
+    wp_cache_delete('rr_lock', 'options');
+    return $removed;
+}
+function rr_data() {
+    $now = time();
+    $cache = get_option('rr_cache', []);
+    // Keep last-good data separately from the refresh timer; failures cannot overwrite it.
+    if (($cache['source'] ?? '') !== rr_endpoint()) { $cache = []; }
+    if ($cache && $now - $cache['captured'] < 3600) { return [$cache, 'fresh']; }
+    if (!get_transient('rr_backoff')) {
+        // Atomic option insertion prevents concurrent visitors from starting the same refresh.
+        $locked = add_option('rr_lock', $now, '', false);
+        if (!$locked) {
+            $owner = (int)get_option('rr_lock');
+            if ($owner < $now - 15 && rr_unlock($owner)) { $locked = add_option('rr_lock', $now, '', false); }
+        }
+        if ($locked) {
+            set_transient('rr_backoff', 1, 60);
+            $response = wp_remote_get(rr_endpoint(), ['timeout'=>2, 'redirection'=>0, 'limit_response_size'=>8192]);
+            $rows = !is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200 ? rr_valid(json_decode(wp_remote_retrieve_body($response), true)) : false;
+            if ($rows) {
+                $cache = ['rows'=>$rows, 'captured'=>$now, 'source'=>rr_endpoint()];
+                update_option('rr_cache', $cache, false);
+                delete_transient('rr_backoff');
+                rr_unlock($now);
+                return [$cache, 'fresh'];
+            }
+            rr_unlock($now);
+        }
+    }
+    // Stop displaying old rates after seven days, even if the provider stays down.
+    return $cache && $now - $cache['captured'] < 604800 ? [$cache, 'stale'] : [[], 'unavailable'];
+}
+function rr_render() {
+    [$cache, $state] = rr_data();
+    ob_start(); ?>
+    <section class="rates" data-state="<?php echo esc_attr($state); ?>" aria-labelledby="rates-heading">
+      <div class="eyebrow">CURRENCY REFERENCE</div><h2 id="rates-heading">A little clarity before you travel.</h2>
+      <?php if ($state === 'unavailable'): ?>
+        <p class="notice" role="status">Rates are temporarily unavailable. Please check the source below and try again shortly.</p>
+      <?php else: ?>
+        <p class="status" role="status"><?php echo $state === 'stale' ? 'Updates are unavailable — showing the last saved rates.' : 'Latest saved rates · refreshed hourly'; ?></p>
+        <div class="rate-grid"><?php foreach (['EUR','USD'] as $currency): $row = $cache['rows'][$currency]; ?>
+          <div class="rate"><span>1 GBP in <?php echo esc_html($currency); ?></span><strong><?php echo esc_html(number_format($row['rate'], 4, '.', '')); ?></strong><small>Rate date: <?php echo esc_html($row['date']); ?></small></div>
+        <?php endforeach; ?></div>
+        <p class="capture">Fetched <time datetime="<?php echo esc_attr(gmdate('c', $cache['captured'])); ?>"><?php echo esc_html(gmdate('Y-m-d H:i:s', $cache['captured'])); ?> UTC</time></p>
+      <?php endif; ?>
+      <p class="source">Source: <?php if (defined('RR_FIXTURE') && RR_FIXTURE): ?>Local check · fixed values<?php else: ?><a href="https://frankfurter.dev/">Frankfurter</a> · daily reference rates<?php endif; ?></p>
+      <p class="footnote">For orientation; your payment provider sets the rate you pay. <a href="https://frankfurter.dev/">Check the source →</a></p>
+    </section>
+    <?php return ob_get_clean();
+}
+add_shortcode('reference_rates', 'rr_render');

@@ -1,0 +1,11 @@
+{
+  "method": "WordPress asset-generation comments are omitted from saved HTML. Visible content and executable statements are unchanged; assertions use the original HTTP responses.",
+  "files": [
+    "after.html",
+    "before.html",
+    "empty.html",
+    "hostile.html",
+    "live.html",
+    "outage.html"
+  ]
+}

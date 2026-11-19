@@ -1,0 +1,17 @@
+{
+  "method": "Direct browser screenshot of the working page, clipped to the currency cards, capture time and source; no text or values replaced.",
+  "viewport_width": 700,
+  "clip": {
+    "x": 59,
+    "y": 395.640625,
+    "width": 582,
+    "height": 222.578125
+  },
+  "values": [
+    "1.1995",
+    "1.3186"
+  ],
+  "captured_at": "2026-11-19T06:19:06+00:00",
+  "source": "https://api.frankfurter.dev/v2/rates?base=GBP&quotes=EUR,USD",
+  "browser": "134.0.6998.35"
+}

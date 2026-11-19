@@ -1,0 +1,243 @@
+{
+  "method": "Actual WordPress HTTP page requests followed by Chromium screenshots. API assertions use a deterministic local HTTP fixture; live network observations are separate. Cache expiry and outage state are induced by CLI-only test controls. No throughput or production performance claim.",
+  "conditions": {
+    "default_command": "./run.sh",
+    "separate_live_command": "LIVE_FETCH=1 ./run.sh",
+    "viewports": [
+      1280,
+      390
+    ],
+    "viewport_height": 900,
+    "browser": "See proof/*-browser.json",
+    "runtime": "See proof/run.json"
+  },
+  "claims": [
+    {
+      "claim": "The opening screenshot and receipt time come from a real Frankfurter response rendered by WordPress",
+      "evidence": [
+        {
+          "path": "proof/live-cache.json",
+          "locator": "rows and captured"
+        },
+        {
+          "path": "proof/live-panel.json",
+          "locator": "values, captured_at, source, clip, method"
+        },
+        {
+          "path": "media/live-rates.png",
+          "locator": "two rate cards, fetch time and source"
+        },
+        {
+          "path": "tests/capture.cjs",
+          "locator": "stage==='live': values and datetime equality assertions"
+        }
+      ]
+    },
+    {
+      "claim": "Two parsed currency rates on the repaired page",
+      "evidence": [
+        {
+          "path": "fixtures/good.json",
+          "locator": "array entries 0 and 1: quote and rate"
+        },
+        {
+          "path": "proof/fixed-checks.json",
+          "locator": "check = Parsed EUR and USD values appear on real WordPress page"
+        },
+        {
+          "path": "proof/after-1280.png",
+          "locator": "EUR and USD cards"
+        }
+      ]
+    },
+    {
+      "claim": "The same page acceptance fails before and passes after",
+      "evidence": [
+        {
+          "path": "proof/before-acceptance.txt",
+          "locator": "FAIL and Exit code: 1"
+        },
+        {
+          "path": "proof/after-acceptance.txt",
+          "locator": "PASS parsed values and fresh state"
+        },
+        {
+          "path": "tests/accept.php",
+          "locator": "$ok expression and exit status"
+        }
+      ]
+    },
+    {
+      "claim": "Three fresh page views make one upstream request",
+      "evidence": [
+        {
+          "path": "proof/fixed-checks.json",
+          "locator": "check = Three fresh page views use one upstream request; details.page_views and details.upstream_requests"
+        }
+      ]
+    },
+    {
+      "claim": "Rates are cached for one hour and refreshed after expiry",
+      "evidence": [
+        {
+          "path": "source/rates.php",
+          "locator": "rr_data: captured age < 3600"
+        },
+        {
+          "path": "proof/fixed-checks.json",
+          "locator": "Fresh cache keeps previous value; Expired cache refreshes to changed upstream value"
+        }
+      ]
+    },
+    {
+      "claim": "Service failures keep labelled last-good rates without replacing the cache",
+      "evidence": [
+        {
+          "path": "proof/fixed-checks.json",
+          "locator": "checks ending labelled last-good fallback on page and failed response cannot replace cache"
+        },
+        {
+          "path": "proof/outage-1280.png",
+          "locator": "status notice and currency cards"
+        }
+      ]
+    },
+    {
+      "claim": "Timeout is configured at two seconds; measured request is below four seconds",
+      "evidence": [
+        {
+          "path": "proof/fixed-checks.json",
+          "locator": "check = Timeout request is bounded below four seconds; details.seconds and configured_timeout_seconds"
+        },
+        {
+          "path": "source/rates.php",
+          "locator": "wp_remote_get timeout => 2"
+        }
+      ]
+    },
+    {
+      "claim": "Failed requests back off for one minute; saved rates older than seven days are hidden",
+      "evidence": [
+        {
+          "path": "source/rates.php",
+          "locator": "set_transient rr_backoff 60; captured age < 604800"
+        },
+        {
+          "path": "proof/fixed-checks.json",
+          "locator": "checks ending retry backoff avoids another upstream request; Rates saved more than seven days ago are hidden"
+        }
+      ]
+    },
+    {
+      "claim": "Empty-cache failure provides source and retry guidance; recovery restores rates",
+      "evidence": [
+        {
+          "path": "proof/fixed-checks.json",
+          "locator": "Empty-cache outage gives an actionable source link; Provider recovery restores fresh rates"
+        },
+        {
+          "path": "proof/empty-390.png",
+          "locator": "unavailable notice and Check the source link"
+        }
+      ]
+    },
+    {
+      "claim": "Malformed, partial, hostile and invalid responses do not render unsafe input",
+      "evidence": [
+        {
+          "path": "proof/fixed-checks.json",
+          "locator": "checks ending unsafe markup never reaches the page"
+        },
+        {
+          "path": "fixtures/server.py",
+          "locator": "response variants in Handler.do_GET"
+        },
+        {
+          "path": "source/rates.php",
+          "locator": "rr_valid; esc_html and esc_attr calls in rr_render"
+        },
+        {
+          "path": "proof/hostile-browser.json",
+          "locator": "checks at 1280 and 390; stale state; tests/capture.cjs rejects window.injected"
+        }
+      ]
+    },
+    {
+      "claim": "A separately observed live fetch reached the WordPress page without a key",
+      "evidence": [
+        {
+          "path": "proof/live-fetch.json",
+          "locator": "url, captured_at, http_status, valid"
+        },
+        {
+          "path": "proof/live-cache.json",
+          "locator": "rows, captured, source"
+        },
+        {
+          "path": "proof/live-checks.json",
+          "locator": "all checks"
+        },
+        {
+          "path": "proof/live-1280.png",
+          "locator": "rates, rate dates, fetched UTC and source"
+        }
+      ]
+    },
+    {
+      "claim": "The API permits commercial use and caching of blended rates",
+      "evidence": [
+        {
+          "path": "proof/source-terms.json",
+          "locator": "terms_url, permission_url, permission_summary, checked_at"
+        }
+      ]
+    },
+    {
+      "claim": "Desktop and mobile pages have no horizontal overflow",
+      "evidence": [
+        {
+          "path": "proof/after-browser.json",
+          "locator": "checks widths 1280 and 390, horizontal_overflow false"
+        },
+        {
+          "path": "proof/live-browser.json",
+          "locator": "checks widths 1280 and 390"
+        }
+      ]
+    },
+    {
+      "claim": "Playground loads live rates and keeps them during a controlled outage",
+      "evidence": [
+        {
+          "path": "proof/demo.json",
+          "locator": "verified, observations expected_state fresh/stale and pass, browser, checked_at"
+        },
+        {
+          "path": "tests/playground.cjs",
+          "locator": "stale blueprint runPHP step installs a controlled failure hook"
+        }
+      ]
+    },
+    {
+      "claim": "Runtime and tested dependency versions",
+      "evidence": [
+        {
+          "path": "proof/run.json",
+          "locator": "duration_seconds, environment, captured_at"
+        },
+        {
+          "path": "proof/after-browser.json",
+          "locator": "browser"
+        },
+        {
+          "path": "compose.yaml",
+          "locator": "service image tags"
+        },
+        {
+          "path": "tests/browser.Dockerfile",
+          "locator": "FROM and npm package pins"
+        }
+      ]
+    }
+  ]
+}

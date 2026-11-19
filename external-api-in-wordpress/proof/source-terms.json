@@ -1,0 +1,28 @@
+{
+  "provider": "Frankfurter",
+  "endpoint": "https://api.frankfurter.dev/v2/rates?base=GBP&quotes=EUR,USD",
+  "terms_url": "https://frankfurter.dev/license/",
+  "permission_url": "https://frankfurter.dev/#faq",
+  "checked_at": "2026-11-19",
+  "method": "Independent review of the public provider documentation and terms over HTTPS",
+  "permission_summary": "The FAQ permits commercial use of blended rates and encourages storing daily observations for caching. The public API requires no key. Provider-specific endpoints carry their individual provider terms; this case uses blended rates.",
+  "attribution": "Frankfurter is linked on the page; rates are labelled as reference information.",
+  "limits": "No service availability guarantee. Not a trading or payment quotation.",
+  "provider_verification": {
+    "official_name": "Frankfurter Exchange rate API",
+    "documentation": "https://frankfurter.dev/",
+    "confirmed": [
+      "Public exchange-rate service",
+      "No API key needed",
+      "Default v2 rates blend provider data",
+      "Daily reference rates, not streaming market quotes"
+    ],
+    "relationship": "Data source used by the integration"
+  },
+  "page_labels": {
+    "Currency reference": "Page subject",
+    "Reference Rates": "Plugin feature name",
+    "Currency page layout": "Theme description",
+    "business_identity": null
+  }
+}

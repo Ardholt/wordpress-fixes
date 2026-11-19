@@ -1,0 +1,104 @@
+ external-api-in-wordpress-browser  Built
+ Network external-api-in-wordpress_default  Creating
+ Network external-api-in-wordpress_default  Created
+ Volume external-api-in-wordpress_database  Creating
+ Volume external-api-in-wordpress_database  Created
+ Volume external-api-in-wordpress_wordpress  Creating
+ Volume external-api-in-wordpress_wordpress  Created
+ Container external-api-in-wordpress-fixture-1  Creating
+ Container external-api-in-wordpress-db-1  Creating
+ Container external-api-in-wordpress-db-1  Created
+ Container external-api-in-wordpress-web-1  Creating
+ Container external-api-in-wordpress-fixture-1  Created
+ Container external-api-in-wordpress-web-1  Created
+ Container external-api-in-wordpress-fixture-1  Starting
+ Container external-api-in-wordpress-db-1  Starting
+ Container external-api-in-wordpress-fixture-1  Started
+ Container external-api-in-wordpress-db-1  Started
+ Container external-api-in-wordpress-db-1  Waiting
+ Container external-api-in-wordpress-db-1  Healthy
+ Container external-api-in-wordpress-web-1  Starting
+ Container external-api-in-wordpress-web-1  Started
+ Container external-api-in-wordpress-db-1  Waiting
+ Container external-api-in-wordpress-web-1  Waiting
+ Container external-api-in-wordpress-fixture-1  Waiting
+ Container external-api-in-wordpress-db-1  Healthy
+ Container external-api-in-wordpress-fixture-1  Healthy
+ Container external-api-in-wordpress-web-1  Healthy
+WordPress installed; broken integration active.
+PASS Broken page does not render parsed currency cards
+PASS Broken response exposes unmapped provider JSON
+PASS Fixed acceptance check is red before repair
+FAIL parsed values or fresh state missing
+Exit code: 1
+PASS before: real page captured at 1280 and 390 px; no overflow
+PASS Parsed EUR and USD values appear on real WordPress page
+PASS Rate date, capture time and local source are visible
+PASS Three fresh page views use one upstream request
+PASS Fresh cache keeps previous value
+PASS Expired cache refreshes to changed upstream value
+PASS down: labelled last-good fallback on page
+PASS down: failed response cannot replace cache
+PASS down: unsafe markup never reaches the page
+PASS down: retry backoff avoids another upstream request
+PASS malformed: labelled last-good fallback on page
+PASS malformed: failed response cannot replace cache
+PASS malformed: unsafe markup never reaches the page
+PASS malformed: retry backoff avoids another upstream request
+PASS partial: labelled last-good fallback on page
+PASS partial: failed response cannot replace cache
+PASS partial: unsafe markup never reaches the page
+PASS partial: retry backoff avoids another upstream request
+PASS hostile: labelled last-good fallback on page
+PASS hostile: failed response cannot replace cache
+PASS hostile: unsafe markup never reaches the page
+PASS hostile: retry backoff avoids another upstream request
+PASS bad-date: labelled last-good fallback on page
+PASS bad-date: failed response cannot replace cache
+PASS bad-date: unsafe markup never reaches the page
+PASS bad-date: retry backoff avoids another upstream request
+PASS negative: labelled last-good fallback on page
+PASS negative: failed response cannot replace cache
+PASS negative: unsafe markup never reaches the page
+PASS negative: retry backoff avoids another upstream request
+PASS wrong-base: labelled last-good fallback on page
+PASS wrong-base: failed response cannot replace cache
+PASS wrong-base: unsafe markup never reaches the page
+PASS wrong-base: retry backoff avoids another upstream request
+PASS duplicate: labelled last-good fallback on page
+PASS duplicate: failed response cannot replace cache
+PASS duplicate: unsafe markup never reaches the page
+PASS duplicate: retry backoff avoids another upstream request
+PASS future: labelled last-good fallback on page
+PASS future: failed response cannot replace cache
+PASS future: unsafe markup never reaches the page
+PASS future: retry backoff avoids another upstream request
+PASS oversized: labelled last-good fallback on page
+PASS oversized: failed response cannot replace cache
+PASS oversized: unsafe markup never reaches the page
+PASS oversized: retry backoff avoids another upstream request
+PASS timeout: labelled last-good fallback on page
+PASS timeout: failed response cannot replace cache
+PASS timeout: unsafe markup never reaches the page
+PASS Timeout request is bounded below four seconds
+PASS timeout: retry backoff avoids another upstream request
+PASS Empty-cache timeout shows guidance within four seconds
+PASS Empty-cache outage gives an actionable source link
+PASS Rates saved more than seven days ago are hidden
+PASS Expired refresh lock is recovered
+PASS Provider recovery restores fresh rates
+PASS parsed values and fresh state
+PASS after: real page captured at 1280 and 390 px; no overflow
+PASS outage: real page captured at 1280 and 390 px; no overflow
+PASS hostile: real page captured at 1280 and 390 px; no overflow
+PASS empty: real page captured at 1280 and 390 px; no overflow
+PASS separate live observation: public API returned valid rates without a key
+PASS Live external fetch reaches the WordPress page
+PASS Live cache records the public API source
+PASS live: real page captured at 1280 and 390 px; no overflow
+make-hero: wrote media/hero.png (1200x1178, 272 KB)
+make-button: wrote media/button.png (580x96)
+PASS deterministic WordPress checks and browser captures
+Runtime: 169s
+Cleaning up WordPress, database, fixture and volumes.
+Cleanup complete: case containers and volumes removed.

@@ -1,0 +1,17 @@
+[
+    {
+        "check": "Broken page does not render parsed currency cards",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Broken response exposes unmapped provider JSON",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Fixed acceptance check is red before repair",
+        "pass": true,
+        "details": null
+    }
+]

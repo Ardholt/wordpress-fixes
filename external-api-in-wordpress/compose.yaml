@@ -1,0 +1,49 @@
+services:
+  db:
+    image: mariadb:11.4.5
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${DB_PASSWORD:-}
+      MARIADB_ROOT_PASSWORD: ${ROOT_PASSWORD:-}
+    volumes: [database:/var/lib/mysql]
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      retries: 40
+  web:
+    image: wordpress:6.8.3-php8.3-apache
+    ports: ["${BIND_ADDRESS:-127.0.0.1}:${PORT:-8080}:80"]
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:-}
+      WORDPRESS_DB_NAME: wordpress
+    healthcheck:
+      test: [CMD, php, -r, "exit(is_file('/var/www/html/wp-config.php') ? 0 : 1);"]
+      interval: 2s
+      timeout: 5s
+      retries: 60
+    depends_on:
+      db: {condition: service_healthy}
+    volumes:
+      - wordpress:/var/www/html
+      - ./source:/case/source:ro
+      - ./broken:/case/broken:ro
+      - ./tests:/case/tests:ro
+      - ./tests/php.ini:/usr/local/etc/php/conf.d/case.ini:ro
+      - ./proof:/case/proof
+  fixture:
+    image: python:3.12.10-alpine
+    command: [python, /fixture/server.py]
+    volumes: [./fixtures:/fixture:ro]
+  browser:
+    build: {context: ., dockerfile: tests/browser.Dockerfile}
+    profiles: [tools]
+    init: true
+    ipc: host
+    volumes: [./:/case]
+    working_dir: /case
+volumes:
+  database:
+  wordpress:

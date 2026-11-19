@@ -1,0 +1,12 @@
+[
+    {
+        "check": "Live external fetch reaches the WordPress page",
+        "pass": true,
+        "details": null
+    },
+    {
+        "check": "Live cache records the public API source",
+        "pass": true,
+        "details": null
+    }
+]

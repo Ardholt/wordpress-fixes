@@ -1,0 +1,14 @@
+{
+    "rows": {
+        "EUR": {
+            "rate": 1.1995,
+            "date": "2026-11-19"
+        },
+        "USD": {
+            "rate": 1.3186,
+            "date": "2026-11-19"
+        }
+    },
+    "captured": 1795069146,
+    "source": "https://api.frankfurter.dev/v2/rates?base=GBP&quotes=EUR,USD"
+}

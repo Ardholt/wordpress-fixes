@@ -1,0 +1,15 @@
+{
+  "browser": "134.0.6998.35",
+  "checks": [
+    {
+      "width": 1280,
+      "state": "fresh",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "state": "fresh",
+      "horizontal_overflow": false
+    }
+  ]
+}

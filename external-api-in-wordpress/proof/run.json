@@ -1,0 +1,18 @@
+{
+    "environment": {
+        "wordpress": "6.8.3",
+        "php": "8.3.28",
+        "database_image": "mariadb:11.4.5",
+        "browser_image": "mcr.microsoft.com/playwright:v1.51.1-noble"
+    },
+    "commands": [
+        "./run.sh",
+        "php tests/check.php broken",
+        "php tests/check.php fixed",
+        "node tests/capture.cjs"
+    ],
+    "deterministic_checks": "passed",
+    "live_observation_requested": true,
+    "duration_seconds": 169,
+    "captured_at": "2026-11-19T06:19:24+00:00"
+}
