@@ -1,12 +1,12 @@
 # Third-party files and their licences
 
-Everything not listed here is my own work under the repository licence. Where a plugin or theme file inside a case states a licence in its header, that licence applies to it (GPL-2.0-or-later in some cases, MIT in others); plugin and theme files without a licence header are my own work under the repository licence. Third-party code is listed below.
+Each case folder carries its own licence and third-party notices (its LICENSE, ASSETS.md, THIRD-PARTY.md, NOTICE.md or ASSET-LICENSES.md files, where present); those notices govern the files in that folder, and a file that states a licence in its own header is under that licence. Files that no such notice or header covers are under the repository licence. The table below lists third-party files used across the cases; it does not replace the case-level notices.
 
 | Files | What they are | Licence |
 |---|---|---|
 | `*/hero/fonts/Inter-*.ttf` | Inter, by Rasmus Andersson | SIL Open Font License 1.1 (`LICENSE-Inter.txt` beside it) |
 | `*/hero/fonts/InstrumentSerif-Regular.ttf` | Instrument Serif | SIL Open Font License 1.1 (`LICENSE-InstrumentSerif.txt` beside it) |
 | `*/hero/fonts/JetBrainsMono-Bold.ttf` | JetBrains Mono | SIL Open Font License 1.1 (`LICENSE-JetBrainsMono.txt` beside it) |
-| `*/proof/*.png`, `*/media/*.png` | My own browser captures and crops of WordPress pages I ran, and images I rendered from my saved run records (the software shown keeps its own licence) | repository licence |
+| `*/proof/*.png`, `*/media/*.png` | Captures, crops, previews and rendered images I made while running each case (browser, office-app and offline README previews, and images rendered from saved run records); the software shown keeps its own licence | the case folder's own notice where it names one, otherwise the repository licence |
 | `theme-update-wiped-changes/vendor/twentytwentyone.2.3.zip`, `2.4.zip`, `2.5.zip` and `proof/edited-parent.tar.gz` | Twenty Twenty-One theme from WordPress.org (download URLs and hashes in `vendor/asset-manifest.json`) | GPL-2.0-or-later; its bundled images are public domain (Berthe Morisot) and parts of its form CSS are MIT, as its readme says |
 | `theme-update-wiped-changes/artwork/fonts/*` | Inter, Instrument Serif, JetBrains Mono | SIL Open Font License 1.1 (licence files beside them) |
