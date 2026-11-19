@@ -1,0 +1,79 @@
+{
+  "capturePhases": "First image is captured after 1 second; the playing image is captured 2.8 seconds later in the loop.",
+  "method": "Offline layout preview using the casebook page layout, GitHub Markdown CSS 5.8.1 and marked 15.0.12. This is a readability check, not proof of a published GitHub or Pages page. No badge response was substituted.",
+  "browser": "141.0.7390.37",
+  "viewports": [
+    {
+      "kind": "gh",
+      "width": 390,
+      "height": 844,
+      "title": {
+        "x": 33,
+        "y": 429,
+        "width": 324,
+        "height": 50.59375
+      },
+      "recording": {
+        "x": 33,
+        "y": 495.59375,
+        "width": 324,
+        "height": 206.546875
+      },
+      "noHorizontalOverflow": true
+    },
+    {
+      "kind": "gh",
+      "width": 1366,
+      "height": 768,
+      "title": {
+        "x": 369,
+        "y": 332,
+        "width": 948,
+        "height": 50.59375
+      },
+      "recording": {
+        "x": 563,
+        "y": 398.59375,
+        "width": 560,
+        "height": 357
+      },
+      "noHorizontalOverflow": true
+    },
+    {
+      "kind": "pages",
+      "width": 390,
+      "height": 844,
+      "title": {
+        "x": 20,
+        "y": 87,
+        "width": 350,
+        "height": 32.390625
+      },
+      "recording": {
+        "x": 20,
+        "y": 141.390625,
+        "width": 350,
+        "height": 223.125
+      },
+      "noHorizontalOverflow": true
+    },
+    {
+      "kind": "pages",
+      "width": 1366,
+      "height": 768,
+      "title": {
+        "x": 333,
+        "y": 103,
+        "width": 700,
+        "height": 49.671875
+      },
+      "recording": {
+        "x": 403,
+        "y": 174.671875,
+        "width": 560,
+        "height": 357
+      },
+      "noHorizontalOverflow": true
+    }
+  ]
+}

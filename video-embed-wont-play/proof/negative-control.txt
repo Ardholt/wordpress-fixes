@@ -1,0 +1,2 @@
+Playback acceptance failed: currentTime did not advance beyond 0.5 seconds.
+

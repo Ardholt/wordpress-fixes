@@ -1,0 +1,27 @@
+name: Video playback repair
+on:
+  push:
+    branches: [main]
+    paths: ['video-embed-wont-play/**', '.github/workflows/video-embed-wont-play.yml']
+  pull_request:
+    paths: ['video-embed-wont-play/**', '.github/workflows/video-embed-wont-play.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  playback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reproduce the block and verify playback after repair
+        run: cd video-embed-wont-play && ./run.sh
+      - name: Keep browser evidence and run output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-playback-proof
+          path: |
+            video-embed-wont-play/proof/
+            video-embed-wont-play/media/
+          if-no-files-found: error

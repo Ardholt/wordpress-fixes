@@ -1,0 +1,111 @@
+{
+  "stage": "after",
+  "testedAt": "2026-11-19T06:36:53.569Z",
+  "browser": "141.0.7390.37",
+  "viewport": {
+    "width": 1280,
+    "height": 820
+  },
+  "initial": {
+    "currentTime": 0.537724,
+    "duration": 8,
+    "paused": false,
+    "ended": false,
+    "readyState": 4,
+    "error": null,
+    "decodedFrames": 16
+  },
+  "progressed": {
+    "currentTime": 1.792256,
+    "duration": 8,
+    "paused": false,
+    "ended": false,
+    "readyState": 4,
+    "error": null,
+    "decodedFrames": 47
+  },
+  "sought": {
+    "currentTime": 5.04092,
+    "duration": 8,
+    "paused": false,
+    "ended": false,
+    "readyState": 4,
+    "error": null,
+    "decodedFrames": 177
+  },
+  "completed": {
+    "currentTime": 8,
+    "duration": 8,
+    "paused": true,
+    "ended": true,
+    "readyState": 4,
+    "error": null,
+    "decodedFrames": 244
+  },
+  "playerBounds": {
+    "x": 189,
+    "y": 255.78125,
+    "width": 526.796875,
+    "height": 296.3125
+  },
+  "securityHeaders": {
+    "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN"
+  },
+  "violations": [],
+  "console": [],
+  "failedRequests": [],
+  "blockedRequests": [],
+  "mediaResponses": [
+    {
+      "url": "http://localhost:8080/wp-content/uploads/visit-guide.webm",
+      "status": 206,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'",
+        "etag": "\"10ae5-6609b27db6999\"",
+        "connection": "Keep-Alive",
+        "content-range": "bytes 0-68324/68325",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5, max=97",
+        "content-length": "68325",
+        "date": "Thu, 19 Nov 2026 06:36:47 GMT",
+        "last-modified": "Thu, 19 Nov 2026 06:22:45 GMT",
+        "content-type": "video/webm",
+        "server": "Apache/2.4.65 (Debian)",
+        "x-frame-options": "SAMEORIGIN"
+      }
+    }
+  ],
+  "directRangeRequest": {
+    "status": 206,
+    "headers": {
+      "date": "Thu, 19 Nov 2026 06:36:53 GMT",
+      "server": "Apache/2.4.65 (Debian)",
+      "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "last-modified": "Thu, 19 Nov 2026 06:22:45 GMT",
+      "etag": "\"10ae5-6609b27db6999\"",
+      "accept-ranges": "bytes",
+      "content-length": "1024",
+      "content-range": "bytes 0-1023/68325",
+      "keep-alive": "timeout=5, max=100",
+      "connection": "Keep-Alive",
+      "content-type": "video/webm"
+    },
+    "bodyBytes": 1024
+  },
+  "retainedBehavior": {
+    "visitPage": true,
+    "expandableInformation": true
+  },
+  "onlyHeaderChange": "media-src 'none' → media-src 'self'"
+}

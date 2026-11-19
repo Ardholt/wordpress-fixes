@@ -1,0 +1,27 @@
+{
+  "testedAt": "2026-11-19T06:41:39.784Z",
+  "runtime": "WordPress Playground CLI 3.1.65; PHP 8.3; WordPress 6.8.3",
+  "browser": "141.0.7390.37",
+  "capability": {
+    "sapi": "cli",
+    "apacheModuleAPIAvailable": false,
+    "apacheHeaderDirectiveOnDisk": true,
+    "configuredMediaDirective": "media-src 'self'"
+  },
+  "responseStatus": 200,
+  "responseHeaders": {
+    "connection": "keep-alive",
+    "date": "Thu, 19 Nov 2026 06:41:38 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked",
+    "content-type": "text/html; charset=UTF-8",
+    "link": "<http://localhost:8081/wp-json/>; rel=\"https://api.w.org/\"\n<http://localhost:8081/wp-json/wp/v2/pages/4>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\"\n<http://localhost:8081/>; rel=shortlink",
+    "x-powered-by": "PHP/8.3.36"
+  },
+  "URLNormalization": "The local container origin is shown as http://localhost:8081; header names and other values are unchanged.",
+  "video": {
+    "currentTime": 1.032974,
+    "decodedFrames": 29
+  },
+  "observation": "The blueprint loads and plays its embedded video. Apache Header directives exist on disk, but no Content-Security-Policy response header is emitted. The Apache policy failure and repair cannot be verified here."
+}

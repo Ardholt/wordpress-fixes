@@ -1,0 +1,16 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "currentTime": 1.022904,
+  "decodedFrames": 29,
+  "error": null,
+  "soughtOnPhone": 5.00896,
+  "completedOnPhone": {
+    "ended": true,
+    "currentTime": 8,
+    "error": null
+  },
+  "noHorizontalOverflow": true
+}

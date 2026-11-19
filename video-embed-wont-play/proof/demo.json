@@ -1,0 +1,18 @@
+{
+  "status": "unsupported-for-header-reproduction",
+  "url": null,
+  "blueprint": "blueprint.json",
+  "verifiedAt": "2026-11-19T06:41:39.784Z",
+  "browser": "Chromium 141.0.7390.37",
+  "verifiedCapability": "The blueprint loaded and the owned video advanced in a local Playground CLI browser check.",
+  "supportedInteraction": "Play introduction",
+  "limitation": "The blueprint loads and plays its embedded video. Apache Header directives exist on disk, but no Content-Security-Policy response header is emitted. The Apache policy failure and repair cannot be verified here.",
+  "evidence": [
+    {
+      "path": "proof/playground.json",
+      "locator": "capability.apacheHeaderDirectiveOnDisk = true; capability.apacheModuleAPIAvailable = false; responseHeaders has no content-security-policy; video.currentTime > 1"
+    }
+  ],
+  "publicPlaygroundURLVerified": false,
+  "fallback": "./run.sh reproduces the actual Apache header block and repair; recordings are in proof/before.webm and proof/after.webm."
+}

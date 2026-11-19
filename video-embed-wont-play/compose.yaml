@@ -1,0 +1,58 @@
+name: video-embed-wont-play
+services:
+  db:
+    image: mariadb:11.4@sha256:5e73baf8179b29f115101bb102763a47a017361f3e9792daccba6646c3ab1532
+    env_file: .runtime/credentials.env
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+  web:
+    image: wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4
+    ports:
+      - '${BIND_ADDRESS:-127.0.0.1}:${PORT:-8080}:80'
+    env_file: .runtime/credentials.env
+    environment:
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://' . ($$_SERVER['HTTP_HOST'] ?? 'localhost:8080'));
+        define('WP_SITEURL', WP_HOME);
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - wordpress:/var/www/html
+      - ./source/theme:/var/www/html/wp-content/themes/video-visit:ro
+      - ./source/wordpress.htaccess:/var/www/html/.htaccess:ro
+      - ./source/assets:/var/www/html/wp-content/uploads:ro
+      - ./.runtime/security.conf:/etc/apache2/conf-enabled/video-security.conf:ro
+    entrypoint: [sh, -c, 'a2enmod headers >/dev/null && exec docker-entrypoint.sh apache2-foreground']
+  cli:
+    profiles: [tools]
+    image: wordpress:cli-php8.3@sha256:e4980e3ef763ce7535049c05a54e906d95b16370f28ca02fa329a079eebf3f65
+    user: '0:0'
+    env_file: .runtime/credentials.env
+    volumes:
+      - wordpress:/var/www/html
+      - ./source/theme:/var/www/html/wp-content/themes/video-visit:ro
+      - ./fixtures:/fixtures:ro
+    entrypoint: [wp, --allow-root]
+  browser:
+    profiles: [tools]
+    build: tests
+    init: true
+    shm_size: 256mb
+    volumes:
+      - ./:/work
+    environment:
+      TARGET: http://web
+  assets:
+    profiles: [tools]
+    build: tools
+    volumes:
+      - ./:/work
+volumes:
+  database:
+  wordpress:

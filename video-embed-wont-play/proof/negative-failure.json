@@ -1,0 +1,28 @@
+{
+  "message": "Playback acceptance failed: currentTime did not advance beyond 0.5 seconds.",
+  "state": {
+    "currentTime": 0,
+    "duration": null,
+    "paused": true,
+    "ended": false,
+    "readyState": 0,
+    "networkState": 3,
+    "error": {
+      "code": 4,
+      "message": "MEDIA_ELEMENT_ERROR: Media load rejected by URL safety check"
+    },
+    "source": ""
+  },
+  "signals": {
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Refused to load media from 'http://localhost:8080/wp-content/uploads/visit-guide.webm' because it violates the following Content Security Policy directive: \"media-src 'none'\".\n"
+      }
+    ],
+    "failed": [],
+    "responses": [],
+    "violations": [],
+    "blockedRequests": []
+  }
+}

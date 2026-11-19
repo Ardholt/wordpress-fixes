@@ -1,0 +1,49 @@
+{
+  "testedAt": "2026-11-19T06:36:53.569Z",
+  "durationSeconds": 878,
+  "durationScope": "From reproduction startup through stack cleanup, including image checks and media rendering; final report writing excluded.",
+  "environment": {
+    "platform": "Linux Docker / Docker Compose v2",
+    "wordpress": "6.8.3",
+    "php": "8.3.28",
+    "apache": "Server version: Apache/2.4.65 (Debian)\nServer built:   2025-07-29T17:52:31",
+    "browser": "141.0.7390.37",
+    "browserTooling": "Playwright 1.56.1",
+    "video": "Original visitor-guide video; silent VP9 WebM; recipe: tools/make-video.sh"
+  },
+  "commands": [
+    "./run.sh"
+  ],
+  "independentStageCommands": [
+    "./run.sh broken",
+    "./run.sh test before",
+    "./run.sh fix",
+    "./run.sh test after",
+    "./run.sh down"
+  ],
+  "conditions": {
+    "network": "Isolated Docker bridge; no external media requests",
+    "cache": "New browser contexts for each state and viewport",
+    "desktopViewport": {
+      "width": 1280,
+      "height": 820
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "publicURL": "http://localhost:8080",
+    "URLNormalization": "Container origin replaced by public local URL in browser evidence; request paths and errors unchanged."
+  },
+  "outcomes": {
+    "before": "Blocked by media-src CSP; zero decoded frames and zero time progress",
+    "negativeControlExit": 1,
+    "after": "Decoded frames and time progress, seek to 5 seconds, completion at 8 seconds",
+    "onlyHeaderChange": "media-src 'none' \u2192 media-src 'self'",
+    "unrelatedBehavior": {
+      "visitPage": true,
+      "expandableInformation": true
+    },
+    "cleanup": "run.sh removes stack and volumes on exit"
+  }
+}
