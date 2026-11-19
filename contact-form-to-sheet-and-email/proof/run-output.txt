@@ -1,38 +1,1745 @@
 Preparing isolated WordPress, n8n, SQLite sheet and Mailpit services.
-Waiting for the other WordPress stack to finish.
-Waiting for the other WordPress stack to finish.
-Waiting for the other WordPress stack to finish.
-Waiting for the other WordPress stack to finish.
-Waiting for the other WordPress stack to finish.
-Waiting for the other WordPress stack to finish.
-Waiting for the other WordPress stack to finish.
-Waiting for the other WordPress stack to finish.
-Waiting for the other WordPress stack to finish.
-Waiting for the other WordPress stack to finish.
+STAGE: Pull credential helper (limit 300s)
+docker.io/library/python@sha256:09a17cad02668ae61ece136b4fd36ac3849e14f670ebedb637ea3e15580525bc: Pulling from library/python
+37fb86c2a767: Pulling fs layer
+0069ea31add0: Pulling fs layer
+faa890a31e98: Pulling fs layer
+f7a79299dedd: Pulling fs layer
+f7a79299dedd: Waiting
+0069ea31add0: Verifying Checksum
+0069ea31add0: Download complete
+faa890a31e98: Verifying Checksum
+faa890a31e98: Download complete
+37fb86c2a767: Verifying Checksum
+37fb86c2a767: Download complete
+f7a79299dedd: Verifying Checksum
+f7a79299dedd: Download complete
+37fb86c2a767: Pull complete
+0069ea31add0: Pull complete
+faa890a31e98: Pull complete
+f7a79299dedd: Pull complete
+Digest: sha256:09a17cad02668ae61ece136b4fd36ac3849e14f670ebedb637ea3e15580525bc
+Status: Downloaded newer image for python@sha256:09a17cad02668ae61ece136b4fd36ac3849e14f670ebedb637ea3e15580525bc
+docker.io/library/python:3.13-slim@sha256:09a17cad02668ae61ece136b4fd36ac3849e14f670ebedb637ea3e15580525bc
+DONE: Pull credential helper (4s)
+STAGE: Create local credentials (limit 30s)
+DONE: Create local credentials (2s)
+STAGE: Reset case volumes (limit 90s)
+DONE: Reset case volumes (0s)
+STAGE: Build browser and spreadsheet tools (limit 1500s)
+#1 [internal] load local bake definitions
+#1 reading from stdin 727B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile:
+#2 transferring dockerfile: 488B done
+#2 DONE 0.2s
+
+#3 [internal] load metadata for mcr.microsoft.com/playwright:v1.56.1-noble
+#3 DONE 0.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 84B done
+#4 DONE 0.2s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/5] FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#6 resolve mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a 0.1s done
+#6 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 1.70kB done
+#5 DONE 0.2s
+
+#6 [1/5] FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#6 sha256:42f02d323c310069b4d54c94bd91a608966a486c3492c48ae0b1cea747ec5ca2 1.17kB / 1.17kB done
+#6 sha256:4967572bb0de50a2eab9cbfd8dbc573933f9eea87fa1ca11eeb746322225aed5 4.35kB / 4.35kB done
+#6 sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a 743B / 743B done
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 1.05MB / 30.59MB 0.1s
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 6.29MB / 30.59MB 0.3s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 1.05MB / 101.50MB 0.3s
+#6 sha256:495d3111de8d48de6f2b960b521f4c5e2e4e98878550ee089c82fbfb73142998 0B / 1.96MB 0.3s
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 11.53MB / 30.59MB 0.5s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 8.39MB / 101.50MB 0.5s
+#6 sha256:495d3111de8d48de6f2b960b521f4c5e2e4e98878550ee089c82fbfb73142998 1.05MB / 1.96MB 0.5s
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 15.73MB / 30.59MB 0.7s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 14.68MB / 101.50MB 0.7s
+#6 sha256:495d3111de8d48de6f2b960b521f4c5e2e4e98878550ee089c82fbfb73142998 1.96MB / 1.96MB 0.6s done
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 1.05MB / 786.74MB 0.7s
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 18.87MB / 30.59MB 0.9s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 19.92MB / 101.50MB 0.9s
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 20.97MB / 30.59MB 1.0s
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 24.12MB / 30.59MB 1.2s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 27.26MB / 101.50MB 1.2s
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 27.26MB / 30.59MB 1.4s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 32.51MB / 101.50MB 1.4s
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 29.36MB / 30.59MB 1.6s
+#6 sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 30.59MB / 30.59MB 1.7s done
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 38.80MB / 101.50MB 1.8s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 45.09MB / 101.50MB 2.0s
+#6 extracting sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 0.1s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 52.43MB / 101.50MB 2.3s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 42.99MB / 786.74MB 2.4s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 59.77MB / 101.50MB 2.5s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 65.01MB / 101.50MB 2.7s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 72.35MB / 101.50MB 3.0s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 77.59MB / 101.50MB 3.2s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 87.03MB / 101.50MB 3.6s
+#6 extracting sha256:cf57d2112d8994ff0bb5f867ab8e776272e1d0bcfbb6e6d7f38fd7973b7140cf 1.8s done
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 95.42MB / 101.50MB 3.9s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 100.66MB / 101.50MB 4.1s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 87.03MB / 786.74MB 4.1s
+#6 sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 101.50MB / 101.50MB 4.4s done
+#6 extracting sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 126.88MB / 786.74MB 5.0s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 177.21MB / 786.74MB 6.1s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 217.06MB / 786.74MB 7.1s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 260.05MB / 786.74MB 8.1s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 301.99MB / 786.74MB 9.0s
+#6 extracting sha256:e1de47aaed0a2dd2c2b1cb9ea6936665efe171c657cbe339204479412f523e3b 4.8s done
+#6 extracting sha256:495d3111de8d48de6f2b960b521f4c5e2e4e98878550ee089c82fbfb73142998 0.0s done
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 352.32MB / 786.74MB 9.9s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 398.46MB / 786.74MB 10.8s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 443.55MB / 786.74MB 11.7s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 487.59MB / 786.74MB 12.7s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 529.53MB / 786.74MB 13.7s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 575.67MB / 786.74MB 14.8s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 618.66MB / 786.74MB 15.9s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 660.60MB / 786.74MB 16.9s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 703.59MB / 786.74MB 17.9s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 746.59MB / 786.74MB 18.9s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 786.74MB / 786.74MB 19.9s
+#6 sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 786.74MB / 786.74MB 19.9s done
+#6 extracting sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 0.1s
+#6 extracting sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 5.1s
+#6 extracting sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 10.2s
+#6 extracting sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 15.2s
+#6 extracting sha256:44acc34a5cf7569816f1cbd047c04ba06ad8face9b0707ca096e78a7d1b856f3 15.3s done
+#6 DONE 35.9s
+
+#7 [2/5] COPY tools/install-packages.sh /opt/install-packages.sh
+#7 DONE 0.9s
+
+#8 [3/5] RUN bash /opt/install-packages.sh
+#8 0.654 PACKAGES: trying https://archive.ubuntu.com/ubuntu (maximum 360 seconds)
+#8 1.035 Get:1 https://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+#8 1.066 Get:2 https://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+#8 1.067 Get:3 https://archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+#8 1.185 Get:4 https://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+#8 1.229 Get:5 https://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+#8 1.237 Get:6 https://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+#8 1.237 Get:7 https://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+#8 1.471 Get:8 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1800 kB]
+#8 1.498 Get:9 https://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2329 kB]
+#8 1.529 Get:10 https://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [61.7 kB]
+#8 1.531 Get:11 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [2184 kB]
+#8 1.556 Get:12 https://archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [55.6 kB]
+#8 1.556 Get:13 https://archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2216 kB]
+#8 1.571 Get:14 https://archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1560 kB]
+#8 1.584 Get:15 https://archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1475 kB]
+#8 2.387 Fetched 33.8 MB in 1s (24.3 MB/s)
+#8 2.387 Reading package lists...
+#8 3.356 Reading package lists...
+#8 4.324 Building dependency tree...
+#8 4.583 Reading state information...
+#8 4.782 xauth is already the newest version (1:1.1.2-1build1).
+#8 4.782 xauth set to manually installed.
+#8 4.782 The following additional packages will be installed:
+#8 4.782   fonts-opensymbol imagemagick-6-common imagemagick-6.q16
+#8 4.782   libboost-iostreams1.83.0 libboost-locale1.83.0 libboost-thread1.83.0
+#8 4.782   libclucene-contribs1t64 libclucene-core1t64 libcolamd3 libeot0
+#8 4.782   libetonyek-0.1-1 libexttextcat-2.0-0 libexttextcat-data libgpgme11t64
+#8 4.782   libgpgmepp6t64 libheif-plugin-aomdec libheif1 liblangtag-common liblangtag1
+#8 4.782   liblqr-1-0 libltdl7 libmagickcore-6.q16-7t64 libmagickwand-6.q16-7t64
+#8 4.782   libmhash2 libmwaw-0.3-3 libmythes-1.2-0 libodfgen-0.1-1 liborcus-0.18-0
+#8 4.783   liborcus-parser-0.18-0 libpoppler134 libpython3-stdlib librasqal3t64
+#8 4.783   libraw23t64 librdf0t64 libreoffice-base-core libreoffice-common
+#8 4.783   libreoffice-core libreoffice-style-colibre libreoffice-uiconfig-calc
+#8 4.783   libreoffice-uiconfig-common librevenge-0.0-0 libsuitesparseconfig7
+#8 4.783   libuno-cppu3t64 libuno-cppuhelpergcc3-3t64 libuno-purpenvhelpergcc3-3t64
+#8 4.783   libuno-sal3t64 libuno-salhelpergcc3-3t64 libwps-0.4-4 libxdo3 libxmlsec1t64
+#8 4.784   libxmlsec1t64-nss lp-solve python3-minimal ucf uno-libs-private ure
+#8 4.784   xserver-common
+#8 4.785 Suggested packages:
+#8 4.785   imagemagick-6-doc autotrace cups-bsd | lpr | lprng enscript ffmpeg gimp
+#8 4.785   gnuplot grads graphviz groff-base hp2xx html2ps libwmf-bin mplayer povray
+#8 4.785   radiance sane-utils texlive-base-bin transfig libraw-bin xdg-utils
+#8 4.785   libheif-plugin-libde265 libheif-plugin-x265 libheif-plugin-ffmpegdec
+#8 4.785   libheif-plugin-jpegdec libheif-plugin-jpegenc libheif-plugin-j2kdec
+#8 4.785   libheif-plugin-j2kenc libheif-plugin-rav1e libheif-plugin-svtenc
+#8 4.785   libmagickcore-6.q16-7-extra rasqal-utils librdf-storage-mysql
+#8 4.785   librdf-storage-postgresql librdf-storage-sqlite librdf-storage-virtuoso
+#8 4.785   redland-utils libreoffice-base python3-scriptforge gstreamer1.0-plugins-ugly
+#8 4.785   python3-doc python3-tk python3-venv
+#8 4.785 Recommended packages:
+#8 4.785   libmagickcore-6.q16-7-extra ghostscript netpbm gpg-wks-client gpgsm
+#8 4.785   libheif-plugin-aomenc fonts-urw-base35 poppler-data xdg-utils apparmor
+#8 4.785   python3-uno libpaper-utils xfonts-base
+#8 5.033 The following NEW packages will be installed:
+#8 5.033   fonts-opensymbol imagemagick imagemagick-6-common imagemagick-6.q16
+#8 5.033   libboost-iostreams1.83.0 libboost-locale1.83.0 libboost-thread1.83.0
+#8 5.033   libclucene-contribs1t64 libclucene-core1t64 libcolamd3 libeot0
+#8 5.033   libetonyek-0.1-1 libexttextcat-2.0-0 libexttextcat-data libgpgme11t64
+#8 5.033   libgpgmepp6t64 libheif-plugin-aomdec libheif1 liblangtag-common liblangtag1
+#8 5.033   liblqr-1-0 libltdl7 libmagickcore-6.q16-7t64 libmagickwand-6.q16-7t64
+#8 5.033   libmhash2 libmwaw-0.3-3 libmythes-1.2-0 libodfgen-0.1-1 liborcus-0.18-0
+#8 5.033   liborcus-parser-0.18-0 libpoppler134 librasqal3t64 libraw23t64 librdf0t64
+#8 5.033   libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core
+#8 5.033   libreoffice-style-colibre libreoffice-uiconfig-calc
+#8 5.034   libreoffice-uiconfig-common librevenge-0.0-0 libsuitesparseconfig7
+#8 5.034   libuno-cppu3t64 libuno-cppuhelpergcc3-3t64 libuno-purpenvhelpergcc3-3t64
+#8 5.034   libuno-sal3t64 libuno-salhelpergcc3-3t64 libwps-0.4-4 libxdo3 libxmlsec1t64
+#8 5.035   libxmlsec1t64-nss lp-solve ucf uno-libs-private ure xdotool
+#8 5.037 The following packages will be upgraded:
+#8 5.038   libpython3-stdlib python3 python3-minimal xserver-common xvfb
+#8 5.109 5 upgraded, 57 newly installed, 0 to remove and 154 not upgraded.
+#8 5.109 Need to get 97.1 MB of archives.
+#8 5.109 After this operation, 316 MB of additional disk space will be used.
+#8 5.109 Get:1 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 python3-minimal amd64 3.12.3-0ubuntu2.1 [27.4 kB]
+#8 5.116 Get:2 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 python3 amd64 3.12.3-0ubuntu2.1 [23.0 kB]
+#8 5.117 Get:3 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpython3-stdlib amd64 3.12.3-0ubuntu2.1 [10.1 kB]
+#8 5.118 Get:4 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libheif-plugin-aomdec amd64 1.17.6-1ubuntu4.9 [11.9 kB]
+#8 5.119 Get:5 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libheif1 amd64 1.17.6-1ubuntu4.9 [277 kB]
+#8 5.132 Get:6 https://archive.ubuntu.com/ubuntu noble/universe amd64 liblqr-1-0 amd64 0.4.2-2.1build2 [28.5 kB]
+#8 5.132 Get:7 https://archive.ubuntu.com/ubuntu noble/main amd64 libltdl7 amd64 2.4.7-7build1 [40.3 kB]
+#8 5.132 Get:8 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libraw23t64 amd64 0.21.2-2.1ubuntu0.24.04.2 [379 kB]
+#8 5.136 Get:9 https://archive.ubuntu.com/ubuntu noble/universe amd64 imagemagick-6-common all 8:6.9.12.98+dfsg1-5.2build2 [69.5 kB]
+#8 5.136 Get:10 https://archive.ubuntu.com/ubuntu noble/universe amd64 libmagickcore-6.q16-7t64 amd64 8:6.9.12.98+dfsg1-5.2build2 [1811 kB]
+#8 5.309 Get:11 https://archive.ubuntu.com/ubuntu noble/universe amd64 libmagickwand-6.q16-7t64 amd64 8:6.9.12.98+dfsg1-5.2build2 [318 kB]
+#8 5.313 Get:12 https://archive.ubuntu.com/ubuntu noble/main amd64 ucf all 3.0043+nmu1 [56.5 kB]
+#8 5.313 Get:13 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 fonts-opensymbol all 4:102.12+LibO24.2.7-0ubuntu0.24.04.7 [139 kB]
+#8 5.315 Get:14 https://archive.ubuntu.com/ubuntu noble/universe amd64 imagemagick-6.q16 amd64 8:6.9.12.98+dfsg1-5.2build2 [254 kB]
+#8 5.317 Get:15 https://archive.ubuntu.com/ubuntu noble/universe amd64 imagemagick amd64 8:6.9.12.98+dfsg1-5.2build2 [14.2 kB]
+#8 5.318 Get:16 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libboost-iostreams1.83.0 amd64 1.83.0-2.1ubuntu3.2 [260 kB]
+#8 5.323 Get:17 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libboost-thread1.83.0 amd64 1.83.0-2.1ubuntu3.2 [276 kB]
+#8 5.324 Get:18 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libboost-locale1.83.0 amd64 1.83.0-2.1ubuntu3.2 [413 kB]
+#8 5.329 Get:19 https://archive.ubuntu.com/ubuntu noble/main amd64 libclucene-core1t64 amd64 2.3.3.4+dfsg-1.2ubuntu2 [565 kB]
+#8 5.336 Get:20 https://archive.ubuntu.com/ubuntu noble/main amd64 libclucene-contribs1t64 amd64 2.3.3.4+dfsg-1.2ubuntu2 [93.5 kB]
+#8 5.357 Get:21 https://archive.ubuntu.com/ubuntu noble/main amd64 libsuitesparseconfig7 amd64 1:7.6.1+dfsg-1build1 [12.9 kB]
+#8 5.358 Get:22 https://archive.ubuntu.com/ubuntu noble/main amd64 libcolamd3 amd64 1:7.6.1+dfsg-1build1 [19.4 kB]
+#8 5.359 Get:23 https://archive.ubuntu.com/ubuntu noble/main amd64 libeot0 amd64 0.01-5build3 [28.1 kB]
+#8 5.361 Get:24 https://archive.ubuntu.com/ubuntu noble/main amd64 liblangtag-common all 0.6.7-1build2 [210 kB]
+#8 5.363 Get:25 https://archive.ubuntu.com/ubuntu noble/main amd64 liblangtag1 amd64 0.6.7-1build2 [52.2 kB]
+#8 5.363 Get:26 https://archive.ubuntu.com/ubuntu noble/main amd64 librevenge-0.0-0 amd64 0.0.5-3build1 [211 kB]
+#8 5.366 Get:27 https://archive.ubuntu.com/ubuntu noble/main amd64 libetonyek-0.1-1 amd64 0.1.10-5build1 [637 kB]
+#8 5.383 Get:28 https://archive.ubuntu.com/ubuntu noble/main amd64 libexttextcat-data all 3.4.7-1build1 [193 kB]
+#8 5.387 Get:29 https://archive.ubuntu.com/ubuntu noble/main amd64 libexttextcat-2.0-0 amd64 3.4.7-1build1 [13.3 kB]
+#8 5.387 Get:30 https://archive.ubuntu.com/ubuntu noble/main amd64 libgpgme11t64 amd64 1.18.0-4.1ubuntu4 [136 kB]
+#8 5.391 Get:31 https://archive.ubuntu.com/ubuntu noble/main amd64 libgpgmepp6t64 amd64 1.18.0-4.1ubuntu4 [119 kB]
+#8 5.392 Get:32 https://archive.ubuntu.com/ubuntu noble/main amd64 libmhash2 amd64 0.9.9.9-9build3 [94.2 kB]
+#8 5.397 Get:33 https://archive.ubuntu.com/ubuntu noble/main amd64 libmwaw-0.3-3 amd64 0.3.22-1build1 [2455 kB]
+#8 5.427 Get:34 https://archive.ubuntu.com/ubuntu noble/main amd64 libmythes-1.2-0 amd64 2:1.2.5-1build1 [8580 B]
+#8 5.428 Get:35 https://archive.ubuntu.com/ubuntu noble/main amd64 libodfgen-0.1-1 amd64 0.1.8-2build3 [246 kB]
+#8 5.431 Get:36 https://archive.ubuntu.com/ubuntu noble/main amd64 liborcus-parser-0.18-0 amd64 0.19.2-3build3 [113 kB]
+#8 5.434 Get:37 https://archive.ubuntu.com/ubuntu noble/main amd64 liborcus-0.18-0 amd64 0.19.2-3build3 [435 kB]
+#8 5.438 Get:38 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpoppler134 amd64 24.02.0-1ubuntu9.11 [1118 kB]
+#8 5.452 Get:39 https://archive.ubuntu.com/ubuntu noble/main amd64 librasqal3t64 amd64 0.9.33-2.1build1 [188 kB]
+#8 5.455 Get:40 https://archive.ubuntu.com/ubuntu noble/main amd64 librdf0t64 amd64 1.0.17-3.1ubuntu3 [102 kB]
+#8 5.457 Get:41 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libreoffice-style-colibre all 4:24.2.7-0ubuntu0.24.04.7 [7277 kB]
+#8 5.519 Get:42 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libreoffice-uiconfig-common all 4:24.2.7-0ubuntu0.24.04.7 [343 kB]
+#8 5.520 Get:43 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libuno-sal3t64 amd64 4:24.2.7-0ubuntu0.24.04.7 [236 kB]
+#8 5.523 Get:44 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libuno-salhelpergcc3-3t64 amd64 4:24.2.7-0ubuntu0.24.04.7 [19.3 kB]
+#8 5.524 Get:45 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libuno-cppu3t64 amd64 4:24.2.7-0ubuntu0.24.04.7 [91.1 kB]
+#8 5.524 Get:46 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 uno-libs-private amd64 4:24.2.7-0ubuntu0.24.04.7 [229 kB]
+#8 5.526 Get:47 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libuno-cppuhelpergcc3-3t64 amd64 4:24.2.7-0ubuntu0.24.04.7 [363 kB]
+#8 5.529 Get:48 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libuno-purpenvhelpergcc3-3t64 amd64 4:24.2.7-0ubuntu0.24.04.7 [17.4 kB]
+#8 5.530 Get:49 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 ure amd64 4:24.2.7-0ubuntu0.24.04.7 [1426 kB]
+#8 5.539 Get:50 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libreoffice-common all 4:24.2.7-0ubuntu0.24.04.7 [20.3 MB]
+#8 5.727 Get:51 https://archive.ubuntu.com/ubuntu noble/main amd64 libxmlsec1t64 amd64 1.2.39-5build2 [153 kB]
+#8 5.730 Get:52 https://archive.ubuntu.com/ubuntu noble/main amd64 libxmlsec1t64-nss amd64 1.2.39-5build2 [63.0 kB]
+#8 5.732 Get:53 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libreoffice-core amd64 4:24.2.7-0ubuntu0.24.04.7 [43.0 MB]
+#8 6.396 Get:54 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libreoffice-base-core amd64 4:24.2.7-0ubuntu0.24.04.7 [983 kB]
+#8 6.407 Get:55 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libreoffice-uiconfig-calc all 4:24.2.7-0ubuntu0.24.04.7 [193 kB]
+#8 6.409 Get:56 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 lp-solve amd64 5.5.2.5-2ubuntu0.1 [314 kB]
+#8 6.412 Get:57 https://archive.ubuntu.com/ubuntu noble/main amd64 libwps-0.4-4 amd64 0.4.14-2build1 [819 kB]
+#8 6.421 Get:58 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libreoffice-calc amd64 4:24.2.7-0ubuntu0.24.04.7 [8792 kB]
+#8 6.502 Get:59 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 xserver-common all 2:21.1.12-1ubuntu1.9 [35.0 kB]
+#8 6.503 Get:60 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 xvfb amd64 2:21.1.12-1ubuntu1.9 [877 kB]
+#8 6.509 Get:61 https://archive.ubuntu.com/ubuntu noble/universe amd64 libxdo3 amd64 1:3.20160805.1-5build1 [22.2 kB]
+#8 6.509 Get:62 https://archive.ubuntu.com/ubuntu noble/universe amd64 xdotool amd64 1:3.20160805.1-5build1 [42.6 kB]
+#8 6.862 debconf: delaying package configuration, since apt-utils is not installed
+#8 6.931 Fetched 97.1 MB in 1s (67.1 MB/s)
+#8 6.970 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 35216 files and directories currently installed.)
+#8 7.012 Preparing to unpack .../python3-minimal_3.12.3-0ubuntu2.1_amd64.deb ...
+#8 7.081 Unpacking python3-minimal (3.12.3-0ubuntu2.1) over (3.12.3-0ubuntu2) ...
+#8 7.248 Setting up python3-minimal (3.12.3-0ubuntu2.1) ...
+#8 7.504 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 35216 files and directories currently installed.)
+#8 7.529 Preparing to unpack .../00-python3_3.12.3-0ubuntu2.1_amd64.deb ...
+#8 7.601 Unpacking python3 (3.12.3-0ubuntu2.1) over (3.12.3-0ubuntu2) ...
+#8 7.740 Preparing to unpack .../01-libpython3-stdlib_3.12.3-0ubuntu2.1_amd64.deb ...
+#8 7.764 Unpacking libpython3-stdlib:amd64 (3.12.3-0ubuntu2.1) over (3.12.3-0ubuntu2) ...
+#8 7.840 Selecting previously unselected package libheif-plugin-aomdec:amd64.
+#8 7.845 Preparing to unpack .../02-libheif-plugin-aomdec_1.17.6-1ubuntu4.9_amd64.deb ...
+#8 7.853 Unpacking libheif-plugin-aomdec:amd64 (1.17.6-1ubuntu4.9) ...
+#8 7.922 Selecting previously unselected package libheif1:amd64.
+#8 7.926 Preparing to unpack .../03-libheif1_1.17.6-1ubuntu4.9_amd64.deb ...
+#8 7.941 Unpacking libheif1:amd64 (1.17.6-1ubuntu4.9) ...
+#8 8.011 Selecting previously unselected package liblqr-1-0:amd64.
+#8 8.015 Preparing to unpack .../04-liblqr-1-0_0.4.2-2.1build2_amd64.deb ...
+#8 8.029 Unpacking liblqr-1-0:amd64 (0.4.2-2.1build2) ...
+#8 8.115 Selecting previously unselected package libltdl7:amd64.
+#8 8.115 Preparing to unpack .../05-libltdl7_2.4.7-7build1_amd64.deb ...
+#8 8.125 Unpacking libltdl7:amd64 (2.4.7-7build1) ...
+#8 8.196 Selecting previously unselected package libraw23t64:amd64.
+#8 8.201 Preparing to unpack .../06-libraw23t64_0.21.2-2.1ubuntu0.24.04.2_amd64.deb ...
+#8 8.212 Unpacking libraw23t64:amd64 (0.21.2-2.1ubuntu0.24.04.2) ...
+#8 8.283 Selecting previously unselected package imagemagick-6-common.
+#8 8.287 Preparing to unpack .../07-imagemagick-6-common_8%3a6.9.12.98+dfsg1-5.2build2_all.deb ...
+#8 8.296 Unpacking imagemagick-6-common (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 8.377 Selecting previously unselected package libmagickcore-6.q16-7t64:amd64.
+#8 8.386 Preparing to unpack .../08-libmagickcore-6.q16-7t64_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+#8 8.394 Unpacking libmagickcore-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 8.549 Selecting previously unselected package libmagickwand-6.q16-7t64:amd64.
+#8 8.551 Preparing to unpack .../09-libmagickwand-6.q16-7t64_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+#8 8.565 Unpacking libmagickwand-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 8.653 Selecting previously unselected package ucf.
+#8 8.658 Preparing to unpack .../10-ucf_3.0043+nmu1_all.deb ...
+#8 8.667 Moving old data out of the way
+#8 8.670 Unpacking ucf (3.0043+nmu1) ...
+#8 8.732 Selecting previously unselected package fonts-opensymbol.
+#8 8.736 Preparing to unpack .../11-fonts-opensymbol_4%3a102.12+LibO24.2.7-0ubuntu0.24.04.7_all.deb ...
+#8 8.746 Unpacking fonts-opensymbol (4:102.12+LibO24.2.7-0ubuntu0.24.04.7) ...
+#8 8.852 Selecting previously unselected package imagemagick-6.q16.
+#8 8.857 Preparing to unpack .../12-imagemagick-6.q16_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+#8 8.866 Unpacking imagemagick-6.q16 (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 9.083 Selecting previously unselected package imagemagick.
+#8 9.087 Preparing to unpack .../13-imagemagick_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+#8 9.098 Unpacking imagemagick (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 9.174 Selecting previously unselected package libboost-iostreams1.83.0:amd64.
+#8 9.175 Preparing to unpack .../14-libboost-iostreams1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb ...
+#8 9.185 Unpacking libboost-iostreams1.83.0:amd64 (1.83.0-2.1ubuntu3.2) ...
+#8 9.264 Selecting previously unselected package libboost-thread1.83.0:amd64.
+#8 9.268 Preparing to unpack .../15-libboost-thread1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb ...
+#8 9.277 Unpacking libboost-thread1.83.0:amd64 (1.83.0-2.1ubuntu3.2) ...
+#8 9.352 Selecting previously unselected package libboost-locale1.83.0:amd64.
+#8 9.355 Preparing to unpack .../16-libboost-locale1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb ...
+#8 9.363 Unpacking libboost-locale1.83.0:amd64 (1.83.0-2.1ubuntu3.2) ...
+#8 9.445 Selecting previously unselected package libclucene-core1t64:amd64.
+#8 9.449 Preparing to unpack .../17-libclucene-core1t64_2.3.3.4+dfsg-1.2ubuntu2_amd64.deb ...
+#8 9.461 Unpacking libclucene-core1t64:amd64 (2.3.3.4+dfsg-1.2ubuntu2) ...
+#8 9.540 Selecting previously unselected package libclucene-contribs1t64:amd64.
+#8 9.545 Preparing to unpack .../18-libclucene-contribs1t64_2.3.3.4+dfsg-1.2ubuntu2_amd64.deb ...
+#8 9.558 Unpacking libclucene-contribs1t64:amd64 (2.3.3.4+dfsg-1.2ubuntu2) ...
+#8 9.641 Selecting previously unselected package libsuitesparseconfig7:amd64.
+#8 9.646 Preparing to unpack .../19-libsuitesparseconfig7_1%3a7.6.1+dfsg-1build1_amd64.deb ...
+#8 9.657 Unpacking libsuitesparseconfig7:amd64 (1:7.6.1+dfsg-1build1) ...
+#8 9.725 Selecting previously unselected package libcolamd3:amd64.
+#8 9.730 Preparing to unpack .../20-libcolamd3_1%3a7.6.1+dfsg-1build1_amd64.deb ...
+#8 9.739 Unpacking libcolamd3:amd64 (1:7.6.1+dfsg-1build1) ...
+#8 9.802 Selecting previously unselected package libeot0:amd64.
+#8 9.806 Preparing to unpack .../21-libeot0_0.01-5build3_amd64.deb ...
+#8 9.814 Unpacking libeot0:amd64 (0.01-5build3) ...
+#8 9.872 Selecting previously unselected package liblangtag-common.
+#8 9.876 Preparing to unpack .../22-liblangtag-common_0.6.7-1build2_all.deb ...
+#8 9.885 Unpacking liblangtag-common (0.6.7-1build2) ...
+#8 9.970 Selecting previously unselected package liblangtag1:amd64.
+#8 9.974 Preparing to unpack .../23-liblangtag1_0.6.7-1build2_amd64.deb ...
+#8 9.982 Unpacking liblangtag1:amd64 (0.6.7-1build2) ...
+#8 10.06 Selecting previously unselected package librevenge-0.0-0:amd64.
+#8 10.06 Preparing to unpack .../24-librevenge-0.0-0_0.0.5-3build1_amd64.deb ...
+#8 10.07 Unpacking librevenge-0.0-0:amd64 (0.0.5-3build1) ...
+#8 10.14 Selecting previously unselected package libetonyek-0.1-1:amd64.
+#8 10.15 Preparing to unpack .../25-libetonyek-0.1-1_0.1.10-5build1_amd64.deb ...
+#8 10.16 Unpacking libetonyek-0.1-1:amd64 (0.1.10-5build1) ...
+#8 10.22 Selecting previously unselected package libexttextcat-data.
+#8 10.23 Preparing to unpack .../26-libexttextcat-data_3.4.7-1build1_all.deb ...
+#8 10.24 Unpacking libexttextcat-data (3.4.7-1build1) ...
+#8 10.35 Selecting previously unselected package libexttextcat-2.0-0:amd64.
+#8 10.35 Preparing to unpack .../27-libexttextcat-2.0-0_3.4.7-1build1_amd64.deb ...
+#8 10.36 Unpacking libexttextcat-2.0-0:amd64 (3.4.7-1build1) ...
+#8 10.44 Selecting previously unselected package libgpgme11t64:amd64.
+#8 10.44 Preparing to unpack .../28-libgpgme11t64_1.18.0-4.1ubuntu4_amd64.deb ...
+#8 10.45 Unpacking libgpgme11t64:amd64 (1.18.0-4.1ubuntu4) ...
+#8 10.52 Selecting previously unselected package libgpgmepp6t64:amd64.
+#8 10.52 Preparing to unpack .../29-libgpgmepp6t64_1.18.0-4.1ubuntu4_amd64.deb ...
+#8 10.53 Unpacking libgpgmepp6t64:amd64 (1.18.0-4.1ubuntu4) ...
+#8 10.60 Selecting previously unselected package libmhash2:amd64.
+#8 10.61 Preparing to unpack .../30-libmhash2_0.9.9.9-9build3_amd64.deb ...
+#8 10.61 Unpacking libmhash2:amd64 (0.9.9.9-9build3) ...
+#8 10.68 Selecting previously unselected package libmwaw-0.3-3:amd64.
+#8 10.69 Preparing to unpack .../31-libmwaw-0.3-3_0.3.22-1build1_amd64.deb ...
+#8 10.70 Unpacking libmwaw-0.3-3:amd64 (0.3.22-1build1) ...
+#8 10.81 Selecting previously unselected package libmythes-1.2-0:amd64.
+#8 10.81 Preparing to unpack .../32-libmythes-1.2-0_2%3a1.2.5-1build1_amd64.deb ...
+#8 10.82 Unpacking libmythes-1.2-0:amd64 (2:1.2.5-1build1) ...
+#8 10.89 Selecting previously unselected package libodfgen-0.1-1:amd64.
+#8 10.89 Preparing to unpack .../33-libodfgen-0.1-1_0.1.8-2build3_amd64.deb ...
+#8 10.90 Unpacking libodfgen-0.1-1:amd64 (0.1.8-2build3) ...
+#8 10.98 Selecting previously unselected package liborcus-parser-0.18-0:amd64.
+#8 10.98 Preparing to unpack .../34-liborcus-parser-0.18-0_0.19.2-3build3_amd64.deb ...
+#8 10.99 Unpacking liborcus-parser-0.18-0:amd64 (0.19.2-3build3) ...
+#8 11.05 Selecting previously unselected package liborcus-0.18-0:amd64.
+#8 11.05 Preparing to unpack .../35-liborcus-0.18-0_0.19.2-3build3_amd64.deb ...
+#8 11.06 Unpacking liborcus-0.18-0:amd64 (0.19.2-3build3) ...
+#8 11.12 Selecting previously unselected package libpoppler134:amd64.
+#8 11.13 Preparing to unpack .../36-libpoppler134_24.02.0-1ubuntu9.11_amd64.deb ...
+#8 11.14 Unpacking libpoppler134:amd64 (24.02.0-1ubuntu9.11) ...
+#8 11.22 Selecting previously unselected package librasqal3t64:amd64.
+#8 11.22 Preparing to unpack .../37-librasqal3t64_0.9.33-2.1build1_amd64.deb ...
+#8 11.23 Unpacking librasqal3t64:amd64 (0.9.33-2.1build1) ...
+#8 11.29 Selecting previously unselected package librdf0t64:amd64.
+#8 11.30 Preparing to unpack .../38-librdf0t64_1.0.17-3.1ubuntu3_amd64.deb ...
+#8 11.30 Unpacking librdf0t64:amd64 (1.0.17-3.1ubuntu3) ...
+#8 11.38 Selecting previously unselected package libreoffice-style-colibre.
+#8 11.38 Preparing to unpack .../39-libreoffice-style-colibre_4%3a24.2.7-0ubuntu0.24.04.7_all.deb ...
+#8 11.39 Unpacking libreoffice-style-colibre (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 11.50 Selecting previously unselected package libreoffice-uiconfig-common.
+#8 11.50 Preparing to unpack .../40-libreoffice-uiconfig-common_4%3a24.2.7-0ubuntu0.24.04.7_all.deb ...
+#8 11.51 Unpacking libreoffice-uiconfig-common (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 11.70 Selecting previously unselected package libuno-sal3t64.
+#8 11.71 Preparing to unpack .../41-libuno-sal3t64_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 11.72 Unpacking libuno-sal3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 11.80 Selecting previously unselected package libuno-salhelpergcc3-3t64.
+#8 11.80 Preparing to unpack .../42-libuno-salhelpergcc3-3t64_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 11.81 Unpacking libuno-salhelpergcc3-3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 11.88 Selecting previously unselected package libuno-cppu3t64.
+#8 11.89 Preparing to unpack .../43-libuno-cppu3t64_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 11.90 Unpacking libuno-cppu3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 11.97 Selecting previously unselected package uno-libs-private.
+#8 11.97 Preparing to unpack .../44-uno-libs-private_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 11.99 Unpacking uno-libs-private (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 12.07 Selecting previously unselected package libuno-cppuhelpergcc3-3t64.
+#8 12.07 Preparing to unpack .../45-libuno-cppuhelpergcc3-3t64_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 12.08 Unpacking libuno-cppuhelpergcc3-3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 12.16 Selecting previously unselected package libuno-purpenvhelpergcc3-3t64.
+#8 12.17 Preparing to unpack .../46-libuno-purpenvhelpergcc3-3t64_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 12.18 Unpacking libuno-purpenvhelpergcc3-3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 12.24 Selecting previously unselected package ure.
+#8 12.24 Preparing to unpack .../47-ure_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 12.25 Unpacking ure (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 12.37 Selecting previously unselected package libreoffice-common.
+#8 12.37 Preparing to unpack .../48-libreoffice-common_4%3a24.2.7-0ubuntu0.24.04.7_all.deb ...
+#8 12.40 Unpacking libreoffice-common (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 13.16 Selecting previously unselected package libxmlsec1t64:amd64.
+#8 13.17 Preparing to unpack .../49-libxmlsec1t64_1.2.39-5build2_amd64.deb ...
+#8 13.18 Unpacking libxmlsec1t64:amd64 (1.2.39-5build2) ...
+#8 13.26 Selecting previously unselected package libxmlsec1t64-nss:amd64.
+#8 13.26 Preparing to unpack .../50-libxmlsec1t64-nss_1.2.39-5build2_amd64.deb ...
+#8 13.27 Unpacking libxmlsec1t64-nss:amd64 (1.2.39-5build2) ...
+#8 13.36 Selecting previously unselected package libreoffice-core.
+#8 13.37 Preparing to unpack .../51-libreoffice-core_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 13.39 Unpacking libreoffice-core (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 14.02 Selecting previously unselected package libreoffice-base-core.
+#8 14.03 Preparing to unpack .../52-libreoffice-base-core_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 14.04 Unpacking libreoffice-base-core (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 14.11 Selecting previously unselected package libreoffice-uiconfig-calc.
+#8 14.12 Preparing to unpack .../53-libreoffice-uiconfig-calc_4%3a24.2.7-0ubuntu0.24.04.7_all.deb ...
+#8 14.13 Unpacking libreoffice-uiconfig-calc (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 14.26 Selecting previously unselected package lp-solve.
+#8 14.26 Preparing to unpack .../54-lp-solve_5.5.2.5-2ubuntu0.1_amd64.deb ...
+#8 14.27 Unpacking lp-solve (5.5.2.5-2ubuntu0.1) ...
+#8 14.34 Selecting previously unselected package libwps-0.4-4:amd64.
+#8 14.34 Preparing to unpack .../55-libwps-0.4-4_0.4.14-2build1_amd64.deb ...
+#8 14.35 Unpacking libwps-0.4-4:amd64 (0.4.14-2build1) ...
+#8 14.44 Selecting previously unselected package libreoffice-calc.
+#8 14.44 Preparing to unpack .../56-libreoffice-calc_4%3a24.2.7-0ubuntu0.24.04.7_amd64.deb ...
+#8 14.46 Unpacking libreoffice-calc (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 14.64 Preparing to unpack .../57-xserver-common_2%3a21.1.12-1ubuntu1.9_all.deb ...
+#8 14.67 Unpacking xserver-common (2:21.1.12-1ubuntu1.9) over (2:21.1.12-1ubuntu1.4) ...
+#8 14.76 Preparing to unpack .../58-xvfb_2%3a21.1.12-1ubuntu1.9_amd64.deb ...
+#8 14.79 Unpacking xvfb (2:21.1.12-1ubuntu1.9) over (2:21.1.12-1ubuntu1.4) ...
+#8 14.93 Selecting previously unselected package libxdo3:amd64.
+#8 14.94 Preparing to unpack .../59-libxdo3_1%3a3.20160805.1-5build1_amd64.deb ...
+#8 14.94 Unpacking libxdo3:amd64 (1:3.20160805.1-5build1) ...
+#8 15.03 Selecting previously unselected package xdotool.
+#8 15.03 Preparing to unpack .../60-xdotool_1%3a3.20160805.1-5build1_amd64.deb ...
+#8 15.04 Unpacking xdotool (1:3.20160805.1-5build1) ...
+#8 15.15 Setting up liborcus-parser-0.18-0:amd64 (0.19.2-3build3) ...
+#8 15.18 Setting up imagemagick-6-common (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 15.42 Setting up libuno-sal3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 15.46 Setting up libclucene-core1t64:amd64 (2.3.3.4+dfsg-1.2ubuntu2) ...
+#8 15.50 Setting up libpoppler134:amd64 (24.02.0-1ubuntu9.11) ...
+#8 15.53 Setting up libclucene-contribs1t64:amd64 (2.3.3.4+dfsg-1.2ubuntu2) ...
+#8 15.55 Setting up libboost-thread1.83.0:amd64 (1.83.0-2.1ubuntu3.2) ...
+#8 15.58 Setting up libeot0:amd64 (0.01-5build3) ...
+#8 15.61 Setting up libxmlsec1t64:amd64 (1.2.39-5build2) ...
+#8 15.64 Setting up libreoffice-uiconfig-calc (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 15.67 Setting up librevenge-0.0-0:amd64 (0.0.5-3build1) ...
+#8 15.71 Setting up libxmlsec1t64-nss:amd64 (1.2.39-5build2) ...
+#8 15.73 Setting up libxdo3:amd64 (1:3.20160805.1-5build1) ...
+#8 15.76 Setting up libreoffice-style-colibre (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 15.79 Setting up libboost-iostreams1.83.0:amd64 (1.83.0-2.1ubuntu3.2) ...
+#8 15.82 Setting up libreoffice-uiconfig-common (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 15.85 Setting up ucf (3.0043+nmu1) ...
+#8 16.00 Setting up liborcus-0.18-0:amd64 (0.19.2-3build3) ...
+#8 16.02 Setting up libltdl7:amd64 (2.4.7-7build1) ...
+#8 16.05 Setting up libraw23t64:amd64 (0.21.2-2.1ubuntu0.24.04.2) ...
+#8 16.07 Setting up libmhash2:amd64 (0.9.9.9-9build3) ...
+#8 16.10 Setting up libmythes-1.2-0:amd64 (2:1.2.5-1build1) ...
+#8 16.14 Setting up liblqr-1-0:amd64 (0.4.2-2.1build2) ...
+#8 16.17 Setting up libexttextcat-data (3.4.7-1build1) ...
+#8 16.22 Setting up libsuitesparseconfig7:amd64 (1:7.6.1+dfsg-1build1) ...
+#8 16.26 Setting up libgpgme11t64:amd64 (1.18.0-4.1ubuntu4) ...
+#8 16.32 Setting up xserver-common (2:21.1.12-1ubuntu1.9) ...
+#8 16.36 Setting up liblangtag-common (0.6.7-1build2) ...
+#8 16.39 Setting up libuno-salhelpergcc3-3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 16.42 Setting up fonts-opensymbol (4:102.12+LibO24.2.7-0ubuntu0.24.04.7) ...
+#8 16.44 Setting up libodfgen-0.1-1:amd64 (0.1.8-2build3) ...
+#8 16.47 Setting up libpython3-stdlib:amd64 (3.12.3-0ubuntu2.1) ...
+#8 16.50 Setting up libgpgmepp6t64:amd64 (1.18.0-4.1ubuntu4) ...
+#8 16.53 Setting up libwps-0.4-4:amd64 (0.4.14-2build1) ...
+#8 16.56 Setting up libexttextcat-2.0-0:amd64 (3.4.7-1build1) ...
+#8 16.59 Setting up xdotool (1:3.20160805.1-5build1) ...
+#8 16.62 Setting up libcolamd3:amd64 (1:7.6.1+dfsg-1build1) ...
+#8 16.64 Setting up xvfb (2:21.1.12-1ubuntu1.9) ...
+#8 16.68 Setting up lp-solve (5.5.2.5-2ubuntu0.1) ...
+#8 16.70 Setting up libboost-locale1.83.0:amd64 (1.83.0-2.1ubuntu3.2) ...
+#8 16.74 Setting up python3 (3.12.3-0ubuntu2.1) ...
+#8 16.88 Setting up libmwaw-0.3-3:amd64 (0.3.22-1build1) ...
+#8 16.91 Setting up librasqal3t64:amd64 (0.9.33-2.1build1) ...
+#8 16.93 Setting up librdf0t64:amd64 (1.0.17-3.1ubuntu3) ...
+#8 16.97 Setting up liblangtag1:amd64 (0.6.7-1build2) ...
+#8 17.01 Setting up libuno-cppu3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 17.04 Setting up libuno-purpenvhelpergcc3-3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 17.07 Setting up uno-libs-private (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 17.10 Setting up libetonyek-0.1-1:amd64 (0.1.10-5build1) ...
+#8 17.13 Setting up libuno-cppuhelpergcc3-3t64 (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 17.16 Setting up ure (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 17.20 Setting up libreoffice-common (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 17.48 
+#8 17.48 Creating config file /etc/libreoffice/registry/main.xcd with new version
+#8 17.69 
+#8 17.69 Creating config file /etc/libreoffice/registry/pdfimport.xcd with new version
+#8 17.87 
+#8 17.87 Creating config file /etc/libreoffice/registry/xsltfilter.xcd with new version
+#8 18.09 
+#8 18.09 Creating config file /etc/libreoffice/registry/lingucomponent.xcd with new version
+#8 18.37 
+#8 18.37 Creating config file /etc/libreoffice/registry/Langpack-en-US.xcd with new version
+#8 18.65 
+#8 18.65 Creating config file /etc/libreoffice/registry/res/fcfg_langpack_en-US.xcd with new version
+#8 18.79 Setting up libreoffice-core (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 18.83 Setting up libreoffice-base-core (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 18.87 Setting up libreoffice-calc (4:24.2.7-0ubuntu0.24.04.7) ...
+#8 19.04 
+#8 19.04 Creating config file /etc/libreoffice/registry/calc.xcd with new version
+#8 19.18 Setting up libheif-plugin-aomdec:amd64 (1.17.6-1ubuntu4.9) ...
+#8 19.21 Setting up libheif1:amd64 (1.17.6-1ubuntu4.9) ...
+#8 19.32 Setting up libmagickcore-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 19.39 Setting up libmagickwand-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 19.42 Setting up imagemagick-6.q16 (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 19.45 update-alternatives: using /usr/bin/compare-im6.q16 to provide /usr/bin/compare (compare) in auto mode
+#8 19.45 update-alternatives: warning: skip creation of /usr/share/man/man1/compare.1.gz because associated file /usr/share/man/man1/compare-im6.q16.1.gz (of link group compare) doesn't exist
+#8 19.46 update-alternatives: using /usr/bin/compare-im6.q16 to provide /usr/bin/compare-im6 (compare-im6) in auto mode
+#8 19.46 update-alternatives: warning: skip creation of /usr/share/man/man1/compare-im6.1.gz because associated file /usr/share/man/man1/compare-im6.q16.1.gz (of link group compare-im6) doesn't exist
+#8 19.47 update-alternatives: using /usr/bin/animate-im6.q16 to provide /usr/bin/animate (animate) in auto mode
+#8 19.47 update-alternatives: warning: skip creation of /usr/share/man/man1/animate.1.gz because associated file /usr/share/man/man1/animate-im6.q16.1.gz (of link group animate) doesn't exist
+#8 19.48 update-alternatives: using /usr/bin/animate-im6.q16 to provide /usr/bin/animate-im6 (animate-im6) in auto mode
+#8 19.48 update-alternatives: warning: skip creation of /usr/share/man/man1/animate-im6.1.gz because associated file /usr/share/man/man1/animate-im6.q16.1.gz (of link group animate-im6) doesn't exist
+#8 19.48 update-alternatives: using /usr/bin/convert-im6.q16 to provide /usr/bin/convert (convert) in auto mode
+#8 19.48 update-alternatives: warning: skip creation of /usr/share/man/man1/convert.1.gz because associated file /usr/share/man/man1/convert-im6.q16.1.gz (of link group convert) doesn't exist
+#8 19.49 update-alternatives: using /usr/bin/convert-im6.q16 to provide /usr/bin/convert-im6 (convert-im6) in auto mode
+#8 19.49 update-alternatives: warning: skip creation of /usr/share/man/man1/convert-im6.1.gz because associated file /usr/share/man/man1/convert-im6.q16.1.gz (of link group convert-im6) doesn't exist
+#8 19.50 update-alternatives: using /usr/bin/composite-im6.q16 to provide /usr/bin/composite (composite) in auto mode
+#8 19.50 update-alternatives: warning: skip creation of /usr/share/man/man1/composite.1.gz because associated file /usr/share/man/man1/composite-im6.q16.1.gz (of link group composite) doesn't exist
+#8 19.51 update-alternatives: using /usr/bin/composite-im6.q16 to provide /usr/bin/composite-im6 (composite-im6) in auto mode
+#8 19.51 update-alternatives: warning: skip creation of /usr/share/man/man1/composite-im6.1.gz because associated file /usr/share/man/man1/composite-im6.q16.1.gz (of link group composite-im6) doesn't exist
+#8 19.52 update-alternatives: using /usr/bin/conjure-im6.q16 to provide /usr/bin/conjure (conjure) in auto mode
+#8 19.52 update-alternatives: warning: skip creation of /usr/share/man/man1/conjure.1.gz because associated file /usr/share/man/man1/conjure-im6.q16.1.gz (of link group conjure) doesn't exist
+#8 19.53 update-alternatives: using /usr/bin/conjure-im6.q16 to provide /usr/bin/conjure-im6 (conjure-im6) in auto mode
+#8 19.53 update-alternatives: warning: skip creation of /usr/share/man/man1/conjure-im6.1.gz because associated file /usr/share/man/man1/conjure-im6.q16.1.gz (of link group conjure-im6) doesn't exist
+#8 19.54 update-alternatives: using /usr/bin/import-im6.q16 to provide /usr/bin/import (import) in auto mode
+#8 19.54 update-alternatives: warning: skip creation of /usr/share/man/man1/import.1.gz because associated file /usr/share/man/man1/import-im6.q16.1.gz (of link group import) doesn't exist
+#8 19.54 update-alternatives: using /usr/bin/import-im6.q16 to provide /usr/bin/import-im6 (import-im6) in auto mode
+#8 19.54 update-alternatives: warning: skip creation of /usr/share/man/man1/import-im6.1.gz because associated file /usr/share/man/man1/import-im6.q16.1.gz (of link group import-im6) doesn't exist
+#8 19.55 update-alternatives: using /usr/bin/identify-im6.q16 to provide /usr/bin/identify (identify) in auto mode
+#8 19.55 update-alternatives: warning: skip creation of /usr/share/man/man1/identify.1.gz because associated file /usr/share/man/man1/identify-im6.q16.1.gz (of link group identify) doesn't exist
+#8 19.56 update-alternatives: using /usr/bin/identify-im6.q16 to provide /usr/bin/identify-im6 (identify-im6) in auto mode
+#8 19.56 update-alternatives: warning: skip creation of /usr/share/man/man1/identify-im6.1.gz because associated file /usr/share/man/man1/identify-im6.q16.1.gz (of link group identify-im6) doesn't exist
+#8 19.57 update-alternatives: using /usr/bin/stream-im6.q16 to provide /usr/bin/stream (stream) in auto mode
+#8 19.57 update-alternatives: warning: skip creation of /usr/share/man/man1/stream.1.gz because associated file /usr/share/man/man1/stream-im6.q16.1.gz (of link group stream) doesn't exist
+#8 19.57 update-alternatives: using /usr/bin/stream-im6.q16 to provide /usr/bin/stream-im6 (stream-im6) in auto mode
+#8 19.57 update-alternatives: warning: skip creation of /usr/share/man/man1/stream-im6.1.gz because associated file /usr/share/man/man1/stream-im6.q16.1.gz (of link group stream-im6) doesn't exist
+#8 19.58 update-alternatives: using /usr/bin/display-im6.q16 to provide /usr/bin/display (display) in auto mode
+#8 19.58 update-alternatives: warning: skip creation of /usr/share/man/man1/display.1.gz because associated file /usr/share/man/man1/display-im6.q16.1.gz (of link group display) doesn't exist
+#8 19.59 update-alternatives: using /usr/bin/display-im6.q16 to provide /usr/bin/display-im6 (display-im6) in auto mode
+#8 19.59 update-alternatives: warning: skip creation of /usr/share/man/man1/display-im6.1.gz because associated file /usr/share/man/man1/display-im6.q16.1.gz (of link group display-im6) doesn't exist
+#8 19.59 update-alternatives: using /usr/bin/montage-im6.q16 to provide /usr/bin/montage (montage) in auto mode
+#8 19.59 update-alternatives: warning: skip creation of /usr/share/man/man1/montage.1.gz because associated file /usr/share/man/man1/montage-im6.q16.1.gz (of link group montage) doesn't exist
+#8 19.60 update-alternatives: using /usr/bin/montage-im6.q16 to provide /usr/bin/montage-im6 (montage-im6) in auto mode
+#8 19.60 update-alternatives: warning: skip creation of /usr/share/man/man1/montage-im6.1.gz because associated file /usr/share/man/man1/montage-im6.q16.1.gz (of link group montage-im6) doesn't exist
+#8 19.61 update-alternatives: using /usr/bin/mogrify-im6.q16 to provide /usr/bin/mogrify (mogrify) in auto mode
+#8 19.61 update-alternatives: warning: skip creation of /usr/share/man/man1/mogrify.1.gz because associated file /usr/share/man/man1/mogrify-im6.q16.1.gz (of link group mogrify) doesn't exist
+#8 19.62 update-alternatives: using /usr/bin/mogrify-im6.q16 to provide /usr/bin/mogrify-im6 (mogrify-im6) in auto mode
+#8 19.62 update-alternatives: warning: skip creation of /usr/share/man/man1/mogrify-im6.1.gz because associated file /usr/share/man/man1/mogrify-im6.q16.1.gz (of link group mogrify-im6) doesn't exist
+#8 19.63 Setting up imagemagick (8:6.9.12.98+dfsg1-5.2build2) ...
+#8 19.66 Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+#8 19.76 Processing triggers for hicolor-icon-theme (0.17-2) ...
+#8 19.81 Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+#8 19.93 Processing triggers for shared-mime-info (2.4-4) ...
+#8 24.49 PACKAGES: installation complete using https://archive.ubuntu.com/ubuntu
+#8 DONE 24.7s
+
+#9 [4/5] WORKDIR /opt/checks
+#9 DONE 0.1s
+
+#10 [5/5] RUN npm init -y && timeout --kill-after=15 240 npm install --save-exact --no-audit --no-fund --fetch-retries=2 --fetch-timeout=30000 --fetch-retry-mintimeout=2000 --fetch-retry-maxtimeout=10000 playwright@1.56.1 marked@16.4.1 github-markdown-css@5.8.1
+#10 0.759 Wrote to /opt/checks/package.json:
+#10 0.759 
+#10 0.759 {
+#10 0.759   "name": "checks",
+#10 0.759   "version": "1.0.0",
+#10 0.759   "description": "",
+#10 0.759   "main": "index.js",
+#10 0.759   "scripts": {
+#10 0.759     "test": "echo \"Error: no test specified\" && exit 1"
+#10 0.759   },
+#10 0.759   "keywords": [],
+#10 0.759   "author": "",
+#10 0.759   "license": "ISC"
+#10 0.759 }
+#10 0.759 
+#10 0.759 
+#10 0.759 
+#10 2.311 
+#10 2.311 added 4 packages in 1s
+#10 DONE 2.4s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 1.5s done
+#11 writing image sha256:d0d01317961b3f7360d34f2fa6ff34b4add8443e88249912ea995ddf77687d63 done
+#11 naming to docker.io/library/form-sheet-inbox-test 0.0s done
+#11 DONE 1.6s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ form-sheet-inbox-test  Built
+DONE: Build browser and spreadsheet tools (67s)
+STAGE: Pull application images (limit 600s)
+ db Pulling 
+ sheet Pulling 
+ wordpress Pulling 
+ n8n Pulling 
+ mailpit Pulling 
+ sheet Pulled 
+ 37fb86c2a767 Already exists 
+ 067a2b628263 Pulling fs layer 
+ 1fa8de492bba Pulling fs layer 
+ 44a440dba9d0 Pulling fs layer 
+ 62e69b33e59f Pulling fs layer 
+ 8ee47f0ed4ec Pulling fs layer 
+ bb4d617e8464 Pulling fs layer 
+ 84b10aa4bc8f Pulling fs layer 
+ 8f31f5d009d9 Pulling fs layer 
+ b004a7a0f0f4 Pulling fs layer 
+ 32c8abf0cee9 Pulling fs layer 
+ da094eda3f4b Pulling fs layer 
+ f1c7f08df21f Pulling fs layer 
+ 879886e0a17a Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ 00ecb9af356f Pulling fs layer 
+ 36a8c12d0a43 Pulling fs layer 
+ e4306c3f8d84 Pulling fs layer 
+ e440f9cf21b7 Pulling fs layer 
+ a388275a4f32 Pulling fs layer 
+ 0a35cd157580 Pulling fs layer 
+ 367f10dae597 Pulling fs layer 
+ 0881636e3a4d Pulling fs layer 
+ 7bd486cc0344 Pulling fs layer 
+ 62e69b33e59f Waiting 
+ 8ee47f0ed4ec Waiting 
+ bb4d617e8464 Waiting 
+ 84b10aa4bc8f Waiting 
+ 8f31f5d009d9 Waiting 
+ b004a7a0f0f4 Waiting 
+ 32c8abf0cee9 Waiting 
+ da094eda3f4b Waiting 
+ f1c7f08df21f Waiting 
+ 879886e0a17a Waiting 
+ 4f4fb700ef54 Waiting 
+ 00ecb9af356f Waiting 
+ 36a8c12d0a43 Waiting 
+ e4306c3f8d84 Waiting 
+ e440f9cf21b7 Waiting 
+ a388275a4f32 Waiting 
+ 0a35cd157580 Waiting 
+ 367f10dae597 Waiting 
+ 0881636e3a4d Waiting 
+ 7bd486cc0344 Waiting 
+ 22b37da5853a Pulling fs layer 
+ cb0e99e1c627 Pulling fs layer 
+ 59ef0fb7d7f5 Pulling fs layer 
+ d1520cba0de0 Pulling fs layer 
+ ea2debf3e1ac Pulling fs layer 
+ 81d49b7a1dbb Pulling fs layer 
+ a38ab7e8fafb Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ 4a625ce0a970 Pulling fs layer 
+ ac6add58a240 Pulling fs layer 
+ 52a3ddf585a1 Pulling fs layer 
+ 636d156b530d Pulling fs layer 
+ 61d5add0825b Pulling fs layer 
+ 1b846d69e08e Pulling fs layer 
+ 22b37da5853a Waiting 
+ cb0e99e1c627 Waiting 
+ 59ef0fb7d7f5 Waiting 
+ d1520cba0de0 Waiting 
+ ea2debf3e1ac Waiting 
+ 81d49b7a1dbb Waiting 
+ a38ab7e8fafb Waiting 
+ 4f4fb700ef54 Waiting 
+ 4a625ce0a970 Waiting 
+ ac6add58a240 Waiting 
+ 52a3ddf585a1 Waiting 
+ 636d156b530d Waiting 
+ 61d5add0825b Waiting 
+ 1b846d69e08e Waiting 
+ 7b229517ed22 Pulling fs layer 
+ 5d9afc867194 Pulling fs layer 
+ e1656acc19fd Pulling fs layer 
+ 7b229517ed22 Waiting 
+ 5d9afc867194 Waiting 
+ e1656acc19fd Waiting 
+ 7a48b8f0e5c7 Pulling fs layer 
+ abf44d652425 Pulling fs layer 
+ 51cb608ce6b7 Pulling fs layer 
+ 2297701ffd6e Pulling fs layer 
+ 0543510fe2ed Pulling fs layer 
+ b22508c864c4 Pulling fs layer 
+ 0a3b048a97c1 Pulling fs layer 
+ 61cd5f8046b1 Pulling fs layer 
+ 51cb608ce6b7 Waiting 
+ 2297701ffd6e Waiting 
+ 0543510fe2ed Waiting 
+ b22508c864c4 Waiting 
+ 0a3b048a97c1 Waiting 
+ 61cd5f8046b1 Waiting 
+ abf44d652425 Waiting 
+ 7a48b8f0e5c7 Waiting 
+ 44a440dba9d0 Downloading [==================================================>]     223B/223B
+ 44a440dba9d0 Verifying Checksum 
+ 44a440dba9d0 Download complete 
+ 067a2b628263 Downloading [==================================================>]     225B/225B
+ 067a2b628263 Verifying Checksum 
+ 067a2b628263 Download complete 
+ 067a2b628263 Extracting [==================================================>]     225B/225B
+ 067a2b628263 Extracting [==================================================>]     225B/225B
+ 1fa8de492bba Downloading [>                                                  ]  538.3kB/117.8MB
+ 1fa8de492bba Downloading [====>                                              ]  10.26MB/117.8MB
+ 067a2b628263 Pull complete 
+ 1fa8de492bba Downloading [========>                                          ]  19.97MB/117.8MB
+ 1fa8de492bba Downloading [=============>                                     ]  31.29MB/117.8MB
+ 8ee47f0ed4ec Downloading [==================================================>]     428B/428B
+ 8ee47f0ed4ec Verifying Checksum 
+ 8ee47f0ed4ec Download complete 
+ 62e69b33e59f Downloading [>                                                  ]  48.55kB/4.244MB
+ 1fa8de492bba Downloading [================>                                  ]  38.84MB/117.8MB
+ 62e69b33e59f Downloading [==========================================>        ]  3.637MB/4.244MB
+ 62e69b33e59f Verifying Checksum 
+ 62e69b33e59f Download complete 
+ 1fa8de492bba Downloading [====================>                              ]  47.49MB/117.8MB
+ bb4d617e8464 Downloading [==================================================>]     481B/481B
+ bb4d617e8464 Verifying Checksum 
+ bb4d617e8464 Download complete 
+ 1fa8de492bba Downloading [======================>                            ]  53.97MB/117.8MB
+ 84b10aa4bc8f Downloading [>                                                  ]  130.4kB/12.84MB
+ 1fa8de492bba Downloading [==========================>                        ]  63.14MB/117.8MB
+ 84b10aa4bc8f Downloading [=================>                                 ]  4.587MB/12.84MB
+ 1fa8de492bba Downloading [==============================>                    ]  71.25MB/117.8MB
+ 8f31f5d009d9 Downloading [==================================================>]     488B/488B
+ 8f31f5d009d9 Download complete 
+ 84b10aa4bc8f Downloading [=================================>                 ]   8.65MB/12.84MB
+ 1fa8de492bba Downloading [=================================>                 ]  78.28MB/117.8MB
+ 84b10aa4bc8f Downloading [=================================================> ]  12.71MB/12.84MB
+ 84b10aa4bc8f Verifying Checksum 
+ 84b10aa4bc8f Download complete 
+ 1fa8de492bba Downloading [====================================>              ]  85.84MB/117.8MB
+ b004a7a0f0f4 Downloading [>                                                  ]  130.5kB/11.76MB
+ 1fa8de492bba Downloading [========================================>          ]  95.03MB/117.8MB
+ b004a7a0f0f4 Downloading [==================>                                ]  4.456MB/11.76MB
+ 1fa8de492bba Downloading [===========================================>       ]  102.6MB/117.8MB
+ 32c8abf0cee9 Downloading [==================================================>]   2.46kB/2.46kB
+ 32c8abf0cee9 Verifying Checksum 
+ 32c8abf0cee9 Download complete 
+ b004a7a0f0f4 Downloading [==========================================>        ]  9.961MB/11.76MB
+ 1fa8de492bba Downloading [=============================================>     ]    108MB/117.8MB
+ b004a7a0f0f4 Verifying Checksum 
+ b004a7a0f0f4 Download complete 
+ 1fa8de492bba Downloading [================================================>  ]    115MB/117.8MB
+ 1fa8de492bba Verifying Checksum 
+ 1fa8de492bba Download complete 
+ 1fa8de492bba Extracting [>                                                  ]  557.1kB/117.8MB
+ da094eda3f4b Downloading [==================================================>]     252B/252B
+ da094eda3f4b Verifying Checksum 
+ da094eda3f4b Download complete 
+ f1c7f08df21f Downloading [==================================================>]     247B/247B
+ f1c7f08df21f Verifying Checksum 
+ f1c7f08df21f Download complete 
+ 1fa8de492bba Extracting [===>                                               ]  7.242MB/117.8MB
+ 879886e0a17a Downloading [==================================================>]     890B/890B
+ 879886e0a17a Verifying Checksum 
+ 879886e0a17a Download complete 
+ 1fa8de492bba Extracting [=====>                                             ]  12.81MB/117.8MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ 1fa8de492bba Extracting [========>                                          ]   19.5MB/117.8MB
+ 00ecb9af356f Downloading [>                                                  ]  348.9kB/33.43MB
+ 00ecb9af356f Downloading [=============>                                     ]  9.208MB/33.43MB
+ 1fa8de492bba Extracting [=========>                                         ]  21.73MB/117.8MB
+ 36a8c12d0a43 Downloading [>                                                  ]  300.7kB/29.95MB
+ 00ecb9af356f Downloading [============================>                      ]   18.8MB/33.43MB
+ 1fa8de492bba Extracting [=========>                                         ]   23.4MB/117.8MB
+ 36a8c12d0a43 Downloading [=======>                                           ]  4.535MB/29.95MB
+ 00ecb9af356f Downloading [====================================>              ]  24.57MB/33.43MB
+ 1fa8de492bba Extracting [==========>                                        ]  23.95MB/117.8MB
+ 36a8c12d0a43 Downloading [===============>                                   ]  9.059MB/29.95MB
+ 00ecb9af356f Downloading [===============================================>   ]  31.76MB/33.43MB
+ 00ecb9af356f Verifying Checksum 
+ 00ecb9af356f Download complete 
+ 36a8c12d0a43 Downloading [======================>                            ]  13.67MB/29.95MB
+ 36a8c12d0a43 Downloading [==================================>                ]  20.44MB/29.95MB
+ 1fa8de492bba Extracting [==========>                                        ]  25.07MB/117.8MB
+ 36a8c12d0a43 Verifying Checksum 
+ 36a8c12d0a43 Download complete 
+ e440f9cf21b7 Downloading [==================================================>]     391B/391B
+ e440f9cf21b7 Verifying Checksum 
+ e440f9cf21b7 Download complete 
+ 1fa8de492bba Extracting [===========>                                       ]  26.18MB/117.8MB
+ 1fa8de492bba Extracting [===========>                                       ]  26.74MB/117.8MB
+ a388275a4f32 Downloading [=========>                                         ]    3.5kB/18.79kB
+ a388275a4f32 Downloading [==================================================>]  18.79kB/18.79kB
+ a388275a4f32 Verifying Checksum 
+ a388275a4f32 Download complete 
+ 0a35cd157580 Downloading [>                                                  ]    359kB/35.41MB
+ 0a35cd157580 Downloading [===============>                                   ]  10.88MB/35.41MB
+ 1fa8de492bba Extracting [===========>                                       ]   27.3MB/117.8MB
+ 0a35cd157580 Downloading [===============================>                   ]  22.43MB/35.41MB
+ 367f10dae597 Downloading [==================================================>]   2.44kB/2.44kB
+ 367f10dae597 Verifying Checksum 
+ 367f10dae597 Download complete 
+ e4306c3f8d84 Downloading [==================================================>]     314B/314B
+ e4306c3f8d84 Verifying Checksum 
+ e4306c3f8d84 Download complete 
+ 0a35cd157580 Downloading [==============================================>    ]  33.24MB/35.41MB
+ 0a35cd157580 Verifying Checksum 
+ 0a35cd157580 Download complete 
+ 1fa8de492bba Extracting [===========>                                       ]  27.85MB/117.8MB
+ 1fa8de492bba Extracting [=============>                                     ]  31.75MB/117.8MB
+ 0881636e3a4d Downloading [==================================================>]  1.769kB/1.769kB
+ 0881636e3a4d Verifying Checksum 
+ 0881636e3a4d Download complete 
+ 7bd486cc0344 Downloading [==================================================>]     196B/196B
+ 7bd486cc0344 Download complete 
+ 22b37da5853a Downloading [==================================================>]  1.882kB/1.882kB
+ 22b37da5853a Verifying Checksum 
+ 22b37da5853a Download complete 
+ 22b37da5853a Extracting [==================================================>]  1.882kB/1.882kB
+ 22b37da5853a Extracting [==================================================>]  1.882kB/1.882kB
+ 1fa8de492bba Extracting [===============>                                   ]  36.21MB/117.8MB
+ 22b37da5853a Pull complete 
+ 1fa8de492bba Extracting [==================>                                ]  43.45MB/117.8MB
+ cb0e99e1c627 Downloading [>                                                  ]   98.3kB/9.542MB
+ d1520cba0de0 Downloading [>                                                  ]    426kB/42.11MB
+ 1fa8de492bba Extracting [=====================>                             ]  50.14MB/117.8MB
+ cb0e99e1c627 Downloading [=================================>                 ]  6.453MB/9.542MB
+ cb0e99e1c627 Verifying Checksum 
+ cb0e99e1c627 Download complete 
+ cb0e99e1c627 Extracting [>                                                  ]   98.3kB/9.542MB
+ d1520cba0de0 Downloading [=======>                                           ]   6.03MB/42.11MB
+ 1fa8de492bba Extracting [======================>                            ]  52.92MB/117.8MB
+ 59ef0fb7d7f5 Downloading [==================================================>]     376B/376B
+ 59ef0fb7d7f5 Verifying Checksum 
+ 59ef0fb7d7f5 Download complete 
+ cb0e99e1c627 Extracting [=====>                                             ]    983kB/9.542MB
+ d1520cba0de0 Downloading [=============>                                     ]  11.59MB/42.11MB
+ 1fa8de492bba Extracting [=======================>                           ]  55.71MB/117.8MB
+ cb0e99e1c627 Extracting [===============>                                   ]  3.047MB/9.542MB
+ d1520cba0de0 Downloading [======================>                            ]  18.87MB/42.11MB
+ ea2debf3e1ac Downloading [==================================================>]      77B/77B
+ ea2debf3e1ac Verifying Checksum 
+ ea2debf3e1ac Download complete 
+ 1fa8de492bba Extracting [========================>                          ]  57.93MB/117.8MB
+ cb0e99e1c627 Extracting [===================================>               ]  6.685MB/9.542MB
+ d1520cba0de0 Downloading [==================================>                ]  28.72MB/42.11MB
+ 81d49b7a1dbb Downloading [==================================================>]  6.084kB/6.084kB
+ 81d49b7a1dbb Verifying Checksum 
+ 81d49b7a1dbb Download complete 
+ 1fa8de492bba Extracting [=========================>                         ]   59.6MB/117.8MB
+ cb0e99e1c627 Extracting [================================================>  ]  9.339MB/9.542MB
+ d1520cba0de0 Downloading [===============================================>   ]  39.84MB/42.11MB
+ cb0e99e1c627 Extracting [==================================================>]  9.542MB/9.542MB
+ d1520cba0de0 Verifying Checksum 
+ d1520cba0de0 Download complete 
+ 1fa8de492bba Extracting [==========================>                        ]  61.28MB/117.8MB
+ a38ab7e8fafb Downloading [>                                                  ]    213kB/20.3MB
+ cb0e99e1c627 Pull complete 
+ 59ef0fb7d7f5 Extracting [==================================================>]     376B/376B
+ 59ef0fb7d7f5 Extracting [==================================================>]     376B/376B
+ 1fa8de492bba Extracting [==========================>                        ]  62.95MB/117.8MB
+ a38ab7e8fafb Downloading [========================>                          ]  9.966MB/20.3MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ 59ef0fb7d7f5 Pull complete 
+ 1fa8de492bba Extracting [===========================>                       ]  65.18MB/117.8MB
+ a38ab7e8fafb Verifying Checksum 
+ a38ab7e8fafb Download complete 
+ 4a625ce0a970 Downloading [>                                                  ]  540.7kB/167.1MB
+ d1520cba0de0 Extracting [>                                                  ]    426kB/42.11MB
+ 1fa8de492bba Extracting [============================>                      ]   67.4MB/117.8MB
+ 4a625ce0a970 Downloading [==>                                                ]  8.041MB/167.1MB
+ d1520cba0de0 Extracting [=======>                                           ]   6.39MB/42.11MB
+ 1fa8de492bba Extracting [==============================>                    ]  71.86MB/117.8MB
+ 4a625ce0a970 Downloading [=====>                                             ]  18.18MB/167.1MB
+ ac6add58a240 Downloading [>                                                  ]   64.9kB/6.214MB
+ d1520cba0de0 Extracting [==============>                                    ]  12.35MB/42.11MB
+ 1fa8de492bba Extracting [================================>                  ]  76.87MB/117.8MB
+ 4a625ce0a970 Downloading [=======>                                           ]   26.2MB/167.1MB
+ ac6add58a240 Downloading [=====================>                             ]  2.686MB/6.214MB
+ d1520cba0de0 Extracting [====================>                              ]  17.47MB/42.11MB
+ 1fa8de492bba Extracting [==================================>                ]  81.33MB/117.8MB
+ 4a625ce0a970 Downloading [==========>                                        ]  33.67MB/167.1MB
+ ac6add58a240 Verifying Checksum 
+ ac6add58a240 Download complete 
+ d1520cba0de0 Extracting [=============================>                     ]  25.13MB/42.11MB
+ 52a3ddf585a1 Downloading [==================================================>]     311B/311B
+ 52a3ddf585a1 Verifying Checksum 
+ 52a3ddf585a1 Download complete 
+ 1fa8de492bba Extracting [====================================>              ]  85.79MB/117.8MB
+ 4a625ce0a970 Downloading [============>                                      ]  41.14MB/167.1MB
+ d1520cba0de0 Extracting [====================================>              ]   31.1MB/42.11MB
+ 4a625ce0a970 Downloading [==============>                                    ]   48.6MB/167.1MB
+ 1fa8de492bba Extracting [======================================>            ]  90.24MB/117.8MB
+ d1520cba0de0 Extracting [==========================================>        ]  35.78MB/42.11MB
+ 636d156b530d Downloading [==================================================>]     569B/569B
+ 636d156b530d Verifying Checksum 
+ 636d156b530d Download complete 
+ 4a625ce0a970 Downloading [=================>                                 ]   58.2MB/167.1MB
+ 1fa8de492bba Extracting [========================================>          ]   94.7MB/117.8MB
+ 61d5add0825b Downloading [>                                                  ]  32.77kB/2.741MB
+ 1fa8de492bba Extracting [==========================================>        ]  100.3MB/117.8MB
+ 4a625ce0a970 Downloading [====================>                              ]  68.32MB/167.1MB
+ d1520cba0de0 Extracting [==============================================>    ]  38.76MB/42.11MB
+ 61d5add0825b Verifying Checksum 
+ 61d5add0825b Download complete 
+ 1fa8de492bba Extracting [============================================>      ]  105.3MB/117.8MB
+ 4a625ce0a970 Downloading [======================>                            ]   74.7MB/167.1MB
+ d1520cba0de0 Extracting [==============================================>    ]  39.19MB/42.11MB
+ 1b846d69e08e Downloading [>                                                  ]  274.2kB/27.4MB
+ 1fa8de492bba Extracting [==============================================>    ]  109.7MB/117.8MB
+ 4a625ce0a970 Downloading [=======================>                           ]   79.5MB/167.1MB
+ 1b846d69e08e Downloading [========>                                          ]  4.477MB/27.4MB
+ 1fa8de492bba Extracting [===============================================>   ]    112MB/117.8MB
+ 4a625ce0a970 Downloading [=========================>                         ]  86.41MB/167.1MB
+ d1520cba0de0 Extracting [===============================================>   ]  39.62MB/42.11MB
+ 1b846d69e08e Downloading [===============>                                   ]  8.702MB/27.4MB
+ 7b229517ed22 Downloading [>                                                  ]  48.55kB/3.853MB
+ 1fa8de492bba Extracting [===============================================>   ]  112.5MB/117.8MB
+ 4a625ce0a970 Downloading [===========================>                       ]  92.27MB/167.1MB
+ d1520cba0de0 Extracting [===============================================>   ]  40.04MB/42.11MB
+ 1b846d69e08e Downloading [=======================>                           ]  12.63MB/27.4MB
+ 7b229517ed22 Downloading [======================================>            ]  2.949MB/3.853MB
+ 7b229517ed22 Verifying Checksum 
+ 7b229517ed22 Download complete 
+ 7b229517ed22 Extracting [>                                                  ]  65.54kB/3.853MB
+ 4a625ce0a970 Downloading [=============================>                     ]  97.07MB/167.1MB
+ 1fa8de492bba Extracting [================================================>  ]  114.2MB/117.8MB
+ 1b846d69e08e Downloading [================================>                  ]  17.93MB/27.4MB
+ 7b229517ed22 Extracting [================>                                  ]  1.245MB/3.853MB
+ 4a625ce0a970 Downloading [==============================>                    ]  100.8MB/167.1MB
+ d1520cba0de0 Extracting [================================================>  ]  40.89MB/42.11MB
+ 1b846d69e08e Downloading [============================================>      ]  24.39MB/27.4MB
+ 1b846d69e08e Download complete 
+ 1fa8de492bba Extracting [================================================>  ]  114.8MB/117.8MB
+ 7b229517ed22 Extracting [=========================================>         ]  3.211MB/3.853MB
+ 7b229517ed22 Extracting [==================================================>]  3.853MB/3.853MB
+ 7b229517ed22 Extracting [==================================================>]  3.853MB/3.853MB
+ 4a625ce0a970 Downloading [===============================>                   ]  104.5MB/167.1MB
+ 4a625ce0a970 Downloading [================================>                  ]  109.3MB/167.1MB
+ 1fa8de492bba Extracting [=================================================> ]  115.9MB/117.8MB
+ d1520cba0de0 Extracting [=================================================> ]  41.32MB/42.11MB
+ d1520cba0de0 Extracting [==================================================>]  42.11MB/42.11MB
+ 4a625ce0a970 Downloading [==================================>                ]  115.2MB/167.1MB
+ 1fa8de492bba Extracting [=================================================> ]  116.4MB/117.8MB
+ e1656acc19fd Downloading [====>                                              ]  16.38kB/177.3kB
+ 4a625ce0a970 Downloading [====================================>              ]  120.6MB/167.1MB
+ 7b229517ed22 Pull complete 
+ e1656acc19fd Downloading [==================================================>]  177.3kB/177.3kB
+ e1656acc19fd Verifying Checksum 
+ e1656acc19fd Download complete 
+ d1520cba0de0 Pull complete 
+ ea2debf3e1ac Extracting [==================================================>]      77B/77B
+ ea2debf3e1ac Extracting [==================================================>]      77B/77B
+ 4a625ce0a970 Downloading [=======================================>           ]  132.3MB/167.1MB
+ 1fa8de492bba Extracting [=================================================> ]    117MB/117.8MB
+ ea2debf3e1ac Pull complete 
+ 81d49b7a1dbb Extracting [==================================================>]  6.084kB/6.084kB
+ 81d49b7a1dbb Extracting [==================================================>]  6.084kB/6.084kB
+ 5d9afc867194 Downloading [>                                                  ]  114.1kB/10.87MB
+ 81d49b7a1dbb Pull complete 
+ a38ab7e8fafb Extracting [>                                                  ]  229.4kB/20.3MB
+ 4a625ce0a970 Downloading [==========================================>        ]  140.8MB/167.1MB
+ 1fa8de492bba Extracting [==================================================>]  117.8MB/117.8MB
+ 5d9afc867194 Downloading [==========>                                        ]  2.293MB/10.87MB
+ a38ab7e8fafb Extracting [===>                                               ]  1.376MB/20.3MB
+ 4a625ce0a970 Downloading [============================================>      ]  148.3MB/167.1MB
+ 5d9afc867194 Downloading [=========================>                         ]  5.619MB/10.87MB
+ 1fa8de492bba Pull complete 
+ a38ab7e8fafb Extracting [========>                                          ]  3.441MB/20.3MB
+ 44a440dba9d0 Extracting [==================================================>]     223B/223B
+ 44a440dba9d0 Extracting [==================================================>]     223B/223B
+ 4a625ce0a970 Downloading [==============================================>    ]  155.7MB/167.1MB
+ 5d9afc867194 Downloading [=========================================>         ]  8.945MB/10.87MB
+ 44a440dba9d0 Pull complete 
+ 62e69b33e59f Extracting [>                                                  ]  65.54kB/4.244MB
+ 7a48b8f0e5c7 Downloading [>                                                  ]  310.7kB/29.77MB
+ 5d9afc867194 Verifying Checksum 
+ 5d9afc867194 Download complete 
+ 5d9afc867194 Extracting [>                                                  ]  131.1kB/10.87MB
+ a38ab7e8fafb Extracting [================>                                  ]  6.652MB/20.3MB
+ 4a625ce0a970 Downloading [===============================================>   ]    160MB/167.1MB
+ 62e69b33e59f Extracting [======>                                            ]  524.3kB/4.244MB
+ 7a48b8f0e5c7 Downloading [=========>                                         ]  5.914MB/29.77MB
+ a38ab7e8fafb Extracting [=======================>                           ]  9.404MB/20.3MB
+ 5d9afc867194 Extracting [==========>                                        ]  2.359MB/10.87MB
+ 4a625ce0a970 Downloading [=================================================> ]  165.9MB/167.1MB
+ 4a625ce0a970 Verifying Checksum 
+ 4a625ce0a970 Download complete 
+ 62e69b33e59f Extracting [==================>                                ]  1.573MB/4.244MB
+ 7a48b8f0e5c7 Downloading [===================>                               ]  11.52MB/29.77MB
+ 5d9afc867194 Extracting [===================>                               ]  4.194MB/10.87MB
+ a38ab7e8fafb Extracting [============================>                      ]   11.7MB/20.3MB
+ 62e69b33e59f Extracting [=================================>                 ]  2.818MB/4.244MB
+ abf44d652425 Downloading [==================================================>]  1.336kB/1.336kB
+ abf44d652425 Verifying Checksum 
+ abf44d652425 Download complete 
+ 7a48b8f0e5c7 Downloading [===========================>                       ]   16.5MB/29.77MB
+ 5d9afc867194 Extracting [===============================>                   ]  6.947MB/10.87MB
+ a38ab7e8fafb Extracting [================================>                  ]  13.07MB/20.3MB
+ 7a48b8f0e5c7 Downloading [========================================>          ]  24.28MB/29.77MB
+ 5d9afc867194 Extracting [=================================================> ]  10.75MB/10.87MB
+ 51cb608ce6b7 Downloading [>                                                  ]  64.94kB/5.245MB
+ 5d9afc867194 Extracting [==================================================>]  10.87MB/10.87MB
+ a38ab7e8fafb Extracting [====================================>              ]  14.68MB/20.3MB
+ 62e69b33e59f Extracting [==================================================>]  4.244MB/4.244MB
+ 5d9afc867194 Pull complete 
+ e1656acc19fd Extracting [=========>                                         ]  32.77kB/177.3kB
+ e1656acc19fd Extracting [==================================================>]  177.3kB/177.3kB
+ 62e69b33e59f Extracting [==================================================>]  4.244MB/4.244MB
+ 7a48b8f0e5c7 Verifying Checksum 
+ 7a48b8f0e5c7 Download complete 
+ 51cb608ce6b7 Verifying Checksum 
+ 51cb608ce6b7 Download complete 
+ e1656acc19fd Extracting [==================================================>]  177.3kB/177.3kB
+ 62e69b33e59f Pull complete 
+ 2297701ffd6e Downloading [==================================================>]     116B/116B
+ 2297701ffd6e Verifying Checksum 
+ 2297701ffd6e Download complete 
+ 8ee47f0ed4ec Extracting [==================================================>]     428B/428B
+ 8ee47f0ed4ec Extracting [==================================================>]     428B/428B
+ 7a48b8f0e5c7 Extracting [>                                                  ]  327.7kB/29.77MB
+ 8ee47f0ed4ec Pull complete 
+ bb4d617e8464 Extracting [==================================================>]     481B/481B
+ bb4d617e8464 Extracting [==================================================>]     481B/481B
+ a38ab7e8fafb Extracting [============================================>      ]  17.89MB/20.3MB
+ a38ab7e8fafb Extracting [==================================================>]   20.3MB/20.3MB
+ 7a48b8f0e5c7 Extracting [=======>                                           ]   4.26MB/29.77MB
+ 0543510fe2ed Downloading [==================================================>]     332B/332B
+ 0543510fe2ed Verifying Checksum 
+ 0543510fe2ed Download complete 
+ b22508c864c4 Downloading [>                                                  ]  540.7kB/68.88MB
+ 7a48b8f0e5c7 Extracting [============>                                      ]  7.537MB/29.77MB
+ b22508c864c4 Downloading [==>                                                ]  3.219MB/68.88MB
+ 0a3b048a97c1 Downloading [==================================================>]  4.034kB/4.034kB
+ 0a3b048a97c1 Download complete 
+ 7a48b8f0e5c7 Extracting [=============>                                     ]  8.192MB/29.77MB
+ b22508c864c4 Downloading [==========>                                        ]  13.89MB/68.88MB
+ 61cd5f8046b1 Downloading [==================================================>]  8.493kB/8.493kB
+ 61cd5f8046b1 Verifying Checksum 
+ 61cd5f8046b1 Download complete 
+ 7a48b8f0e5c7 Extracting [=================>                                 ]  10.16MB/29.77MB
+ b22508c864c4 Downloading [=============>                                     ]  19.23MB/68.88MB
+ 7a48b8f0e5c7 Extracting [===================>                               ]  11.47MB/29.77MB
+ b22508c864c4 Downloading [=================>                                 ]  24.58MB/68.88MB
+ 7a48b8f0e5c7 Extracting [====================>                              ]  12.45MB/29.77MB
+ bb4d617e8464 Pull complete 
+ a38ab7e8fafb Pull complete 
+ b22508c864c4 Downloading [====================>                              ]   28.3MB/68.88MB
+ 7a48b8f0e5c7 Extracting [========================>                          ]  14.75MB/29.77MB
+ e1656acc19fd Pull complete 
+ b22508c864c4 Downloading [===========================>                       ]   37.9MB/68.88MB
+ 7a48b8f0e5c7 Extracting [===============================>                   ]  19.01MB/29.77MB
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ b22508c864c4 Downloading [==================================>                ]  46.98MB/68.88MB
+ 7a48b8f0e5c7 Extracting [===================================>               ]  20.97MB/29.77MB
+ b22508c864c4 Downloading [========================================>          ]   55.5MB/68.88MB
+ 7a48b8f0e5c7 Extracting [=====================================>             ]  22.28MB/29.77MB
+ b22508c864c4 Downloading [============================================>      ]  60.81MB/68.88MB
+ b22508c864c4 Download complete 
+ 7a48b8f0e5c7 Extracting [=========================================>         ]  24.58MB/29.77MB
+ 84b10aa4bc8f Extracting [>                                                  ]  131.1kB/12.84MB
+ mailpit Pulled 
+ 84b10aa4bc8f Extracting [=>                                                 ]  262.1kB/12.84MB
+ 7a48b8f0e5c7 Extracting [==========================================>        ]  25.56MB/29.77MB
+ 4f4fb700ef54 Pull complete 
+ 84b10aa4bc8f Extracting [==================================================>]  12.84MB/12.84MB
+ 7a48b8f0e5c7 Extracting [==============================================>    ]  27.85MB/29.77MB
+ 7a48b8f0e5c7 Extracting [================================================>  ]  28.84MB/29.77MB
+ 7a48b8f0e5c7 Extracting [=================================================> ]  29.49MB/29.77MB
+ 7a48b8f0e5c7 Extracting [==================================================>]  29.77MB/29.77MB
+ 84b10aa4bc8f Pull complete 
+ 8f31f5d009d9 Extracting [==================================================>]     488B/488B
+ 8f31f5d009d9 Extracting [==================================================>]     488B/488B
+ 7a48b8f0e5c7 Pull complete 
+ abf44d652425 Extracting [==================================================>]  1.336kB/1.336kB
+ abf44d652425 Extracting [==================================================>]  1.336kB/1.336kB
+ 8f31f5d009d9 Pull complete 
+ b004a7a0f0f4 Extracting [>                                                  ]  131.1kB/11.76MB
+ abf44d652425 Pull complete 
+ 4a625ce0a970 Extracting [>                                                  ]  557.1kB/167.1MB
+ 51cb608ce6b7 Extracting [>                                                  ]  65.54kB/5.245MB
+ b004a7a0f0f4 Extracting [===============>                                   ]   3.67MB/11.76MB
+ 51cb608ce6b7 Extracting [==================================>                ]   3.67MB/5.245MB
+ b004a7a0f0f4 Extracting [===================================>               ]  8.258MB/11.76MB
+ 51cb608ce6b7 Extracting [============================================>      ]  4.719MB/5.245MB
+ 4a625ce0a970 Extracting [>                                                  ]  1.114MB/167.1MB
+ b004a7a0f0f4 Extracting [=========================================>         ]   9.83MB/11.76MB
+ 51cb608ce6b7 Extracting [==================================================>]  5.245MB/5.245MB
+ b004a7a0f0f4 Extracting [============================================>      ]  10.49MB/11.76MB
+ 51cb608ce6b7 Pull complete 
+ 2297701ffd6e Extracting [==================================================>]     116B/116B
+ 2297701ffd6e Extracting [==================================================>]     116B/116B
+ 2297701ffd6e Pull complete 
+ 0543510fe2ed Extracting [==================================================>]     332B/332B
+ 0543510fe2ed Extracting [==================================================>]     332B/332B
+ b004a7a0f0f4 Extracting [==================================================>]  11.76MB/11.76MB
+ 4a625ce0a970 Extracting [>                                                  ]  1.671MB/167.1MB
+ 0543510fe2ed Pull complete 
+ b004a7a0f0f4 Pull complete 
+ 32c8abf0cee9 Extracting [==================================================>]   2.46kB/2.46kB
+ 32c8abf0cee9 Extracting [==================================================>]   2.46kB/2.46kB
+ b22508c864c4 Extracting [>                                                  ]  557.1kB/68.88MB
+ 32c8abf0cee9 Pull complete 
+ da094eda3f4b Extracting [==================================================>]     252B/252B
+ da094eda3f4b Extracting [==================================================>]     252B/252B
+ da094eda3f4b Pull complete 
+ f1c7f08df21f Extracting [==================================================>]     247B/247B
+ f1c7f08df21f Extracting [==================================================>]     247B/247B
+ b22508c864c4 Extracting [===>                                               ]  4.456MB/68.88MB
+ f1c7f08df21f Pull complete 
+ 879886e0a17a Extracting [==================================================>]     890B/890B
+ 879886e0a17a Extracting [==================================================>]     890B/890B
+ 879886e0a17a Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ b22508c864c4 Extracting [======>                                            ]   9.47MB/68.88MB
+ 4a625ce0a970 Extracting [>                                                  ]  2.228MB/167.1MB
+ 4f4fb700ef54 Pull complete 
+ 00ecb9af356f Extracting [>                                                  ]  360.4kB/33.43MB
+ b22508c864c4 Extracting [============>                                      ]  16.71MB/68.88MB
+ 00ecb9af356f Extracting [========>                                          ]  5.767MB/33.43MB
+ b22508c864c4 Extracting [===============>                                   ]  21.17MB/68.88MB
+ 4a625ce0a970 Extracting [>                                                  ]  2.785MB/167.1MB
+ b22508c864c4 Extracting [==================>                                ]  25.62MB/68.88MB
+ 00ecb9af356f Extracting [==============>                                    ]  9.372MB/33.43MB
+ b22508c864c4 Extracting [=====================>                             ]  29.52MB/68.88MB
+ 00ecb9af356f Extracting [===================>                               ]  13.34MB/33.43MB
+ b22508c864c4 Extracting [=========================>                         ]  34.54MB/68.88MB
+ 00ecb9af356f Extracting [======================>                            ]  14.78MB/33.43MB
+ 4a625ce0a970 Extracting [>                                                  ]  3.342MB/167.1MB
+ b22508c864c4 Extracting [=============================>                     ]  41.22MB/68.88MB
+ 00ecb9af356f Extracting [==============================>                    ]  20.19MB/33.43MB
+ b22508c864c4 Extracting [=================================>                 ]  46.24MB/68.88MB
+ 00ecb9af356f Extracting [==========================================>        ]  28.11MB/33.43MB
+ b22508c864c4 Extracting [===================================>               ]  48.46MB/68.88MB
+ 00ecb9af356f Extracting [===========================================>       ]   29.2MB/33.43MB
+ b22508c864c4 Extracting [====================================>              ]  50.69MB/68.88MB
+ 4a625ce0a970 Extracting [=>                                                 ]  3.899MB/167.1MB
+ 00ecb9af356f Extracting [==============================================>    ]     31MB/33.43MB
+ b22508c864c4 Extracting [======================================>            ]  52.36MB/68.88MB
+ 00ecb9af356f Extracting [==================================================>]  33.43MB/33.43MB
+ b22508c864c4 Extracting [=======================================>           ]  54.59MB/68.88MB
+ 00ecb9af356f Pull complete 
+ 4a625ce0a970 Extracting [=>                                                 ]  4.456MB/167.1MB
+ b22508c864c4 Extracting [===========================================>       ]  60.16MB/68.88MB
+ 36a8c12d0a43 Extracting [>                                                  ]  327.7kB/29.95MB
+ 36a8c12d0a43 Extracting [===>                                               ]  1.966MB/29.95MB
+ b22508c864c4 Extracting [=============================================>     ]  62.95MB/68.88MB
+ 36a8c12d0a43 Extracting [===========>                                       ]  6.881MB/29.95MB
+ b22508c864c4 Extracting [==============================================>    ]  64.62MB/68.88MB
+ 36a8c12d0a43 Extracting [================>                                  ]   9.83MB/29.95MB
+ 36a8c12d0a43 Extracting [=========================>                         ]   15.4MB/29.95MB
+ b22508c864c4 Extracting [================================================>  ]  66.29MB/68.88MB
+ 36a8c12d0a43 Extracting [====================================>              ]  21.95MB/29.95MB
+ 36a8c12d0a43 Extracting [============================================>      ]  26.87MB/29.95MB
+ 4a625ce0a970 Extracting [=>                                                 ]  5.014MB/167.1MB
+ b22508c864c4 Extracting [=================================================> ]  68.52MB/68.88MB
+ 36a8c12d0a43 Extracting [=================================================> ]  29.82MB/29.95MB
+ b22508c864c4 Extracting [==================================================>]  68.88MB/68.88MB
+ 36a8c12d0a43 Extracting [==================================================>]  29.95MB/29.95MB
+ 36a8c12d0a43 Pull complete 
+ b22508c864c4 Pull complete 
+ e4306c3f8d84 Extracting [==================================================>]     314B/314B
+ e4306c3f8d84 Extracting [==================================================>]     314B/314B
+ 0a3b048a97c1 Extracting [==================================================>]  4.034kB/4.034kB
+ 0a3b048a97c1 Extracting [==================================================>]  4.034kB/4.034kB
+ e4306c3f8d84 Pull complete 
+ e440f9cf21b7 Extracting [==================================================>]     391B/391B
+ e440f9cf21b7 Extracting [==================================================>]     391B/391B
+ 0a3b048a97c1 Pull complete 
+ 61cd5f8046b1 Extracting [==================================================>]  8.493kB/8.493kB
+ 61cd5f8046b1 Extracting [==================================================>]  8.493kB/8.493kB
+ e440f9cf21b7 Pull complete 
+ a388275a4f32 Extracting [==================================================>]  18.79kB/18.79kB
+ a388275a4f32 Extracting [==================================================>]  18.79kB/18.79kB
+ 61cd5f8046b1 Pull complete 
+ db Pulled 
+ a388275a4f32 Pull complete 
+ 0a35cd157580 Extracting [>                                                  ]  360.4kB/35.41MB
+ 4a625ce0a970 Extracting [=>                                                 ]  5.571MB/167.1MB
+ 0a35cd157580 Extracting [===>                                               ]  2.523MB/35.41MB
+ 4a625ce0a970 Extracting [=>                                                 ]  6.128MB/167.1MB
+ 0a35cd157580 Extracting [===============>                                   ]  10.81MB/35.41MB
+ 0a35cd157580 Extracting [=====================>                             ]   15.5MB/35.41MB
+ 4a625ce0a970 Extracting [=>                                                 ]  6.685MB/167.1MB
+ 0a35cd157580 Extracting [=======================>                           ]  16.58MB/35.41MB
+ 0a35cd157580 Extracting [=======================>                           ]  16.94MB/35.41MB
+ 4a625ce0a970 Extracting [==>                                                ]  7.242MB/167.1MB
+ 0a35cd157580 Extracting [==========================>                        ]   19.1MB/35.41MB
+ 0a35cd157580 Extracting [==============================>                    ]  21.27MB/35.41MB
+ 4a625ce0a970 Extracting [==>                                                ]  7.799MB/167.1MB
+ 0a35cd157580 Extracting [===================================>               ]  25.23MB/35.41MB
+ 0a35cd157580 Extracting [======================================>            ]  27.39MB/35.41MB
+ 4a625ce0a970 Extracting [==>                                                ]  8.356MB/167.1MB
+ 0a35cd157580 Extracting [============================================>      ]  31.36MB/35.41MB
+ 0a35cd157580 Extracting [==============================================>    ]   32.8MB/35.41MB
+ 4a625ce0a970 Extracting [==>                                                ]  8.913MB/167.1MB
+ 0a35cd157580 Extracting [================================================>  ]  34.24MB/35.41MB
+ 0a35cd157580 Extracting [=================================================> ]  34.96MB/35.41MB
+ 0a35cd157580 Extracting [==================================================>]  35.41MB/35.41MB
+ 4a625ce0a970 Extracting [==>                                                ]   9.47MB/167.1MB
+ 0a35cd157580 Pull complete 
+ 367f10dae597 Extracting [==================================================>]   2.44kB/2.44kB
+ 367f10dae597 Extracting [==================================================>]   2.44kB/2.44kB
+ 367f10dae597 Pull complete 
+ 0881636e3a4d Extracting [==================================================>]  1.769kB/1.769kB
+ 0881636e3a4d Extracting [==================================================>]  1.769kB/1.769kB
+ 0881636e3a4d Pull complete 
+ 7bd486cc0344 Extracting [==================================================>]     196B/196B
+ 7bd486cc0344 Extracting [==================================================>]     196B/196B
+ 4a625ce0a970 Extracting [==>                                                ]  10.03MB/167.1MB
+ 7bd486cc0344 Pull complete 
+ wordpress Pulled 
+ 4a625ce0a970 Extracting [===>                                               ]  10.58MB/167.1MB
+ 4a625ce0a970 Extracting [===>                                               ]  12.26MB/167.1MB
+ 4a625ce0a970 Extracting [===>                                               ]  12.81MB/167.1MB
+ 4a625ce0a970 Extracting [====>                                              ]  14.48MB/167.1MB
+ 4a625ce0a970 Extracting [====>                                              ]  15.04MB/167.1MB
+ 4a625ce0a970 Extracting [====>                                              ]   15.6MB/167.1MB
+ 4a625ce0a970 Extracting [====>                                              ]  16.15MB/167.1MB
+ 4a625ce0a970 Extracting [=====>                                             ]  17.83MB/167.1MB
+ 4a625ce0a970 Extracting [=====>                                             ]  18.38MB/167.1MB
+ 4a625ce0a970 Extracting [=====>                                             ]  18.94MB/167.1MB
+ 4a625ce0a970 Extracting [=====>                                             ]   19.5MB/167.1MB
+ 4a625ce0a970 Extracting [=====>                                             ]  20.05MB/167.1MB
+ 4a625ce0a970 Extracting [======>                                            ]  20.61MB/167.1MB
+ 4a625ce0a970 Extracting [======>                                            ]  21.17MB/167.1MB
+ 4a625ce0a970 Extracting [======>                                            ]  22.28MB/167.1MB
+ 4a625ce0a970 Extracting [======>                                            ]  22.84MB/167.1MB
+ 4a625ce0a970 Extracting [======>                                            ]   23.4MB/167.1MB
+ 4a625ce0a970 Extracting [=======>                                           ]  23.95MB/167.1MB
+ 4a625ce0a970 Extracting [=======>                                           ]  24.51MB/167.1MB
+ 4a625ce0a970 Extracting [=======>                                           ]  25.07MB/167.1MB
+ 4a625ce0a970 Extracting [=======>                                           ]  25.62MB/167.1MB
+ 4a625ce0a970 Extracting [=======>                                           ]  26.18MB/167.1MB
+ 4a625ce0a970 Extracting [=======>                                           ]  26.74MB/167.1MB
+ 4a625ce0a970 Extracting [========>                                          ]   27.3MB/167.1MB
+ 4a625ce0a970 Extracting [========>                                          ]  27.85MB/167.1MB
+ 4a625ce0a970 Extracting [========>                                          ]  28.41MB/167.1MB
+ 4a625ce0a970 Extracting [========>                                          ]  28.97MB/167.1MB
+ 4a625ce0a970 Extracting [========>                                          ]  29.52MB/167.1MB
+ 4a625ce0a970 Extracting [=========>                                         ]  31.75MB/167.1MB
+ 4a625ce0a970 Extracting [=========>                                         ]  32.31MB/167.1MB
+ 4a625ce0a970 Extracting [=========>                                         ]  32.87MB/167.1MB
+ 4a625ce0a970 Extracting [=========>                                         ]  33.42MB/167.1MB
+ 4a625ce0a970 Extracting [==========>                                        ]  33.98MB/167.1MB
+ 4a625ce0a970 Extracting [==========>                                        ]  35.65MB/167.1MB
+ 4a625ce0a970 Extracting [==========>                                        ]  36.21MB/167.1MB
+ 4a625ce0a970 Extracting [==========>                                        ]  36.77MB/167.1MB
+ 4a625ce0a970 Extracting [===========>                                       ]  37.32MB/167.1MB
+ 4a625ce0a970 Extracting [===========>                                       ]  37.88MB/167.1MB
+ 4a625ce0a970 Extracting [===========>                                       ]  38.44MB/167.1MB
+ 4a625ce0a970 Extracting [===========>                                       ]  39.55MB/167.1MB
+ 4a625ce0a970 Extracting [===========>                                       ]  40.11MB/167.1MB
+ 4a625ce0a970 Extracting [============>                                      ]  40.67MB/167.1MB
+ 4a625ce0a970 Extracting [============>                                      ]  41.22MB/167.1MB
+ 4a625ce0a970 Extracting [============>                                      ]  41.78MB/167.1MB
+ 4a625ce0a970 Extracting [============>                                      ]  42.89MB/167.1MB
+ 4a625ce0a970 Extracting [============>                                      ]  43.45MB/167.1MB
+ 4a625ce0a970 Extracting [=============>                                     ]  44.56MB/167.1MB
+ 4a625ce0a970 Extracting [==============>                                    ]  47.35MB/167.1MB
+ 4a625ce0a970 Extracting [==============>                                    ]  49.02MB/167.1MB
+ 4a625ce0a970 Extracting [===============>                                   ]  50.69MB/167.1MB
+ 4a625ce0a970 Extracting [===============>                                   ]  51.81MB/167.1MB
+ 4a625ce0a970 Extracting [===============>                                   ]  52.36MB/167.1MB
+ 4a625ce0a970 Extracting [===============>                                   ]  53.48MB/167.1MB
+ 4a625ce0a970 Extracting [================>                                  ]  54.03MB/167.1MB
+ 4a625ce0a970 Extracting [================>                                  ]  54.59MB/167.1MB
+ 4a625ce0a970 Extracting [================>                                  ]  55.15MB/167.1MB
+ 4a625ce0a970 Extracting [================>                                  ]  55.71MB/167.1MB
+ 4a625ce0a970 Extracting [================>                                  ]  56.26MB/167.1MB
+ 4a625ce0a970 Extracting [================>                                  ]  56.82MB/167.1MB
+ 4a625ce0a970 Extracting [=================>                                 ]  57.38MB/167.1MB
+ 4a625ce0a970 Extracting [=================>                                 ]  57.93MB/167.1MB
+ 4a625ce0a970 Extracting [=================>                                 ]  58.49MB/167.1MB
+ 4a625ce0a970 Extracting [=================>                                 ]  59.05MB/167.1MB
+ 4a625ce0a970 Extracting [=================>                                 ]   59.6MB/167.1MB
+ 4a625ce0a970 Extracting [=================>                                 ]  60.16MB/167.1MB
+ 4a625ce0a970 Extracting [==================>                                ]  60.72MB/167.1MB
+ 4a625ce0a970 Extracting [==================>                                ]  62.39MB/167.1MB
+ 4a625ce0a970 Extracting [===================>                               ]  66.29MB/167.1MB
+ 4a625ce0a970 Extracting [====================>                              ]  69.07MB/167.1MB
+ 4a625ce0a970 Extracting [====================>                              ]  69.63MB/167.1MB
+ 4a625ce0a970 Extracting [====================>                              ]  70.19MB/167.1MB
+ 4a625ce0a970 Extracting [=====================>                             ]  70.75MB/167.1MB
+ 4a625ce0a970 Extracting [=====================>                             ]  72.42MB/167.1MB
+ 4a625ce0a970 Extracting [=====================>                             ]  72.97MB/167.1MB
+ 4a625ce0a970 Extracting [======================>                            ]   75.2MB/167.1MB
+ 4a625ce0a970 Extracting [======================>                            ]  76.87MB/167.1MB
+ 4a625ce0a970 Extracting [=======================>                           ]  77.43MB/167.1MB
+ 4a625ce0a970 Extracting [=======================>                           ]  78.54MB/167.1MB
+ 4a625ce0a970 Extracting [=======================>                           ]  79.66MB/167.1MB
+ 4a625ce0a970 Extracting [========================>                          ]  81.33MB/167.1MB
+ 4a625ce0a970 Extracting [=========================>                         ]  85.79MB/167.1MB
+ 4a625ce0a970 Extracting [===========================>                       ]  91.91MB/167.1MB
+ 4a625ce0a970 Extracting [============================>                      ]  95.81MB/167.1MB
+ 4a625ce0a970 Extracting [============================>                      ]  96.37MB/167.1MB
+ 4a625ce0a970 Extracting [============================>                      ]  96.93MB/167.1MB
+ 4a625ce0a970 Extracting [=============================>                     ]  97.48MB/167.1MB
+ 4a625ce0a970 Extracting [=============================>                     ]  98.04MB/167.1MB
+ 4a625ce0a970 Extracting [=============================>                     ]   98.6MB/167.1MB
+ 4a625ce0a970 Extracting [=============================>                     ]  99.16MB/167.1MB
+ 4a625ce0a970 Extracting [=============================>                     ]  99.71MB/167.1MB
+ 4a625ce0a970 Extracting [=============================>                     ]  100.3MB/167.1MB
+ 4a625ce0a970 Extracting [==============================>                    ]  100.8MB/167.1MB
+ 4a625ce0a970 Extracting [==============================>                    ]  101.4MB/167.1MB
+ 4a625ce0a970 Extracting [==============================>                    ]  101.9MB/167.1MB
+ 4a625ce0a970 Extracting [==============================>                    ]  102.5MB/167.1MB
+ 4a625ce0a970 Extracting [==============================>                    ]  103.1MB/167.1MB
+ 4a625ce0a970 Extracting [===============================>                   ]  104.7MB/167.1MB
+ 4a625ce0a970 Extracting [===============================>                   ]  105.3MB/167.1MB
+ 4a625ce0a970 Extracting [===============================>                   ]  106.4MB/167.1MB
+ 4a625ce0a970 Extracting [===============================>                   ]    107MB/167.1MB
+ 4a625ce0a970 Extracting [================================>                  ]  107.5MB/167.1MB
+ 4a625ce0a970 Extracting [================================>                  ]  108.1MB/167.1MB
+ 4a625ce0a970 Extracting [================================>                  ]  109.7MB/167.1MB
+ 4a625ce0a970 Extracting [================================>                  ]  110.3MB/167.1MB
+ 4a625ce0a970 Extracting [=================================>                 ]  113.6MB/167.1MB
+ 4a625ce0a970 Extracting [==================================>                ]  115.9MB/167.1MB
+ 4a625ce0a970 Extracting [===================================>               ]  117.5MB/167.1MB
+ 4a625ce0a970 Extracting [=====================================>             ]  125.3MB/167.1MB
+ 4a625ce0a970 Extracting [======================================>            ]  128.7MB/167.1MB
+ 4a625ce0a970 Extracting [=======================================>           ]    132MB/167.1MB
+ 4a625ce0a970 Extracting [========================================>          ]  134.3MB/167.1MB
+ 4a625ce0a970 Extracting [========================================>          ]  135.4MB/167.1MB
+ 4a625ce0a970 Extracting [==========================================>        ]    142MB/167.1MB
+ 4a625ce0a970 Extracting [==========================================>        ]  143.2MB/167.1MB
+ 4a625ce0a970 Extracting [==========================================>        ]  143.7MB/167.1MB
+ 4a625ce0a970 Extracting [===========================================>       ]  144.8MB/167.1MB
+ 4a625ce0a970 Extracting [============================================>      ]  149.3MB/167.1MB
+ 4a625ce0a970 Extracting [=============================================>     ]  152.6MB/167.1MB
+ 4a625ce0a970 Extracting [=============================================>     ]  153.2MB/167.1MB
+ 4a625ce0a970 Extracting [==============================================>    ]  154.3MB/167.1MB
+ 4a625ce0a970 Extracting [==============================================>    ]  154.9MB/167.1MB
+ 4a625ce0a970 Extracting [===============================================>   ]  157.6MB/167.1MB
+ 4a625ce0a970 Extracting [===============================================>   ]  159.3MB/167.1MB
+ 4a625ce0a970 Extracting [===============================================>   ]  160.4MB/167.1MB
+ 4a625ce0a970 Extracting [================================================>  ]    161MB/167.1MB
+ 4a625ce0a970 Extracting [================================================>  ]  162.7MB/167.1MB
+ 4a625ce0a970 Extracting [=================================================> ]    166MB/167.1MB
+ 4a625ce0a970 Extracting [=================================================> ]  167.1MB/167.1MB
+ 4a625ce0a970 Extracting [==================================================>]  167.1MB/167.1MB
+ 4a625ce0a970 Pull complete 
+ ac6add58a240 Extracting [>                                                  ]  65.54kB/6.214MB
+ ac6add58a240 Extracting [==================================================>]  6.214MB/6.214MB
+ ac6add58a240 Pull complete 
+ 52a3ddf585a1 Extracting [==================================================>]     311B/311B
+ 52a3ddf585a1 Extracting [==================================================>]     311B/311B
+ 52a3ddf585a1 Pull complete 
+ 636d156b530d Extracting [==================================================>]     569B/569B
+ 636d156b530d Extracting [==================================================>]     569B/569B
+ 636d156b530d Pull complete 
+ 61d5add0825b Extracting [>                                                  ]  32.77kB/2.741MB
+ 61d5add0825b Extracting [===========================>                       ]  1.507MB/2.741MB
+ 61d5add0825b Extracting [==================================================>]  2.741MB/2.741MB
+ 61d5add0825b Pull complete 
+ 1b846d69e08e Extracting [>                                                  ]  294.9kB/27.4MB
+ 1b846d69e08e Extracting [=========================>                         ]  14.16MB/27.4MB
+ 1b846d69e08e Extracting [=========================================>         ]     23MB/27.4MB
+ 1b846d69e08e Extracting [==================================================>]   27.4MB/27.4MB
+ 1b846d69e08e Pull complete 
+ n8n Pulled 
+DONE: Pull application images (50s)
+STAGE: Wait for an available host (limit 900s)
+DONE: Wait for an available host (0s)
+STAGE: Start database, WordPress, sheet and inbox (limit 180s)
+ Network form-sheet-inbox_default  Creating
+ Network form-sheet-inbox_default  Created
+ Volume form-sheet-inbox_db  Creating
+ Volume form-sheet-inbox_db  Created
+ Volume form-sheet-inbox_wordpress  Creating
+ Volume form-sheet-inbox_wordpress  Created
+ Volume form-sheet-inbox_sheet  Creating
+ Volume form-sheet-inbox_sheet  Created
+ Container form-sheet-inbox-sheet-1  Creating
+ Container form-sheet-inbox-mailpit-1  Creating
+ Container form-sheet-inbox-db-1  Creating
+ Container form-sheet-inbox-db-1  Created
+ Container form-sheet-inbox-wordpress-1  Creating
+ Container form-sheet-inbox-mailpit-1  Created
+ Container form-sheet-inbox-sheet-1  Created
+ Container form-sheet-inbox-wordpress-1  Created
+ Container form-sheet-inbox-mailpit-1  Starting
+ Container form-sheet-inbox-db-1  Starting
+ Container form-sheet-inbox-sheet-1  Starting
+ Container form-sheet-inbox-mailpit-1  Started
+ Container form-sheet-inbox-db-1  Started
+ Container form-sheet-inbox-db-1  Waiting
+ Container form-sheet-inbox-sheet-1  Started
+ Container form-sheet-inbox-db-1  Healthy
+ Container form-sheet-inbox-wordpress-1  Starting
+ Container form-sheet-inbox-wordpress-1  Started
+DONE: Start database, WordPress, sheet and inbox (15s)
+STAGE: Wait for WordPress files (limit 120s)
+DONE: Wait for WordPress files (2s)
+STAGE: Install WordPress and broken handler (limit 120s)
 WordPress installed; broken delivery handler loaded.
+DONE: Install WordPress and broken handler (3s)
+STAGE: Import n8n workflow (limit 120s)
+ Volume form-sheet-inbox_n8n  Creating
+ Volume form-sheet-inbox_n8n  Created
+Permissions 0644 for n8n settings file /home/node/.n8n/config are too wide. This is ignored for now, but in the future n8n will attempt to change the permissions automatically. To automatically enforce correct permissions now set N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true (recommended), or turn this check off set N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false.
+Error tracking disabled because this release is older than 6 weeks.
+(node:7) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Migrations in progress, please do NOT stop the process.
+Starting migration InitialMigration1588102412422
+Finished migration InitialMigration1588102412422
+Starting migration WebhookModel1592445003908
+Finished migration WebhookModel1592445003908
+Starting migration CreateIndexStoppedAt1594825041918
+Finished migration CreateIndexStoppedAt1594825041918
+Starting migration MakeStoppedAtNullable1607431743769
+Finished migration MakeStoppedAtNullable1607431743769
+Starting migration AddWebhookId1611071044839
+Finished migration AddWebhookId1611071044839
+Starting migration CreateTagEntity1617213344594
+Finished migration CreateTagEntity1617213344594
+Starting migration UniqueWorkflowNames1620821879465
+Finished migration UniqueWorkflowNames1620821879465
+Starting migration AddWaitColumn1621707690587
+Finished migration AddWaitColumn1621707690587
+Starting migration UpdateWorkflowCredentials1630330987096
+Finished migration UpdateWorkflowCredentials1630330987096
+Starting migration AddExecutionEntityIndexes1644421939510
+Finished migration AddExecutionEntityIndexes1644421939510
+Starting migration CreateUserManagement1646992772331
+Finished migration CreateUserManagement1646992772331
+Starting migration LowerCaseUserEmail1648740597343
+Finished migration LowerCaseUserEmail1648740597343
+Starting migration CommunityNodes1652254514001
+Finished migration CommunityNodes1652254514001
+Starting migration AddUserSettings1652367743993
+Finished migration AddUserSettings1652367743993
+Starting migration AddAPIKeyColumn1652905585850
+Finished migration AddAPIKeyColumn1652905585850
+Starting migration IntroducePinData1654089251344
+Finished migration IntroducePinData1654089251344
+Starting migration AddNodeIds1658930531669
+Finished migration AddNodeIds1658930531669
+Starting migration AddJsonKeyPinData1659888469333
+Finished migration AddJsonKeyPinData1659888469333
+Starting migration CreateCredentialsUserRole1660062385367
+Finished migration CreateCredentialsUserRole1660062385367
+Starting migration CreateWorkflowsEditorRole1663755770892
+Finished migration CreateWorkflowsEditorRole1663755770892
+Starting migration WorkflowStatistics1664196174000
+Finished migration WorkflowStatistics1664196174000
+Starting migration CreateCredentialUsageTable1665484192211
+Finished migration CreateCredentialUsageTable1665484192211
+Starting migration RemoveCredentialUsageTable1665754637024
+Finished migration RemoveCredentialUsageTable1665754637024
+Starting migration AddWorkflowVersionIdColumn1669739707124
+Finished migration AddWorkflowVersionIdColumn1669739707124
+Starting migration AddTriggerCountColumn1669823906993
+Finished migration AddTriggerCountColumn1669823906993
+Starting migration MessageEventBusDestinations1671535397530
+Finished migration MessageEventBusDestinations1671535397530
+Starting migration RemoveWorkflowDataLoadedFlag1671726148419
+Finished migration RemoveWorkflowDataLoadedFlag1671726148419
+Starting migration DeleteExecutionsWithWorkflows1673268682475
+Finished migration DeleteExecutionsWithWorkflows1673268682475
+Starting migration AddStatusToExecutions1674138566000
+Finished migration AddStatusToExecutions1674138566000
+Starting migration CreateLdapEntities1674509946020
+Finished migration CreateLdapEntities1674509946020
+Starting migration PurgeInvalidWorkflowConnections1675940580449
+Finished migration PurgeInvalidWorkflowConnections1675940580449
+Starting migration MigrateExecutionStatus1676996103000
+Finished migration MigrateExecutionStatus1676996103000
+Starting migration UpdateRunningExecutionStatus1677237073720
+Finished migration UpdateRunningExecutionStatus1677237073720
+Starting migration CreateVariables1677501636752
+Finished migration CreateVariables1677501636752
+Starting migration CreateExecutionMetadataTable1679416281777
+Finished migration CreateExecutionMetadataTable1679416281777
+Starting migration AddUserActivatedProperty1681134145996
+Finished migration AddUserActivatedProperty1681134145996
+Starting migration RemoveSkipOwnerSetup1681134145997
+Finished migration RemoveSkipOwnerSetup1681134145997
+Starting migration MigrateIntegerKeysToString1690000000002
+Finished migration MigrateIntegerKeysToString1690000000002
+Starting migration SeparateExecutionData1690000000010
+Finished migration SeparateExecutionData1690000000010
+Starting migration FixMissingIndicesFromStringIdMigration1690000000020
+Finished migration FixMissingIndicesFromStringIdMigration1690000000020
+Starting migration RemoveResetPasswordColumns1690000000030
+Finished migration RemoveResetPasswordColumns1690000000030
+Starting migration AddMfaColumns1690000000030
+Finished migration AddMfaColumns1690000000030
+Starting migration CreateWorkflowNameIndex1691088862123
+Finished migration CreateWorkflowNameIndex1691088862123
+Starting migration CreateWorkflowHistoryTable1692967111175
+Finished migration CreateWorkflowHistoryTable1692967111175
+Starting migration ExecutionSoftDelete1693491613982
+Finished migration ExecutionSoftDelete1693491613982
+Starting migration DisallowOrphanExecutions1693554410387
+Finished migration DisallowOrphanExecutions1693554410387
+Starting migration AddWorkflowMetadata1695128658538
+Finished migration AddWorkflowMetadata1695128658538
+Starting migration ModifyWorkflowHistoryNodesAndConnections1695829275184
+Finished migration ModifyWorkflowHistoryNodesAndConnections1695829275184
+Starting migration AddGlobalAdminRole1700571993961
+Finished migration AddGlobalAdminRole1700571993961
+Starting migration DropRoleMapping1705429061930
+Finished migration DropRoleMapping1705429061930
+Starting migration RemoveFailedExecutionStatus1711018413374
+Finished migration RemoveFailedExecutionStatus1711018413374
+Starting migration MoveSshKeysToDatabase1711390882123
+[MoveSshKeysToDatabase1711390882123] No SSH keys in filesystem, skipping
+Finished migration MoveSshKeysToDatabase1711390882123
+Starting migration RemoveNodesAccess1712044305787
+Finished migration RemoveNodesAccess1712044305787
+Starting migration CreateProject1714133768519
+Finished migration CreateProject1714133768519
+Starting migration MakeExecutionStatusNonNullable1714133768521
+Finished migration MakeExecutionStatusNonNullable1714133768521
+Starting migration AddActivatedAtUserSetting1717498465931
+Finished migration AddActivatedAtUserSetting1717498465931
+Starting migration AddConstraintToExecutionMetadata1720101653148
+Finished migration AddConstraintToExecutionMetadata1720101653148
+Starting migration CreateInvalidAuthTokenTable1723627610222
+Finished migration CreateInvalidAuthTokenTable1723627610222
+Starting migration RefactorExecutionIndices1723796243146
+Finished migration RefactorExecutionIndices1723796243146
+Starting migration CreateAnnotationTables1724753530828
+Finished migration CreateAnnotationTables1724753530828
+Starting migration AddApiKeysTable1724951148974
+Finished migration AddApiKeysTable1724951148974
+Starting migration CreateProcessedDataTable1726606152711
+Finished migration CreateProcessedDataTable1726606152711
+Starting migration SeparateExecutionCreationFromStart1727427440136
+Finished migration SeparateExecutionCreationFromStart1727427440136
+Starting migration AddMissingPrimaryKeyOnAnnotationTagMapping1728659839644
+Finished migration AddMissingPrimaryKeyOnAnnotationTagMapping1728659839644
+Starting migration UpdateProcessedDataValueColumnToText1729607673464
+Finished migration UpdateProcessedDataValueColumnToText1729607673464
+Starting migration AddProjectIcons1729607673469
+Finished migration AddProjectIcons1729607673469
+Starting migration CreateTestDefinitionTable1730386903556
+Finished migration CreateTestDefinitionTable1730386903556
+Starting migration AddDescriptionToTestDefinition1731404028106
+Finished migration AddDescriptionToTestDefinition1731404028106
+Starting migration MigrateTestDefinitionKeyToString1731582748663
+Finished migration MigrateTestDefinitionKeyToString1731582748663
+Starting migration CreateTestMetricTable1732271325258
+Finished migration CreateTestMetricTable1732271325258
+Starting migration CreateTestRun1732549866705
+Finished migration CreateTestRun1732549866705
+Starting migration AddMockedNodesColumnToTestDefinition1733133775640
+Finished migration AddMockedNodesColumnToTestDefinition1733133775640
+Starting migration AddManagedColumnToCredentialsTable1734479635324
+Finished migration AddManagedColumnToCredentialsTable1734479635324
+Starting migration AddStatsColumnsToTestRun1736172058779
+Finished migration AddStatsColumnsToTestRun1736172058779
+Starting migration CreateTestCaseExecutionTable1736947513045
+Finished migration CreateTestCaseExecutionTable1736947513045
+Starting migration AddErrorColumnsToTestRuns1737715421462
+Finished migration AddErrorColumnsToTestRuns1737715421462
+Starting migration CreateFolderTable1738709609940
+Finished migration CreateFolderTable1738709609940
+Starting migration CreateAnalyticsTables1739549398681
+Finished migration CreateAnalyticsTables1739549398681
+Starting migration UpdateParentFolderIdColumn1740445074052
+Finished migration UpdateParentFolderIdColumn1740445074052
+Starting migration RenameAnalyticsToInsights1741167584277
+Finished migration RenameAnalyticsToInsights1741167584277
+Starting migration AddScopesColumnToApiKeys1742918400000
+Finished migration AddScopesColumnToApiKeys1742918400000
+Starting migration ClearEvaluation1745322634000
+Finished migration ClearEvaluation1745322634000
+Starting migration AddWorkflowStatisticsRootCount1745587087521
+Finished migration AddWorkflowStatisticsRootCount1745587087521
+Starting migration AddWorkflowArchivedColumn1745934666076
+Finished migration AddWorkflowArchivedColumn1745934666076
+Starting migration DropRoleTable1745934666077
+Finished migration DropRoleTable1745934666077
+Starting migration AddProjectDescriptionColumn1747824239000
+Finished migration AddProjectDescriptionColumn1747824239000
+Starting migration AddLastActiveAtColumnToUser1750252139166
+Finished migration AddLastActiveAtColumnToUser1750252139166
+Starting migration AddScopeTables1750252139166
+Finished migration AddScopeTables1750252139166
+Starting migration AddRolesTables1750252139167
+Finished migration AddRolesTables1750252139167
+Starting migration LinkRoleToUserTable1750252139168
+Finished migration LinkRoleToUserTable1750252139168
+Starting migration RemoveOldRoleColumn1750252139170
+Finished migration RemoveOldRoleColumn1750252139170
+Starting migration AddInputsOutputsToTestCaseExecution1752669793000
+Finished migration AddInputsOutputsToTestCaseExecution1752669793000
+Starting migration LinkRoleToProjectRelationTable1753953244168
+Finished migration LinkRoleToProjectRelationTable1753953244168
+Starting migration CreateDataStoreTables1754475614601
+Finished migration CreateDataStoreTables1754475614601
+Starting migration ReplaceDataStoreTablesWithDataTables1754475614602
+Finished migration ReplaceDataStoreTablesWithDataTables1754475614602
+Starting migration AddTimestampsToRoleAndRoleIndexes1756906557570
+Finished migration AddTimestampsToRoleAndRoleIndexes1756906557570
+Starting migration AddAudienceColumnToApiKeys1758731786132
+Finished migration AddAudienceColumnToApiKeys1758731786132
+Starting migration AddProjectIdToVariableTable1758794506893
+Finished migration AddProjectIdToVariableTable1758794506893
+Starting migration ChangeValueTypesForInsights1759399811000
+Finished migration ChangeValueTypesForInsights1759399811000
+Starting migration CreateChatHubTables1760019379982
+Finished migration CreateChatHubTables1760019379982
+Starting migration CreateChatHubAgentTable1760020000000
+Finished migration CreateChatHubAgentTable1760020000000
+Starting migration UniqueRoleNames1760020838000
+Finished migration UniqueRoleNames1760020838000
+Starting migration CreateOAuthEntities1760116750277
+Finished migration CreateOAuthEntities1760116750277
+Starting migration CreateWorkflowDependencyTable1760314000000
+Finished migration CreateWorkflowDependencyTable1760314000000
+Starting migration DropUnusedChatHubColumns1760965142113
+Finished migration DropUnusedChatHubColumns1760965142113
+Starting migration AddWorkflowVersionColumn1761047826451
+Finished migration AddWorkflowVersionColumn1761047826451
+Starting migration ChangeDependencyInfoToJson1761655473000
+Finished migration ChangeDependencyInfoToJson1761655473000
+Starting migration AddAttachmentsToChatHubMessages1761773155024
+Finished migration AddAttachmentsToChatHubMessages1761773155024
+Starting migration AddToolsColumnToChatHubTables1761830340990
+Finished migration AddToolsColumnToChatHubTables1761830340990
+Starting migration AddWorkflowDescriptionColumn1762177736257
+Finished migration AddWorkflowDescriptionColumn1762177736257
+Starting migration BackfillMissingWorkflowHistoryRecords1762763704614
+Finished migration BackfillMissingWorkflowHistoryRecords1762763704614
+Starting migration AddIsGlobalColumnToCredentialsTable1762771954619
+Finished migration AddIsGlobalColumnToCredentialsTable1762771954619
+Starting migration AddWorkflowHistoryAutoSaveFields1762847206508
+Finished migration AddWorkflowHistoryAutoSaveFields1762847206508
+Starting migration AddActiveVersionIdColumn1763047800000
+Finished migration AddActiveVersionIdColumn1763047800000
+Starting migration ChangeOAuthStateColumnToUnboundedVarchar1763572724000
+Finished migration ChangeOAuthStateColumnToUnboundedVarchar1763572724000
+Starting migration CreateBinaryDataTable1763716655000
+Finished migration CreateBinaryDataTable1763716655000
+Starting migration CreateWorkflowPublishHistoryTable1764167920585
+Finished migration CreateWorkflowPublishHistoryTable1764167920585
+Starting migration BackfillMissingWorkflowHistoryRecords1765448186933
+Finished migration BackfillMissingWorkflowHistoryRecords1765448186933
+Importing 1 workflows...
+Successfully imported 1 workflow.
+DONE: Import n8n workflow (8s)
+STAGE: Activate n8n workflow (limit 120s)
+Permissions 0644 for n8n settings file /home/node/.n8n/config are too wide. This is ignored for now, but in the future n8n will attempt to change the permissions automatically. To automatically enforce correct permissions now set N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true (recommended), or turn this check off set N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false.
+Error tracking disabled because this release is older than 6 weeks.
+(node:7) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Activating workflow with ID: enquiryDelivery
+Activation or deactivation will not take effect if n8n is running.
+Please restart n8n for changes to take effect if n8n is currently running.
+DONE: Activate n8n workflow (3s)
+STAGE: Start n8n (limit 180s)
+ Container form-sheet-inbox-n8n-1  Creating
+ Container form-sheet-inbox-n8n-1  Created
+ Container form-sheet-inbox-n8n-1  Starting
+ Container form-sheet-inbox-n8n-1  Started
+DONE: Start n8n (0s)
+STAGE: Wait for n8n webhook routing (limit 120s)
+Waiting for n8n webhook routing: {"error":"fetch failed"}
+Waiting for n8n webhook routing: {"health_status":200,"webhook_status":404,"webhook_content_type":"text/html; charset=utf-8"}
+n8n database and webhook routing are ready.
+DONE: Wait for n8n webhook routing (9s)
 BEFORE: exercising the real form with the retired webhook route.
+STAGE: Reproduce broken form (limit 180s)
 EXPECTED FAIL delivery contract: claimed delivery; 0 rows, 0 mails
+DONE: Reproduce broken form (1s)
 Applying the durable outbox and confirmed delivery handler.
+STAGE: Apply repaired handler (limit 120s)
+ Container form-sheet-inbox-wordpress-1  Restarting
+ Container form-sheet-inbox-wordpress-1  Started
+DONE: Apply repaired handler (3s)
+STAGE: Verify repaired form (limit 180s)
 PASS browser submission matches SQLite row and Mailpit message
+DONE: Verify repaired form (2s)
+STAGE: Verify retries, validation and outages (limit 180s)
 PASS repeated and concurrent retries create no extra row or mail
 PASS reference reuse with changed fields is rejected
 PASS invalid input cannot reach either destination
 PASS unsigned webhook cannot write a sheet row
 PASS mail outage returns pending and retains the actual row
 PASS sheet outage returns pending without claiming delivery
+DONE: Verify retries, validation and outages (3s)
+STAGE: Read pending outbox (limit 30s)
+DONE: Read pending outbox (0s)
+STAGE: Restart WordPress (limit 90s)
+ Container form-sheet-inbox-wordpress-1  Restarting
+ Container form-sheet-inbox-wordpress-1  Started
+DONE: Restart WordPress (1s)
+STAGE: Verify outbox survives restart (limit 180s)
 PASS both undelivered entries remain in the persistent WordPress outbox
+DONE: Verify outbox survives restart (2s)
+STAGE: Retry pending enquiries (limit 90s)
 Outbox replay completed.
+DONE: Retry pending enquiries (0s)
+STAGE: Read recovered outbox (limit 30s)
+DONE: Read recovered outbox (1s)
+STAGE: Verify recovered deliveries (limit 180s)
 PASS replay delivers RETRY-MAIL once
 PASS replay delivers RETRY-SHEET once
 PASS direct n8n replay is idempotent at both destinations
 PASS formula-like input stays text and CSV export neutralises it
+DONE: Verify recovered deliveries (1s)
+STAGE: Verify spreadsheet and render proof (limit 240s)
 PASS saved enquiry opens in LibreOffice Calc with matching spreadsheet cells
 make-hero: wrote media/before-after.png (1200x1178, 252 KB)
 780x486 61344B
 800x600 197020B
+DONE: Verify spreadsheet and render proof (14s)
+STAGE: Read WordPress version (limit 30s)
+DONE: Read WordPress version (0s)
+STAGE: Read n8n version (limit 30s)
+DONE: Read n8n version (0s)
+STAGE: Read Mailpit version (limit 20s)
+DONE: Read Mailpit version (0s)
+STAGE: Read MariaDB version (limit 30s)
+DONE: Read MariaDB version (1s)
+STAGE: Read SQLite version (limit 30s)
+DONE: Read SQLite version (0s)
+STAGE: Summarise verification (limit 60s)
 Verified 13 repaired-flow checks; 0 failed.
+DONE: Summarise verification (1s)
 PASS: broken-state failure reproduced; all repaired-flow checks passed.
-Run duration: 273 seconds.
+Run duration: 193 seconds.
 Cleanup: removing this run’s containers and data volumes.
 Cleanup complete: case containers and data volumes removed.
-Total elapsed including cleanup: 284 seconds.
+Total elapsed including cleanup: 204 seconds.

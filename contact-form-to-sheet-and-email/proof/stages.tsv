@@ -1,0 +1,31 @@
+stage	seconds	exit_code
+Pull credential helper	4	0
+Create local credentials	2	0
+Reset case volumes	0	0
+Build browser and spreadsheet tools	67	0
+Pull application images	50	0
+Wait for an available host	0	0
+Start database, WordPress, sheet and inbox	15	0
+Wait for WordPress files	2	0
+Install WordPress and broken handler	3	0
+Import n8n workflow	8	0
+Activate n8n workflow	3	0
+Start n8n	0	0
+Wait for n8n webhook routing	9	0
+Reproduce broken form	1	0
+Apply repaired handler	3	0
+Verify repaired form	2	0
+Verify retries, validation and outages	2	0
+Read pending outbox	0	0
+Restart WordPress	1	0
+Verify outbox survives restart	2	0
+Retry pending enquiries	0	0
+Read recovered outbox	1	0
+Verify recovered deliveries	1	0
+Verify spreadsheet and render proof	14	0
+Read WordPress version	0	0
+Read n8n version	0	0
+Read Mailpit version	0	0
+Read MariaDB version	1	0
+Read SQLite version	0	0
+Summarise verification	1	0

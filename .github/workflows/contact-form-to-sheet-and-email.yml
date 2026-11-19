@@ -5,14 +5,14 @@ on:
     paths: ['contact-form-to-sheet-and-email/**', '.github/workflows/contact-form-to-sheet-and-email.yml']
   pull_request:
     paths: ['contact-form-to-sheet-and-email/**', '.github/workflows/contact-form-to-sheet-and-email.yml']
-  workflow_dispatch:
   workflow_call:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
   integration:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - run: cd contact-form-to-sheet-and-email && ./run.sh

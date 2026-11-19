@@ -3,7 +3,7 @@
   "url": null,
   "public_demo": false,
   "playground": "Not applicable to this case; no Playground claim",
-  "date": "2026-11-19T06:39:19.742Z",
+  "date": "2026-11-19T08:25:14.669Z",
   "browser": "141.0.7390.37",
   "interaction": "Submit enquiry, inspect SQLite row and Mailpit message, replay pending deliveries",
   "fallback": "./run.sh or the captured flow GIF"

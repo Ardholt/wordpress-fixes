@@ -1,0 +1,41 @@
+{
+  "ready": true,
+  "method": "Wait for database readiness and the retired webhook route to return its JSON 404 before submitting the form.",
+  "observations": [
+    {
+      "elapsed_ms": 0,
+      "error": "fetch failed"
+    },
+    {
+      "elapsed_ms": 1051,
+      "error": "fetch failed"
+    },
+    {
+      "elapsed_ms": 2056,
+      "error": "fetch failed"
+    },
+    {
+      "elapsed_ms": 3058,
+      "error": "fetch failed"
+    },
+    {
+      "elapsed_ms": 4060,
+      "health_status": 200,
+      "webhook_status": 404,
+      "webhook_content_type": "text/html; charset=utf-8"
+    },
+    {
+      "elapsed_ms": 5745,
+      "health_status": 200,
+      "webhook_status": 404,
+      "webhook_content_type": "text/html; charset=utf-8"
+    },
+    {
+      "elapsed_ms": 6964,
+      "health_status": 200,
+      "webhook_status": 404,
+      "webhook_content_type": "application/json; charset=utf-8",
+      "webhook_code": 404
+    }
+  ]
+}
