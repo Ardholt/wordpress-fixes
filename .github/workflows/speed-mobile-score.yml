@@ -1,0 +1,24 @@
+name: Mobile speed evidence
+on:
+  push:
+    branches: [main]
+    paths: ['speed-mobile-score/**', '.github/workflows/speed-mobile-score.yml']
+  pull_request:
+    paths: ['speed-mobile-score/**', '.github/workflows/speed-mobile-score.yml']
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reproduce and measure
+        run: |
+          set -o pipefail
+          cd speed-mobile-score
+          ./run.sh 2>&1 | tee proof/run-output.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mobile-speed-reports
+          path: speed-mobile-score/proof/

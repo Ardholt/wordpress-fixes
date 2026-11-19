@@ -1,0 +1,284 @@
+[
+  {
+    "file": "speed-mobile-score/fixtures/Inter-Regular.ttf",
+    "origin": "https://github.com/rsms/inter",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Inter.txt"
+  },
+  {
+    "file": "speed-mobile-score/fixtures/assets/Inter-Regular.ttf",
+    "origin": "https://github.com/rsms/inter",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Inter.txt"
+  },
+  {
+    "file": "speed-mobile-score/scripts/hero/fonts/Inter-Regular.ttf",
+    "origin": "https://github.com/rsms/inter",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Inter.txt"
+  },
+  {
+    "file": "speed-mobile-score/scripts/hero/fonts/Inter-SemiBold.ttf",
+    "origin": "https://github.com/rsms/inter",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Inter.txt"
+  },
+  {
+    "file": "speed-mobile-score/fixtures/LICENSE-Inter.txt",
+    "origin": "https://github.com/rsms/inter",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Inter.txt"
+  },
+  {
+    "file": "speed-mobile-score/scripts/hero/fonts/LICENSE-Inter.txt",
+    "origin": "https://github.com/rsms/inter",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Inter.txt"
+  },
+  {
+    "file": "speed-mobile-score/scripts/hero/fonts/InstrumentSerif-Regular.ttf",
+    "origin": "https://github.com/Instrument/instrument-serif",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/scripts/hero/fonts/LICENSE-InstrumentSerif.txt"
+  },
+  {
+    "file": "speed-mobile-score/scripts/hero/fonts/LICENSE-InstrumentSerif.txt",
+    "origin": "https://github.com/Instrument/instrument-serif",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/scripts/hero/fonts/LICENSE-InstrumentSerif.txt"
+  },
+  {
+    "file": "speed-mobile-score/scripts/hero/fonts/JetBrainsMono-Bold.ttf",
+    "origin": "https://github.com/JetBrains/JetBrainsMono",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/scripts/hero/fonts/LICENSE-JetBrainsMono.txt"
+  },
+  {
+    "file": "speed-mobile-score/scripts/hero/fonts/LICENSE-JetBrainsMono.txt",
+    "origin": "https://github.com/JetBrains/JetBrainsMono",
+    "licence": "OFL-1.1",
+    "notice": "speed-mobile-score/scripts/hero/fonts/LICENSE-JetBrainsMono.txt"
+  },
+  {
+    "file": "speed-mobile-score/fixtures/assets/bootstrap.css",
+    "origin": "bootstrap@5.3.3 npm package (bundle includes Popper MIT notice)",
+    "licence": "MIT",
+    "notice": "speed-mobile-score/fixtures/assets/LICENSE-Bootstrap.txt"
+  },
+  {
+    "file": "speed-mobile-score/fixtures/assets/bootstrap.js",
+    "origin": "bootstrap@5.3.3 npm package (bundle includes Popper MIT notice)",
+    "licence": "MIT",
+    "notice": "speed-mobile-score/fixtures/assets/LICENSE-Bootstrap.txt"
+  },
+  {
+    "file": "speed-mobile-score/fixtures/assets/LICENSE-Bootstrap.txt",
+    "origin": "bootstrap@5.3.3 npm package (bundle includes Popper MIT notice)",
+    "licence": "MIT",
+    "notice": "speed-mobile-score/fixtures/assets/LICENSE-Bootstrap.txt"
+  },
+  {
+    "file": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt",
+    "origin": "lighthouse@12.8.2 npm package",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/after/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/after/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/after/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/before/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/before/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/before/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/applied-timeout/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/applied-timeout/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/applied-timeout/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/below-heading-reveal/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/below-heading-reveal/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/below-heading-reveal/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/simulated-originals/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/simulated-originals/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/simulated-originals/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/top-hero/after/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/top-hero/after/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/top-hero/after/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/top-hero/before/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/top-hero/before/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/calibration/top-hero/before/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/first-clean/after/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/first-clean/after/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/first-clean/after/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/first-clean/before/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/first-clean/before/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/first-clean/before/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/series-b/after/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/series-b/after/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/series-b/after/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/series-b/before/run-1.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/series-b/before/run-2.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  },
+  {
+    "file": "speed-mobile-score/proof/verification/series-b/before/run-3.report.html",
+    "origin": "Lighthouse 12.8.2 report with embedded renderer",
+    "licence": "Apache-2.0",
+    "notice": "speed-mobile-score/fixtures/LICENSE-Lighthouse.txt"
+  }
+]

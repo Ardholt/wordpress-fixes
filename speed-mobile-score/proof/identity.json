@@ -1,0 +1,17 @@
+{
+  "visibleHeading": "Garden services",
+  "themeLabel": "Garden services page",
+  "businessBrands": [],
+  "policy": "Service headings describe the page content. No named gardening business, customer relationship or endorsement is represented.",
+  "nameCheck": {
+    "date": "2026-11-19T06:20:38.147557+00:00",
+    "query": "Room to Grow garden business",
+    "observed": "Room To Grow is used by real gardening businesses. This wording is excluded from the page identity.",
+    "sources": [
+      "https://roomtogrow.co/",
+      "https://www.roomtogrow.co.za/about/"
+    ]
+  },
+  "capturedRecords": "Headings captured in reports are page copy, not evidence of customer identity.",
+  "otherNames": "Software, licence and emulated-device names identify technical dependencies and measurements; they are not client names or private-device identities."
+}

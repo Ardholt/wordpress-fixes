@@ -1,0 +1,7 @@
+{
+  "selection": {
+    "before": 1,
+    "after": 2
+  },
+  "method": "First run matching the median score in each state. Five evenly indexed frames from screenshot-thumbnails. Labels are trace times under applied mobile throttling."
+}

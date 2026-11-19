@@ -1,0 +1,46 @@
+services:
+  db:
+    image: mariadb:11.4.8@sha256:bc474f00629f0123c10f9e1bca193a45d18af15a274cf0656acda64f1086c3b6
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Run ./run.sh setup first}
+      MARIADB_ROOT_PASSWORD: ${ROOT_PASSWORD:?Run ./run.sh setup first}
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+  wordpress:
+    build:
+      context: .
+      dockerfile: source/Dockerfile
+    image: speed-mobile-score-wordpress:1
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${BIND_ADDRESS:-0.0.0.0}:${PORT:-8080}:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://' . ($$_SERVER['HTTP_HOST'] ?? 'speed.test'));
+        define('WP_SITEURL', WP_HOME);
+        define('DISABLE_WP_CRON', true);
+        define('WP_AUTO_UPDATE_CORE', false);
+    volumes:
+      - wordpress:/var/www/html
+      - ./source/theme:/var/www/html/wp-content/themes/garden:ro
+      - ./fixtures/assets:/var/www/html/wp-content/themes/garden/assets:ro
+      - ./scripts:/case-scripts:ro
+    networks:
+      default:
+        aliases: [speed.test]
+volumes:
+  database:
+  wordpress:

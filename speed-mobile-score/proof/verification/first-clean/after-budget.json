@@ -1,0 +1,15 @@
+{
+  "state": "after",
+  "metrics": {
+    "score": 99,
+    "lcpMs": 1597.739,
+    "cls": 0
+  },
+  "checks": {
+    "score": true,
+    "lcp": true,
+    "cls": true,
+    "resources": true
+  },
+  "pass": true
+}

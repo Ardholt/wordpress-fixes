@@ -1,0 +1,86 @@
+{
+  "scope": "Local WordPress mobile Lighthouse measurements; no commissioned site or production PageSpeed Insights result is claimed.",
+  "rounding": "Scores are category score ×100; LCP is milliseconds /1000; MB is bytes /1000000. Displayed values rounded only after aggregation.",
+  "claims": [
+    {
+      "claim": "Title: broken mobile performance in the 30s–40s; headline before/after performance",
+      "path": "proof/summary.json",
+      "locator": "before.stats.score and after.stats.score"
+    },
+    {
+      "claim": "Three runs per state; score/LCP/CLS medians and ranges",
+      "path": "proof/summary.json",
+      "locator": "before.runs, after.runs; before.stats and after.stats"
+    },
+    {
+      "claim": "Less transferred data",
+      "path": "proof/summary.json",
+      "locator": "before.stats.bytes and after.stats.bytes"
+    },
+    {
+      "claim": "Content and behavior retained",
+      "path": "proof/after-behavior.json",
+      "locator": "contentRetained, menu, anchorNavigation, faq, allImagesLoaded, consoleErrors; content equals proof/before-behavior.json content"
+    },
+    {
+      "claim": "Oversized eager JPEGs and absent reserved dimensions before; responsive/lazy images afterward",
+      "path": "proof/before-behavior.json",
+      "locator": "images; compare proof/after-behavior.json images"
+    },
+    {
+      "claim": "Caching policy changed",
+      "path": "proof/after-behavior.json",
+      "locator": "cacheHeader; compare proof/before-behavior.json cacheHeader"
+    },
+    {
+      "claim": "All measured acceptance checks pass; performance budget fails before",
+      "path": "proof/summary.json",
+      "locator": "checks"
+    },
+    {
+      "claim": "Large-type hero shows median score and LCP, with retained controls",
+      "path": "proof/summary.json",
+      "locator": "before.stats and after.stats; proof/after-behavior.json menu, faq, contentRetained"
+    },
+    {
+      "claim": "Filmstrip timestamps",
+      "path": "proof/visuals.json",
+      "locator": "selection → corresponding raw report audits.screenshot-thumbnails.details.items[].timing"
+    },
+    {
+      "claim": "Tools, profile and run method",
+      "path": "proof/run.json",
+      "locator": "environment, commands, versions; proof/before/conditions.json and proof/after/conditions.json; raw reports configSettings and environment"
+    },
+    {
+      "claim": "Final clean-run duration",
+      "path": "proof/run-output.txt",
+      "locator": "Final PASS: complete clean run in … seconds line"
+    },
+    {
+      "claim": "About seven minutes as a runtime guide; first complete clean verification took 398 seconds",
+      "path": "proof/verification/first-clean/run-output.txt",
+      "locator": "PASS: complete clean run in 398 seconds; seven minutes is a rounded planning guide"
+    },
+    {
+      "claim": "Original reveal waits for every image; fix removes that dependency",
+      "path": "source/theme/site.js",
+      "locator": "window load listener; source/theme/style.css .unoptimized .hero rule; source/theme/index.php body state"
+    },
+    {
+      "claim": "Blocking global framework removed and navigation deferred",
+      "path": "source/theme/index.php",
+      "locator": "head conditional stylesheet/script output; compare raw report audits.network-requests.details.items"
+    },
+    {
+      "claim": "Animation shows the working page, menu and answer",
+      "path": "proof/interaction.json",
+      "locator": "frames and method"
+    },
+    {
+      "claim": "Saved page preserves the rendered WordPress content and controls",
+      "path": "proof/reader-checks.json",
+      "locator": "savedPage"
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "method": "Image headers inspected with Pillow; exported final screenshots stripped with ImageMagick. Raw Lighthouse reports unchanged.",
+  "images": [
+    {
+      "file": "proof/after-answer.png",
+      "size": [
+        390,
+        844
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/after-desktop.png",
+      "size": [
+        1366,
+        2314
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/after-menu.png",
+      "size": [
+        390,
+        844
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/after-mobile.png",
+      "size": [
+        390,
+        2728
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/after-report.png",
+      "size": [
+        1280,
+        900
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/after-top.png",
+      "size": [
+        390,
+        844
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/before-desktop.png",
+      "size": [
+        1366,
+        2211
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/before-mobile.png",
+      "size": [
+        390,
+        2575
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/before-report.png",
+      "size": [
+        1280,
+        900
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/calibration/applied-timeout/final-frame.jpg",
+      "size": [
+        250,
+        498
+      ],
+      "metadataKeys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/calibration/top-hero/after-desktop.png",
+      "size": [
+        1366,
+        2320
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/calibration/top-hero/after-mobile.png",
+      "size": [
+        390,
+        2734
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/calibration/top-hero/before-desktop.png",
+      "size": [
+        1366,
+        2217
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/calibration/top-hero/before-mobile.png",
+      "size": [
+        390,
+        2581
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/filmstrip.png",
+      "size": [
+        1200,
+        1020
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/layout/gh-case-1366.png",
+      "size": [
+        1366,
+        900
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/layout/gh-case-390.png",
+      "size": [
+        390,
+        844
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/layout/pages-1366.png",
+      "size": [
+        1366,
+        900
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/layout/pages-390.png",
+      "size": [
+        390,
+        844
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/reader-1366.png",
+      "size": [
+        1366,
+        844
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "proof/reader-390.png",
+      "size": [
+        390,
+        844
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "media/hero.png",
+      "size": [
+        600,
+        452
+      ],
+      "metadataKeys": [],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "media/page-in-use.gif",
+      "size": [
+        390,
+        844
+      ],
+      "metadataKeys": [
+        "version",
+        "background",
+        "loop",
+        "duration",
+        "extension"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/care-1600.webp",
+      "size": [
+        1600,
+        1050
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/care-480.webp",
+      "size": [
+        480,
+        315
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/care-960.webp",
+      "size": [
+        960,
+        630
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/care.jpg",
+      "size": [
+        3200,
+        2100
+      ],
+      "metadataKeys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/courtyard-1600.webp",
+      "size": [
+        1600,
+        1050
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/courtyard-480.webp",
+      "size": [
+        480,
+        315
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/courtyard-960.webp",
+      "size": [
+        960,
+        630
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/courtyard.jpg",
+      "size": [
+        3200,
+        2100
+      ],
+      "metadataKeys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/garden-1600.webp",
+      "size": [
+        1600,
+        1050
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/garden-480.webp",
+      "size": [
+        480,
+        315
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/garden-960.webp",
+      "size": [
+        960,
+        630
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/garden.jpg",
+      "size": [
+        3200,
+        2100
+      ],
+      "metadataKeys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/planting-1600.webp",
+      "size": [
+        1600,
+        1050
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/planting-480.webp",
+      "size": [
+        480,
+        315
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/planting-960.webp",
+      "size": [
+        960,
+        630
+      ],
+      "metadataKeys": [
+        "loop",
+        "background"
+      ],
+      "exifCommentXmpAbsent": true
+    },
+    {
+      "file": "fixtures/assets/planting.jpg",
+      "size": [
+        3200,
+        2100
+      ],
+      "metadataKeys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ],
+      "exifCommentXmpAbsent": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "browser": "141.0.7390.37",
+  "target": "http://speed.test/",
+  "runs": 3,
+  "method": "Sequential Lighthouse CLI runs, default mobile simulated throttling; a fresh Chromium process and storage reset per run. Server warmed by one page visit before each series. No other stack or browser run in parallel.",
+  "browserCache": "Cold per run (Lighthouse reset enabled)",
+  "serverCache": "PHP opcode cache warmed; no WordPress page-cache plugin",
+  "staticCache": "no-store",
+  "command": "node lighthouse/cli/index.js http://speed.test/ --only-categories=performance --output=json --output=html --chrome-flags=\"--headless --no-sandbox --disable-dev-shm-usage\""
+}

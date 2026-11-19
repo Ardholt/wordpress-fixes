@@ -1,0 +1,22 @@
+{
+  "scope": "Static rendering saved from the measured WordPress response; no hosted PHP server is claimed.",
+  "browser": "141.0.7390.37",
+  "layouts": [
+    {
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1366,
+      "horizontalOverflow": false
+    }
+  ],
+  "savedPage": {
+    "contentMatches": true,
+    "menu": true,
+    "serviceLink": true,
+    "answer": true,
+    "allImagesLoaded": true,
+    "consoleErrors": []
+  }
+}

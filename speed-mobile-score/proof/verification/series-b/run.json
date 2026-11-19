@@ -1,0 +1,30 @@
+{
+  "target": "http://speed.test/",
+  "environment": "Disposable WordPress and MariaDB containers on a shared build host; separate browser container on a Docker network; no external asset requests. Other host activity is not controlled.",
+  "commands": [
+    "./run.sh setup",
+    "./run.sh check before",
+    "./run.sh measure before",
+    "./run.sh after",
+    "./run.sh check after",
+    "./run.sh measure after",
+    "node tests/compare.cjs",
+    "./run.sh down"
+  ],
+  "versions": {
+    "wordpress": "6.8.3",
+    "php": "8.3.28",
+    "mariadb": "mariadbd  Ver 11.4.8-MariaDB-ubu2404 for debian-linux-gnu on x86_64 (mariadb.org binary distribution)",
+    "lighthouse": "12.8.2",
+    "chromium": "141.0.7390.37"
+  },
+  "outcomes": {
+    "baselineInTitleRange": true,
+    "scoreImproved": true,
+    "lcpImproved": true,
+    "clsNotWorse": true,
+    "transferReduced": true,
+    "optimizedPerformanceBefore": false,
+    "optimizedPerformanceAfter": true
+  }
+}

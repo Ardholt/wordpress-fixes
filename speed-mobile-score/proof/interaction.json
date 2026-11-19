@@ -1,0 +1,13 @@
+{
+  "frames": [
+    "proof/after-top.png",
+    "proof/after-menu.png",
+    "proof/after-answer.png"
+  ],
+  "method": "Browser viewport captures after the page loads, after opening the menu, and after opening an answer. This animation shows retained interactions; it is not a load-time recording.",
+  "frameDelayCentiseconds": 150,
+  "dimensions": [
+    390,
+    844
+  ]
+}

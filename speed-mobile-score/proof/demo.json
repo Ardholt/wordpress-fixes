@@ -1,0 +1,18 @@
+{
+  "status": "docker",
+  "url": null,
+  "playground": "Not applicable: local Lighthouse measurements require the Docker browser and server.",
+  "verified": [
+    "WordPress page loads",
+    "Mobile menu",
+    "Service anchor",
+    "Expandable answers",
+    "All images load"
+  ],
+  "evidence": [
+    "before-behavior.json",
+    "after-behavior.json"
+  ],
+  "browser": "141.0.7390.37",
+  "date": "2026-11-19T06:29:21.452Z"
+}

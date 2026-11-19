@@ -1,0 +1,10 @@
+const fs=require('fs'),assert=require('assert/strict');
+const state=process.argv[2];
+const records=[1,2,3].map(n=>JSON.parse(fs.readFileSync(`proof/${state}/run-${n}.report.json`)));
+const median=values=>values.sort((a,b)=>a-b)[1];
+const metrics={score:median(records.map(r=>Math.round(r.categories.performance.score*100))),lcpMs:median(records.map(r=>r.audits['largest-contentful-paint'].numericValue)),cls:median(records.map(r=>r.audits['cumulative-layout-shift'].numericValue))};
+const behavior=JSON.parse(fs.readFileSync(`proof/${state}-behavior.json`));
+const checks={score:metrics.score>=75,lcp:metrics.lcpMs<=4000,cls:metrics.cls<=.1,resources:behavior.optimizedResourceContract};
+fs.writeFileSync(`proof/${state}-budget.json`,JSON.stringify({state,metrics,checks,pass:Object.values(checks).every(Boolean)},null,2));
+console.log(`${state} budget: ${JSON.stringify(checks)}`);
+assert.ok(Object.values(checks).every(Boolean),'The page must meet the same mobile performance and resource budgets.');

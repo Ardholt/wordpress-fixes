@@ -1,0 +1,78 @@
+{
+  "method": "Offline rendering with the casebook layout, not a published GitHub or Pages session. External requests blocked; workflow is linked as text.",
+  "browser": "141.0.7390.37",
+  "records": [
+    {
+      "mode": "gh-case",
+      "width": 390,
+      "height": 844,
+      "title": {
+        "x": 33,
+        "y": 429,
+        "width": 324,
+        "height": 90.59375
+      },
+      "hero": {
+        "x": 33,
+        "y": 535.59375,
+        "width": 324,
+        "height": 244.078125
+      },
+      "horizontalOverflow": false
+    },
+    {
+      "mode": "gh-case",
+      "width": 1366,
+      "height": 900,
+      "title": {
+        "x": 369,
+        "y": 332,
+        "width": 948,
+        "height": 50.59375
+      },
+      "hero": {
+        "x": 543,
+        "y": 398.59375,
+        "width": 600,
+        "height": 452
+      },
+      "horizontalOverflow": false
+    },
+    {
+      "mode": "pages",
+      "width": 390,
+      "height": 844,
+      "title": {
+        "x": 20,
+        "y": 87,
+        "width": 350,
+        "height": 64.78125
+      },
+      "hero": {
+        "x": 20,
+        "y": 173.78125,
+        "width": 350,
+        "height": 264.15625
+      },
+      "horizontalOverflow": false
+    },
+    {
+      "mode": "pages",
+      "width": 1366,
+      "height": 900,
+      "title": {
+        "x": 333,
+        "y": 103,
+        "width": 700,
+        "height": 49.671875
+      },
+      "hero": {
+        "x": 383,
+        "y": 174.671875,
+        "width": 600,
+        "height": 452.484375
+      },
+      "horizontalOverflow": false
+    }
+  ]
+}

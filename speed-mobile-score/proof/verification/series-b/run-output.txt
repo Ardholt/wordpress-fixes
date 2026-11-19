@@ -1,0 +1,143 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 495B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 87B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#4 resolve mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 109B done
+#5 DONE 0.0s
+
+#6 [2/6] WORKDIR /tools
+#6 CACHED
+
+#7 [3/6] RUN apt-get update && apt-get install -y --no-install-recommends python3-pil imagemagick && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [4/6] COPY tests/package.json tests/package-lock.json /tools/
+#8 CACHED
+
+#9 [5/6] RUN npm ci --no-audit --no-fund
+#9 CACHED
+
+#10 [6/6] WORKDIR /work
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers done
+#11 exporting manifest sha256:b736708d2ba00cada9b65db69fe5a168cf4d664e27dc46f5517b694219fdf3c9 done
+#11 exporting config sha256:480bc515443382a3f3e49d27d2475e226028a3e62d889621e358735f88a887fa done
+#11 exporting attestation manifest sha256:65a221d711f173e87c7d829a1f3b0370f5075c1515b76edcd2f53121ba37bc6e 0.1s done
+#11 exporting manifest list sha256:447d7ed6bdb88ed45431212de0dcdcff43a50e4fa60d7798f1b9e8ac8468920c
+#11 exporting manifest list sha256:447d7ed6bdb88ed45431212de0dcdcff43a50e4fa60d7798f1b9e8ac8468920c 0.0s done
+#11 naming to docker.io/library/speed-mobile-score-tools:1 done
+#11 unpacking to docker.io/library/speed-mobile-score-tools:1 0.0s done
+#11 DONE 0.2s
+#1 [internal] load local bake definitions
+#1 reading from stdin 702B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 164B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context:
+#4 transferring context: 87B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4
+#5 resolve docker.io/library/wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4 0.0s done
+#5 CACHED
+
+#6 [2/2] RUN a2enmod headers
+#6 0.469 Enabling module headers.
+#6 0.503 To activate the new configuration, you need to run:
+#6 0.503   service apache2 restart
+#6 DONE 0.6s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 0.2s done
+#7 exporting manifest sha256:5b4ffcafbbfa8c0b7e1d34a8808bdacccd70b90d10774ccf95c28d3639579013
+#7 exporting manifest sha256:5b4ffcafbbfa8c0b7e1d34a8808bdacccd70b90d10774ccf95c28d3639579013 0.0s done
+#7 exporting config sha256:82ebba00724c016b3af9dad6f5de236769cf550d860ed7389d0dc846d9f1f595 0.0s done
+#7 exporting attestation manifest sha256:005cf0f41e727df3d5af93838bebe0da9fd5b0f3a663004f344935af019995f1
+#7 exporting attestation manifest sha256:005cf0f41e727df3d5af93838bebe0da9fd5b0f3a663004f344935af019995f1 0.1s done
+#7 exporting manifest list sha256:ef756478202cefe39efcf4d06dc9e73133dce26d598d0cc3500c6a6f94336a22 0.0s done
+#7 naming to docker.io/library/speed-mobile-score-wordpress:1
+#7 naming to docker.io/library/speed-mobile-score-wordpress:1 done
+#7 unpacking to docker.io/library/speed-mobile-score-wordpress:1 0.1s done
+#7 DONE 0.7s
+
+#8 resolving provenance for metadata file
+#8 DONE 0.0s
+ speed-mobile-score-wordpress:1  Built
+ Network speed-mobile-score_default  Creating
+ Network speed-mobile-score_default  Created
+ Volume speed-mobile-score_database  Creating
+ Volume speed-mobile-score_database  Created
+ Volume speed-mobile-score_wordpress  Creating
+ Volume speed-mobile-score_wordpress  Created
+ Container speed-mobile-score-db-1  Creating
+ Container speed-mobile-score-db-1  Created
+ Container speed-mobile-score-wordpress-1  Creating
+ Container speed-mobile-score-wordpress-1  Created
+ Container speed-mobile-score-db-1  Starting
+ Container speed-mobile-score-db-1  Started
+ Container speed-mobile-score-db-1  Waiting
+ Container speed-mobile-score-db-1  Healthy
+ Container speed-mobile-score-wordpress-1  Starting
+ Container speed-mobile-score-wordpress-1  Started
+ Container speed-mobile-score-wordpress-1  Waiting
+ Container speed-mobile-score-db-1  Waiting
+ Container speed-mobile-score-db-1  Healthy
+ Container speed-mobile-score-wordpress-1  Healthy
+WordPress 6.8.3 installed; garden theme active.
+BEFORE configuration active.
+before: EXPECTED FAIL optimized resource contract; PASS menu, service link, FAQ and image loading.
+before run 1: score 45, LCP 45.75 s, CLS 0.3195, bytes 8587759
+before run 2: score 45, LCP 45.47 s, CLS 0.3195, bytes 8587759
+before run 3: score 43, LCP 45.57 s, CLS 0.3195, bytes 8587759
+EXPECTED FAIL: unchanged budget test exits 1 on the broken page.
+Responsive images, reserved space, local font swap and deferred navigation enabled.
+AFTER configuration active.
+after: PASS optimized resource contract; PASS menu, service link, FAQ and image loading; PASS retained copy and image descriptions.
+after run 1: score 99, LCP 1.64 s, CLS 0.0000, bytes 651753
+after run 2: score 99, LCP 1.62 s, CLS 0.0000, bytes 651753
+after run 3: score 99, LCP 1.62 s, CLS 0.0000, bytes 651753
+PASS: unchanged budget test exits 0 on the fixed page.
+Median score 45 (43–45) → 99 (99–99); LCP 45.57 → 1.62 s; CLS 0.3195 → 0.0000.
+EXPECTED FAIL: broken page misses score/LCP/CLS budget.
+PASS: title range, score, LCP, CLS, transferred bytes and fixed performance budget.
+PASS: reports, screenshots and public run records saved.
+make-hero: wrote media/hero.png (1200x1178, 316 KB)
+PASS: complete clean run in 397 seconds.
+ Container speed-mobile-score-wordpress-1  Stopping
+ Container speed-mobile-score-wordpress-1  Stopped
+ Container speed-mobile-score-wordpress-1  Removing
+ Container speed-mobile-score-wordpress-1  Removed
+ Container speed-mobile-score-db-1  Stopping
+ Container speed-mobile-score-db-1  Stopped
+ Container speed-mobile-score-db-1  Removing
+ Container speed-mobile-score-db-1  Removed
+ Volume speed-mobile-score_database  Removing
+ Network speed-mobile-score_default  Removing
+ Volume speed-mobile-score_database  Removed
+ Volume speed-mobile-score_wordpress  Removing
+ Network speed-mobile-score_default  Removed
+ Volume speed-mobile-score_wordpress  Removed

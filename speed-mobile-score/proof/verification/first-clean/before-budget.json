@@ -1,0 +1,15 @@
+{
+  "state": "before",
+  "metrics": {
+    "score": 47,
+    "lcpMs": 45401.592,
+    "cls": 0.3195221136995463
+  },
+  "checks": {
+    "score": false,
+    "lcp": false,
+    "cls": false,
+    "resources": false
+  },
+  "pass": false
+}

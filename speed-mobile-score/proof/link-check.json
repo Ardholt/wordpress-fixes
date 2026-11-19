@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-19T06:20:38.147721+00:00",
+  "url": "https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/",
+  "method": "HTTP GET with curl, no authentication",
+  "httpStatus": 404,
+  "verifiedPublicUrl": null,
+  "localEvidence": [
+    "reader-checks.json",
+    "after-behavior.json"
+  ],
+  "scope": "The saved HTML view and Docker WordPress page have separate local browser checks. No live customer website is claimed."
+}

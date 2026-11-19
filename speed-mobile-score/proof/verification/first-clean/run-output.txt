@@ -1,0 +1,150 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 495B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 87B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/6] FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#5 resolve mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a 0.1s done
+#5 DONE 0.1s
+
+#6 [2/6] WORKDIR /tools
+#6 CACHED
+
+#7 [3/6] RUN apt-get update && apt-get install -y --no-install-recommends python3-pil imagemagick && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 94.55kB 0.0s done
+#4 DONE 0.1s
+
+#8 [4/6] COPY tests/package.json tests/package-lock.json /tools/
+#8 DONE 0.1s
+
+#9 [5/6] RUN npm ci --no-audit --no-fund
+#9 6.759 npm warn deprecated @opentelemetry/sdk-trace-base@1.30.1: Use @opentelemetry/sdk-trace package
+#9 9.014 
+#9 9.014 added 205 packages in 8s
+#9 9.015 npm notice
+#9 9.015 npm notice New major version of npm available! 10.9.3 -> 12.2.3
+#9 9.015 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+#9 9.015 npm notice To update run: npm install -g npm@12.2.3
+#9 9.015 npm notice
+#9 DONE 9.2s
+
+#10 [6/6] WORKDIR /work
+#10 DONE 0.3s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 11.3s done
+#11 exporting manifest sha256:b736708d2ba00cada9b65db69fe5a168cf4d664e27dc46f5517b694219fdf3c9 0.0s done
+#11 exporting config sha256:480bc515443382a3f3e49d27d2475e226028a3e62d889621e358735f88a887fa 0.0s done
+#11 exporting attestation manifest sha256:ea582b367bde940a9da101a8ac3845df00a0088ba7bcbabf97bae3feec6f7ef0
+#11 exporting attestation manifest sha256:ea582b367bde940a9da101a8ac3845df00a0088ba7bcbabf97bae3feec6f7ef0 0.1s done
+#11 exporting manifest list sha256:83bef624aa8c036334744c66fc1608d3b8d6b28f8774d89a8e354c5fc97c7691 0.0s done
+#11 naming to docker.io/library/speed-mobile-score-tools:1 0.0s done
+#11 unpacking to docker.io/library/speed-mobile-score-tools:1
+#11 unpacking to docker.io/library/speed-mobile-score-tools:1 7.0s done
+#11 DONE 18.6s
+#1 [internal] load local bake definitions
+#1 reading from stdin 702B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 164B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 87B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4
+#5 resolve docker.io/library/wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4 0.1s done
+#5 DONE 0.1s
+
+#6 [2/2] RUN a2enmod headers
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 0.0s done
+#7 exporting manifest sha256:2a7d243a2885ce199dd63b93a3ae550dc78a2e8715d619c41788837666ee6f80 done
+#7 exporting config sha256:0162c644b015c1139b5483d41888188e402125686e579d14ba040986369da861 done
+#7 exporting attestation manifest sha256:f001fc57516613f2bde493bd25321ba8f2df61e8f3f58fe1d6143320c8c56c87 0.1s done
+#7 exporting manifest list sha256:7c152141113e8fb72cf1f7bab53430591c78b2682677d0df405a3407cbda29f8
+#7 exporting manifest list sha256:7c152141113e8fb72cf1f7bab53430591c78b2682677d0df405a3407cbda29f8 0.0s done
+#7 naming to docker.io/library/speed-mobile-score-wordpress:1 done
+#7 unpacking to docker.io/library/speed-mobile-score-wordpress:1 0.1s done
+#7 DONE 0.3s
+
+#8 resolving provenance for metadata file
+#8 DONE 0.0s
+ speed-mobile-score-wordpress:1  Built
+ Network speed-mobile-score_default  Creating
+ Network speed-mobile-score_default  Created
+ Volume speed-mobile-score_database  Creating
+ Volume speed-mobile-score_database  Created
+ Volume speed-mobile-score_wordpress  Creating
+ Volume speed-mobile-score_wordpress  Created
+ Container speed-mobile-score-db-1  Creating
+ Container speed-mobile-score-db-1  Created
+ Container speed-mobile-score-wordpress-1  Creating
+ Container speed-mobile-score-wordpress-1  Created
+ Container speed-mobile-score-db-1  Starting
+ Container speed-mobile-score-db-1  Started
+ Container speed-mobile-score-db-1  Waiting
+ Container speed-mobile-score-db-1  Healthy
+ Container speed-mobile-score-wordpress-1  Starting
+ Container speed-mobile-score-wordpress-1  Started
+ Container speed-mobile-score-wordpress-1  Waiting
+ Container speed-mobile-score-db-1  Waiting
+ Container speed-mobile-score-db-1  Healthy
+ Container speed-mobile-score-wordpress-1  Healthy
+WordPress 6.8.3 installed; garden theme active.
+BEFORE configuration active.
+before: EXPECTED FAIL optimized resource contract; PASS menu, service link, FAQ and image loading.
+before run 1: score 47, LCP 45.37 s, CLS 0.3195, bytes 8587759
+before run 2: score 46, LCP 45.49 s, CLS 0.3195, bytes 8587759
+before run 3: score 47, LCP 45.40 s, CLS 0.3195, bytes 8587759
+EXPECTED FAIL: unchanged budget test exits 1 on the broken page.
+Responsive images, reserved space, local font swap and deferred navigation enabled.
+AFTER configuration active.
+after: PASS optimized resource contract; PASS menu, service link, FAQ and image loading; PASS retained copy and image descriptions.
+after run 1: score 99, LCP 1.62 s, CLS 0.0000, bytes 651753
+after run 2: score 98, LCP 1.60 s, CLS 0.0000, bytes 651753
+after run 3: score 100, LCP 1.59 s, CLS 0.0000, bytes 651753
+PASS: unchanged budget test exits 0 on the fixed page.
+Median score 47 (46–47) → 99 (98–100); LCP 45.40 → 1.60 s; CLS 0.3195 → 0.0000.
+EXPECTED FAIL: broken page misses score/LCP/CLS budget.
+PASS: title range, score, LCP, CLS, transferred bytes and fixed performance budget.
+PASS: reports, screenshots and public run records saved.
+make-hero: wrote media/hero.png (1200x1178, 316 KB)
+PASS: complete clean run in 398 seconds.
+ Container speed-mobile-score-wordpress-1  Stopping
+ Container speed-mobile-score-wordpress-1  Stopped
+ Container speed-mobile-score-wordpress-1  Removing
+ Container speed-mobile-score-wordpress-1  Removed
+ Container speed-mobile-score-db-1  Stopping
+ Container speed-mobile-score-db-1  Stopped
+ Container speed-mobile-score-db-1  Removing
+ Container speed-mobile-score-db-1  Removed
+ Volume speed-mobile-score_database  Removing
+ Volume speed-mobile-score_wordpress  Removing
+ Network speed-mobile-score_default  Removing
+ Volume speed-mobile-score_database  Removed
+ Network speed-mobile-score_default  Removed
+ Volume speed-mobile-score_wordpress  Removed

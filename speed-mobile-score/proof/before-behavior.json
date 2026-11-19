@@ -1,0 +1,46 @@
+{
+  "state": "before",
+  "content": "Garden services ↗\nMenu\nA place to slow down, through every season.\nTHOUGHTFUL SPACES. EVERYDAY JOY.\nMore life in\nyour garden.\n\nFrom a quiet corner to a garden full of life, we plan, plant and care for outdoor spaces that feel like home.\n\nExplore garden services ↗\nMADE FOR THE WAY YOU LIVE\nGood gardens start with care.\nPlanting plans\n\nLayered colour, texture and habitat, with plants chosen for your space.\n\nSmall gardens\n\nMake every corner count with simple layouts and thoughtful details.\n\nSeasonal care\n\nKeep your garden growing well with pruning, soil care and seasonal attention.\n\nA CLEAR PATH FROM IDEA TO GARDEN\nListen. Plan. Grow.\n\nWe start with how you want to use the space. Then we make a practical plan, choose the right planting and help you keep it thriving.\n\nYour questions\nCan you work with a small garden?\nCan I keep my existing plants?\nPlanting plans · Small gardens · Seasonal care",
+  "images": [
+    {
+      "alt": "A planted garden with a stone path, timber pergola and flower beds",
+      "src": "http://speed.test/wp-content/themes/garden/assets/garden.jpg",
+      "width": 3200,
+      "loaded": true,
+      "reserved": false,
+      "lazy": false
+    },
+    {
+      "alt": "Planting plans garden illustration",
+      "src": "http://speed.test/wp-content/themes/garden/assets/planting.jpg",
+      "width": 3200,
+      "loaded": true,
+      "reserved": false,
+      "lazy": false
+    },
+    {
+      "alt": "Small gardens garden illustration",
+      "src": "http://speed.test/wp-content/themes/garden/assets/courtyard.jpg",
+      "width": 3200,
+      "loaded": true,
+      "reserved": false,
+      "lazy": false
+    },
+    {
+      "alt": "Seasonal care garden illustration",
+      "src": "http://speed.test/wp-content/themes/garden/assets/care.jpg",
+      "width": 3200,
+      "loaded": true,
+      "reserved": false,
+      "lazy": false
+    }
+  ],
+  "cacheHeader": "no-store",
+  "optimizedResourceContract": false,
+  "menu": true,
+  "anchorNavigation": true,
+  "faq": true,
+  "allImagesLoaded": true,
+  "consoleErrors": [],
+  "contentRetained": null
+}

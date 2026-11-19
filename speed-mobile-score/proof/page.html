@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garden services — Planting and seasonal care</title>
+<style>/*
+Theme Name: Garden services page
+Version: 1.0.0
+License: MIT
+*/
+@font-face{font-family:Inter;src:url(../fixtures/assets/Inter-Regular.ttf);font-display:swap}
+:root{--ink:#173d32;--cream:#f6f3e9;--orange:#df693c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 Inter,Arial,sans-serif}header{padding:22px 5%;border-bottom:1px solid #cbd1c4;display:flex;align-items:center;justify-content:space-between;gap:20px}.site-label{font-weight:bold;font-size:20px;letter-spacing:-.5px}nav a{color:inherit;margin-left:25px;text-decoration:none}.menu-toggle{display:none}main{max-width:1440px;margin:auto}.intro{padding:45px 6% 30px;max-width:920px}.eyebrow{font-size:12px;font-weight:bold;text-transform:uppercase;letter-spacing:3px}h1{font:normal clamp(38px,5vw,68px)/1.06 Georgia,serif;letter-spacing:-2px;margin:18px 0}h2{font:normal 34px/1.15 Georgia,serif}p{max-width:650px}.button{display:inline-block;border:0;background:var(--ink);color:white;padding:13px 22px;border-radius:3px;text-decoration:none;font-size:15px}.hero{margin:0 4%;overflow:hidden;background:#b4c7ab}.hero img{display:block;width:100%;height:auto}.caption{font-size:12px;margin:9px 4% 30px;color:#476658}.services{padding:36px 6%}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{background:white;border:0;border-radius:0;color:var(--ink)}.card img{width:100%;height:auto;display:block}.card-body{padding:20px}.card h3{font:normal 26px Georgia,serif;margin:0 0 10px}.care{padding:35px 6%;display:grid;grid-template-columns:1fr 1fr;gap:30px;background:#e2e8da}details{padding:16px 0;border-bottom:1px solid #b7c4b0}summary{cursor:pointer;font-weight:bold}footer{padding:30px 6%;font-size:13px}button{cursor:pointer}.menu-toggle{background:transparent;border:1px solid #7c9587;padding:8px 12px;color:inherit}@media(max-width:600px){header{padding:16px 6%;flex-wrap:wrap}.site-label{font-size:17px}.menu-toggle{display:block}nav{display:none;width:100%}nav.open{display:flex;flex-direction:column}nav a{margin:8px 0}.intro{padding:30px 6% 24px}h1{font-size:44px}.cards,.care{grid-template-columns:1fr}.hero{margin:0 6%}.caption{margin-left:6%}.services{padding-top:20px}}
+
+.hero .caption{margin:0;padding:9px 0 24px;background:var(--cream)}
+</style>
+<script>document.addEventListener('DOMContentLoaded', () => {
+  const button = document.querySelector('.menu-toggle');
+  button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(open));
+    document.querySelector('nav').classList.toggle('open', open);
+  });
+});
+
+// The original reveal waits for every eager image before opening the hero.
+window.addEventListener('load', () => {
+  if (document.body.classList.contains('unoptimized')) document.querySelector('.hero').style.height = 'auto';
+});
+</script>
+</head><body class="optimized">
+<header><span class="site-label">Garden services <span aria-hidden="true">↗</span></span><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu</button><nav id="navigation" aria-label="Main"><a href="#services">Our services</a><a href="#approach">Our approach</a><a href="#questions">Questions</a></nav></header>
+<main>
+<figure class="hero"><img src="../fixtures/assets/garden-960.webp" srcset="../fixtures/assets/garden-480.webp 480w, ../fixtures/assets/garden-960.webp 960w, ../fixtures/assets/garden-1600.webp 1600w" sizes="(max-width: 600px) 88vw, 92vw" width="3200" height="2100" fetchpriority="high" loading="eager" alt="A planted garden with a stone path, timber pergola and flower beds"><figcaption class="caption">A place to slow down, through every season.</figcaption></figure>
+<section class="intro"><span class="eyebrow">Thoughtful spaces. Everyday joy.</span><h1>More life in<br>your garden.</h1><p>From a quiet corner to a garden full of life, we plan, plant and care for outdoor spaces that feel like home.</p><a class="button" href="#services">Explore garden services ↗</a></section>
+<section class="services" id="services"><span class="eyebrow">Made for the way you live</span><h2>Good gardens start with care.</h2><div class="cards">
+<article class="card"><img src="../fixtures/assets/planting-960.webp" srcset="../fixtures/assets/planting-480.webp 480w, ../fixtures/assets/planting-960.webp 960w, ../fixtures/assets/planting-1600.webp 1600w" sizes="(max-width: 600px) 88vw, 30vw" width="3200" height="2100" loading="lazy" decoding="async" alt="Planting plans garden illustration"><div class="card-body"><h3>Planting plans</h3><p>Layered colour, texture and habitat, with plants chosen for your space.</p></div></article>
+<article class="card"><img src="../fixtures/assets/courtyard-960.webp" srcset="../fixtures/assets/courtyard-480.webp 480w, ../fixtures/assets/courtyard-960.webp 960w, ../fixtures/assets/courtyard-1600.webp 1600w" sizes="(max-width: 600px) 88vw, 30vw" width="3200" height="2100" loading="lazy" decoding="async" alt="Small gardens garden illustration"><div class="card-body"><h3>Small gardens</h3><p>Make every corner count with simple layouts and thoughtful details.</p></div></article>
+<article class="card"><img src="../fixtures/assets/care-960.webp" srcset="../fixtures/assets/care-480.webp 480w, ../fixtures/assets/care-960.webp 960w, ../fixtures/assets/care-1600.webp 1600w" sizes="(max-width: 600px) 88vw, 30vw" width="3200" height="2100" loading="lazy" decoding="async" alt="Seasonal care garden illustration"><div class="card-body"><h3>Seasonal care</h3><p>Keep your garden growing well with pruning, soil care and seasonal attention.</p></div></article>
+</div></section>
+<section class="care" id="approach"><div><span class="eyebrow">A clear path from idea to garden</span><h2>Listen. Plan. Grow.</h2><p>We start with how you want to use the space. Then we make a practical plan, choose the right planting and help you keep it thriving.</p></div><div id="questions"><h2>Your questions</h2><details><summary>Can you work with a small garden?</summary><p>Yes. Courtyards, narrow borders and compact spaces all have room for thoughtful planting.</p></details><details><summary>Can I keep my existing plants?</summary><p>Yes. Healthy plants and favourite features can be part of the new plan.</p></details></div></section>
+</main><footer>Planting plans · Small gardens · Seasonal care</footer>
+
+</body></html>
