@@ -38,7 +38,7 @@ Ranges, before → after: score **46–47 → 99–100**; LCP **45.42–45.49 s 
 
 **Does this match your site?** These fixes fit pages where oversized uploads, delayed main images or theme/plugin files slow the first view. I check the actual page and its essential features before choosing the changes. A different theme, host or set of plugins needs its own before-and-after measurement; this result is not a promised score for another site.
 
-[Readable results and the retained page](https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/) · [Every original HTML/JSON report](https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/#every-report) · [Measurement conditions](REPRODUCE.md) · [Source of each claim](proof/claims.json)
+[Readable results and the retained page](https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/) · [Every original HTML/JSON report](https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/#reports) · [Measurement conditions](REPRODUCE.md) · [Source of each claim](proof/claims.json)
 
 ## Try it yourself
 

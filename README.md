@@ -48,6 +48,20 @@
    <sub>WordPress · Security · Cleanup</sub>
 <!-- cases:end -->
 
+## Run a case locally
+
+You need Git, Bash, and a running Docker Engine with Docker Compose v2. Docker must be available to your user, with network access to download the case images and dependencies.
+
+For example, to reproduce the critical-error repair:
+
+```bash
+git clone https://github.com/Ardholt/wordpress-fixes.git
+cd wordpress-fixes/critical-error-after-update
+./run.sh
+```
+
+To try a different repair, choose its folder from the case list above, open that folder in the cloned repository, and run `./run.sh`. Run one case at a time; its README explains the checks and any case-specific conditions.
+
 ## How every case is laid out
 
 Each folder opens with the problem and a before/after picture, then what was wrong, what I did, the proof
