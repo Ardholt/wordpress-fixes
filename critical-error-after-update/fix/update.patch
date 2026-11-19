@@ -1,0 +1,15 @@
+--- estimate-1.1.0.php
++++ estimate-1.1.1.php
+@@ -1,10 +1,10 @@
+ <?php
+ /* Plugin Name: Repair Estimate
+-Version: 1.1.0
++Version: 1.1.1
+ License: GPL-2.0-or-later
+ */
+ function repair_estimate_total($count) {
+-    $calculate = create_function('$units', 'return $units * 35;');
++    $calculate = static function ($units) { return $units * 35; };
+     return $calculate($count);
+ }
+ add_shortcode('repair_estimate', function () {

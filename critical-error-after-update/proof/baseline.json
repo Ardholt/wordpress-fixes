@@ -1,0 +1,24 @@
+{
+  "state": "baseline",
+  "browser": "141.0.7390.37",
+  "viewport": [
+    1280,
+    800
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "status": 200,
+  "healthy": true,
+  "checks": [
+    "baseline: HTTP 200 and three-item estimate £105",
+    "baseline: submitted calculator returns £70",
+    "baseline: mobile page fits viewport",
+    "baseline: rejects 0",
+    "baseline: rejects 11",
+    "baseline: rejects abc",
+    "baseline: rejects %3Cscript%3E",
+    "Unaffected about page works in baseline"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "state": "fixed",
+  "browser": "141.0.7390.37",
+  "viewport": [
+    1280,
+    800
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "status": 200,
+  "healthy": true,
+  "checks": [
+    "fixed: HTTP 200 and three-item estimate £105",
+    "fixed: submitted calculator returns £70",
+    "fixed: mobile page fits viewport",
+    "fixed: rejects 0",
+    "fixed: rejects 11",
+    "fixed: rejects abc",
+    "fixed: rejects %3Cscript%3E",
+    "Unaffected about page works in fixed"
+  ]
+}

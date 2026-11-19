@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+[ $# -eq 2 ] || { sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
+TEXT=$1; OUT=$2
+HERE=$(cd "$(dirname "$0")" && pwd); FD=${HERO_FONT_DIR:-$HERE/fonts}
+F_SANS="$FD/Inter-SemiBold.ttf"; [ -r "$F_SANS" ] || F_SANS=DejaVu-Sans-Bold
+BG='#0b0a0a'; INK='#f1ece6'; ACC='#ff3b1f'
+T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
+convert -background none -font "$F_SANS" -pointsize 36 -fill "$INK" label:"$TEXT" "$T/t.png"
+tw=$(identify -format %w "$T/t.png"); th=$(identify -format %h "$T/t.png")
+H=96; AW=34; W=$((tw + 56 + 22 + AW + 48))
+# arrow drawn as a shape in the accent colour (no glyph dependency)
+ay=$((H/2)); ax=$((56 + tw + 22))
+convert -size "${W}x${H}" xc:none -fill "$BG" -draw "roundrectangle 0,0 $((W-1)),$((H-1)) 14,14" \
+  "$T/t.png" -gravity northwest -geometry +56+$(( (H-th)/2 )) -composite \
+  -stroke "$ACC" -strokewidth 5 -fill none \
+  -draw "line $ax,$ay $((ax+AW)),$ay" \
+  -draw "polyline $((ax+AW-13)),$((ay-13)) $((ax+AW)),$ay $((ax+AW-13)),$((ay+13))" \
+  -strip "$OUT"
+echo "make-button: wrote $OUT ($(identify -format '%wx%h' "$OUT"))"

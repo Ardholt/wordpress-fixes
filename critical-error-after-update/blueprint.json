@@ -1,0 +1,37 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "preferredVersions": {
+    "php": "8.2",
+    "wp": "6.8"
+  },
+  "landingPage": "/?items=3",
+  "steps": [
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/mu-plugins"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/mu-plugins/style.php",
+      "data": "<?php\n/* Plugin Name: Estimate Page Styles\nLicense: GPL-2.0-or-later */\nadd_action('wp_head', function () {\n echo '<style>*{box-sizing:border-box}body{font-family:system-ui;background:#f5f2eb;color:#18372e}header,footer{display:none!important}main{padding:24px!important;margin:0 auto!important;max-width:1000px;width:100%}.wp-site-blocks{overflow-x:clip}h1{font-size:38px!important;margin:12px 0!important}.estimate{background:white;border:1px solid #cbd7d0;border-radius:12px;padding:24px}.estimate h2{font-size:28px;margin:0 0 10px}.estimate p{margin:12px 0}input{width:65px;padding:10px}button{background:#18372e;color:white;padding:12px;border:0;border-radius:4px}#total{font-weight:bold;font-size:28px}@media(max-width:500px){h1{font-size:27px!important}.estimate{padding:16px}button{margin-top:10px}}</style>';\n});\n"
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/plugins/repair-estimate"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/plugins/repair-estimate/estimate.php",
+      "data": "<?php\n/* Plugin Name: Repair Estimate\nVersion: 1.1.1\nLicense: GPL-2.0-or-later\n*/\nfunction repair_estimate_total($count) {\n    $calculate = static function ($units) { return $units * 35; };\n    return $calculate($count);\n}\nadd_shortcode('repair_estimate', function () {\n    $raw = isset($_GET['items']) ? wp_unslash($_GET['items']) : '1';\n    $count = is_string($raw) ? filter_var($raw, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 10]]) : false;\n    if ($count === false) {\n        return '<p role=\"alert\">Choose between 1 and 10 items.</p>';\n    }\n    $total = repair_estimate_total($count);\n    return '<section class=\"estimate\"><h2>Your repair estimate</h2><p>Small furniture repairs \u00b7 \u00a335 per item</p><form method=\"get\"><label for=\"items\">Items to repair</label> <input id=\"items\" name=\"items\" type=\"number\" min=\"1\" max=\"10\" value=\"' . esc_attr($count) . '\"> <button type=\"submit\">Calculate estimate</button></form><p id=\"total\" aria-live=\"polite\">Estimated total: \u00a3' . esc_html($total) . '</p><p>Final price agreed after inspection.</p></section>';\n});\n"
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "repair-estimate/estimate.php"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; \n$home = wp_insert_post(['post_title'=>'Furniture repair estimates', 'post_content'=>'[repair_estimate]', 'post_status'=>'publish', 'post_type'=>'page']);\nupdate_option('show_on_front', 'page');\nupdate_option('page_on_front', $home);\nwp_insert_post(['post_title'=>'About the workshop', 'post_name'=>'about', 'post_content'=>'Furniture repairs with a clear estimate before work begins.', 'post_status'=>'publish', 'post_type'=>'page']);\n\nupdate_option('blogname', 'Furniture repair estimates'); wp_delete_post(1, true); wp_delete_post(2, true);"
+    }
+  ],
+  "login": false
+}

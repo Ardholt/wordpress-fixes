@@ -1,0 +1,188 @@
+{
+  "method": "Real HTTP navigation and form submission in Chromium against WordPress in Docker; PHP logs cleared per stage. Exact run versions and date are recorded separately.",
+  "conditions": [
+    "compose.yaml",
+    "Dockerfile",
+    "tests/Dockerfile",
+    "proof/versions.txt",
+    "proof/run.json"
+  ],
+  "claims": [
+    {
+      "claim": "Updated estimate page returns HTTP 500 and critical-error text; healthy assertion fails",
+      "evidence": [
+        {
+          "path": "proof/broken.json",
+          "locator": "status, healthy, checks"
+        },
+        {
+          "path": "proof/broken.png",
+          "locator": "whole image"
+        },
+        {
+          "path": "proof/php-error-before.log",
+          "locator": "Call to undefined function create_function()"
+        },
+        {
+          "path": "proof/healthy-check-broken.txt",
+          "locator": "FAIL expected HTTP 200 with estimate \u00a3105"
+        },
+        {
+          "path": "proof/healthy-check-fixed.txt",
+          "locator": "PASS healthy estimate page"
+        }
+      ]
+    },
+    {
+      "claim": "Corrected update returns HTTP 200 and retains \u00a3105 and \u00a370 calculator results",
+      "evidence": [
+        {
+          "path": "proof/fixed.json",
+          "locator": "status, healthy, checks"
+        },
+        {
+          "path": "proof/fixed.png",
+          "locator": "estimate panel"
+        }
+      ]
+    },
+    {
+      "claim": "Archive rollback recovers service and calculator",
+      "evidence": [
+        {
+          "path": "proof/rollback.json",
+          "locator": "status, checks"
+        },
+        {
+          "path": "run.sh",
+          "locator": "rollback() archive extraction"
+        },
+        {
+          "path": "proof/run-output.txt",
+          "locator": "PASS archive rollback restored calculator with no PHP errors"
+        }
+      ]
+    },
+    {
+      "claim": "Recovered states have no logged PHP errors during tests",
+      "evidence": [
+        {
+          "path": "proof/php-error-after.log",
+          "locator": "entire empty file"
+        },
+        {
+          "path": "proof/php-error-rollback.log",
+          "locator": "entire empty file"
+        },
+        {
+          "path": "run.sh",
+          "locator": "test ! -s checks"
+        }
+      ]
+    },
+    {
+      "claim": "Invalid inputs rejected, mobile layout fits, About page unaffected",
+      "evidence": [
+        {
+          "path": "proof/fixed.json",
+          "locator": "checks"
+        },
+        {
+          "path": "proof/rollback.json",
+          "locator": "checks"
+        },
+        {
+          "path": "proof/broken.json",
+          "locator": "checks"
+        }
+      ]
+    },
+    {
+      "claim": "Version transition and removed-call repair",
+      "evidence": [
+        {
+          "path": "src/estimate.php",
+          "locator": "plugin header and repair_estimate_total"
+        },
+        {
+          "path": "fixtures/estimate-1.1.0.php",
+          "locator": "plugin header and repair_estimate_total"
+        },
+        {
+          "path": "fix/update.patch",
+          "locator": "entire patch"
+        },
+        {
+          "path": "proof/versions.txt",
+          "locator": "all lines"
+        }
+      ]
+    },
+    {
+      "claim": "Plugin and database backups created before update",
+      "evidence": [
+        {
+          "path": "run.sh",
+          "locator": "setup() tar, wp db export and copy commands"
+        },
+        {
+          "path": "proof/run-output.txt",
+          "locator": "PASS pre-update plugin archive and database backup created"
+        }
+      ]
+    },
+    {
+      "claim": "Viewport sizes and browser version",
+      "evidence": [
+        {
+          "path": "proof/fixed.json",
+          "locator": "viewport, mobile, browser"
+        }
+      ]
+    },
+    {
+      "claim": "Elapsed run time and run date",
+      "evidence": [
+        {
+          "path": "proof/run.json",
+          "locator": "elapsed_seconds, date_utc"
+        }
+      ]
+    },
+    {
+      "claim": "Playground verification status",
+      "evidence": [
+        {
+          "path": "proof/demo.json",
+          "locator": "verified, limitation, supported_interaction"
+        }
+      ]
+    },
+    {
+      "claim": "Published fixed-price offer \u00a325 per fault, 1 working day",
+      "evidence": [
+        {
+          "path": "proof/price-source.txt",
+          "locator": "entire file"
+        }
+      ]
+    },
+    {
+      "claim": "Compact comparison shows the recorded critical error and working three-item estimate",
+      "evidence": [
+        {
+          "path": "hero/make-summary",
+          "locator": "crop coordinates and labels"
+        },
+        {
+          "path": "proof/broken.png",
+          "locator": "critical-error message"
+        },
+        {
+          "path": "proof/fixed.png",
+          "locator": "quantity input and estimate total"
+        }
+      ]
+    }
+  ]
+}

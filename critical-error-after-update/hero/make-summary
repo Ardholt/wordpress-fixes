@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Close crops from the original captures, with labels for a narrow README column.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+work=$(mktemp -d)
+trap 'rm -rf "$work"' EXIT
+convert proof/broken.png -crop 320x28+280+88 +repage -resize 592x "$work/before.png"
+convert proof/fixed.png -crop 380x100+330+275 +repage -resize 592x "$work/after.png"
+convert -size 640x354 xc:'#0b0a0a' \
+  -font hero/fonts/Inter-SemiBold.ttf -pointsize 30 -fill '#f1ece6' \
+  -annotate +24+40 'BEFORE · Critical error' \
+  -annotate +24+152 'AFTER · Calculator working' \
+  "$work/before.png" -geometry +24+58 -composite \
+  "$work/after.png" -geometry +24+174 -composite \
+  -strip media/recovery.png
