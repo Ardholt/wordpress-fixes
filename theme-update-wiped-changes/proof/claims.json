@@ -1,0 +1,154 @@
+{
+  "conditions": {
+    "source": "proof/run.json",
+    "locators": [
+      "environment",
+      "commands",
+      "method",
+      "parentTransition"
+    ]
+  },
+  "claims": [
+    {
+      "claim": "The first parent update erases the custom styling and notice.",
+      "evidence": [
+        {
+          "path": "proof/original-browser.json",
+          "locator": "checks.desktop:customStyle; checks.desktop:customNotice"
+        },
+        {
+          "path": "proof/broken-browser.json",
+          "locator": "failed; observations.desktop"
+        }
+      ]
+    },
+    {
+      "claim": "Two customizations are restored: styling and the repair notice; both survive the next update.",
+      "evidence": [
+        {
+          "path": "proof/fixed-browser.json",
+          "locator": "passed"
+        },
+        {
+          "path": "proof/updated-browser.json",
+          "locator": "passed; checks.desktop:customStyle; checks.desktop:customNotice; checks.desktop:noticeLinkWorks"
+        },
+        {
+          "path": "proof/updated-state.json",
+          "locator": "activeStylesheet; parentTemplate; parentVersion"
+        }
+      ]
+    },
+    {
+      "claim": "The version sequence is Twenty Twenty-One 2.3 to 2.4 to 2.5.",
+      "evidence": [
+        {
+          "path": "proof/original-state.json",
+          "locator": "parentVersion"
+        },
+        {
+          "path": "proof/broken-state.json",
+          "locator": "parentVersion"
+        },
+        {
+          "path": "proof/updated-state.json",
+          "locator": "parentVersion"
+        }
+      ]
+    },
+    {
+      "claim": "Inherited desktop navigation and phone menu still work.",
+      "evidence": [
+        {
+          "path": "proof/original-browser.json",
+          "locator": "checks.desktop:inheritedNavigation; checks.mobile:inheritedMenuOpens; checks.mobile:inheritedNavigation"
+        },
+        {
+          "path": "proof/broken-browser.json",
+          "locator": "checks.desktop:inheritedNavigation; checks.mobile:inheritedMenuOpens; checks.mobile:inheritedNavigation"
+        },
+        {
+          "path": "proof/fixed-browser.json",
+          "locator": "checks.desktop:inheritedNavigation; checks.mobile:inheritedMenuOpens; checks.mobile:inheritedNavigation"
+        },
+        {
+          "path": "proof/updated-browser.json",
+          "locator": "checks.desktop:inheritedNavigation; checks.mobile:inheritedMenuOpens; checks.mobile:inheritedNavigation"
+        }
+      ]
+    },
+    {
+      "claim": "The replacement parent PHP and CSS remain untouched.",
+      "evidence": [
+        {
+          "path": "proof/run.json",
+          "locator": "outcomes.replacementParentFilesUntouched"
+        },
+        {
+          "path": "tests/report.cjs",
+          "locator": "state.parentFiles comparison against upstream unzip output"
+        },
+        {
+          "path": "vendor/SHA256SUMS",
+          "locator": "all lines"
+        }
+      ]
+    },
+    {
+      "claim": "The screenshots show the same page at matched desktop and phone sizes.",
+      "evidence": [
+        {
+          "path": "proof/broken-browser.json",
+          "locator": "observations.desktop.viewport; observations.mobile.viewport"
+        },
+        {
+          "path": "proof/updated-browser.json",
+          "locator": "observations.desktop.viewport; observations.mobile.viewport"
+        },
+        {
+          "path": "media/comparison.png",
+          "locator": "top panel: broken-desktop.png; bottom panel: updated-desktop.png; top-aligned equal-scale crops"
+        }
+      ]
+    },
+    {
+      "claim": "Playground capability is limited to the separately observed browser result.",
+      "evidence": [
+        {
+          "path": "proof/demo.json",
+          "locator": "verified; limitation or supportedInteraction"
+        }
+      ]
+    },
+    {
+      "claim": "The clean-run duration is recorded including provisioning, browser checks, artwork and cleanup.",
+      "evidence": [
+        {
+          "path": "proof/timing.json",
+          "locator": "elapsedSeconds; exitCode; includes"
+        }
+      ]
+    },
+    {
+      "claim": "The lead picture shows the page after updating again from 2.4 to 2.5, with colours kept and a working notice link.",
+      "evidence": [
+        {
+          "path": "proof/fixed-state.json",
+          "locator": "parentVersion = 2.4"
+        },
+        {
+          "path": "proof/updated-state.json",
+          "locator": "parentVersion = 2.5; activeStylesheet = repair-child"
+        },
+        {
+          "path": "proof/updated-browser.json",
+          "locator": "checks.mobile:customStyle; checks.mobile:customNotice; checks.mobile:noticeLinkWorks; checks.mobile:inheritedMenuOpens"
+        },
+        {
+          "path": "media/hero.png",
+          "locator": "unretouched top 430 image pixels (215 CSS pixels at device scale 2) of proof/updated-mobile.png, with captions outside the screenshot"
+        }
+      ]
+    }
+  ]
+}

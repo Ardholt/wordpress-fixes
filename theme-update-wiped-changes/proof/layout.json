@@ -1,0 +1,70 @@
+{
+  "method": "Local GitHub-style and Pages-style previews; these are layout checks, not live publication screenshots.",
+  "browser": "141.0.7390.37",
+  "renderer": {
+    "marked": "15.0.12",
+    "githubMarkdownCss": "5.8.1"
+  },
+  "checks": [
+    {
+      "mode": "github",
+      "width": 390,
+      "height": 844,
+      "hero": {
+        "x": 33,
+        "y": 535.59375,
+        "width": 324,
+        "height": 267.5
+      },
+      "title": "A theme update wiped my changes",
+      "horizontalOverflow": false,
+      "noticeVisibleInFirstScreen": true,
+      "fullHeroVisible": true
+    },
+    {
+      "mode": "github",
+      "width": 1366,
+      "height": 768,
+      "hero": {
+        "x": 453,
+        "y": 398.59375,
+        "width": 780,
+        "height": 644
+      },
+      "title": "A theme update wiped my changes",
+      "horizontalOverflow": false,
+      "noticeVisibleInFirstScreen": true,
+      "fullHeroVisible": false
+    },
+    {
+      "mode": "pages",
+      "width": 390,
+      "height": 844,
+      "hero": {
+        "x": 20,
+        "y": 173.78125,
+        "width": 350,
+        "height": 289.3125
+      },
+      "title": "A theme update wiped my changes",
+      "horizontalOverflow": false,
+      "noticeVisibleInFirstScreen": true,
+      "fullHeroVisible": true
+    },
+    {
+      "mode": "pages",
+      "width": 1366,
+      "height": 768,
+      "hero": {
+        "x": 333,
+        "y": 174.671875,
+        "width": 700,
+        "height": 578.296875
+      },
+      "title": "A theme update wiped my changes",
+      "horizontalOverflow": false,
+      "noticeVisibleInFirstScreen": true,
+      "fullHeroVisible": true
+    }
+  ]
+}

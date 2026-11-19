@@ -1,0 +1,73 @@
+# A theme update wiped my changes
+
+<p align="center">
+  <a href="proof/updated-mobile.png"><img src="media/hero.png" width="780" alt="After I updated the theme again from 2.4 to 2.5: the cream background and repair notice are still present, and I checked that the notice link works."></a>
+</p>
+
+**I restored the colours and repair notice, updated the theme again, and checked that the notice link and menu still worked.**
+
+<p align="center">
+  <a href="https://playground.wordpress.net/#eyIkc2NoZW1hIjoiaHR0cHM6Ly9wbGF5Z3JvdW5kLndvcmRwcmVzcy5uZXQvYmx1ZXByaW50LXNjaGVtYS5qc29uIiwicHJlZmVycmVkVmVyc2lvbnMiOnsicGhwIjoiOC4zIiwid3AiOiI2LjgifSwibGFuZGluZ1BhZ2UiOiIvIiwiZmVhdHVyZXMiOnsibmV0d29ya2luZyI6dHJ1ZX0sInN0ZXBzIjpbeyJzdGVwIjoiaW5zdGFsbFRoZW1lIiwidGhlbWVEYXRhIjp7InJlc291cmNlIjoidXJsIiwidXJsIjoiaHR0cHM6Ly9kb3dubG9hZHMud29yZHByZXNzLm9yZy90aGVtZS90d2VudHl0d2VudHlvbmUuMi41LnppcCJ9fSx7InN0ZXAiOiJta2RpciIsInBhdGgiOiIvd29yZHByZXNzL3dwLWNvbnRlbnQvdGhlbWVzL3JlcGFpci1jaGlsZCJ9LHsic3RlcCI6IndyaXRlRmlsZSIsInBhdGgiOiIvd29yZHByZXNzL3dwLWNvbnRlbnQvdGhlbWVzL3JlcGFpci1jaGlsZC9mdW5jdGlvbnMucGhwIiwiZGF0YSI6Ijw/cGhwXG4vKiogS2VlcCB0aGUgcGFyZW50IHN0eWxlc2hlZXQgYW5kIGxvYWQgdGhlIHJlc2N1ZWQgc3R5bGluZyBhZnRlciBpdC4gKi9cbmFkZF9hY3Rpb24oICd3cF9lbnF1ZXVlX3NjcmlwdHMnLCBmdW5jdGlvbiAoKSB7XG4gICAgd3BfZW5xdWV1ZV9zdHlsZSggJ2Z1cm5pdHVyZS1yZXBhaXItY2hpbGQnLCBnZXRfc3R5bGVzaGVldF91cmkoKSwgYXJyYXkoICd0d2VudHktdHdlbnR5LW9uZS1zdHlsZScgKSwgd3BfZ2V0X3RoZW1lKCktPmdldCggJ1ZlcnNpb24nICkgKTtcbn0sIDIwICk7XG5yZXF1aXJlIF9fRElSX18gLiAnL25vdGljZS5waHAnO1xuIn0seyJzdGVwIjoid3JpdGVGaWxlIiwicGF0aCI6Ii93b3JkcHJlc3Mvd3AtY29udGVudC90aGVtZXMvcmVwYWlyLWNoaWxkL25vdGljZS5waHAiLCJkYXRhIjoiPD9waHBcbi8qKiBDdXN0b21lci1mYWNpbmcgbm90aWNlIHJlc2N1ZWQgZnJvbSB0aGUgZWRpdGVkIHBhcmVudCBmdW5jdGlvbnMgZmlsZS4gKi9cbmZ1bmN0aW9uIGZ1cm5pdHVyZV9yZXBhaXJfbm90aWNlKCkge1xuICAgIGVjaG8gJzxhc2lkZSBjbGFzcz1cInJlcGFpci1ub3RpY2VcIiBhcmlhLWxhYmVsPVwiUmVwYWlyIHNlcnZpY2VcIj5LZWVwIHRoZSBjaGFpciB5b3UgbG92ZS4gPGEgaHJlZj1cIicgLiBlc2NfdXJsKCBob21lX3VybCggJy8/cGFnZV9pZD0nIC4gZ2V0X29wdGlvbiggJ3JlcGFpcl9zZXJ2aWNlc19wYWdlJyApICkgKSAuICdcIj5TZWUgcmVwYWlyIHNlcnZpY2VzICZyYXJyOzwvYT48L2FzaWRlPic7XG59XG5hZGRfYWN0aW9uKCAnd3BfYm9keV9vcGVuJywgJ2Z1cm5pdHVyZV9yZXBhaXJfbm90aWNlJyApO1xuIn0seyJzdGVwIjoid3JpdGVGaWxlIiwicGF0aCI6Ii93b3JkcHJlc3Mvd3AtY29udGVudC90aGVtZXMvcmVwYWlyLWNoaWxkL3N0eWxlLmNzcyIsImRhdGEiOiIvKlxuVGhlbWUgTmFtZTogRnVybml0dXJlIFJlcGFpciBDaGlsZFxuVGVtcGxhdGU6IHR3ZW50eXR3ZW50eW9uZVxuVmVyc2lvbjogMS4wLjBcbkxpY2Vuc2U6IEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIHYyIG9yIGxhdGVyXG5MaWNlbnNlIFVSSTogaHR0cHM6Ly93d3cuZ251Lm9yZy9saWNlbnNlcy9ncGwtMi4wLmh0bWxcblRleHQgRG9tYWluOiByZXBhaXItY2hpbGRcbiovXG5ib2R5IHsgYmFja2dyb3VuZC1jb2xvcjogI2Y0ZjBlNzsgY29sb3I6ICMxNzNiMzY7IH1cbi5yZXBhaXItbm90aWNlIHsgYmFja2dyb3VuZDogIzE3M2IzNjsgY29sb3I6ICNmZmY7IHBhZGRpbmc6IDIwcHggMjRweDsgdGV4dC1hbGlnbjogY2VudGVyOyBmb250OiA2MDAgMjBweC8xLjQgQXJpYWwsIHNhbnMtc2VyaWY7IH1cbi5yZXBhaXItbm90aWNlIGEgeyBjb2xvcjogI2ZmZjsgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7IH1cbi5zaXRlLWhlYWRlciB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgcGFkZGluZy10b3A6IDMycHg7IHBhZGRpbmctYm90dG9tOiAzMnB4OyB9XG4uc2l0ZS10aXRsZSB7IGNvbG9yOiAjMTczYjM2OyB9XG4uc2l0ZS1tYWluIHsgcGFkZGluZy10b3A6IDA7IH1cbi5zaW5ndWxhciAuZW50cnktaGVhZGVyIHsgcGFkZGluZy1ib3R0b206IDI0cHg7IG1hcmdpbi1ib3R0b206IDI0cHg7IGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjMTczYjM2OyB9XG4uZW50cnktdGl0bGUgeyBmb250LXNpemU6IGNsYW1wKDQwcHgsIDZ2dywgNzJweCk7IH1cbkBtZWRpYSAobWF4LXdpZHRoOiA0ODFweCkgeyAucmVwYWlyLW5vdGljZSB7IGZvbnQtc2l6ZTogMTdweDsgcGFkZGluZzogMTZweDsgfSB9XG4ifSx7InN0ZXAiOiJhY3RpdmF0ZVRoZW1lIiwidGhlbWVGb2xkZXJOYW1lIjoicmVwYWlyLWNoaWxkIn0seyJzdGVwIjoicnVuUEhQIiwiY29kZSI6Ijw/cGhwIHJlcXVpcmUgJy93b3JkcHJlc3Mvd3AtbG9hZC5waHAnOyB1cGRhdGVfb3B0aW9uKCdibG9nbmFtZScsICdGdXJuaXR1cmUgcmVwYWlyJyk7XG5cbmZvcmVhY2ggKGdldF9wb3N0cyhhcnJheSgncG9zdF90eXBlJyA9PiBhcnJheSgncG9zdCcsICdwYWdlJyksICdwb3N0X3N0YXR1cycgPT4gJ2FueScsICdudW1iZXJwb3N0cycgPT4gLTEpKSBhcyAkcG9zdCkgeyB3cF9kZWxldGVfcG9zdCgkcG9zdC0+SUQsIHRydWUpOyB9XG53cF9zZXRfc2lkZWJhcnNfd2lkZ2V0cyhhcnJheSgnd3BfaW5hY3RpdmVfd2lkZ2V0cycgPT4gYXJyYXkoKSkpO1xuJGhvbWUgPSB3cF9pbnNlcnRfcG9zdCggYXJyYXkoXG4gICAgJ3Bvc3RfdGl0bGUnID0+ICdGdXJuaXR1cmUgd29ydGgga2VlcGluZy4nLFxuICAgICdwb3N0X2NvbnRlbnQnID0+ICc8IS0tIHdwOmhlYWRpbmcge1wibGV2ZWxcIjoxLFwic3R5bGVcIjp7XCJ0eXBvZ3JhcGh5XCI6e1wiZm9udFNpemVcIjpcIjQwcHhcIn19fSAtLT48aDEgY2xhc3M9XCJ3cC1ibG9jay1oZWFkaW5nXCIgc3R5bGU9XCJmb250LXNpemU6NDBweFwiPkZ1cm5pdHVyZSB3b3J0aCBrZWVwaW5nLjwvaDE+PCEtLSAvd3A6aGVhZGluZyAtLT48IS0tIHdwOnBhcmFncmFwaCAtLT48cD5DYXJlZnVsIHJlcGFpcnMgZm9yIGNoYWlycywgdGFibGVzIGFuZCB0aGUgcGllY2VzIHlvdSB3YW50IHRvIGtlZXAuPC9wPjwhLS0gL3dwOnBhcmFncmFwaCAtLT4nLFxuICAgICdwb3N0X3N0YXR1cycgPT4gJ3B1Ymxpc2gnLCAncG9zdF90eXBlJyA9PiAncGFnZScsXG4pICk7XG4kc2VydmljZXMgPSB3cF9pbnNlcnRfcG9zdCggYXJyYXkoXG4gICAgJ3Bvc3RfdGl0bGUnID0+ICdSZXBhaXIgc2VydmljZXMnLFxuICAgICdwb3N0X2NvbnRlbnQnID0+ICc8IS0tIHdwOnBhcmFncmFwaCAtLT48cD5DaGFpciBqb2ludHMsIHRhYmxlIHN1cmZhY2VzIGFuZCB0aW1iZXIgcmVwYWlycy4gQnJpbmcgYSBtdWNoLWxvdmVkIHBpZWNlIGJhY2sgaW50byBldmVyeWRheSB1c2UuPC9wPjwhLS0gL3dwOnBhcmFncmFwaCAtLT4nLFxuICAgICdwb3N0X3N0YXR1cycgPT4gJ3B1Ymxpc2gnLCAncG9zdF90eXBlJyA9PiAncGFnZScsXG4pICk7XG51cGRhdGVfb3B0aW9uKCAncmVwYWlyX3NlcnZpY2VzX3BhZ2UnLCAkc2VydmljZXMgKTtcbnVwZGF0ZV9vcHRpb24oICdzaG93X29uX2Zyb250JywgJ3BhZ2UnICk7XG51cGRhdGVfb3B0aW9uKCAncGFnZV9vbl9mcm9udCcsICRob21lICk7XG51cGRhdGVfb3B0aW9uKCAnYmxvZ2Rlc2NyaXB0aW9uJywgJ1JlcGFpci4gUmVzdG9yZS4gS2VlcC4nICk7XG4kbWVudSA9IHdwX2NyZWF0ZV9uYXZfbWVudSggJ01haW4gbmF2aWdhdGlvbicgKTtcbmZvcmVhY2ggKCBhcnJheSggJGhvbWUgPT4gJ0hvbWUnLCAkc2VydmljZXMgPT4gJ1JlcGFpciBzZXJ2aWNlcycgKSBhcyAkaWQgPT4gJGxhYmVsICkge1xuICAgIHdwX3VwZGF0ZV9uYXZfbWVudV9pdGVtKCAkbWVudSwgMCwgYXJyYXkoICdtZW51LWl0ZW0tdGl0bGUnID0+ICRsYWJlbCwgJ21lbnUtaXRlbS1vYmplY3QnID0+ICdwYWdlJywgJ21lbnUtaXRlbS1vYmplY3QtaWQnID0+ICRpZCwgJ21lbnUtaXRlbS10eXBlJyA9PiAncG9zdF90eXBlJywgJ21lbnUtaXRlbS1zdGF0dXMnID0+ICdwdWJsaXNoJyApICk7XG59XG5zZXRfdGhlbWVfbW9kKCAnbmF2X21lbnVfbG9jYXRpb25zJywgYXJyYXkoICdwcmltYXJ5JyA9PiAkbWVudSApICk7XG4ifV19"><img src="media/button.png" height="48" alt="Open the repaired site"></a>
+</p>
+
+## What was wrong
+
+- A theme update removed the page's colours and repair notice.
+- The notice's shortcut to the repair services disappeared too.
+- The changes were saved in files that the update replaced.
+
+## What I did
+
+- I recovered the styling and notice from the saved theme files.
+- I moved them into a separate theme folder that updates leave in place.
+- I installed the next theme release, reloaded the page and followed the notice link.
+- I also opened the phone menu and checked the services page.
+
+## Proof
+
+**The picture above is from after the second update, not just after the repair.** I checked the colours, notice, its destination and the menu on both phone and desktop.
+
+| Step | What the page showed |
+|---|---|
+| First update, to 2.4 | [Colours and notice lost](proof/broken-mobile.png) |
+| Repair, still on 2.4 | [Colours and notice restored](proof/fixed-mobile.png) |
+| Next update, to 2.5 | [Both still present](proof/updated-mobile.png) |
+
+[Open the before/after comparison](media/comparison.png) · [See the final desktop page](proof/updated-desktop.png)
+
+The [saved checks after the next update](proof/updated-browser.json) include the working notice link and phone menu. The [version record](proof/updated-state.json) confirms the update to 2.5. This proves the releases shown here; later releases still need a compatibility check.
+
+## Try it yourself
+
+Use **Open the repaired site** above to explore the page in your browser. Nothing needs installing. That preview opens the repaired page; the update sequence is recorded in the proof above.
+
+<details>
+<summary>Technical files and local reproduction — optional</summary>
+
+The separate folder is a WordPress child theme: it holds the custom changes while inheriting the original theme's templates and navigation.
+
+[Download the child theme](proof/repair-child.zip) · [Recovered files](proof/edited-parent.tar.gz) · [Installation notes](fix/README.md) · [Source](fix/repair-child/)
+
+With Docker installed, run this from the case folder:
+
+```bash
+./run.sh
+```
+
+It reproduces the loss, installs the child theme, performs the next update, saves the checks and shuts down. [Complete instructions](REPRODUCE.md) · [Full run log](proof/run-output.txt) · [Run conditions](proof/run.json) · [Claim sources](proof/claims.json) · [Browser preview verification](proof/demo.json)
+
+</details>
+
+## How it is tested
+
+- I check the actual page before repair, after repair and after the next update.
+- I check the notice's link and navigation on desktop and phone.
+- I verify the update replaced the original theme's files while leaving the recovered changes active.
+
+[Read the saved test results](proof/run.json) · [View automated checks](https://github.com/Ardholt/wordpress-fixes/actions/workflows/theme-update-wiped-changes.yml)
+
+---
+
+Fixed price for this kind of job: £10 (WordPress fix, £10 a fault, 1 working day), see https://ardholt.com/p/prices/.
+
+<sub>Maintained by Genco Doganay, Ardholt · [All cases](../README.md) · [GPL-2.0-or-later](LICENSE)</sub>

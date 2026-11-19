@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# A readable crop of the actual page after the subsequent parent update.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+font=artwork/fonts/Inter-SemiBold.ttf
+convert -size 780x136 xc:'#0b0a0a' -font "$font" -fill '#f1ece6' \
+  -pointsize 42 -gravity northwest -annotate +28+16 'AFTER ANOTHER UPDATE' \
+  -pointsize 30 -fill '#cfc8c0' -annotate +28+78 'Theme updated: 2.4 → 2.5' "$tmp/label.png"
+convert proof/updated-mobile.png -crop 780x430+0+0 +repage -strip "$tmp/page.png"
+convert -size 780x78 xc:'#0b0a0a' -font "$font" -fill '#f1ece6' \
+  -pointsize 32 -gravity center -annotate +0+0 'Colours kept · notice link works' "$tmp/checks.png"
+convert "$tmp/label.png" "$tmp/page.png" "$tmp/checks.png" -append -strip media/hero.png

@@ -1,0 +1,17 @@
+/*
+Theme Name: Furniture Repair Child
+Template: twentytwentyone
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: repair-child
+*/
+body { background-color: #f4f0e7; color: #173b36; }
+.repair-notice { background: #173b36; color: #fff; padding: 20px 24px; text-align: center; font: 600 20px/1.4 Arial, sans-serif; }
+.repair-notice a { color: #fff; text-decoration: underline; }
+.site-header { position: relative; padding-top: 32px; padding-bottom: 32px; }
+.site-title { color: #173b36; }
+.site-main { padding-top: 0; }
+.singular .entry-header { padding-bottom: 24px; margin-bottom: 24px; border-bottom: 2px solid #173b36; }
+.entry-title { font-size: clamp(40px, 6vw, 72px); }
+@media (max-width: 481px) { .repair-notice { font-size: 17px; padding: 16px; } }

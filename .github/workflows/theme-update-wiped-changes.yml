@@ -1,0 +1,25 @@
+name: Theme update rescue
+on:
+  push:
+    branches: [main]
+    paths: ['theme-update-wiped-changes/**', '.github/workflows/theme-update-wiped-changes.yml']
+  pull_request:
+    paths: ['theme-update-wiped-changes/**', '.github/workflows/theme-update-wiped-changes.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reproduce loss, rescue and next update
+        run: cd theme-update-wiped-changes && ./run.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: theme-update-proof
+          path: |
+            theme-update-wiped-changes/proof/
+            theme-update-wiped-changes/media/

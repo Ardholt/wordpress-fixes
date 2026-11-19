@@ -1,0 +1,155 @@
+ Network theme-update-rescue_default  Creating
+ Network theme-update-rescue_default  Created
+ Volume theme-update-rescue_database  Creating
+ Volume theme-update-rescue_database  Created
+ Volume theme-update-rescue_wordpress  Creating
+ Volume theme-update-rescue_wordpress  Created
+ Container theme-update-rescue-db-1  Creating
+ Container theme-update-rescue-db-1  Created
+ Container theme-update-rescue-wordpress-1  Creating
+ Container theme-update-rescue-wordpress-1  Created
+ Container theme-update-rescue-db-1  Starting
+ Container theme-update-rescue-db-1  Started
+ Container theme-update-rescue-db-1  Waiting
+ Container theme-update-rescue-db-1  Healthy
+ Container theme-update-rescue-wordpress-1  Starting
+ Container theme-update-rescue-wordpress-1  Started
+ Container theme-update-rescue-wordpress-1  Waiting
+ Container theme-update-rescue-db-1  Waiting
+ Container theme-update-rescue-wordpress-1  Healthy
+ Container theme-update-rescue-db-1  Healthy
+#1 [internal] load local bake definitions
+#1 reading from stdin 725B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 341B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for mcr.microsoft.com/playwright:v1.56.1-noble
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/4] FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#5 resolve mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a 0.0s done
+#5 DONE 0.1s
+
+#6 [2/4] WORKDIR /runner
+#6 CACHED
+
+#7 [3/4] RUN npm init -y && npm install --save-exact playwright@1.56.1 && npm cache clean --force
+#7 CACHED
+
+#8 [4/4] RUN apt-get update && apt-get install -y --no-install-recommends imagemagick unzip && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 exporting to image
+#9 exporting layers done
+#9 exporting manifest sha256:6d36fb1aae0477ca5ab81e8f5d9df4cb5d80d7f34efde8cf89c58a5e79cc918c done
+#9 exporting config sha256:a38f92a344cb9603d33dee73102a69af8ad0b4c34dcad3272c45f61e27a9e2e8 done
+#9 exporting attestation manifest sha256:73a014a70b8d1540f7db691ed232a6dfa0e16f2b8bacf732fa250caf0dbabcdd 0.1s done
+#9 exporting manifest list sha256:797520ebfec595a52a6e961cc150ea5e58a35fb50bd3fd84137b43705fcc6ac7
+#9 exporting manifest list sha256:797520ebfec595a52a6e961cc150ea5e58a35fb50bd3fd84137b43705fcc6ac7 0.0s done
+#9 naming to docker.io/library/theme-update-rescue-browser:latest done
+#9 unpacking to docker.io/library/theme-update-rescue-browser:latest 0.0s done
+#9 DONE 0.2s
+
+#10 resolving provenance for metadata file
+#10 DONE 0.0s
+ theme-update-rescue-browser  Built
+ Container theme-update-rescue-db-1  Running
+ Container theme-update-rescue-wordpress-1  Running
+ Container theme-update-rescue-db-1  Waiting
+ Container theme-update-rescue-db-1  Healthy
+Downloaded and verified vendor/twentytwentyone.2.3.zip
+Downloaded and verified vendor/twentytwentyone.2.4.zip
+Downloaded and verified vendor/twentytwentyone.2.5.zip
+vendor/twentytwentyone.2.3.zip: OK
+vendor/twentytwentyone.2.4.zip: OK
+vendor/twentytwentyone.2.5.zip: OK
+Success: WordPress installed successfully.
+Unpacking the package...
+Installing the theme...
+Removing the old version of the theme...
+Theme updated successfully.
+Activating 'twentytwentyone'...
+Success: Switched to 'Twenty Twenty-One' theme.
+Success: Installed 1 of 1 themes.
+ Container theme-update-rescue-db-1  Running
+ Container theme-update-rescue-wordpress-1  Running
+ Container theme-update-rescue-db-1  Waiting
+ Container theme-update-rescue-db-1  Healthy
+original: 17/17 behavioral checks passed
+Unpacking the package...
+Installing the theme...
+Removing the old version of the theme...
+Theme updated successfully.
+Success: Installed 1 of 1 themes.
+ Container theme-update-rescue-db-1  Running
+ Container theme-update-rescue-wordpress-1  Running
+ Container theme-update-rescue-db-1  Waiting
+ Container theme-update-rescue-db-1  Healthy
+broken: 11/15 behavioral checks passed
+FAIL desktop:customStyle
+FAIL desktop:customNotice
+FAIL mobile:customStyle
+FAIL mobile:customNotice
+
+Unpacking the package...
+Installing the theme...
+Removing the old version of the theme...
+This theme requires a parent theme. Checking if it is installed...
+The parent theme, Twenty Twenty-One 2.4, is currently installed.
+Theme updated successfully.
+Activating 'repair-child'...
+Success: Switched to 'Furniture Repair Child' theme.
+Success: Installed 1 of 1 themes.
+ Container theme-update-rescue-db-1  Running
+ Container theme-update-rescue-wordpress-1  Running
+ Container theme-update-rescue-db-1  Waiting
+ Container theme-update-rescue-db-1  Healthy
+fixed: 17/17 behavioral checks passed
+Unpacking the package...
+Installing the theme...
+Removing the old version of the theme...
+Theme updated successfully.
+Success: Installed 1 of 1 themes.
+ Container theme-update-rescue-db-1  Running
+ Container theme-update-rescue-wordpress-1  Running
+ Container theme-update-rescue-db-1  Waiting
+ Container theme-update-rescue-db-1  Healthy
+updated: 17/17 behavioral checks passed
+ Container theme-update-rescue-db-1  Running
+ Container theme-update-rescue-wordpress-1  Running
+ Container theme-update-rescue-db-1  Waiting
+ Container theme-update-rescue-db-1  Healthy
+PASS: broken state failed only the four expected customization checks.
+PASS: child theme active; parent 2.4 → 2.5 update preserved style, notice and its link.
+PASS: inherited desktop navigation and mobile menu work in every state.
+PASS: replacement parent PHP and CSS match upstream archives.
+PASS: complete run in 103s (excluding final artwork and cleanup).
+ Container theme-update-rescue-db-1  Running
+ Container theme-update-rescue-wordpress-1  Running
+ Container theme-update-rescue-db-1  Waiting
+ Container theme-update-rescue-db-1  Healthy
+make-hero: wrote media/comparison.png (1200x1178, 304 KB)
+make-button: wrote media/button.png (544x96)
+PASS: screenshots and hero saved; run complete.
+ Container theme-update-rescue-wordpress-1  Stopping
+ Container theme-update-rescue-wordpress-1  Stopped
+ Container theme-update-rescue-wordpress-1  Removing
+ Container theme-update-rescue-wordpress-1  Removed
+ Container theme-update-rescue-db-1  Stopping
+ Container theme-update-rescue-db-1  Stopped
+ Container theme-update-rescue-db-1  Removing
+ Container theme-update-rescue-db-1  Removed
+ Volume theme-update-rescue_database  Removing
+ Volume theme-update-rescue_wordpress  Removing
+ Network theme-update-rescue_default  Removing
+ Volume theme-update-rescue_database  Removed
+ Network theme-update-rescue_default  Removed
+ Volume theme-update-rescue_wordpress  Removed
+PASS: run finished in 117s; cleanup complete unless KEEP_STACK=1.

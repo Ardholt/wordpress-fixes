@@ -1,0 +1,12 @@
+{
+    "wordpress": "6.8.3",
+    "php": "8.3.36",
+    "activeStylesheet": "twentytwentyone",
+    "parentTemplate": "twentytwentyone",
+    "parentVersion": "2.3",
+    "childVersion": "2.3",
+    "parentFiles": {
+        "functions.php": "597c402c2293df693f88f602e93fb0608226ab0123d1e014683cab5775b6b688",
+        "style.css": "f2e6fda2b8e77e8750eeece6fea23199c0654df3dac34be0dd8ece26364d665b"
+    }
+}

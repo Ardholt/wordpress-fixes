@@ -1,0 +1,48 @@
+{
+  "stage": "updated",
+  "browser": "141.0.7390.37",
+  "url": "http://localhost/",
+  "checks": {
+    "desktop:customStyle": true,
+    "desktop:customNotice": true,
+    "desktop:homeContent": true,
+    "desktop:parentStylesheet": true,
+    "desktop:noHorizontalOverflow": true,
+    "desktop:inheritedNavigation": true,
+    "desktop:noticeLinkWorks": true,
+    "desktop:noBrowserErrors": true,
+    "mobile:customStyle": true,
+    "mobile:customNotice": true,
+    "mobile:homeContent": true,
+    "mobile:parentStylesheet": true,
+    "mobile:noHorizontalOverflow": true,
+    "mobile:inheritedMenuOpens": true,
+    "mobile:inheritedNavigation": true,
+    "mobile:noticeLinkWorks": true,
+    "mobile:noBrowserErrors": true
+  },
+  "observations": {
+    "desktop": {
+      "status": 200,
+      "background": "rgb(244, 240, 231)",
+      "noticeCount": 1,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "deviceScaleFactor": 1
+    },
+    "mobile": {
+      "status": 200,
+      "background": "rgb(244, 240, 231)",
+      "noticeCount": 1,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 2
+    }
+  },
+  "failed": [],
+  "passed": true
+}

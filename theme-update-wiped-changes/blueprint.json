@@ -1,0 +1,47 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "6.8"
+  },
+  "landingPage": "/",
+  "features": {
+    "networking": true
+  },
+  "steps": [
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://downloads.wordpress.org/theme/twentytwentyone.2.5.zip"
+      }
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/themes/repair-child"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/themes/repair-child/functions.php",
+      "data": "<?php\n/** Keep the parent stylesheet and load the rescued styling after it. */\nadd_action( 'wp_enqueue_scripts', function () {\n    wp_enqueue_style( 'furniture-repair-child', get_stylesheet_uri(), array( 'twenty-twenty-one-style' ), wp_get_theme()->get( 'Version' ) );\n}, 20 );\nrequire __DIR__ . '/notice.php';\n"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/themes/repair-child/notice.php",
+      "data": "<?php\n/** Customer-facing notice rescued from the edited parent functions file. */\nfunction furniture_repair_notice() {\n    echo '<aside class=\"repair-notice\" aria-label=\"Repair service\">Keep the chair you love. <a href=\"' . esc_url( home_url( '/?page_id=' . get_option( 'repair_services_page' ) ) ) . '\">See repair services &rarr;</a></aside>';\n}\nadd_action( 'wp_body_open', 'furniture_repair_notice' );\n"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/themes/repair-child/style.css",
+      "data": "/*\nTheme Name: Furniture Repair Child\nTemplate: twentytwentyone\nVersion: 1.0.0\nLicense: GNU General Public License v2 or later\nLicense URI: https://www.gnu.org/licenses/gpl-2.0.html\nText Domain: repair-child\n*/\nbody { background-color: #f4f0e7; color: #173b36; }\n.repair-notice { background: #173b36; color: #fff; padding: 20px 24px; text-align: center; font: 600 20px/1.4 Arial, sans-serif; }\n.repair-notice a { color: #fff; text-decoration: underline; }\n.site-header { position: relative; padding-top: 32px; padding-bottom: 32px; }\n.site-title { color: #173b36; }\n.site-main { padding-top: 0; }\n.singular .entry-header { padding-bottom: 24px; margin-bottom: 24px; border-bottom: 2px solid #173b36; }\n.entry-title { font-size: clamp(40px, 6vw, 72px); }\n@media (max-width: 481px) { .repair-notice { font-size: 17px; padding: 16px; } }\n"
+    },
+    {
+      "step": "activateTheme",
+      "themeFolderName": "repair-child"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; update_option('blogname', 'Furniture repair');\n\nforeach (get_posts(array('post_type' => array('post', 'page'), 'post_status' => 'any', 'numberposts' => -1)) as $post) { wp_delete_post($post->ID, true); }\nwp_set_sidebars_widgets(array('wp_inactive_widgets' => array()));\n$home = wp_insert_post( array(\n    'post_title' => 'Furniture worth keeping.',\n    'post_content' => '<!-- wp:heading {\"level\":1,\"style\":{\"typography\":{\"fontSize\":\"40px\"}}} --><h1 class=\"wp-block-heading\" style=\"font-size:40px\">Furniture worth keeping.</h1><!-- /wp:heading --><!-- wp:paragraph --><p>Careful repairs for chairs, tables and the pieces you want to keep.</p><!-- /wp:paragraph -->',\n    'post_status' => 'publish', 'post_type' => 'page',\n) );\n$services = wp_insert_post( array(\n    'post_title' => 'Repair services',\n    'post_content' => '<!-- wp:paragraph --><p>Chair joints, table surfaces and timber repairs. Bring a much-loved piece back into everyday use.</p><!-- /wp:paragraph -->',\n    'post_status' => 'publish', 'post_type' => 'page',\n) );\nupdate_option( 'repair_services_page', $services );\nupdate_option( 'show_on_front', 'page' );\nupdate_option( 'page_on_front', $home );\nupdate_option( 'blogdescription', 'Repair. Restore. Keep.' );\n$menu = wp_create_nav_menu( 'Main navigation' );\nforeach ( array( $home => 'Home', $services => 'Repair services' ) as $id => $label ) {\n    wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => $label, 'menu-item-object' => 'page', 'menu-item-object-id' => $id, 'menu-item-type' => 'post_type', 'menu-item-status' => 'publish' ) );\n}\nset_theme_mod( 'nav_menu_locations', array( 'primary' => $menu ) );\n"
+    }
+  ]
+}

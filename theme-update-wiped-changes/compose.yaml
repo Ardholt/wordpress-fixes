@@ -1,0 +1,49 @@
+name: theme-update-rescue
+services:
+  db:
+    image: mariadb:11.4.5
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${DB_PASSWORD:-}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-}
+    volumes: [database:/var/lib/mysql]
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+  wordpress:
+    image: wordpress:6.8.3-php8.3-apache
+    depends_on:
+      db: {condition: service_healthy}
+    ports: ['${HTTP_PORT:-8080}:80']
+    environment: &wp-env
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:-}
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        if (isset($$_SERVER['HTTP_HOST'])) {
+          define('WP_HOME', 'http://' . $$_SERVER['HTTP_HOST']);
+          define('WP_SITEURL', 'http://' . $$_SERVER['HTTP_HOST']);
+        }
+    volumes: [wordpress:/var/www/html]
+  cli:
+    image: wordpress:cli-2.12.0-php8.3
+    user: '33:33'
+    entrypoint: ['wp']
+    environment: *wp-env
+    volumes: ['wordpress:/var/www/html', './:/case:ro']
+    profiles: [tools]
+  browser:
+    build: {context: ., dockerfile: tests/Dockerfile}
+    network_mode: service:wordpress
+    init: true
+    ipc: host
+    volumes: ['./:/case']
+    working_dir: /case
+    profiles: [tools]
+volumes:
+  database:
+  wordpress:

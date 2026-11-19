@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-19T06:31:50.776Z",
+  "elapsedSeconds": 103,
+  "environment": {
+    "wordpress": "6.8.3",
+    "php": "8.3.28",
+    "cliPhp": "8.3.36",
+    "databaseImage": "mariadb:11.4.5",
+    "browser": "141.0.7390.37",
+    "playwright": "1.56.1",
+    "wpCliImage": "wordpress:cli-2.12.0-php8.3",
+    "url": "http://localhost/",
+    "viewports": [
+      "1280x900",
+      "390x844"
+    ]
+  },
+  "commands": [
+    "scripts/start.sh",
+    "node scripts/fetch-themes.cjs",
+    "scripts/stage.sh original",
+    "node tests/browser.cjs original",
+    "scripts/stage.sh broken",
+    "node tests/browser.cjs broken (expected exit 1)",
+    "scripts/stage.sh fixed",
+    "node tests/browser.cjs fixed",
+    "scripts/stage.sh updated",
+    "node tests/browser.cjs updated",
+    "node tests/report.cjs"
+  ],
+  "outcomes": {
+    "originalCustomized": true,
+    "firstUpdateErasedCustomizations": true,
+    "brokenBrowserExit": 1,
+    "childRestoredCustomizations": true,
+    "nextParentUpdatePreservedCustomizations": true,
+    "inheritedNavigationAndMobileMenuWork": true,
+    "replacementParentFilesUntouched": true
+  },
+  "parentTransition": [
+    "2.3",
+    "2.4",
+    "2.5"
+  ],
+  "method": "Real WordPress pages in Chromium. The same style and notice assertions fail after replacement and pass with the child active. Parent PHP/CSS hashes match the upstream archives after both updates."
+}
