@@ -1,0 +1,38 @@
+{
+  "method": "Exact RGBA pixel comparison; original capture frozen before updating; same Chromium, viewport, fonts and content; maximum allowed changed pixels 1%.",
+  "contentUnchanged": true,
+  "comparisons": [
+    {
+      "slug": "workshops",
+      "width": 1280,
+      "height": 800,
+      "changedPixels": 0,
+      "totalPixels": 1024000,
+      "changedPercent": 0
+    },
+    {
+      "slug": "workshops",
+      "width": 390,
+      "height": 1060,
+      "changedPixels": 0,
+      "totalPixels": 413400,
+      "changedPercent": 0
+    },
+    {
+      "slug": "details",
+      "width": 1280,
+      "height": 800,
+      "changedPixels": 0,
+      "totalPixels": 1024000,
+      "changedPercent": 0
+    },
+    {
+      "slug": "details",
+      "width": 390,
+      "height": 800,
+      "changedPixels": 0,
+      "totalPixels": 312000,
+      "changedPercent": 0
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "method": {
+    "run": "proof/run.json",
+    "browserChecks": "tests/page.cjs",
+    "comparison": "tests/compare.cjs",
+    "conditions": "RUNBOOK.md#what-the-checks-prove"
+  },
+  "claims": [
+    {
+      "claim": "The Elementor update breaks the workshop page while the separate details page stays healthy.",
+      "evidence": [
+        {
+          "path": "proof/baseline.json",
+          "locator": "healthyContractPassed; pages[*].passed"
+        },
+        {
+          "path": "proof/broken.json",
+          "locator": "healthyContractPassed; pages[*].slug/status/checks"
+        }
+      ]
+    },
+    {
+      "claim": "The repaired page, Elementor document and Phlox button work at desktop and phone widths.",
+      "evidence": [
+        {
+          "path": "proof/fixed.json",
+          "locator": "pages[*].checks; pages[*].width; healthyContractPassed"
+        }
+      ]
+    },
+    {
+      "claim": "The original saved page content is unchanged after repair.",
+      "evidence": [
+        {
+          "path": "proof/comparison.json",
+          "locator": "contentUnchanged"
+        },
+        {
+          "path": "proof/baseline-content.json",
+          "locator": "workshops; details"
+        },
+        {
+          "path": "proof/fixed-content.json",
+          "locator": "workshops; details"
+        }
+      ]
+    },
+    {
+      "claim": "The repaired layout matches the frozen original within the declared 1% changed-pixel threshold.",
+      "evidence": [
+        {
+          "path": "proof/comparison.json",
+          "locator": "method; comparisons[*].changedPixels/totalPixels/changedPercent"
+        },
+        {
+          "path": "tests/compare.cjs",
+          "locator": "fraction <= 0.01 assertion"
+        }
+      ]
+    },
+    {
+      "claim": "The old Phlox button calls a removed Elementor typography class; the repaired vendor package replaces it.",
+      "evidence": [
+        {
+          "path": "proof/broken-php.log",
+          "locator": "PHP Fatal error: Class \"Elementor\\Core\\Schemes\\Typography\" not found; modern-button.php:497"
+        },
+        {
+          "path": "proof/vendor-change.diff",
+          "locator": "use declaration and text_normal_typo control diff"
+        },
+        {
+          "path": "proof/fixed-php.log",
+          "locator": "whole file after fixed-state browser requests"
+        }
+      ]
+    },
+    {
+      "claim": "Elementor changes from 3.25.11 to 3.26.0; the repair changes Phlox Core Elements from 2.16.4 to 2.17.0.",
+      "evidence": [
+        {
+          "path": "proof/baseline-plugins.json",
+          "locator": "name=elementor and name=auxin-elements; version; status"
+        },
+        {
+          "path": "proof/broken-plugins.json",
+          "locator": "name=elementor and name=auxin-elements; version; status"
+        },
+        {
+          "path": "proof/fixed-plugins.json",
+          "locator": "name=elementor and name=auxin-elements; version; status"
+        }
+      ]
+    },
+    {
+      "claim": "The Playground button opens the repaired Elementor workshop page and its Phlox button opens the details page.",
+      "evidence": [
+        {
+          "path": "proof/demo.json",
+          "locator": "verified; frontendLoaded; elementorScripts; supportedInteraction; url; date; browser"
+        },
+        {
+          "path": "proof/playground-workshops.png",
+          "locator": "whole image"
+        },
+        {
+          "path": "proof/playground-attempt.png",
+          "locator": "details page after button click"
+        }
+      ]
+    },
+    {
+      "claim": "Run duration and version conditions.",
+      "evidence": [
+        {
+          "path": "proof/run.json",
+          "locator": "durationSeconds; environment; transition"
+        }
+      ]
+    },
+    {
+      "claim": "The reproduction uses a real failing check before the successful repair checks.",
+      "evidence": [
+        {
+          "path": "proof/run-output.txt",
+          "locator": "baseline: healthy-page contract PASS; broken: healthy-page contract FAIL; fixed: healthy-page contract PASS; final PASS lines"
+        }
+      ]
+    },
+    {
+      "claim": "0 changed pixels against the original across four screenshot pairs.",
+      "evidence": [
+        {
+          "path": "proof/comparison.json",
+          "locator": "comparisons[0..3].changedPixels = 0; changedPercent = 0"
+        }
+      ]
+    },
+    {
+      "claim": "I brought the workshop page back and checked that its button opens the details.",
+      "evidence": [
+        {
+          "path": "proof/fixed.json",
+          "locator": "pages with slug=workshops: checks.buttonWorks"
+        },
+        {
+          "path": "proof/fixed-button-destination-390.png",
+          "locator": "actual destination captured immediately after clicking the Phlox button"
+        }
+      ]
+    },
+    {
+      "claim": "The opening image shows a matched crop from the actual broken and repaired phone screenshots.",
+      "evidence": [
+        {
+          "path": "assets/hero/make-outcome",
+          "locator": "crop geometry and image inputs; blank panel shortened vertically, as labelled"
+        },
+        {
+          "path": "proof/broken-workshops-390.png",
+          "locator": "whole source image"
+        },
+        {
+          "path": "proof/fixed-workshops-390.png",
+          "locator": "crop 390x250+0+210"
+        }
+      ]
+    }
+  ]
+}

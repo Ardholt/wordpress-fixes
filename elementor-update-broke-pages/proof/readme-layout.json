@@ -1,0 +1,34 @@
+{
+  "method": "Offline render using the GitHub/Pages layout template; not a claim of a published GitHub or Pages visit.",
+  "browser": "134.0.6998.35",
+  "records": [
+    {
+      "kind": "gh",
+      "width": 390,
+      "title": "Pages broke after an Elementor update",
+      "horizontalOverflow": false,
+      "heroLoaded": true
+    },
+    {
+      "kind": "gh",
+      "width": 1366,
+      "title": "Pages broke after an Elementor update",
+      "horizontalOverflow": false,
+      "heroLoaded": true
+    },
+    {
+      "kind": "pages",
+      "width": 390,
+      "title": "Pages broke after an Elementor update",
+      "horizontalOverflow": false,
+      "heroLoaded": true
+    },
+    {
+      "kind": "pages",
+      "width": 1366,
+      "title": "Pages broke after an Elementor update",
+      "horizontalOverflow": false,
+      "heroLoaded": true
+    }
+  ]
+}

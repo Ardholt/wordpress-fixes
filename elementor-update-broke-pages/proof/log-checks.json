@@ -1,0 +1,6 @@
+{
+  "specificError": "Class \"Elementor\\Core\\Schemes\\Typography\" not found",
+  "brokenOccurrences": 2,
+  "fixedOccurrences": 0,
+  "baselineOccurrences": 0
+}

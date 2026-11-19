@@ -1,0 +1,140 @@
+{
+  "state": "baseline",
+  "browser": "134.0.6998.35",
+  "checkedAt": "2026-11-19T06:15:21.200Z",
+  "pages": [
+    {
+      "slug": "workshops",
+      "width": 1280,
+      "status": 200,
+      "checks": {
+        "http200": true,
+        "expectedHeading": true,
+        "elementorDocument": true,
+        "noCriticalError": true,
+        "noHorizontalOverflow": true,
+        "noBrowserErrors": true,
+        "retainedAddonButton": true,
+        "retainedCopy": true,
+        "responsiveLayout": true,
+        "buttonWorks": true
+      },
+      "layout": {
+        "overflow": false,
+        "heading": {
+          "x": 110,
+          "y": 111,
+          "width": 628,
+          "height": 131.4375
+        },
+        "card": {
+          "x": 748,
+          "y": 48,
+          "width": 432,
+          "height": 439.1875
+        },
+        "button": {
+          "x": 110,
+          "y": 384.4375,
+          "width": 239.046875,
+          "height": 56
+        }
+      },
+      "browserErrors": [],
+      "passed": true
+    },
+    {
+      "slug": "details",
+      "width": 1280,
+      "status": 200,
+      "checks": {
+        "http200": true,
+        "expectedHeading": true,
+        "elementorDocument": true,
+        "noCriticalError": true,
+        "noHorizontalOverflow": true,
+        "noBrowserErrors": true
+      },
+      "layout": {
+        "overflow": false,
+        "heading": {
+          "x": 110,
+          "y": 58,
+          "width": 1060,
+          "height": 65.71875
+        },
+        "card": null,
+        "button": null
+      },
+      "browserErrors": [],
+      "passed": true
+    },
+    {
+      "slug": "workshops",
+      "width": 390,
+      "status": 200,
+      "checks": {
+        "http200": true,
+        "expectedHeading": true,
+        "elementorDocument": true,
+        "noCriticalError": true,
+        "noHorizontalOverflow": true,
+        "noBrowserErrors": true,
+        "retainedAddonButton": true,
+        "retainedCopy": true,
+        "responsiveLayout": true,
+        "buttonWorks": true
+      },
+      "layout": {
+        "overflow": false,
+        "heading": {
+          "x": 28,
+          "y": 91,
+          "width": 334,
+          "height": 89.03125
+        },
+        "card": {
+          "x": 18,
+          "y": 492.03125,
+          "width": 354,
+          "height": 540.375
+        },
+        "button": {
+          "x": 28,
+          "y": 386.03125,
+          "width": 239.046875,
+          "height": 56
+        }
+      },
+      "browserErrors": [],
+      "passed": true
+    },
+    {
+      "slug": "details",
+      "width": 390,
+      "status": 200,
+      "checks": {
+        "http200": true,
+        "expectedHeading": true,
+        "elementorDocument": true,
+        "noCriticalError": true,
+        "noHorizontalOverflow": true,
+        "noBrowserErrors": true
+      },
+      "layout": {
+        "overflow": false,
+        "heading": {
+          "x": 28,
+          "y": 38,
+          "width": 334,
+          "height": 89.03125
+        },
+        "card": null,
+        "button": null
+      },
+      "browserErrors": [],
+      "passed": true
+    }
+  ],
+  "healthyContractPassed": true
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "preferredVersions": {
+    "php": "8.2",
+    "wp": "6.7"
+  },
+  "features": {
+    "networking": true
+  },
+  "landingPage": "/?pagename=workshops",
+  "steps": [
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://downloads.wordpress.org/theme/phlox.2.16.7.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://downloads.wordpress.org/plugin/elementor.3.26.0.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://downloads.wordpress.org/plugin/auxin-elements.2.17.0.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/mu-plugins/workshop-style.php",
+      "data": "<?php\n// Local presentation shared by the original and repaired Elementor documents.\nadd_filter('elementor/frontend/print_google_fonts', '__return_false');\nadd_action('wp_head', function () { ?>\n<style>\nbody { margin:0; background:#f4f0e8; color:#263c36; font-family:Arial,sans-serif; }\n.elementor { max-width:1160px; margin:auto; padding:48px 36px; }\n.elementor .elementor-heading-title { color:#263c36; font-family:Georgia,serif; font-weight:400; }\n.elementor h1.elementor-heading-title { font-size:62px; line-height:1.06; }\n.elementor h2.elementor-heading-title { font-size:31px; line-height:1.2; }\n.elementor .elementor-widget-text-editor { font:20px/1.6 Arial,sans-serif; color:#42544d; }\n.elementor .aux-modern-button { background:#263c36; border-radius:4px; padding:18px 26px; }\n.elementor .aux-modern-button .aux-text { color:#fff; font:600 17px Arial,sans-serif; }\n.elementor .elementor-widget-container { margin-bottom:18px; }\n.elementor .workshop-card { background:#e1e7dc; padding:30px; border-radius:4px; }\n.elementor .eyebrow { font:600 13px Arial,sans-serif; letter-spacing:3px; }\n@media(max-width:767px) { .elementor { padding:28px 18px; } .elementor h1.elementor-heading-title { font-size:42px; } .elementor .workshop-card { margin-top:22px; } }\n</style>\n<?php });\n"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire \"/wordpress/wp-load.php\";\n// Two small, editable Elementor documents; no imported site content or media.\nupdate_option('elementor_disable_color_schemes', 'yes');\nupdate_option('elementor_disable_typography_schemes', 'yes');\nupdate_option('elementor_experiment-container', 'inactive');\nupdate_option('elementor_experiment-e_optimized_markup', 'inactive');\nupdate_option('elementor_experiment-e_element_cache', 'inactive');\n// Generate Phlox's normal theme assets on a fresh install.\nauxin_save_custom_css();\nauxin_save_custom_js();\n$counter = 0;\n$widget = function ($name, $settings) use (&$counter) {\n    return ['id'=>sprintf('%07x', ++$counter), 'elType'=>'widget', 'widgetType'=>$name, 'settings'=>$settings, 'elements'=>[]];\n};\n$column = function ($width, $children, $extra=[]) use (&$counter) {\n    return ['id'=>sprintf('%07x', ++$counter), 'elType'=>'column', 'settings'=>array_merge(['_column_size'=>$width], $extra), 'elements'=>$children];\n};\n$section = function ($columns) use (&$counter) {\n    return ['id'=>sprintf('%07x', ++$counter), 'elType'=>'section', 'settings'=>['content_width'=>['unit'=>'px','size'=>1080]], 'elements'=>$columns];\n};\n$create = function ($title, $slug, $data) {\n    $id=wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_title'=>$title,'post_name'=>$slug]);\n    update_post_meta($id, '_wp_page_template', 'elementor_canvas');\n    update_post_meta($id, '_elementor_edit_mode', 'builder');\n    update_post_meta($id, '_elementor_template_type', 'wp-page');\n    update_post_meta($id, '_elementor_version', ELEMENTOR_VERSION);\n    update_post_meta($id, '_elementor_data', wp_slash(wp_json_encode($data)));\n    return $id;\n};\n$home=$create('Clay workshops', 'workshops', [$section([\n    $column(60, [\n        $widget('text-editor', ['editor'=>'<p class=\"eyebrow\">CLAY / WORKSHOPS</p>']),\n        $widget('heading', ['title'=>'Make something<br>with your hands.', 'header_size'=>'h1']),\n        $widget('text-editor', ['editor'=>'<p>A slower afternoon at the pottery wheel.<br>Explore clay, shape a bowl and find your rhythm.</p>']),\n        $widget('aux_modern_button', ['label'=>'Explore the workshops', 'link'=>['url'=>'/?pagename=details'], 'btn_size'=>'large', 'btn_align'=>'left', 'text_normal_typo_typography'=>'custom', 'text_normal_typo_font_family'=>'Arial'])\n    ]),\n    $column(40, [\n        $widget('heading', ['title'=>'Your afternoon in clay', 'header_size'=>'h2']),\n        $widget('text-editor', ['editor'=>'<p><strong>Settle in</strong><br>Meet the clay and learn the wheel.</p><p><strong>Find your shape</strong><br>Build confidence with hands-on guidance.</p><p><strong>Make it yours</strong><br>Choose a glaze for your finished piece.</p>'])\n    ], ['css_classes'=>'workshop-card'])\n])]);\n$create('Workshop details', 'details', [$section([$column(100, [\n    $widget('heading', ['title'=>'A little space to make.', 'header_size'=>'h1']),\n    $widget('text-editor', ['editor'=>'<p>Clay, tools and an apron are ready at the wheel. Wear comfortable clothes and come ready to try something new.</p>']),\n    $widget('button', ['text'=>'Back to workshops', 'link'=>['url'=>'/?pagename=workshops']])\n])])]);\nupdate_option('show_on_front', 'page');\nupdate_option('page_on_front', $home);\necho \"Created workshop and details pages.\\n\";\n"
+    }
+  ]
+}

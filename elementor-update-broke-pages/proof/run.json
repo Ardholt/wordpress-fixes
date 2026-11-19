@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-19T06:16:31.406Z",
+  "command": "./run.sh",
+  "durationSeconds": 140,
+  "environment": {
+    "wordpress": "6.7.1",
+    "php": "8.2.27",
+    "database": "MariaDB 11.4.5",
+    "theme": "Phlox 2.16.7",
+    "browser": "134.0.6998.35",
+    "playwright": "1.51.1",
+    "platform": "Linux containers",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 800
+      }
+    ],
+    "deviceScaleFactor": 1
+  },
+  "transition": {
+    "elementor": [
+      "3.25.11",
+      "3.26.0"
+    ],
+    "auxinElements": [
+      "2.16.4",
+      "2.17.0"
+    ]
+  },
+  "outcomes": {
+    "baseline": "healthy contract passed",
+    "broken": "healthy contract failed as required; workshop blank despite HTTP 200; details healthy at HTTP 200",
+    "fixed": "healthy contract passed; original content retained; pixel comparison passed"
+  },
+  "notes": [
+    "Old versions are deliberate compatibility fixtures.",
+    "Downloads checked against packages.lock.",
+    "Images captured from the actual page; original baseline frozen before update.",
+    "Runtime excludes final teardown; includes initialization and checks."
+  ]
+}

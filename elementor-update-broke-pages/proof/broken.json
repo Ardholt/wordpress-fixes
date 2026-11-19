@@ -1,0 +1,110 @@
+{
+  "state": "broken",
+  "browser": "134.0.6998.35",
+  "checkedAt": "2026-11-19T06:15:46.873Z",
+  "pages": [
+    {
+      "slug": "workshops",
+      "width": 1280,
+      "status": 200,
+      "checks": {
+        "http200": true,
+        "expectedHeading": false,
+        "elementorDocument": false,
+        "noCriticalError": true,
+        "noHorizontalOverflow": true,
+        "noBrowserErrors": true,
+        "retainedAddonButton": false,
+        "retainedCopy": false,
+        "responsiveLayout": false,
+        "buttonWorks": false
+      },
+      "layout": {
+        "overflow": false,
+        "heading": null,
+        "card": null,
+        "button": null
+      },
+      "browserErrors": [],
+      "passed": false
+    },
+    {
+      "slug": "details",
+      "width": 1280,
+      "status": 200,
+      "checks": {
+        "http200": true,
+        "expectedHeading": true,
+        "elementorDocument": true,
+        "noCriticalError": true,
+        "noHorizontalOverflow": true,
+        "noBrowserErrors": true
+      },
+      "layout": {
+        "overflow": false,
+        "heading": {
+          "x": 110,
+          "y": 58,
+          "width": 1060,
+          "height": 65.71875
+        },
+        "card": null,
+        "button": null
+      },
+      "browserErrors": [],
+      "passed": true
+    },
+    {
+      "slug": "workshops",
+      "width": 390,
+      "status": 200,
+      "checks": {
+        "http200": true,
+        "expectedHeading": false,
+        "elementorDocument": false,
+        "noCriticalError": true,
+        "noHorizontalOverflow": true,
+        "noBrowserErrors": true,
+        "retainedAddonButton": false,
+        "retainedCopy": false,
+        "responsiveLayout": false,
+        "buttonWorks": false
+      },
+      "layout": {
+        "overflow": false,
+        "heading": null,
+        "card": null,
+        "button": null
+      },
+      "browserErrors": [],
+      "passed": false
+    },
+    {
+      "slug": "details",
+      "width": 390,
+      "status": 200,
+      "checks": {
+        "http200": true,
+        "expectedHeading": true,
+        "elementorDocument": true,
+        "noCriticalError": true,
+        "noHorizontalOverflow": true,
+        "noBrowserErrors": true
+      },
+      "layout": {
+        "overflow": false,
+        "heading": {
+          "x": 28,
+          "y": 38,
+          "width": 334,
+          "height": 89.03125
+        },
+        "card": null,
+        "button": null
+      },
+      "browserErrors": [],
+      "passed": true
+    }
+  ],
+  "healthyContractPassed": false
+}

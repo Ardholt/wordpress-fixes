@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# A readable phone close-up; the complete, unmodified captures remain in proof/.
+set -euo pipefail
+cd "$(dirname "$0")/../.."
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+font=assets/hero/fonts/Inter-SemiBold.ttf
+bg='#0b0a0a'
+label() {
+  convert -size 1104x64 "xc:$bg" -font "$font" -pointsize 42 -fill '#f1ece6' -gravity west -annotate +0+0 "$1" "$2"
+}
+# The broken screen is uniformly blank. Use the same region, then shorten its empty height.
+convert proof/broken-workshops-390.png -crop 390x250+0+210 +repage -resize 1104x56! -strip "$tmp/before.png"
+convert proof/fixed-workshops-390.png -crop 390x250+0+210 +repage -resize 1104x -strip "$tmp/after.png"
+label 'BEFORE  Page blank after update' "$tmp/before-label.png"
+label 'AFTER  Page back. Button checked.' "$tmp/after-label.png"
+convert -size 1104x38 "xc:$bg" -font "$font" -pointsize 25 -fill '#cfc8c0' -gravity west -annotate +0+0 'Phone close-up · blank view shortened · full pages linked below' "$tmp/note.png"
+convert -background "$bg" "$tmp/before-label.png" "$tmp/before.png" -size 1104x20 "xc:$bg" "$tmp/after-label.png" "$tmp/after.png" "$tmp/note.png" -append -bordercolor "$bg" -border 48x20 -strip media/hero.png
+printf 'Opening proof: phone text and checked workshop button; full captures retained.\n'
