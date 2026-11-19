@@ -6,6 +6,7 @@ on:
   pull_request:
     paths: ['elementor-update-broke-pages/**', '.github/workflows/elementor-update-broke-pages.yml']
   workflow_dispatch:
+  workflow_call:
 jobs:
   reproduce:
     runs-on: ubuntu-latest

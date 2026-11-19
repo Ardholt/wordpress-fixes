@@ -6,6 +6,7 @@ on:
   pull_request:
     paths: ['theme-update-wiped-changes/**', '.github/workflows/theme-update-wiped-changes.yml']
   workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 jobs:

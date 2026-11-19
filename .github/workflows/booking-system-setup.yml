@@ -6,6 +6,7 @@ on:
   pull_request:
     paths: ['booking-system-setup/**', '.github/workflows/booking-system-setup.yml']
   workflow_dispatch:
+  workflow_call:
 jobs:
   booking:
     runs-on: ubuntu-latest

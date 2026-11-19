@@ -6,6 +6,7 @@ on:
   pull_request:
     paths: ['speed-mobile-score/**', '.github/workflows/speed-mobile-score.yml']
   workflow_dispatch:
+  workflow_call:
 jobs:
   verify:
     runs-on: ubuntu-latest

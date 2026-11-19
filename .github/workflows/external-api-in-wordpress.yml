@@ -6,6 +6,7 @@ on:
   pull_request:
     paths: ['external-api-in-wordpress/**', '.github/workflows/external-api-in-wordpress.yml']
   workflow_dispatch:
+  workflow_call:
 jobs:
   verify:
     runs-on: ubuntu-latest

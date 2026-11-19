@@ -6,6 +6,7 @@ on:
   pull_request:
     paths: ['critical-error-after-update/**', '.github/workflows/critical-error-after-update.yml']
   workflow_dispatch:
+  workflow_call:
 jobs:
   reproduce:
     runs-on: ubuntu-latest

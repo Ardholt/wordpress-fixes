@@ -1,0 +1,29 @@
+name: All cases
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  elementor-update-broke-pages:
+    uses: ./.github/workflows/elementor-update-broke-pages.yml
+  critical-error-after-update:
+    uses: ./.github/workflows/critical-error-after-update.yml
+  speed-mobile-score:
+    uses: ./.github/workflows/speed-mobile-score.yml
+  woocommerce-checkout-slow-cart:
+    uses: ./.github/workflows/woocommerce-checkout-slow-cart.yml
+  video-embed-wont-play:
+    uses: ./.github/workflows/video-embed-wont-play.yml
+  theme-update-wiped-changes:
+    uses: ./.github/workflows/theme-update-wiped-changes.yml
+  contact-form-to-sheet-and-email:
+    uses: ./.github/workflows/contact-form-to-sheet-and-email.yml
+  external-api-in-wordpress:
+    uses: ./.github/workflows/external-api-in-wordpress.yml
+  booking-system-setup:
+    uses: ./.github/workflows/booking-system-setup.yml
+  hacked-site-cleanup:
+    uses: ./.github/workflows/hacked-site-cleanup.yml

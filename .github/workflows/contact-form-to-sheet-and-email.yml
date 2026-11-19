@@ -6,6 +6,7 @@ on:
   pull_request:
     paths: ['contact-form-to-sheet-and-email/**', '.github/workflows/contact-form-to-sheet-and-email.yml']
   workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 jobs:
