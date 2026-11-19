@@ -1,0 +1,3 @@
+INERT, DEFANGED SPECIMEN made for this demonstration.
+Unwanted promotion: visit example.invalid for discount offers.
+This is escaped text only. No hyperlink, script, redirect or external request is present.

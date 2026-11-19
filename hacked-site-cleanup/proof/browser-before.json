@@ -1,0 +1,28 @@
+{
+  "stage": "before",
+  "browser": "141.0.7390.37",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "page_status": 200,
+  "visible_unwanted_blocks": 1,
+  "approved_page_preserved": true,
+  "download_preserved": true,
+  "external_requests": [],
+  "security_paths": {
+    "/wp-content/uploads/blocked.php": 200,
+    "/wp-content/uploads/blocked.phtml": 200,
+    "/wp-content/uploads/blocked.phar": 200,
+    "/wp-content/uploads/listing-check/": 403,
+    "/xmlrpc.php": 405
+  },
+  "clean_audit_verified": false,
+  "assertions_passed": true
+}

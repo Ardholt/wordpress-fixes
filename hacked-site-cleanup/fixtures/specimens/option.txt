@@ -1,0 +1,3 @@
+INERT, DEFANGED SPECIMEN made for this demonstration.
+Intended redirect destination described as example.invalid/offer.
+This unused option is never read by a redirect handler. It contains no executable content.

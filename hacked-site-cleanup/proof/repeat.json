@@ -1,0 +1,46 @@
+{
+    "stage": "repeat",
+    "finding_count": 0,
+    "indicators": {
+        "page_content": false,
+        "unused_redirect_option": false,
+        "disabled_unknown_administrator": false,
+        "dropped_text_file": false,
+        "altered_core_document": false,
+        "cron_without_callback": false
+    },
+    "preserved": {
+        "approved_page_exact": true,
+        "approved_owner_administrator": true,
+        "approved_owner_can_authenticate": true,
+        "approved_option": true,
+        "approved_download": true,
+        "approved_cron": true,
+        "approved_cron_callback_runs": true
+    },
+    "hardening": {
+        "file_editor_disabled": true,
+        "owner_password_rotated": true,
+        "old_owner_password_rejected": true,
+        "old_owner_session_invalid": true,
+        "authentication_salts_rotated": true,
+        "config_mode_0640": true,
+        "public_registration_disabled": true,
+        "server_rules_enabled": true
+    },
+    "safety": {
+        "unknown_account_login_denied": true,
+        "unknown_account_role_visible": true,
+        "unknown_account_has_no_valid_password_hash": true,
+        "unknown_account_has_no_application_passwords": true,
+        "no_rogue_cron_callback": true,
+        "automatic_cron_disabled": true,
+        "specimens_not_executable": true,
+        "specimens_plain_text_only": true,
+        "script_test_paths_contain_no_files": true
+    },
+    "approved_content_sha256": "9d98817f02f452334ce20608b0927b57ebfe54f360b47e0b23215ce588474535",
+    "page_content": "<p id=\"approved-intro\">I repair wooden furniture and share practical notes on caring for it.</p>\n<div class=\"details\"><p id=\"approved-hours\">The workshop is open Tuesday to Saturday.</p><p><a href=\"/wp-content/uploads/care-notes.txt\">Download the furniture care notes</a></p></div>\n",
+    "core_document_sha256": "943dab096faccd1bebc64f0fdb0bbb066eb38ffac46261fa154b587b2e71026b",
+    "clean_gate_passed": true
+}

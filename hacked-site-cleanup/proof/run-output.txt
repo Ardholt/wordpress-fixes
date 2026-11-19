@@ -1,0 +1,91 @@
+Controlled WordPress cleanup: all planted specimens are inert.
+docker.io/library/wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4
+docker.io/library/mariadb:11.4.8@sha256:bc474f00629f0123c10f9e1bca193a45d18af15a274cf0656acda64f1086c3b6
+docker.io/library/wordpress:cli-2.12.0-php8.3@sha256:e4980e3ef763ce7535049c05a54e906d95b16370f28ca02fa329a079eebf3f65
+docker.io/library/node:22-bookworm-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee
+docker.io/clamav/clamav:1.4.3@sha256:75fb5fd95fcbe1d7e6d240c369c1572b686ee2c95949d1042b5148de8eddebb4
+ Network hacked-site-cleanup_default  Creating
+ Network hacked-site-cleanup_default  Created
+ Volume hacked-site-cleanup_site  Creating
+ Volume hacked-site-cleanup_site  Created
+ Volume hacked-site-cleanup_database  Creating
+ Volume hacked-site-cleanup_database  Created
+ Container hacked-site-cleanup-db-1  Creating
+ Container hacked-site-cleanup-db-1  Created
+ Container hacked-site-cleanup-wordpress-1  Creating
+ Container hacked-site-cleanup-wordpress-1  Created
+ Container hacked-site-cleanup-db-1  Starting
+ Container hacked-site-cleanup-db-1  Started
+ Container hacked-site-cleanup-db-1  Waiting
+ Container hacked-site-cleanup-db-1  Healthy
+ Container hacked-site-cleanup-wordpress-1  Starting
+ Container hacked-site-cleanup-wordpress-1  Started
+ Container hacked-site-cleanup-wordpress-1  Waiting
+ Container hacked-site-cleanup-db-1  Waiting
+ Container hacked-site-cleanup-wordpress-1  Healthy
+ Container hacked-site-cleanup-db-1  Healthy
+Success: Added the constant 'DISABLE_WP_CRON' to the 'wp-config.php' file with the raw value 'true'.
+Success: WordPress installed successfully.
+Deleted 'akismet' plugin.
+Deleted 'hello' plugin.
+Success: Deleted 2 of 2 plugins.
+Success: Staged six inert indicators alongside approved content.
+Expected failure: clean gate exit 1; core checksum exit 1.
+PASS before browser: page, download, inert indicators and mobile layout.
+Success: Removed the six indicators, preserved approved content and rotated owner access.
+Success: Added the constant 'DISALLOW_FILE_EDIT' to the 'wp-config.php' file with the raw value 'true'.
+Success: Shuffled the salt keys.
+PASS after browser: page, download, server restrictions and mobile layout.
+PASS after: clean gate, official core checksums and browser behavior.
+PASS repeat browser: page, download, server restrictions and mobile layout.
+PASS repeat: clean gate, official core checksums and browser behavior.
+make-hero: wrote media/page-before-after.png (1200x1178, 304 KB)
+PASS cleanup record: every displayed result agrees with before, after and repeat evidence.
+ Container hacked-site-cleanup-wordpress-1  Stopping
+ Container hacked-site-cleanup-wordpress-1  Stopped
+ Container hacked-site-cleanup-wordpress-1  Removing
+ Container hacked-site-cleanup-wordpress-1  Removed
+ Container hacked-site-cleanup-db-1  Stopping
+ Container hacked-site-cleanup-db-1  Stopped
+ Container hacked-site-cleanup-db-1  Removing
+ Container hacked-site-cleanup-db-1  Removed
+ Volume hacked-site-cleanup_site  Removing
+ Volume hacked-site-cleanup_database  Removing
+ Volume hacked-site-cleanup_private  Removing
+ Network hacked-site-cleanup_default  Removing
+ Network hacked-site-cleanup_default  Removed
+ Volume hacked-site-cleanup_site  Removed
+ Volume hacked-site-cleanup_database  Removed
+ Volume hacked-site-cleanup_private  Removed
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628278
+Engine version: 1.4.3
+Scanned directories: 14
+Scanned files: 74
+Infected files: 0
+Data scanned: 2.18 MB
+Data read: 1.40 MB (ratio 1.56:1)
+Time: 19.670 sec (0 m 19 s)
+Start Date: 2026:11:19 06:35:02
+End Date:   2026:11:19 06:35:21
+PASS whole-folder ClamAV scanner (exit 0).
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628278
+Engine version: 1.4.3
+Scanned directories: 14
+Scanned files: 74
+Infected files: 0
+Data scanned: 2.18 MB
+Data read: 1.40 MB (ratio 1.56:1)
+Time: 17.803 sec (0 m 17 s)
+Start Date: 2026:11:19 06:35:22
+End Date:   2026:11:19 06:35:40
+PASS whole-folder ClamAV scanner-repeat (exit 0).
+PASS before: clean gate rejected 6 inert indicators.
+PASS after + repeat: 0 indicators; approved content retained.
+PASS hardening: access rotated, editor disabled, server restrictions tested.
+PASS scanner: whole case folder clean.
+PASS cleanup: WordPress stack and private volumes removed.
+Total runtime: 336 seconds.

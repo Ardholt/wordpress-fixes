@@ -1,0 +1,6 @@
+/*
+Theme Name: Content Page
+Version: 1.0.0
+License: MIT
+*/
+*{box-sizing:border-box}body{margin:0;background:#f2efe9;color:#172e29;font-family:system-ui,sans-serif}header{background:#173e35;color:#fff;padding:22px 48px;display:flex;justify-content:space-between;align-items:center}header strong{font-size:22px}header span{font-size:14px;color:#cbded5}main{max-width:1184px;margin:auto;padding:30px 44px}h1{font-size:42px;letter-spacing:-1.3px;margin:0 0 12px;line-height:1.1}p{font-size:22px;line-height:1.45;margin:10px 0 18px}.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:#557066;margin-bottom:12px}.specimen{border:2px solid #b9583b;background:#fff0df;padding:16px 20px;margin:0 0 24px}.specimen p{font-size:24px;margin:8px 0}.specimen small{font-size:12px;color:#75402c}.details{border-top:1px solid #bccbc3;padding-top:20px;margin-top:26px}.details a{color:#173e35}footer{padding:24px 48px;color:#557066;font-size:13px}@media(max-width:600px){header{padding:20px;display:block}header span{display:block;margin-top:5px}main{padding:26px 20px}h1{font-size:32px}p{font-size:19px}.specimen p{font-size:21px}footer{padding:20px}}

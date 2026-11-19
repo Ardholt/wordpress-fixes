@@ -1,0 +1,9 @@
+{
+  "capability": "Docker reproduction and captured screenshots",
+  "url": null,
+  "playground": "Not claimed; this case exercises server configuration, filesystem checks and a local scanner.",
+  "browser": "141.0.7390.37",
+  "verified_at": "2026-11-19T06:34:55.678Z",
+  "supported_interaction": "run.sh stages the altered page, checks it, cleans it and verifies the preserved page and download.",
+  "public_deployment_verified": false
+}

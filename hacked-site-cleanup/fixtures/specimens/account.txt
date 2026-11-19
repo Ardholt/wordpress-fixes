@@ -1,0 +1,3 @@
+INERT, DEFANGED SPECIMEN made for this demonstration.
+The unrecognized_editor account holds the administrator role for inventory checks.
+Its password field is invalid, application passwords are absent, and a mandatory authentication filter denies sign-in.

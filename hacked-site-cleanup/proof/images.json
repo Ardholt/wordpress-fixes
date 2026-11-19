@@ -1,0 +1,53 @@
+[
+  {
+    "tags": [
+      "wordpress:6.8.3-php8.3-apache",
+      "wordpress@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4"
+    ],
+    "digests": [
+      "wordpress@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4"
+    ],
+    "id": "sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4"
+  },
+  {
+    "tags": [
+      "mariadb:11.4.8",
+      "mariadb@sha256:bc474f00629f0123c10f9e1bca193a45d18af15a274cf0656acda64f1086c3b6"
+    ],
+    "digests": [
+      "mariadb@sha256:bc474f00629f0123c10f9e1bca193a45d18af15a274cf0656acda64f1086c3b6"
+    ],
+    "id": "sha256:bc474f00629f0123c10f9e1bca193a45d18af15a274cf0656acda64f1086c3b6"
+  },
+  {
+    "tags": [
+      "wordpress:cli-2.12.0-php8.3",
+      "wordpress:cli-php8.3",
+      "wordpress@sha256:e4980e3ef763ce7535049c05a54e906d95b16370f28ca02fa329a079eebf3f65"
+    ],
+    "digests": [
+      "wordpress@sha256:e4980e3ef763ce7535049c05a54e906d95b16370f28ca02fa329a079eebf3f65"
+    ],
+    "id": "sha256:e4980e3ef763ce7535049c05a54e906d95b16370f28ca02fa329a079eebf3f65"
+  },
+  {
+    "tags": [
+      "node:22-bookworm-slim",
+      "node@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee"
+    ],
+    "digests": [
+      "node@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee"
+    ],
+    "id": "sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee"
+  },
+  {
+    "tags": [
+      "clamav/clamav:1.4.3",
+      "clamav/clamav@sha256:75fb5fd95fcbe1d7e6d240c369c1572b686ee2c95949d1042b5148de8eddebb4"
+    ],
+    "digests": [
+      "clamav/clamav@sha256:75fb5fd95fcbe1d7e6d240c369c1572b686ee2c95949d1042b5148de8eddebb4"
+    ],
+    "id": "sha256:75fb5fd95fcbe1d7e6d240c369c1572b686ee2c95949d1042b5148de8eddebb4"
+  }
+]

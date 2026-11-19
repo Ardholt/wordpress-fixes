@@ -1,0 +1,34 @@
+{
+  "case": "hacked-site-cleanup",
+  "recorded_at": "2026-11-19T06:34:55.678Z",
+  "environment": {
+    "wordpress": "6.8.3",
+    "php": "8.3",
+    "database": "MariaDB 11.4.8",
+    "wp_cli": "2.12.0",
+    "playwright": "1.56.1",
+    "browser": "141.0.7390.37",
+    "scope": "Disposable local Docker Compose installation; no customer site"
+  },
+  "commands": [
+    "scripts/stage.sh start",
+    "scripts/stage.sh before",
+    "scripts/stage.sh fix",
+    "scripts/stage.sh after",
+    "scripts/stage.sh repeat",
+    "scripts/stage.sh stop",
+    "scripts/scan.sh"
+  ],
+  "observations": {
+    "before_gate_exit": 1,
+    "before_core_checksum_exit": 1,
+    "indicators_before": 6,
+    "indicators_after": 0,
+    "indicators_repeat": 0,
+    "after_core_checksum_exit": 0,
+    "repeat_core_checksum_exit": 0,
+    "browser_checks": "passed"
+  },
+  "seconds_through_browser_checks": 289,
+  "timing_note": "Full runtime including final AV scan and teardown is the final line of run-output.txt."
+}

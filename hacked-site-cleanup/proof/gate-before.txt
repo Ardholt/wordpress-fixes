@@ -1,0 +1,8 @@
+Error: Clean gate rejected: 6 indicators remain or hardening is incomplete.
+FOUND page_content
+FOUND unused_redirect_option
+FOUND disabled_unknown_administrator
+FOUND dropped_text_file
+FOUND altered_core_document
+FOUND cron_without_callback
+

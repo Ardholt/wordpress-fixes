@@ -1,0 +1,66 @@
+name: hacked-site-cleanup
+services:
+  db:
+    image: mariadb:11.4.8@sha256:bc474f00629f0123c10f9e1bca193a45d18af15a274cf0656acda64f1086c3b6
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD_FILE: /runtime/db-password
+      MARIADB_ROOT_PASSWORD_FILE: /runtime/root-password
+    volumes:
+      - database:/var/lib/mysql
+      - ./.runtime:/runtime:ro
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+  wordpress:
+    build:
+      context: .
+      dockerfile: tools/WordPress.Dockerfile
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${PORT:-8080}:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD_FILE: /runtime/db-password
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - site:/var/www/html
+      - ./.runtime:/runtime:ro
+      - ./source/mu-plugins:/var/www/html/wp-content/mu-plugins:ro
+      - ./source/theme:/var/www/html/wp-content/themes/workshop:ro
+  cli:
+    image: wordpress:cli-2.12.0-php8.3@sha256:e4980e3ef763ce7535049c05a54e906d95b16370f28ca02fa329a079eebf3f65
+    profiles: [tools]
+    user: "0:0"
+    entrypoint: [wp, --allow-root]
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD_FILE: /runtime/db-password
+    volumes:
+      - site:/var/www/html
+      - private:/private
+      - ./.runtime:/runtime:ro
+      - ./:/case
+      - ./source/mu-plugins:/var/www/html/wp-content/mu-plugins:ro
+      - ./source/theme:/var/www/html/wp-content/themes/workshop:ro
+  browser:
+    build:
+      context: .
+      dockerfile: tools/Browser.Dockerfile
+    profiles: [tools]
+    working_dir: /case
+    volumes:
+      - ./:/case
+    shm_size: 256mb
+volumes:
+  database:
+  site:
+  private:

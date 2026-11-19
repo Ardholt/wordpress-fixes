@@ -1,0 +1,3 @@
+INERT, DEFANGED SPECIMEN made for this demonstration.
+The unrecognized_maintenance cron hook has no callback and no arguments.
+Automatic WordPress cron is disabled for this controlled run. Nothing executes when this hook is dispatched.

@@ -1,0 +1,38 @@
+[
+  {
+    "file": "fixtures/specimens/account.txt",
+    "mode": "644",
+    "label": "INERT, DEFANGED SPECIMEN made for this demonstration.",
+    "sha256": "199b87d4d67764146a364479d080e216b6346e878f213ad010228fc6d08a9dff"
+  },
+  {
+    "file": "fixtures/specimens/content.txt",
+    "mode": "644",
+    "label": "INERT, DEFANGED SPECIMEN made for this demonstration.",
+    "sha256": "3e76264c2a01ccda95e450417f358e39958d446aca6a5f4b6b990be65d47219a"
+  },
+  {
+    "file": "fixtures/specimens/core-document.txt",
+    "mode": "644",
+    "label": "INERT, DEFANGED SPECIMEN made for this demonstration.",
+    "sha256": "e8fd95c291908ffb7a7408d2f3170a32633a42a25444ceea3925b0e28e4a0f3e"
+  },
+  {
+    "file": "fixtures/specimens/cron.txt",
+    "mode": "644",
+    "label": "INERT, DEFANGED SPECIMEN made for this demonstration.",
+    "sha256": "9a01f7aa450bcb05c65472671526fe7ed128c6d647522b386cfa67ac5d9c3f46"
+  },
+  {
+    "file": "fixtures/specimens/option.txt",
+    "mode": "644",
+    "label": "INERT, DEFANGED SPECIMEN made for this demonstration.",
+    "sha256": "4c0b6d33f487fa035e4a21933cdf22420cc1b07df3666d32f223d945d4ba4c91"
+  },
+  {
+    "file": "fixtures/specimens/unrecognized-upload.php.txt",
+    "mode": "644",
+    "label": "INERT, DEFANGED SPECIMEN made for this demonstration.",
+    "sha256": "ba920f8a788650e45b789f56bbd0c288f2e7a0b3ec3629d590b0cd718d0674df"
+  }
+]

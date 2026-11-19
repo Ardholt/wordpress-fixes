@@ -1,0 +1,3 @@
+INERT, DEFANGED SPECIMEN made for this demonstration.
+UNAPPROVED DOCUMENT CHANGE: this text is appended to the core readme.html file.
+Only documentation changes. No core executable code is modified.

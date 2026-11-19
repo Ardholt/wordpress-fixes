@@ -1,0 +1,106 @@
+{
+  "conditions": {
+    "scope": "Controlled local WordPress installation with labelled inert specimens; no customer incident",
+    "method": "Same PHP clean gate before/after/repeat, official core checksums, Chromium page and HTTP assertions, independent ClamAV scan",
+    "versions": "run.json#/environment",
+    "screenshots": "Matching 1280-wide desktop and 390-wide mobile browser viewports; exact viewport heights in browser-after.json",
+    "limitations": "Targeted indicator detection is not a universal malware scan; no production security certification or initial-entry-point claim"
+  },
+  "claims": [
+    {
+      "claim": "6 staged indicators before cleanup",
+      "source": "before.json",
+      "locator": "/finding_count and /indicators"
+    },
+    {
+      "claim": "0 indicators after cleanup and on a fresh repeat check",
+      "source": "after.json",
+      "locator": "/finding_count",
+      "also": "repeat.json#/finding_count"
+    },
+    {
+      "claim": "Approved page, owner, setting, download and scheduled task preserved",
+      "source": "after.json",
+      "locator": "/preserved",
+      "also": "browser-after.json#/approved_page_preserved and /download_preserved"
+    },
+    {
+      "claim": "Unwanted promotion visible before cleanup and removed afterward",
+      "source": "browser-before.json",
+      "locator": "/visible_unwanted_blocks",
+      "also": "browser-after.json#/visible_unwanted_blocks; before-desktop.png and after-desktop.png at the page content"
+    },
+    {
+      "claim": "Core documentation modified before cleanup; official core checksums pass after",
+      "source": "core-before.txt",
+      "locator": "readme.html checksum warning",
+      "also": "core-after.txt and core-repeat.txt: Success line"
+    },
+    {
+      "claim": "Private database backup created before cleanup",
+      "source": "backup.txt",
+      "locator": "line 1; stage.sh fix requires a nonempty SQL export before writing this report"
+    },
+    {
+      "claim": "Owner password and authentication salts rotated; old session invalidated",
+      "source": "after.json",
+      "locator": "/hardening/owner_password_rotated, /authentication_salts_rotated, /old_owner_session_invalid"
+    },
+    {
+      "claim": "Dashboard editor disabled, config permissions restricted, registration remains off",
+      "source": "after.json",
+      "locator": "/hardening/file_editor_disabled, /config_mode_0640, /public_registration_disabled"
+    },
+    {
+      "claim": "Upload script paths, directory listings and XML-RPC denied; ordinary download retained",
+      "source": "browser-after.json",
+      "locator": "/security_paths, /download_preserved",
+      "also": "browser-before.json#/security_paths"
+    },
+    {
+      "claim": "No external request from the rendered page",
+      "source": "browser-before.json",
+      "locator": "/external_requests",
+      "also": "browser-after.json#/external_requests"
+    },
+    {
+      "claim": "Same clean gate rejects before and passes twice afterward",
+      "source": "run.json",
+      "locator": "/observations",
+      "also": "gate-before.txt, gate-after.txt, gate-repeat.txt"
+    },
+    {
+      "claim": "Whole case folder scanner reports no infected files",
+      "source": "scanner.txt",
+      "locator": "SCAN SUMMARY / Infected files",
+      "also": "scanner-update.txt: signature update result"
+    },
+    {
+      "claim": "Specimens labelled and nonexecutable; planted account disabled; no rogue cron callback",
+      "source": "before.json",
+      "locator": "/safety",
+      "also": "../SAFETY.md"
+    },
+    {
+      "claim": "Runtime of the last full run",
+      "source": "run-output.txt",
+      "locator": "final Total runtime line"
+    },
+    {
+      "claim": "Repeat whole-folder ClamAV scan is clean",
+      "source": "scanner-repeat.txt",
+      "locator": "SCAN SUMMARY / Infected files"
+    },
+    {
+      "claim": "The first-screen record names all six changes, shows their repair, confirms the page and download still work, and reports an immediate repeat with none remaining",
+      "source": "hero.json",
+      "locator": "/rows; rendered from before.json, after.json, repeat.json and the matching browser reports",
+      "also": "cleanup-report.md explains each finding and its limitations"
+    },
+    {
+      "claim": "The complete cleanup record fits the first screen at phone and laptop widths, without horizontal overflow",
+      "source": "layout.json",
+      "locator": "/results: 390\u00d7844 and 1366\u00d7768 for both GitHub-style and Pages previews"
+    }
+  ]
+}

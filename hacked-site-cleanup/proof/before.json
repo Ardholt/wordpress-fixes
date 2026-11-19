@@ -1,0 +1,46 @@
+{
+    "stage": "before",
+    "finding_count": 6,
+    "indicators": {
+        "page_content": true,
+        "unused_redirect_option": true,
+        "disabled_unknown_administrator": true,
+        "dropped_text_file": true,
+        "altered_core_document": true,
+        "cron_without_callback": true
+    },
+    "preserved": {
+        "approved_page_exact": true,
+        "approved_owner_administrator": true,
+        "approved_owner_can_authenticate": true,
+        "approved_option": true,
+        "approved_download": true,
+        "approved_cron": true,
+        "approved_cron_callback_runs": true
+    },
+    "hardening": {
+        "file_editor_disabled": false,
+        "owner_password_rotated": false,
+        "old_owner_password_rejected": false,
+        "old_owner_session_invalid": false,
+        "authentication_salts_rotated": false,
+        "config_mode_0640": false,
+        "public_registration_disabled": true,
+        "server_rules_enabled": false
+    },
+    "safety": {
+        "unknown_account_login_denied": true,
+        "unknown_account_role_visible": true,
+        "unknown_account_has_no_valid_password_hash": true,
+        "unknown_account_has_no_application_passwords": true,
+        "no_rogue_cron_callback": true,
+        "automatic_cron_disabled": true,
+        "specimens_not_executable": true,
+        "specimens_plain_text_only": true,
+        "script_test_paths_contain_no_files": true
+    },
+    "approved_content_sha256": "9d98817f02f452334ce20608b0927b57ebfe54f360b47e0b23215ce588474535",
+    "page_content": "<aside class=\"specimen\" data-indicator=\"unwanted-promotion\"><small>INERT, DEFANGED SPECIMEN made for this demonstration.</small><p>Unwanted promotion: visit example.invalid for discount offers.</p></aside><p id=\"approved-intro\">I repair wooden furniture and share practical notes on caring for it.</p>\n<div class=\"details\"><p id=\"approved-hours\">The workshop is open Tuesday to Saturday.</p><p><a href=\"/wp-content/uploads/care-notes.txt\">Download the furniture care notes</a></p></div>\n",
+    "core_document_sha256": "0444008fc4fb69d84442abf54802d52e1ff9c039586176db9a5d396f1873a9ad",
+    "clean_gate_passed": false
+}

@@ -1,0 +1,59 @@
+{
+  "scope": "Offline previews of the README in GitHub-style and Pages layouts",
+  "method": "Rendered README with the shared page styles and measured the complete cleanup record against each viewport.",
+  "browser": "141.0.7390.37",
+  "results": [
+    {
+      "mode": "github",
+      "width": 390,
+      "height": 844,
+      "hero": {
+        "x": 33,
+        "y": 495.59375,
+        "width": 324,
+        "height": 283.3125
+      },
+      "whole_cleanup_record_on_first_screen": true,
+      "horizontal_overflow": false
+    },
+    {
+      "mode": "github",
+      "width": 1366,
+      "height": 768,
+      "hero": {
+        "x": 633,
+        "y": 398.59375,
+        "width": 420,
+        "height": 367.265625
+      },
+      "whole_cleanup_record_on_first_screen": true,
+      "horizontal_overflow": false
+    },
+    {
+      "mode": "pages",
+      "width": 390,
+      "height": 844,
+      "hero": {
+        "x": 20,
+        "y": 141.390625,
+        "width": 350,
+        "height": 306.296875
+      },
+      "whole_cleanup_record_on_first_screen": true,
+      "horizontal_overflow": false
+    },
+    {
+      "mode": "pages",
+      "width": 1366,
+      "height": 768,
+      "hero": {
+        "x": 473,
+        "y": 174.671875,
+        "width": 420,
+        "height": 367.515625
+      },
+      "whole_cleanup_record_on_first_screen": true,
+      "horizontal_overflow": false
+    }
+  ]
+}

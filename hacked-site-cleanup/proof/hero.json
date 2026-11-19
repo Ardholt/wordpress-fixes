@@ -1,0 +1,62 @@
+{
+  "source_reports": [
+    "before.json",
+    "after.json",
+    "repeat.json",
+    "browser-after.json",
+    "browser-repeat.json"
+  ],
+  "method": "Rendered the measured cleanup record; no customer dashboard is represented.",
+  "width": 900,
+  "height": 786.375,
+  "rows": [
+    {
+      "label": "Advert",
+      "key": "page_content",
+      "result": "Removed",
+      "before": true,
+      "after": false,
+      "repeat": false
+    },
+    {
+      "label": "Unknown admin",
+      "key": "disabled_unknown_administrator",
+      "result": "Removed",
+      "before": true,
+      "after": false,
+      "repeat": false
+    },
+    {
+      "label": "Extra upload",
+      "key": "dropped_text_file",
+      "result": "Removed",
+      "before": true,
+      "after": false,
+      "repeat": false
+    },
+    {
+      "label": "Unwanted setting",
+      "key": "unused_redirect_option",
+      "result": "Removed",
+      "before": true,
+      "after": false,
+      "repeat": false
+    },
+    {
+      "label": "Changed site file",
+      "key": "altered_core_document",
+      "result": "Restored",
+      "before": true,
+      "after": false,
+      "repeat": false
+    },
+    {
+      "label": "Unwanted task",
+      "key": "cron_without_callback",
+      "result": "Removed",
+      "before": true,
+      "after": false,
+      "repeat": false
+    }
+  ]
+}

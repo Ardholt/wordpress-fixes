@@ -1,0 +1,26 @@
+name: Hacked site cleanup
+on:
+  push:
+    branches: [main]
+    paths: ['hacked-site-cleanup/**', '.github/workflows/hacked-site-cleanup.yml']
+  pull_request:
+    paths: ['hacked-site-cleanup/**', '.github/workflows/hacked-site-cleanup.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reproduce, clean and verify
+        run: cd hacked-site-cleanup && ./run.sh
+      - name: Keep measured proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hacked-site-cleanup-proof
+          path: |
+            hacked-site-cleanup/proof/
+            hacked-site-cleanup/media/

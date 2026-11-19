@@ -1,0 +1,3 @@
+INERT, DEFANGED SPECIMEN made for this demonstration.
+A dropped upload is represented by this ordinary text file.
+There are no PHP opening tags, commands, encodings or active URLs. The final extension is .txt and mode is 0644.
