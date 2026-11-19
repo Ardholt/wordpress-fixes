@@ -57,7 +57,7 @@ docker compose run --rm -T tests node tests/flow.cjs fixed
 docker compose run --rm -T tests node tests/verify.cjs
 ```
 
-Use `./run.sh` to regenerate the full set, including the red/green acceptance checks, media, environment report and Playground probe. The [GitHub Actions workflow](../.github/workflows/booking-system-setup.yml) runs the same command; `.ci/workflow.yml` contains its source.
+Use `./run.sh` to regenerate the full set, including the red/green acceptance checks, media, environment report and Playground probe. The [GitHub Actions workflow](https://github.com/Ardholt/wordpress-fixes/blob/main/.github/workflows/booking-system-setup.yml) runs the same command.
 
 ## Ports and cleanup
 

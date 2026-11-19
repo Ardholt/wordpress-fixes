@@ -49,4 +49,4 @@ The checks use real Chromium playback in fresh browser contexts. They inspect th
 
 [blueprint.json](blueprint.json) contains the same page and owned video for a Playground capability check. It also writes the repaired Apache header directives and a read-only `header-capability.php` probe. See [the observed result](proof/demo.json): a playable page alone would not reproduce this Apache policy experiment. Docker remains the supported reproduction path.
 
-The [automated checks](https://github.com/Ardholt/wordpress-fixes/actions/workflows/video-embed-wont-play.yml) run this reproduction. The workflow source is retained in [.ci/workflow.yml](.ci/workflow.yml).
+The [automated checks](https://github.com/Ardholt/wordpress-fixes/actions/workflows/video-embed-wont-play.yml) run this reproduction. The workflow source is retained in [.github/workflows/video-embed-wont-play.yml](https://github.com/Ardholt/wordpress-fixes/blob/main/.github/workflows/video-embed-wont-play.yml).

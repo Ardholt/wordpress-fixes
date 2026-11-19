@@ -69,7 +69,7 @@ The [Playground blueprint](blueprint.json) is available for inspection; a comple
 - I verify the receipt and the saved product, quantity, shipping, total and on-hold order status using WooCommerce’s local cheque method.
 - I check invalid input, cache expiry, service timeouts and malformed replies.
 
-The [GitHub workflow](https://github.com/Ardholt/wordpress-fixes/actions/workflows/woocommerce-checkout-slow-cart.yml) runs these checks and retains their output. Its definition is also kept [with the case](.ci/workflow.yml).
+The [GitHub workflow](https://github.com/Ardholt/wordpress-fixes/actions/workflows/woocommerce-checkout-slow-cart.yml) runs these checks and retains their output. Its definition is [in the repository](https://github.com/Ardholt/wordpress-fixes/blob/main/.github/workflows/woocommerce-checkout-slow-cart.yml).
 
 ---
 

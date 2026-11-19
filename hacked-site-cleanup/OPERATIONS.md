@@ -92,7 +92,7 @@ That command restores database records only. It does not restore files, salts or
 - Node `22` browser-tool base, ImageMagick from Debian Bookworm, and ClamAV `1.4.3` with signatures refreshed at runtime. Image identities are recorded in [images.json](proof/images.json).
 - The first-screen cleanup record is generated from the actual before, after and repeat reports. The page screenshots come from the same WordPress run.
 
-The complete reproduction runs in Docker, including the server rules, file checks and antivirus scans. [Automated checks](https://github.com/Ardholt/wordpress-fixes/actions/workflows/hacked-site-cleanup.yml) run this process and retain its reports. The workflow source is in [.ci/workflow.yml](.ci/workflow.yml).
+The complete reproduction runs in Docker, including the server rules, file checks and antivirus scans. [Automated checks](https://github.com/Ardholt/wordpress-fixes/actions/workflows/hacked-site-cleanup.yml) run this process and retain its reports. The workflow source is in [.github/workflows/hacked-site-cleanup.yml](https://github.com/Ardholt/wordpress-fixes/blob/main/.github/workflows/hacked-site-cleanup.yml).
 
 ## What a live-site recovery also needs
 

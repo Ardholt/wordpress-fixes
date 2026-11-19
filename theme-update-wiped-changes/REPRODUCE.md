@@ -50,6 +50,6 @@ Pinned runtime: WordPress `6.8.3` with PHP `8.3`, MariaDB `11.4.5`, WP-CLI `2.12
 
 The separate `tests/playground.cjs` checks the hosted Playground candidate in `blueprint.json`. Its observed result is in `proof/demo.json`; it is not part of the deterministic Docker regression test.
 
-The automated workflow is at `.github/workflows/theme-update-wiped-changes.yml`; its source is kept in `.ci/workflow.yml`. [View workflow runs](https://github.com/Ardholt/wordpress-fixes/actions/workflows/theme-update-wiped-changes.yml).
+The automated workflow is [`.github/workflows/theme-update-wiped-changes.yml`](https://github.com/Ardholt/wordpress-fixes/blob/main/.github/workflows/theme-update-wiped-changes.yml). [View workflow runs](https://github.com/Ardholt/wordpress-fixes/actions/workflows/theme-update-wiped-changes.yml).
 
 The edited-parent download contains only the changed `functions.php`, `style.css` and upstream copyright notice, not an installable parent theme. Full unmodified packages are downloaded at runtime and ignored by Git. Their unused block patterns are not redistributed here.

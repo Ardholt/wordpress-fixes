@@ -30,4 +30,4 @@ defaults:
   - scope: { path: "" }
     values: { layout: default }
 
-exclude: [ "**/node_modules", "**/vendor", "**/tests", "**/.github", "*.sh", "Makefile", "docker-compose.yml", "cases.json" ]
+exclude: [ "**/node_modules", "**/vendor", "**/.github", "Makefile", "docker-compose.yml", "cases.json" ]

@@ -54,4 +54,4 @@ Each folder opens with the problem and a before/after picture, then what was wro
 ---
 
 Maintained by Genco Doganay, Ardholt  
-<sub>More of my work: [ardholt.com/p](https://ardholt.com/p/) · Licence: [MIT](LICENSE) (WordPress plugin and theme code inside the cases is GPL-2.0-or-later, as its file headers say) · [Third-party files](ASSET-LICENSES.md)</sub>
+<sub>More of my work: [ardholt.com/p](https://ardholt.com/p/) · Licence: [MIT](LICENSE) (WordPress plugin and theme code inside the cases carries the licence in its file header: GPL-2.0-or-later, or MIT for two plugins) · [Third-party files](ASSET-LICENSES.md)</sub>

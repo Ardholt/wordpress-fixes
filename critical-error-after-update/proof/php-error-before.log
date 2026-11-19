@@ -1,0 +1,42 @@
+[19-Nov-2026 09:30:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function create_function() in /var/www/html/wp-content/plugins/repair-estimate/estimate.php:7
+Stack trace:
+#0 /var/www/html/wp-content/plugins/repair-estimate/estimate.php(16): repair_estimate_total(3)
+#1 /var/www/html/wp-includes/shortcodes.php(434): {closure}(Array, '', 'repair_estimate')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/html/wp-includes/shortcodes.php(273): preg_replace_callback('/\\[(\\[?)(repair...', 'do_shortcode_ta...', '[repair_estimat...')
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): do_shortcode('[repair_estimat...')
+#5 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('[repair_estimat...', Array)
+#6 /var/www/html/wp-includes/blocks/post-content.php(50): apply_filters('the_content', '[repair_estimat...')
+#7 /var/www/html/wp-includes/class-wp-block.php(586): render_block_core_post_content(Array, '[repair_estimat...', Object(WP_Block))
+#8 /var/www/html/wp-includes/class-wp-block.php(566): WP_Block->render()
+#9 /var/www/html/wp-includes/class-wp-block.php(566): WP_Block->render()
+#10 /var/www/html/wp-includes/blocks.php(2359): WP_Block->render()
+#11 /var/www/html/wp-includes/blocks.php(2431): render_block(Array)
+#12 /var/www/html/wp-includes/block-template.php(291): do_blocks('<!-- wp:templat...')
+#13 /var/www/html/wp-includes/template-canvas.php(12): get_the_block_template_html()
+#14 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#15 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#16 /var/www/html/index.php(17): require('/var/www/html/w...')
+#17 {main}
+  thrown in /var/www/html/wp-content/plugins/repair-estimate/estimate.php on line 7
+[19-Nov-2026 09:30:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function create_function() in /var/www/html/wp-content/plugins/repair-estimate/estimate.php:7
+Stack trace:
+#0 /var/www/html/wp-content/plugins/repair-estimate/estimate.php(16): repair_estimate_total(3)
+#1 /var/www/html/wp-includes/shortcodes.php(434): {closure}(Array, '', 'repair_estimate')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /var/www/html/wp-includes/shortcodes.php(273): preg_replace_callback('/\\[(\\[?)(repair...', 'do_shortcode_ta...', '[repair_estimat...')
+#4 /var/www/html/wp-includes/class-wp-hook.php(324): do_shortcode('[repair_estimat...')
+#5 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('[repair_estimat...', Array)
+#6 /var/www/html/wp-includes/blocks/post-content.php(50): apply_filters('the_content', '[repair_estimat...')
+#7 /var/www/html/wp-includes/class-wp-block.php(586): render_block_core_post_content(Array, '[repair_estimat...', Object(WP_Block))
+#8 /var/www/html/wp-includes/class-wp-block.php(566): WP_Block->render()
+#9 /var/www/html/wp-includes/class-wp-block.php(566): WP_Block->render()
+#10 /var/www/html/wp-includes/blocks.php(2359): WP_Block->render()
+#11 /var/www/html/wp-includes/blocks.php(2431): render_block(Array)
+#12 /var/www/html/wp-includes/block-template.php(291): do_blocks('<!-- wp:templat...')
+#13 /var/www/html/wp-includes/template-canvas.php(12): get_the_block_template_html()
+#14 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#15 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#16 /var/www/html/index.php(17): require('/var/www/html/w...')
+#17 {main}
+  thrown in /var/www/html/wp-content/plugins/repair-estimate/estimate.php on line 7

@@ -159,7 +159,7 @@
       ]
     },
     {
-      "claim": "Published fixed-price offer \u00a325 per fault, 1 working day",
+      "claim": "Published fixed-price offer \u00a310 per fault, 1 working day",
       "evidence": [
         {
           "path": "proof/price-source.txt",

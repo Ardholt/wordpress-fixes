@@ -62,7 +62,7 @@ For a developer, the [run and install guide](RUNBOOK.md) explains how to install
 - I check values, cache expiry, slow responses, outages, invalid data, empty cache and recovery.
 - I check the actual page in a browser at phone and desktop widths.
 
-[Recorded results](proof/fixed-checks.json) · [Run log](proof/run-output.txt) · [GitHub Actions](https://github.com/Ardholt/wordpress-fixes/actions/workflows/external-api-in-wordpress.yml) · [Workflow source](../.github/workflows/external-api-in-wordpress.yml)
+[Recorded results](proof/fixed-checks.json) · [Run log](proof/run-output.txt) · [GitHub Actions](https://github.com/Ardholt/wordpress-fixes/actions/workflows/external-api-in-wordpress.yml) · [Workflow source](https://github.com/Ardholt/wordpress-fixes/blob/main/.github/workflows/external-api-in-wordpress.yml)
 
 ---
 

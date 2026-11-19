@@ -57,7 +57,7 @@ This runs the broken update, verifies recovery from the backup, and checks the c
 - Browser checks submit estimates after both backup recovery and the permanent repair, reject invalid quantities, and check the phone layout.
 - The separate About page must still load. Recovered pages must leave an empty error log during the checks.
 
-[Behavioral tests](tests/check.cjs) · [Workflow source](../.github/workflows/critical-error-after-update.yml) · [Evidence for the claims](proof/claims.json)
+[Behavioral tests](tests/check.cjs) · [Workflow source](https://github.com/Ardholt/wordpress-fixes/blob/main/.github/workflows/critical-error-after-update.yml) · [Evidence for the claims](proof/claims.json)
 
 ---
 

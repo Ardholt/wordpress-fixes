@@ -134,8 +134,7 @@
       "pages_url": "https://ardholt.github.io/wordpress-fixes/contact-form-to-sheet-and-email/",
       "demo": {
         "status": "docker-verified",
-        "kind": "WordPress Playground",
-        "url_in": "contact-form-to-sheet-and-email/README.md"
+        "kind": "Docker reproduction"
       }
     },
     {
@@ -168,8 +167,7 @@
       "pages_url": "https://ardholt.github.io/wordpress-fixes/booking-system-setup/",
       "demo": {
         "status": "unverified-docker-fallback",
-        "kind": "WordPress Playground",
-        "url_in": "booking-system-setup/README.md"
+        "kind": "Docker reproduction"
       }
     },
     {

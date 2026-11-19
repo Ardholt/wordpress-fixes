@@ -221,7 +221,7 @@
       "claim": "The case CI definition executes the full runner and preserves artifacts",
       "evidence": [
         {
-          "path": ".ci/workflow.yml",
+          "path": "../.github/workflows/woocommerce-checkout-slow-cart.yml",
           "locator": "jobs.checkout.steps"
         }
       ]
