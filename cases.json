@@ -17,7 +17,7 @@
     {
       "folder": "elementor-update-broke-pages",
       "problem": "Pages broke after an Elementor update",
-      "result": "I restored the page and button, with 0 changed pixels against the original.",
+      "result": "I brought the workshop page back and checked that its button opens the details.",
       "tags": [
         "WordPress",
         "Elementor",
@@ -35,7 +35,7 @@
     {
       "folder": "critical-error-after-update",
       "problem": "There has been a critical error on this website",
-      "result": "Plugin update took the estimate page down (HTTP 500); restored by rollback, then fixed with the calculator kept",
+      "result": "I fixed the error. The calculator works.",
       "tags": [
         "wordpress",
         "critical-error",
@@ -54,7 +54,7 @@
     {
       "folder": "speed-mobile-score",
       "problem": "Mobile PageSpeed in the 30s–40s",
-      "result": "Median local mobile Lighthouse score 45 → 99, LCP 45.57 s → 1.62 s, content kept",
+      "result": "I brought the main content into view in 1.58 seconds instead of 45.47, keeping the page and its working controls.",
       "tags": [
         "wordpress",
         "pagespeed",
@@ -71,7 +71,7 @@
     {
       "folder": "woocommerce-checkout-slow-cart",
       "problem": "Checkout errors and a slow cart",
-      "result": "Checkout accepted; median cart update 3.05 s → 0.26 s across five runs per state; five orders saved correctly",
+      "result": "I fixed the delivery error and cut the median basket update from 3.38 s to 0.35 s.",
       "tags": [
         "woocommerce",
         "checkout",
@@ -87,7 +87,7 @@
     {
       "folder": "video-embed-wont-play",
       "problem": "Video will not play or embed",
-      "result": "I restored an 8-second video: playback, seeking and completion verified, with other security rules unchanged.",
+      "result": "I restored playback of a video hosted on WordPress.",
       "tags": [
         "wordpress",
         "video",
@@ -103,7 +103,7 @@
     {
       "folder": "theme-update-wiped-changes",
       "problem": "A theme update wiped my changes",
-      "result": "Lost styling and notice rescued into a child theme; both survived the next parent-theme update",
+      "result": "I restored the colours and repair notice, updated the theme again, and checked that the notice link and menu still worked.",
       "tags": [
         "wordpress",
         "child-theme",
@@ -121,7 +121,7 @@
     {
       "folder": "contact-form-to-sheet-and-email",
       "problem": "Form entries should land in a sheet and my inbox",
-      "result": "I confirmed one matching SQLite row and one received Mailpit message, with interrupted deliveries saved for replay.",
+      "result": "I fixed the disappearing enquiry: the saved spreadsheet and received email contain the same name and message.",
       "tags": [
         "wordpress",
         "forms",
@@ -141,7 +141,7 @@
     {
       "folder": "external-api-in-wordpress",
       "problem": "Show data from an outside service on my site",
-      "result": "Raw provider data replaced with 2 readable rates, an hourly cache and a useful outage message",
+      "result": "I made the rates readable, saved them between visits and kept a clear fallback when the service cannot respond.",
       "tags": [
         "wordpress",
         "api",
@@ -157,7 +157,7 @@
     {
       "folder": "booking-system-setup",
       "problem": "Customers should book online",
-      "result": "I restored online booking and kept each slot to one appointment across nine simultaneous-request tests, with matching confirmation mail.",
+      "result": "I completed a booking and received its matching confirmation in the local inbox.",
       "tags": [
         "WordPress",
         "Online booking",
@@ -175,7 +175,7 @@
     {
       "folder": "hacked-site-cleanup",
       "problem": "My site was hacked",
-      "result": "6 planted indicators found and removed, approved content kept, hardening tested, repeat scan clean",
+      "result": "I removed the unwanted changes and kept the original page and download working.",
       "tags": [
         "wordpress",
         "security",
