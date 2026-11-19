@@ -1,0 +1,6 @@
+.env
+.runtime
+proof
+media
+node_modules
+.git

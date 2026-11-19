@@ -1,0 +1,50 @@
+[
+  {
+    "mode": "gh-case",
+    "width": 390,
+    "height": 844,
+    "hero": {
+      "x": 33,
+      "y": 575.59375,
+      "width": 324,
+      "height": 201.875
+    },
+    "method": "Offline shared-template layout render; not a live GitHub or Pages capture"
+  },
+  {
+    "mode": "gh-case",
+    "width": 1366,
+    "height": 768,
+    "hero": {
+      "x": 543,
+      "y": 398.59375,
+      "width": 600,
+      "height": 373.84375
+    },
+    "method": "Offline shared-template layout render; not a live GitHub or Pages capture"
+  },
+  {
+    "mode": "pages",
+    "width": 390,
+    "height": 844,
+    "hero": {
+      "x": 20,
+      "y": 173.78125,
+      "width": 350,
+      "height": 218.0625
+    },
+    "method": "Offline shared-template layout render; not a live GitHub or Pages capture"
+  },
+  {
+    "mode": "pages",
+    "width": 1366,
+    "height": 768,
+    "hero": {
+      "x": 383,
+      "y": 224.34375,
+      "width": 600,
+      "height": 373.84375
+    },
+    "method": "Offline shared-template layout render; not a live GitHub or Pages capture"
+  }
+]

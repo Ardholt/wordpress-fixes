@@ -1,0 +1,65 @@
+{
+  "checks": [
+    {
+      "name": "replay delivers RETRY-MAIL once",
+      "passed": true
+    },
+    {
+      "name": "replay delivers RETRY-SHEET once",
+      "passed": true
+    },
+    {
+      "name": "direct n8n replay is idempotent at both destinations",
+      "passed": true
+    },
+    {
+      "name": "formula-like input stays text and CSV export neutralises it",
+      "passed": true
+    }
+  ],
+  "correlations": [
+    {
+      "submission": {
+        "id": "RETRY-MAIL",
+        "name": "Casey",
+        "message": "Please check the side gate."
+      },
+      "row": {
+        "id": "RETRY-MAIL",
+        "name": "Casey",
+        "message": "Please check the side gate.",
+        "mail_status": "sent"
+      },
+      "mail": {
+        "subject": "Enquiry RETRY-MAIL",
+        "text": "Reference: RETRY-MAIL\r\nName: Casey\r\nEnquiry: Please check the side gate.\r\n",
+        "recipient_role": "local inbox",
+        "recipient_verified": true
+      },
+      "matching_rows": 1,
+      "matching_mails": 1
+    },
+    {
+      "submission": {
+        "id": "RETRY-SHEET",
+        "name": "Ellis",
+        "message": "Please quote for the window latch."
+      },
+      "row": {
+        "id": "RETRY-SHEET",
+        "name": "Ellis",
+        "message": "Please quote for the window latch.",
+        "mail_status": "sent"
+      },
+      "mail": {
+        "subject": "Enquiry RETRY-SHEET",
+        "text": "Reference: RETRY-SHEET\r\nName: Ellis\r\nEnquiry: Please quote for the window latch.\r\n",
+        "recipient_role": "local inbox",
+        "recipient_verified": true
+      },
+      "matching_rows": 1,
+      "matching_mails": 1
+    }
+  ],
+  "all_outbox_entries_delivered": true
+}

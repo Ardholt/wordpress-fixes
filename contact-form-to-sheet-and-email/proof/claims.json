@@ -1,0 +1,81 @@
+{
+  "method": "Fresh Docker volumes; identical browser-submitted enquiry before and after; live SQLite and Mailpit API assertions. LibreOffice opens the exported spreadsheet and its saved cells are compared with the submission. The compact hero prints verified record values; full captures remain linked.",
+  "conditions": "Self-hosted n8n, a local SQLite sheet adapter and Mailpit; the CSV export is also opened as an ODS file in LibreOffice Calc. No external mail service, Google Sheets or Excel measurement.",
+  "claims": [
+    {
+      "claim": "The broken form claimed success with no row or mail",
+      "source": "proof/before.json",
+      "locator": "response.body.status, rows, received_mails, checks[0]; retired_webhook_response.code = 404"
+    },
+    {
+      "claim": "One matching row and one received mail after repair",
+      "source": "proof/after.json",
+      "locator": "matching_rows, matching_mails, submission, row, mail"
+    },
+    {
+      "claim": "The GIF follows ENQ-7A31 through WordPress, SQLite and Mailpit",
+      "source": "proof/after.json",
+      "locator": "submission.id, row.id, mail.subject, mail.text; screenshots proof/02-form.png, after-form.png, 04-sheet.png, 05-mail.png in sequence; proof/06-spreadsheet.png shows the exported row opened in LibreOffice Calc"
+    },
+    {
+      "claim": "Mail outage is saved for retry without claiming delivery",
+      "source": "proof/mail-outage.json",
+      "locator": "response.code, response.body.status, row.mail_status"
+    },
+    {
+      "claim": "Sheet outage is saved for retry",
+      "source": "proof/sheet-outage.json",
+      "locator": "response.code, response.body.status"
+    },
+    {
+      "claim": "Pending payloads survive WordPress restart and replay once",
+      "source": "proof/recovered.json",
+      "locator": "checks, correlations, all_outbox_entries_delivered; pending values in proof/outbox-pending.json"
+    },
+    {
+      "claim": "Invalid input, duplicate/concurrent retries, reference conflict and unsigned webhook checks pass",
+      "source": "proof/edges.json",
+      "locator": "checks[0:4]"
+    },
+    {
+      "claim": "CSV formulas are neutralised on export",
+      "source": "proof/recovered.json",
+      "locator": "checks[3]"
+    },
+    {
+      "claim": "Runtime, browser and dependency versions",
+      "source": "proof/run.json",
+      "locator": "date, duration_seconds, versions, media"
+    },
+    {
+      "claim": "No verified public demo or Playground claim",
+      "source": "proof/demo.json",
+      "locator": "url, public_demo, playground, verified_capability"
+    },
+    {
+      "claim": "WordPress persists before attempting delivery and confirms both destinations",
+      "source": "src/delivery.php",
+      "locator": "enquiry_deliver: add_option before enquiry_post; enquiry_post matching id and delivered response"
+    },
+    {
+      "claim": "Root index and hero describe the observed delivery repair",
+      "source": "proof/after.json",
+      "locator": "matching_rows, matching_mails; before contrast in proof/before.json"
+    },
+    {
+      "claim": "Total run duration and completed cleanup",
+      "source": "proof/cleanup.json",
+      "locator": "elapsed_seconds, includes_cleanup, containers_removed, exit_code"
+    },
+    {
+      "claim": "Saved enquiry opens in LibreOffice Calc with matching values",
+      "source": "proof/spreadsheet.json",
+      "locator": "application, window_title, matching_fields, matches_submitted_values"
+    },
+    {
+      "claim": "Hero shows matching values from actual delivery records",
+      "source": "proof/hero.json",
+      "locator": "sources, method, external_mailbox"
+    }
+  ]
+}

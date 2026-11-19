@@ -1,0 +1,112 @@
+{
+  "id": "enquiryDelivery",
+  "name": "WordPress \u2192 local SQLite sheet \u2192 Mailpit",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "enquiry",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "entry",
+      "name": "Receive enquiry",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "enquiry"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://sheet:8080/row",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Webhook-Secret",
+              "value": "={{ $json.headers['x-webhook-secret'] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.body }}",
+        "options": {
+          "timeout": 8000
+        }
+      },
+      "id": "row",
+      "name": "Persist SQLite row",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://sheet:8080/mail",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Webhook-Secret",
+              "value": "={{ $('Receive enquiry').item.json.headers['x-webhook-secret'] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {
+          "timeout": 8000
+        }
+      },
+      "id": "mail",
+      "name": "Deliver to Mailpit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Receive enquiry": {
+      "main": [
+        [
+          {
+            "node": "Persist SQLite row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Persist SQLite row": {
+      "main": [
+        [
+          {
+            "node": "Deliver to Mailpit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "none",
+    "saveDataErrorExecution": "none"
+  },
+  "pinData": {}
+}

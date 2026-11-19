@@ -1,0 +1,35 @@
+{
+  "response": {
+    "code": 200,
+    "body": {
+      "status": "delivered",
+      "message": "Delivered. Your enquiry is in the sheet and inbox."
+    }
+  },
+  "submission": {
+    "id": "ENQ-7A31",
+    "name": "Rowan",
+    "message": "Please quote for the green door repair."
+  },
+  "row": {
+    "id": "ENQ-7A31",
+    "name": "Rowan",
+    "message": "Please quote for the green door repair.",
+    "mail_status": "sent"
+  },
+  "mail": {
+    "subject": "Enquiry ENQ-7A31",
+    "text": "Reference: ENQ-7A31\r\nName: Rowan\r\nEnquiry: Please quote for the green door repair.\r\n",
+    "recipient_role": "local inbox",
+    "recipient_verified": true
+  },
+  "matching_rows": 1,
+  "matching_mails": 1,
+  "checks": [
+    {
+      "name": "browser submission matches SQLite row and Mailpit message",
+      "passed": true
+    }
+  ],
+  "browser": "141.0.7390.37"
+}

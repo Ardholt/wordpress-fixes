@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-19T06:39:19.684Z",
+  "environment": "Docker Compose on Linux; local services only; fresh application volumes",
+  "commands": [
+    "./run.sh"
+  ],
+  "duration_scope": "Provisioning, checks and capture; excludes final teardown",
+  "duration_seconds": 273,
+  "versions": {
+    "wordpress": "7.1.4",
+    "php": "8.3.36",
+    "chromium": "141.0.7390.37",
+    "libreoffice": "LibreOffice 24.2.7.2 420(Build:2)",
+    "playwright": "1.56.1",
+    "n8n": "1.123.27",
+    "mailpit": "/mailpit v1.33.0 compiled with go1.27.3 on linux/amd64",
+    "mariadb": "mariadb from 11.8.9-MariaDB, client 15.2 for debian-linux-gnu (x86_64) using  EditLine wrapper",
+    "python": "3.13.18",
+    "sqlite": "3.46.1",
+    "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+  },
+  "broken_contract_failed": true,
+  "after": {
+    "passed": 13,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "browser submission matches SQLite row and Mailpit message",
+        "passed": true
+      },
+      {
+        "name": "repeated and concurrent retries create no extra row or mail",
+        "passed": true
+      },
+      {
+        "name": "reference reuse with changed fields is rejected",
+        "passed": true
+      },
+      {
+        "name": "invalid input cannot reach either destination",
+        "passed": true
+      },
+      {
+        "name": "unsigned webhook cannot write a sheet row",
+        "passed": true
+      },
+      {
+        "name": "mail outage returns pending and retains the actual row",
+        "passed": true
+      },
+      {
+        "name": "sheet outage returns pending without claiming delivery",
+        "passed": true
+      },
+      {
+        "name": "both undelivered entries remain in the persistent WordPress outbox",
+        "passed": true
+      },
+      {
+        "name": "replay delivers RETRY-MAIL once",
+        "passed": true
+      },
+      {
+        "name": "replay delivers RETRY-SHEET once",
+        "passed": true
+      },
+      {
+        "name": "direct n8n replay is idempotent at both destinations",
+        "passed": true
+      },
+      {
+        "name": "formula-like input stays text and CSV export neutralises it",
+        "passed": true
+      },
+      {
+        "name": "saved enquiry opens in LibreOffice Calc with matching spreadsheet cells",
+        "passed": true
+      }
+    ]
+  },
+  "media": {
+    "gif_bytes": 197020,
+    "gif_duration_seconds": 7
+  }
+}

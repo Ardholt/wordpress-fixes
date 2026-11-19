@@ -1,0 +1,8 @@
+{
+  "checks": [
+    {
+      "name": "both undelivered entries remain in the persistent WordPress outbox",
+      "passed": true
+    }
+  ]
+}

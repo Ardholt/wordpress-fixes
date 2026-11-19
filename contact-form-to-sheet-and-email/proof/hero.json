@@ -1,0 +1,11 @@
+{
+  "width": 780,
+  "height": 486,
+  "sources": [
+    "proof/before.json",
+    "proof/after.json",
+    "proof/spreadsheet.json"
+  ],
+  "method": "Readable excerpts of verified records, not an application screenshot",
+  "external_mailbox": false
+}

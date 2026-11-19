@@ -1,0 +1,24 @@
+name: Form to sheet and inbox
+on:
+  push:
+    branches: [main]
+    paths: ['contact-form-to-sheet-and-email/**', '.github/workflows/contact-form-to-sheet-and-email.yml']
+  pull_request:
+    paths: ['contact-form-to-sheet-and-email/**', '.github/workflows/contact-form-to-sheet-and-email.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: cd contact-form-to-sheet-and-email && ./run.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: form-sheet-inbox-proof
+          path: |
+            contact-form-to-sheet-and-email/proof/
+            contact-form-to-sheet-and-email/media/

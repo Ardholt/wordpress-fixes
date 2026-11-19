@@ -1,0 +1,58 @@
+{
+  "passed": 13,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "browser submission matches SQLite row and Mailpit message",
+      "passed": true
+    },
+    {
+      "name": "repeated and concurrent retries create no extra row or mail",
+      "passed": true
+    },
+    {
+      "name": "reference reuse with changed fields is rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid input cannot reach either destination",
+      "passed": true
+    },
+    {
+      "name": "unsigned webhook cannot write a sheet row",
+      "passed": true
+    },
+    {
+      "name": "mail outage returns pending and retains the actual row",
+      "passed": true
+    },
+    {
+      "name": "sheet outage returns pending without claiming delivery",
+      "passed": true
+    },
+    {
+      "name": "both undelivered entries remain in the persistent WordPress outbox",
+      "passed": true
+    },
+    {
+      "name": "replay delivers RETRY-MAIL once",
+      "passed": true
+    },
+    {
+      "name": "replay delivers RETRY-SHEET once",
+      "passed": true
+    },
+    {
+      "name": "direct n8n replay is idempotent at both destinations",
+      "passed": true
+    },
+    {
+      "name": "formula-like input stays text and CSV export neutralises it",
+      "passed": true
+    },
+    {
+      "name": "saved enquiry opens in LibreOffice Calc with matching spreadsheet cells",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+#!/usr/bin/env bash
+# make-hero: the Ardholt casebook before/after hero image.
+#
+#   make-hero BEFORE.png AFTER.png OUT.png --title "Form entries should land in a sheet and my inbox" \
+#       [--before-note "Said sent. No row, no mail."] [--after-note "1 row + 1 mail. Same enquiry."] \
+#       [--where "hollinandpike.co.uk"] [--before-where TEXT] [--after-where TEXT] \
+#       [--tag "WORDPRESS FIXES · CASE 01"] [--before-crop WxH+X+Y] [--after-crop WxH+X+Y]
+#
+# Needs ImageMagick 6 (`convert`) and the fonts in ./fonts (shipped beside this script). No network.
+# Every word in the image is typeset by this script.
+# Layout, sizes and colours: STYLE.md beside this script.
+set -euo pipefail
+
+usage() { sed -n '2,12p' "$0" | sed 's/^# \{0,1\}//'; exit "${1:-2}"; }
+[ $# -ge 3 ] || usage
+case "$1" in -h|--help) usage 0;; esac
+
+BEFORE=$1; AFTER=$2; OUT=$3; shift 3
+TITLE=""; BNOTE=""; ANOTE=""; WHERE=""; BWHERE=""; AWHERE=""; TAG=""; BCROP=""; ACROP=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --title) TITLE=$2; shift 2;;
+    --before-note) BNOTE=$2; shift 2;;
+    --after-note) ANOTE=$2; shift 2;;
+    --where) WHERE=$2; shift 2;;
+    --before-where) BWHERE=$2; shift 2;;
+    --after-where) AWHERE=$2; shift 2;;
+    --tag) TAG=$2; shift 2;;
+    --before-crop) BCROP=$2; shift 2;;
+    --after-crop) ACROP=$2; shift 2;;
+    -h|--help) usage 0;;
+    *) echo "make-hero: unknown option $1" >&2; usage;;
+  esac
+done
+[ -n "$TITLE" ] || { echo "make-hero: --title is required" >&2; exit 2; }
+for f in "$BEFORE" "$AFTER"; do [ -r "$f" ] || { echo "make-hero: cannot read $f" >&2; exit 2; }; done
+command -v convert >/dev/null || { echo "make-hero: ImageMagick 'convert' not found" >&2; exit 2; }
+BWHERE=${BWHERE:-$WHERE}; AWHERE=${AWHERE:-$WHERE}
+
+# --- fonts (shipped in ./fonts; HERO_FONT_DIR overrides; DejaVu as last resort) ---
+HERE=$(cd "$(dirname "$0")" && pwd)
+FD=${HERO_FONT_DIR:-$HERE/fonts}
+pick() { [ -r "$FD/$1" ] && echo "$FD/$1" || echo "$2"; }
+F_SERIF=$(pick InstrumentSerif-Regular.ttf DejaVu-Serif)
+F_SANS=$(pick Inter-SemiBold.ttf DejaVu-Sans-Bold)
+F_MONO=$(pick JetBrainsMono-Bold.ttf DejaVu-Sans-Mono-Bold)
+
+# --- the style (STYLE.md is the reference; change both together) ---
+W=1200; PAD=48; IW=$((W - 2*PAD))          # canvas width, outer margin, inner width (1104)
+SHOT_H=350                                  # screenshot window height per panel (3.15:1)
+BAR_H=40                                    # window bar above each screenshot
+BG='#0b0a0a'; PANEL='#171413'; BAR='#211d1c'; LINE='#352f2e'
+INK='#f1ece6'; INK2='#cfc8c0'; MUTE='#8e8782'; ACC='#ff3b1f'
+
+T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
+
+# screenshot -> exactly IW x SHOT_H: optional crop first, then cover-fit from the top
+shot() { # in crop out
+  local crop=()
+  [ -n "$2" ] && crop=(-crop "$2" +repage)
+  convert "$1" -auto-orient "${crop[@]}" -resize "${IW}x${SHOT_H}^" -gravity north \
+    -extent "${IW}x${SHOT_H}" -strip "$3"
+}
+
+# window bar: three dots + where-text (a URL or a file name), set in mono
+bar() { # where out
+  convert -size "${IW}x${BAR_H}" "xc:$BAR" \
+    -fill "$LINE" -draw "circle 26,20 32,20" -draw "circle 48,20 54,20" -draw "circle 70,20 76,20" \
+    "$2"
+  if [ -n "$1" ]; then
+    convert "$2" -font "$F_MONO" -pointsize 20 -fill "$MUTE" -gravity west \
+      -annotate +100+0 "$1" "$2"
+  fi
+}
+
+# label row: chip (BEFORE outlined / AFTER filled) + the note in sans
+label() { # word filled(0/1) note out
+  local chip="$T/chip-$1.png" txtfill bgfill stroke
+  if [ "$2" = 1 ]; then txtfill=$BG; bgfill=$INK; stroke=$INK; else txtfill=$INK2; bgfill=$BG; stroke=$MUTE; fi
+  convert -background none -font "$F_MONO" -pointsize 26 -kerning 4 -fill "$txtfill" label:"$1" "$T/w.png"
+  local ww hh; ww=$(identify -format %w "$T/w.png"); hh=$(identify -format %h "$T/w.png")
+  local cw=$((ww + 40)) ch=52
+  convert -size "${cw}x${ch}" xc:none -fill "$bgfill" -stroke "$stroke" -strokewidth 2 \
+    -draw "roundrectangle 1,1 $((cw-2)),$((ch-2)) 6,6" "$T/w.png" -gravity center -composite "$chip"
+  local nw=$((IW - cw - 24))
+  if [ -n "$3" ]; then
+    convert -background none -size "${nw}x" -font "$F_SANS" -pointsize 42 -fill "$INK" caption:"$3" "$T/n.png"
+  else
+    convert -size 1x1 xc:none "$T/n.png"
+  fi
+  local nh; nh=$(identify -format %h "$T/n.png"); local rh=$(( nh > ch ? nh : ch ))
+  convert -size "${IW}x${rh}" "xc:$BG" \
+    "$chip" -gravity northwest -geometry +0+0 -composite \
+    "$T/n.png" -gravity northwest -geometry +$((cw + 24))+$(( nh < ch ? (ch-nh)/2 : 0 )) -composite "$4"
+}
+
+panel() { # word filled note where img crop out
+  label "$1" "$2" "$3" "$T/l.png"
+  bar "$4" "$T/b.png"
+  shot "$5" "$6" "$T/s.png"
+  convert "$T/b.png" "$T/s.png" -append \
+    -bordercolor "$LINE" -border 1 -shave 1x1 "$T/win.png"   # hairline frame, same outer size
+  convert -background "$BG" "$T/l.png" -size "${IW}x14" "xc:$BG" "$T/win.png" -append "$7"
+}
+
+panel BEFORE 0 "$BNOTE" "$BWHERE" "$BEFORE" "$BCROP" "$T/p1.png"
+panel AFTER  1 "$ANOTE" "$AWHERE" "$AFTER"  "$ACROP" "$T/p2.png"
+
+# caption block (below the panels): a mark row (accent rule, tag, ARDHOLT), then the title in the serif.
+# Nothing sits above the BEFORE panel: on a phone every pixel above it pushes the AFTER panel off the first screen.
+convert -size "${IW}x30" "xc:$BG" -fill "$ACC" -draw "rectangle 0,13 63,16" "$T/mark.png"
+[ -n "$TAG" ] && convert "$T/mark.png" -font "$F_MONO" -pointsize 20 -kerning 3 -fill "$MUTE" \
+  -gravity west -annotate +84+0 "$TAG" "$T/mark.png"
+convert "$T/mark.png" -font "$F_MONO" -pointsize 20 -kerning 5 -fill "$INK2" \
+  -gravity east -annotate +0+0 "ARDHOLT" "$T/mark.png"
+convert -background "$BG" -size "${IW}x" -font "$F_SERIF" -pointsize 46 -interline-spacing -2 \
+  -fill "$INK" caption:"$TITLE" "$T/title.png"
+
+convert -background "$BG" \
+  "$T/p1.png"  -size "${IW}x32" "xc:$BG" \
+  "$T/p2.png"  -size "${IW}x34" "xc:$BG" \
+  "$T/mark.png" -size "${IW}x12" "xc:$BG" \
+  "$T/title.png" -append \
+  -bordercolor "$BG" -border "${PAD}x${PAD}" \
+  -strip -define png:compression-level=9 "$OUT"
+
+echo "make-hero: wrote $OUT ($(identify -format '%wx%h' "$OUT"), $(du -k "$OUT" | cut -f1) KB)"

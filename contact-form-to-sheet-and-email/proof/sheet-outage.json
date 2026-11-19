@@ -1,0 +1,14 @@
+{
+  "submission": {
+    "id": "RETRY-SHEET",
+    "name": "Ellis",
+    "message": "Please quote for the window latch."
+  },
+  "response": {
+    "code": 202,
+    "body": {
+      "status": "pending",
+      "message": "Saved for retry. Delivery is pending; please keep your reference."
+    }
+  }
+}

@@ -1,0 +1,73 @@
+name: form-sheet-inbox
+services:
+  db:
+    image: mariadb:11@sha256:c4124d1afa875e47f2892edf26b482fa54f796e2f342d3717a04ca091a22a9bd
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+    command: [--innodb-buffer-pool-size=64M, --performance-schema=OFF]
+    volumes: [db:/var/lib/mysql]
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      retries: 50
+    mem_limit: 384m
+  wordpress:
+    image: wordpress:php8.3-apache@sha256:6888208af0e3cb93af427c13a434273b07ba353ce9e2d5a29abe3031bb28ea3a
+    depends_on:
+      db: {condition: service_healthy}
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: wordpress
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      PUBLIC_PORT: ${WP_PORT:-8080}
+      WORDPRESS_CONFIG_EXTRA: "define('DISABLE_WP_CRON', true);"
+    ports: ["127.0.0.1:${WP_PORT:-8080}:80"]
+    volumes: [wordpress:/var/www/html, './:/case:ro']
+    mem_limit: 384m
+  n8n:
+    image: n8nio/n8n:1.123.27@sha256:289a52a09f6dd3d5fa1f1345713e967b92fe920aff2dd263edd413ffe69de0e5
+    environment:
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET}
+      N8N_DIAGNOSTICS_ENABLED: 'false'
+      N8N_VERSION_NOTIFICATIONS_ENABLED: 'false'
+      N8N_TEMPLATES_ENABLED: 'false'
+      N8N_BLOCK_ENV_ACCESS_IN_NODE: 'false'
+      EXECUTIONS_DATA_SAVE_ON_SUCCESS: none
+      EXECUTIONS_DATA_SAVE_ON_ERROR: none
+      N8N_SECURE_COOKIE: 'false'
+    ports: ["127.0.0.1:${N8N_PORT:-5678}:5678"]
+    volumes: [n8n:/home/node/.n8n, './workflows:/workflows:ro']
+    mem_limit: 512m
+  sheet:
+    image: python:3.13-slim@sha256:09a17cad02668ae61ece136b4fd36ac3849e14f670ebedb637ea3e15580525bc
+    command: [python, -u, /app/sheet.py]
+    environment:
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET}
+    volumes: ['./src:/app:ro', 'sheet:/data']
+    ports: ["127.0.0.1:${SHEET_PORT:-8081}:8080"]
+    mem_limit: 128m
+  mailpit:
+    image: axllent/mailpit:latest@sha256:9b3a463be15354c0f0eba91697d80e3e0d8a5623ef0e627cacc836bc17fd5231
+    ports: ["127.0.0.1:${MAIL_PORT:-8025}:8025"]
+    mem_limit: 128m
+  test:
+    profiles: [tools]
+    build: {context: ., dockerfile: tools/Dockerfile}
+    environment:
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET}
+    volumes: ['./:/work']
+    working_dir: /work
+    shm_size: 256m
+    mem_limit: 768m
+volumes:
+  db:
+  wordpress:
+  n8n:
+  sheet:

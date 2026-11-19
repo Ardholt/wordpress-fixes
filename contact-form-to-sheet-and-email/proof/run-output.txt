@@ -1,0 +1,38 @@
+Preparing isolated WordPress, n8n, SQLite sheet and Mailpit services.
+Waiting for the other WordPress stack to finish.
+Waiting for the other WordPress stack to finish.
+Waiting for the other WordPress stack to finish.
+Waiting for the other WordPress stack to finish.
+Waiting for the other WordPress stack to finish.
+Waiting for the other WordPress stack to finish.
+Waiting for the other WordPress stack to finish.
+Waiting for the other WordPress stack to finish.
+Waiting for the other WordPress stack to finish.
+Waiting for the other WordPress stack to finish.
+WordPress installed; broken delivery handler loaded.
+BEFORE: exercising the real form with the retired webhook route.
+EXPECTED FAIL delivery contract: claimed delivery; 0 rows, 0 mails
+Applying the durable outbox and confirmed delivery handler.
+PASS browser submission matches SQLite row and Mailpit message
+PASS repeated and concurrent retries create no extra row or mail
+PASS reference reuse with changed fields is rejected
+PASS invalid input cannot reach either destination
+PASS unsigned webhook cannot write a sheet row
+PASS mail outage returns pending and retains the actual row
+PASS sheet outage returns pending without claiming delivery
+PASS both undelivered entries remain in the persistent WordPress outbox
+Outbox replay completed.
+PASS replay delivers RETRY-MAIL once
+PASS replay delivers RETRY-SHEET once
+PASS direct n8n replay is idempotent at both destinations
+PASS formula-like input stays text and CSV export neutralises it
+PASS saved enquiry opens in LibreOffice Calc with matching spreadsheet cells
+make-hero: wrote media/before-after.png (1200x1178, 252 KB)
+780x486 61344B
+800x600 197020B
+Verified 13 repaired-flow checks; 0 failed.
+PASS: broken-state failure reproduced; all repaired-flow checks passed.
+Run duration: 273 seconds.
+Cleanup: removing this run’s containers and data volumes.
+Cleanup complete: case containers and data volumes removed.
+Total elapsed including cleanup: 284 seconds.

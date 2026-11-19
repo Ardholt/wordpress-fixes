@@ -1,0 +1,14 @@
+{
+  "application": "LibreOffice 24.2.7.2 420(Build:2)",
+  "window_title": "enquiry.ods (read-only) \u001b%G\u2014\u001b%@ LibreOffice Calc",
+  "source": "proof/enquiry.csv",
+  "file": "proof/enquiry.ods",
+  "matching_fields": {
+    "id": "ENQ-7A31",
+    "name": "Rowan",
+    "message": "Please quote for the green door repair."
+  },
+  "matches_submitted_values": true,
+  "screenshot": "proof/06-spreadsheet.png",
+  "method": "Saved CSV values as an OpenDocument spreadsheet, opened that file in LibreOffice Calc, and compared its stored cells with the browser submission."
+}

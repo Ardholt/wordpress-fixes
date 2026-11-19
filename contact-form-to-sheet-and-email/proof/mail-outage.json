@@ -1,0 +1,21 @@
+{
+  "submission": {
+    "id": "RETRY-MAIL",
+    "name": "Casey",
+    "message": "Please check the side gate."
+  },
+  "response": {
+    "code": 202,
+    "body": {
+      "status": "pending",
+      "message": "Saved for retry. Delivery is pending; please keep your reference."
+    }
+  },
+  "row": {
+    "id": "RETRY-MAIL",
+    "name": "Casey",
+    "message": "Please check the side gate.",
+    "mail_status": "pending"
+  },
+  "received_mails": 1
+}
