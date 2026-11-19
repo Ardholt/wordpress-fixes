@@ -48,6 +48,8 @@ The separate folder is a WordPress child theme: it holds the custom changes whil
 
 [Download the child theme](proof/repair-child.zip) · [Recovered files](proof/edited-parent.tar.gz) · [Installation notes](fix/README.md) · [Source](fix/repair-child/)
 
+The recovered archive contains Twenty Twenty-One 2.3 parent-theme files modified for this case: `functions.php` and `style.css` carry the custom notice and styling, alongside the upstream `readme.txt`. These recovered files are GPL-2.0-or-later; they are not an unmodified upstream release.
+
 With Docker installed, run this from the case folder:
 
 ```bash
