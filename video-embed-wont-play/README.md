@@ -1,14 +1,18 @@
 # Video will not play
 
 <p align="center">
-  <img src="media/playback.gif" width="560" alt="Before: Play is clicked but the video stays at zero. After: the visitor guide plays and its progress bar advances.">
+  <img src="media/playback-poster.png" width="600" alt="After the repair, the visitor guide video is playing at 1.8 seconds of 8.0, and the page says 'Playing — welcome inside.' Before the repair, the same page after Play was clicked shows the video at 0:00 with 'This video could not play.'">
 </p>
 
 **I restored playback of a video hosted on WordPress.**
 
 YouTube and Vimeo embeds need a separate diagnosis.
 
-The recording loops above: the failed Play attempt, then playback after my fix. I made the short visitor-guide video; the same file is used before and after. [Open the recording file](media/playback.webm) to watch separately.
+The picture above uses two frames from the actual browser recordings: the repaired video playing, and the failed attempt before the fix. The recording below loops the actual failed Play attempt, then playback after my fix. I made the short visitor-guide video; the same file is used before and after. [Open the recording file](media/playback.webm) to watch separately.
+
+<p align="center">
+  <img src="media/playback.gif" width="560" alt="Before: Play is clicked but the video stays at zero. After: the visitor guide plays and its progress bar advances.">
+</p>
 
 ## What was wrong
 
@@ -43,8 +47,7 @@ The close-up joins excerpts from the actual browser recordings. [Editing details
 
 Watch the looping recording above, or open the full recordings to inspect the page before and after the repair.
 
-<details>
-<summary>Reproduce the repair locally — technical instructions</summary>
+### Reproduce the repair locally — technical instructions
 
 From this folder, with Docker and Docker Compose installed:
 
@@ -54,7 +57,7 @@ From this folder, with Docker and Docker Compose installed:
 
 This recreates the blocked page, records the failure, applies the repair and checks playback. It saves fresh proof and removes its containers when finished. The [reproduction guide](REPRODUCE.md) includes the exact header change, individual stages and reset commands. [Playground's limitation](proof/demo.json) is documented separately.
 
-</details>
+
 
 ## How it is tested
 

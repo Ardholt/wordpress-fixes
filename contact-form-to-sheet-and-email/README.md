@@ -45,8 +45,7 @@
 
 View the [spreadsheet capture](proof/06-spreadsheet.png) and [received message](proof/05-mail.png) in your browser. You can compare the name and wording without installing anything. The [spreadsheet file](proof/enquiry.ods) also opens in LibreOffice Calc.
 
-<details>
-<summary>Reproduce the delivery checks with Docker</summary>
+### Reproduce the delivery checks with Docker
 
 From the case folder, with Docker and Compose installed:
 
@@ -56,7 +55,7 @@ From the case folder, with Docker and Compose installed:
 
 The command checks the broken and repaired flows, refreshes the proof, and removes the containers afterward. [Setup and local addresses](OPERATIONS.md) explain how to leave the form running and inspect it. The [run record](proof/run.json) contains the observed versions and duration.
 
-</details>
+
 
 ## How it is tested
 

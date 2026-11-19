@@ -1,0 +1,19 @@
+{
+  "output": "media/playback-poster.png",
+  "kind": "Success-first still. Layout of two frames taken from the existing actual browser recordings, with typeset labels. No new browser run; nothing is drawn or regenerated.",
+  "sources": {
+    "after": {"file": "proof/after.webm", "frameAtSeconds": 4.0, "pageShows": "Playing — welcome inside. 1.8 / 8.0 seconds"},
+    "before": {"file": "proof/before.webm", "frameAtSeconds": 3.0, "pageShows": "This video could not play. Playback has not started."}
+  },
+  "crop": {"x": 164, "y": 231, "width": 952, "height": 346, "note": "The player card of the 1280x820 page frame, both states."},
+  "scale": {"after": "724 px wide (0.76x)", "before": "480 px wide (0.50x)"},
+  "typeset_labels": [
+    "AFTER: Play now starts the video.",
+    "Frame at 1.8 s of 8.0 s. Page status: “Playing — welcome inside.”",
+    "BEFORE: Play clicked. Video stays at 0:00.",
+    "Same page, same video file; only the security rule changed.",
+    "Frames from the actual browser recordings. Full recording below."
+  ],
+  "canvas": {"width": 800, "height": 736},
+  "note": "The existing media/playback.webm, media/playback.gif, proof/edit.json and both full recordings are unchanged and remain the before/after recording."
+}

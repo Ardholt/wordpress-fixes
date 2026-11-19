@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /speed-mobile-score/proof/
+---
+
 # The page is faster. The services still work.
 
 **Mobile score 47 → 100. Main content 45.47 → 1.58 seconds.** I measured the same WordPress page before and after the fix.

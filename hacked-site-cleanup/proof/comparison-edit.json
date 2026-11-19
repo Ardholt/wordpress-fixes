@@ -1,0 +1,25 @@
+{
+  "outputs": ["media/cleanup-before-after.mp4", "media/cleanup-before-after.gif"],
+  "kind": "Comparison of two existing screenshots from one run, followed by a typeset card of the six recorded results. It is NOT a recording of a live cleanup and NOT a new run.",
+  "sources": {
+    "before": "proof/before-desktop.png",
+    "after": "proof/after-desktop.png",
+    "results": "proof/cleanup-report.md (table of six items, limits paragraph)"
+  },
+  "crop": {"before": "1280x600+0+0", "after": "1280x600+0+0", "note": "Same crop of both 1280x800 captures, shown at 1:1."},
+  "timeline_seconds": {
+    "0.0-1.4": "BEFORE capture held",
+    "1.4-3.6": "eased vertical divider sweeps right to left, revealing the AFTER capture at identical coordinates (a comparison device; no intermediate page state is implied)",
+    "3.6-5.8": "AFTER capture held",
+    "5.2-5.8": "0.6 s cross-fade to the results card (ends at 12.64 s)",
+    "results card": "six rows appear one by one (0.55 s apart) and then hold ~3.4 s: advert, unknown admin, extra upload, unwanted setting, changed site file, unwanted task"
+  },
+  "persistent_label": "Comparison of two screenshots from one run. Not a recording of the cleanup.",
+  "limits_on_card": [
+    "Isolated WordPress install with harmless, labelled changes, not a customer's site.",
+    "The repeat ran straight after cleanup: not long-term monitoring.",
+    "Page and download link still work after cleanup and on the repeat."
+  ],
+  "encoding": {"mp4": "H.264 High yuv420p 1280x720 25 fps, 12.64 s, faststart (plays in browsers)", "gif": "800x450 10 fps looping, palette 96"},
+  "tools": "ImageMagick 6 (typeset with the supplied Inter, JetBrains Mono fonts), ffmpeg blend/xfade/libx264"
+}

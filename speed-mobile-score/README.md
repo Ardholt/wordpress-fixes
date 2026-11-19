@@ -1,12 +1,12 @@
 # Mobile PageSpeed in the 30s–40s
 
 <p align="center">
-  <a href="proof/README.md"><img src="media/hero.png" width="600" alt="Mobile score 47 to 100. Main content 45.47 seconds to 1.58 seconds. Services, menu and answers retained."></a>
+  <a href="https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/"><img src="media/hero.png" width="600" alt="Mobile score 47 to 100. Main content 45.47 seconds to 1.58 seconds. Services, menu and answers retained."></a>
 </p>
 
 **I brought the main content into view in [1.58 seconds instead of 45.47](proof/summary.json), keeping the page and its working controls.**
 
-[See the page and readable results](proof/README.md) · [Watch the menu and answers work](media/page-in-use.gif)
+[See the page and readable results](https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/) · [Watch the menu and answers work](media/page-in-use.gif)
 
 <sub>Case 03 of 10 in [WordPress fixes](../README.md)</sub>
 
@@ -38,14 +38,15 @@ Ranges, before → after: score **46–47 → 99–100**; LCP **45.42–45.49 s 
 
 **Does this match your site?** These fixes fit pages where oversized uploads, delayed main images or theme/plugin files slow the first view. I check the actual page and its essential features before choosing the changes. A different theme, host or set of plugins needs its own before-and-after measurement; this result is not a promised score for another site.
 
-[Readable results and the retained page](proof/README.md) · [Every original HTML/JSON report](proof/README.md#every-report) · [Measurement conditions](REPRODUCE.md) · [Source of each claim](proof/claims.json)
+[Readable results and the retained page](https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/) · [Every original HTML/JSON report](https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/#every-report) · [Measurement conditions](REPRODUCE.md) · [Source of each claim](proof/claims.json)
 
 ## Try it yourself
 
+[Open the before Lighthouse report](https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/before/run-2.report.html) · [Open the after Lighthouse report](https://ardholt.github.io/wordpress-fixes/speed-mobile-score/proof/after/run-2.report.html) · [Before raw JSON](proof/before/run-2.report.json) · [After raw JSON](proof/after/run-2.report.json)
+
 [Open the full page capture](proof/after-mobile.png) and [watch the menu and answers](media/page-in-use.gif). No installation is needed to inspect these files.
 
-<details>
-<summary>Run the WordPress page and checks locally</summary>
+### Run the WordPress page and checks locally
 
 With Docker installed:
 
@@ -55,7 +56,7 @@ cd speed-mobile-score && ./run.sh
 
 This starts WordPress, measures both states and saves the reports, then removes the stack. [Open either state in your browser and reset it](REPRODUCE.md).
 
-</details>
+
 
 ## How it is tested
 

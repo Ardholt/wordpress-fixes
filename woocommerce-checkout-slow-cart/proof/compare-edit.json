@@ -1,0 +1,22 @@
+{
+  "output": "media/checkout-compare.png",
+  "kind": "Layout of two actual screenshots with typeset labels. No frames are drawn, regenerated or altered apart from cropping.",
+  "sources": {
+    "before": "proof/before-focus.png",
+    "after": "proof/after-focus.png"
+  },
+  "crops": {
+    "before": {"x": 0, "y": 0, "width": 724, "height": 180, "note": "Trims empty space below the error notice. Shown at 1:1."},
+    "after": {"x": 0, "y": 0, "width": 724, "height": 200, "note": "Trims empty space below the total and payment method. Shown at 1:1."}
+  },
+  "typeset_labels": [
+    "BEFORE: Checkout blocked. Basket update 3.38 s.",
+    "AFTER: Order received. Basket update 0.35 s.",
+    "Actual captures from the test shop: local test payment, no card charged.",
+    "Saved order checked: 2 cups, £48 + £4.50 delivery = £52.50.",
+    "Basket times are medians of five runs under the recorded conditions."
+  ],
+  "label_sources": ["proof/before-timings.json", "proof/after-timings.json", "proof/after-orders.json", "proof/summary.json"],
+  "canvas": {"width": 800, "height": 716},
+  "note": "Original screenshots under proof/ and the original media/hero.png are unchanged. No new browser run."
+}

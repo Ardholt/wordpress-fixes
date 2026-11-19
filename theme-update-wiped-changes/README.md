@@ -41,8 +41,7 @@ The [saved checks after the next update](proof/updated-browser.json) include the
 
 Use **Open the repaired site** above to explore the page in your browser. Nothing needs installing. That preview opens the repaired page; the update sequence is recorded in the proof above.
 
-<details>
-<summary>Technical files and local reproduction — optional</summary>
+### Technical files and local reproduction — optional
 
 The separate folder is a WordPress child theme: it holds the custom changes while inheriting the original theme's templates and navigation.
 
@@ -58,7 +57,7 @@ With Docker installed, run this from the case folder:
 
 It reproduces the loss, installs the child theme, performs the next update, saves the checks and shuts down. [Complete instructions](REPRODUCE.md) · [Full run log](proof/run-output.txt) · [Run conditions](proof/run.json) · [Claim sources](proof/claims.json) · [Browser preview verification](proof/demo.json)
 
-</details>
+
 
 ## How it is tested
 

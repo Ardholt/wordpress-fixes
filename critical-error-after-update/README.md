@@ -35,8 +35,7 @@
 
 Open **Try the repair calculator** above, change the number of items, then choose **Calculate estimate**. I verified that interaction in a browser: [record](proof/demo.json) and [screen capture](proof/playground.png).
 
-<details>
-<summary>Run the failure and recovery yourself — technical instructions</summary>
+### Run the failure and recovery yourself — technical instructions
 
 With Docker and Compose installed:
 
@@ -47,7 +46,7 @@ cd critical-error-after-update
 
 This runs the broken update, verifies recovery from the backup, and checks the corrected update. It saves screenshots and results, then removes the local installation. See the [recovery guide](RECOVERY.md) for the code's scope, backup commands, individual stages, port settings and dependencies. [Recorded runtime and conditions](proof/run.json).
 
-</details>
+
 
 ## How it is tested
 

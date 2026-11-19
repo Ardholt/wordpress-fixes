@@ -1,7 +1,7 @@
 # Checkout errors and a slow cart
 
 <p align="center">
-  <img src="media/hero.png" width="600" alt="Before: delivery is rejected and the basket waits. After: checkout confirms the saved order and the basket responds faster.">
+  <img src="media/checkout-compare.png" width="600" alt="Before: checkout says 'Delivery could not be confirmed. Please try again.' and the basket update takes 3.38 seconds. After: 'Thank you. Your order has been received.' with a £52.50 total, paid by local test payment, and a 0.35 second basket update. Actual captures from the test shop; no card charged.">
 </p>
 
 **I fixed the delivery error and cut the median basket update from 3.38 s to 0.35 s.**

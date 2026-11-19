@@ -2,6 +2,8 @@
 
 **Ten problems that take small WordPress sites down, break them or slow them, each one fixed, measured and runnable with one command.**
 
+[![All cases](https://github.com/Ardholt/wordpress-fixes/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Ardholt/wordpress-fixes/actions/workflows/ci.yml)
+
 ## The cases
 
 <!-- cases:start -->
