@@ -1,0 +1,33 @@
+# GitHub Pages for an Ardholt casebook repo. Copy _config.yml, _layouts/ and assets/ to the repo root,
+# then Settings -> Pages -> Deploy from a branch -> main / (root). No build step of your own.
+# The same README.md files GitHub shows become the pages: README.md -> /, 01-case/README.md -> /01-case/.
+title: WordPress Fixes                 # the casebook name (same as the repo README H1)
+description: Ten problems that take small WordPress sites down or slow them, each one fixed, measured and runnable with one command.
+repository: Ardholt/wordpress-fixes   # owner/repo, used for the "Source on GitHub" link
+lang: en-GB
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
+
+# All four are on GitHub Pages' default list; naming them keeps a local build identical.
+plugins:
+  - jekyll-optional-front-matter   # README.md files need no front matter
+  - jekyll-readme-index            # README.md becomes the folder's index page
+  - jekyll-relative-links          # [x](01-case/README.md) and ../README.md links become page links
+  - jekyll-titles-from-headings    # the page title is the README's H1
+
+titles_from_headings:
+  strip_title: false               # keep the H1 on the page; it is the case's headline
+relative_links:
+  enabled: true
+  collections: false
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
+
+exclude: [ "**/node_modules", "**/vendor", "**/tests", "**/.github", "*.sh", "Makefile", "docker-compose.yml", "cases.json" ]

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.title != site.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+{% assign hero = page.dir | append: 'media/hero.png' %}{% assign hero_file = site.static_files | where: "path", hero | first %}{% if hero_file %}<meta property="og:image" content="{{ hero | absolute_url }}">{% endif %}
+<meta name="theme-color" content="#0b0a0a">
+<link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+<!-- ANALYTICS SLOT: the Cloudflare Web Analytics beacon goes on the next line, nothing else here. -->
+<!-- /ANALYTICS SLOT -->
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}: all cases">
+    <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 29 16 3l13 26h-3.6L16 10.2 6.6 29H3Z"/><path d="M11 29l5-10 5 10H11Z"/></svg>
+    <span>ARDHOLT</span>
+  </a>
+  <a class="book" href="{{ '/' | relative_url }}">{{ site.title }}{% if page.url != '/' %} · all cases{% endif %}</a>
+</header>
+<main class="md">
+{{ content }}
+</main>
+<footer class="foot">
+  <p><a href="https://ardholt.com/p/">More of my work</a> · <a href="https://ardholt.com/p/prices/">Prices</a> · <a href="https://github.com/{{ site.repository }}">Source on GitHub</a></p>
+</footer>
+</body>
+</html>

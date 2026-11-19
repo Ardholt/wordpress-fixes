@@ -1,0 +1,61 @@
+/* Ardholt casebook: one small stylesheet for the GitHub Pages copy of each repo. Mobile first, system fonts.
+   Colours match ardholt.com/p/: near-black ground, warm ink, one red-orange accent. */
+:root{
+  --bg:#0b0a0a; --bg-2:#141110; --ink:#f1ece6; --ink-2:#cfc8c0; --mute:#8e8782;
+  --line:#262121; --line-2:#352f2e; --acc:#ff3b1f;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans)}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:.2em}
+a:hover,a:focus-visible{text-decoration-color:var(--acc)}
+:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:18px 20px;border-bottom:1px solid var(--line)}
+.brand{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);letter-spacing:.22em;text-decoration:none}
+.book{font:12px/1.3 var(--mono);letter-spacing:.08em;color:var(--mute);text-decoration:none;text-align:right}
+
+.md{max-width:760px;margin:0 auto;padding:28px 20px 8px}
+.md h1{font:400 clamp(30px,7.4vw,46px)/1.08 var(--serif);letter-spacing:-.01em;margin:4px 0 22px;text-wrap:balance}
+.md h2{font:600 12px/1.2 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin:44px 0 14px;padding-top:18px;border-top:1px solid var(--line)}
+.md h2::before{content:"";display:inline-block;width:18px;height:2px;background:var(--acc);vertical-align:middle;margin:0 10px 3px 0}
+.md p,.md ul,.md ol{margin:0 0 16px}
+.md ul,.md ol{padding-left:1.25em}
+.md li{margin:0 0 8px;color:var(--ink-2)}
+.md li::marker{color:var(--mute)}
+.md strong{color:var(--ink);font-weight:600}
+.md p > strong:only-child{display:block;font-size:19px;line-height:1.5}
+.md sub{font:12px/1.5 var(--mono);letter-spacing:.04em;color:var(--mute);vertical-align:baseline}
+.md img{max-width:100%;height:auto;border:0}
+.md p[align=center]{text-align:center;margin:0 0 20px}
+.md hr{border:0;border-top:1px solid var(--line);margin:40px 0 20px}
+
+.md table{width:100%;border-collapse:collapse;margin:0 0 18px;font-variant-numeric:tabular-nums}
+.md th{font:600 11px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);text-align:left;padding:0 10px 10px 0;border-bottom:1px solid var(--line-2)}
+.md td{padding:12px 10px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.md td:not(:first-child){font:400 clamp(20px,5vw,26px)/1.1 var(--serif);white-space:nowrap}
+.md td a{text-decoration-color:var(--acc)}
+
+.md code{font:.88em var(--mono);background:var(--bg-2);border:1px solid var(--line);border-radius:4px;padding:.1em .35em}
+.md pre{background:var(--bg-2);border:1px solid var(--line-2);border-radius:8px;padding:16px 18px;overflow:auto;margin:0 0 14px}
+.md pre code{background:none;border:0;padding:0;font-size:15px;color:var(--ink)}
+.md .language-bash pre code::before,.md .language-shell pre code::before{content:"$ ";color:var(--acc)}
+.md details{border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:0 0 16px}
+.md summary{cursor:pointer;color:var(--ink)}
+
+.foot{max-width:760px;margin:24px auto 0;padding:20px 20px 40px;border-top:1px solid var(--line);font:12px/1.7 var(--mono);color:var(--mute)}
+.foot p{margin:0}
+.foot a{color:var(--ink-2)}
+
+@media (min-width:900px){
+  body{font-size:18px}
+  .top,.md,.foot{max-width:740px}
+  .md{padding-top:44px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+/* the live-page button (hero/make-button) is dark; outline it so it shows on the dark ground */
+.md p[align=center] a img{border:1px solid #6b625e;border-radius:8px}
+.md p[align=center] a:hover img,.md p[align=center] a:focus-visible img{border-color:var(--acc)}

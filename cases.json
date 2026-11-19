@@ -1,0 +1,192 @@
+{
+  "repo": "Ardholt/wordpress-fixes",
+  "casebook": "WordPress Fixes",
+  "about": "Ten WordPress problems, each fixed, measured and runnable with one command.",
+  "website": "https://ardholt.com/p/",
+  "topics": [
+    "wordpress",
+    "woocommerce",
+    "elementor",
+    "website-speed",
+    "wordpress-security",
+    "php"
+  ],
+  "pages_root": "https://ardholt.github.io/wordpress-fixes/",
+  "licence": "MIT",
+  "cases": [
+    {
+      "folder": "elementor-update-broke-pages",
+      "problem": "Pages broke after an Elementor update",
+      "result": "I restored the page and button, with 0 changed pixels against the original.",
+      "tags": [
+        "WordPress",
+        "Elementor",
+        "Plugin compatibility",
+        "Layout repair"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/elementor-update-broke-pages/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/elementor-update-broke-pages/",
+      "demo": {
+        "status": "verified",
+        "kind": "WordPress Playground",
+        "url_in": "elementor-update-broke-pages/README.md"
+      }
+    },
+    {
+      "folder": "critical-error-after-update",
+      "problem": "There has been a critical error on this website",
+      "result": "Plugin update took the estimate page down (HTTP 500); restored by rollback, then fixed with the calculator kept",
+      "tags": [
+        "wordpress",
+        "critical-error",
+        "php",
+        "plugin-update",
+        "rollback"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/critical-error-after-update/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/critical-error-after-update/",
+      "demo": {
+        "status": "verified",
+        "kind": "WordPress Playground",
+        "url_in": "critical-error-after-update/README.md"
+      }
+    },
+    {
+      "folder": "speed-mobile-score",
+      "problem": "Mobile PageSpeed in the 30s–40s",
+      "result": "Median local mobile Lighthouse score 45 → 99, LCP 45.57 s → 1.62 s, content kept",
+      "tags": [
+        "wordpress",
+        "pagespeed",
+        "lighthouse",
+        "core-web-vitals",
+        "images"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/speed-mobile-score/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/speed-mobile-score/",
+      "demo": {
+        "status": "docker"
+      }
+    },
+    {
+      "folder": "woocommerce-checkout-slow-cart",
+      "problem": "Checkout errors and a slow cart",
+      "result": "Checkout accepted; median cart update 3.05 s → 0.26 s across five runs per state; five orders saved correctly",
+      "tags": [
+        "woocommerce",
+        "checkout",
+        "cart",
+        "performance"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/woocommerce-checkout-slow-cart/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/woocommerce-checkout-slow-cart/",
+      "demo": {
+        "status": "docker-verified; playground-unverified"
+      }
+    },
+    {
+      "folder": "video-embed-wont-play",
+      "problem": "Video will not play or embed",
+      "result": "I restored an 8-second video: playback, seeking and completion verified, with other security rules unchanged.",
+      "tags": [
+        "wordpress",
+        "video",
+        "csp",
+        "security-headers"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/video-embed-wont-play/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/video-embed-wont-play/",
+      "demo": {
+        "status": "docker-only-header-reproduction"
+      }
+    },
+    {
+      "folder": "theme-update-wiped-changes",
+      "problem": "A theme update wiped my changes",
+      "result": "Lost styling and notice rescued into a child theme; both survived the next parent-theme update",
+      "tags": [
+        "wordpress",
+        "child-theme",
+        "theme-update",
+        "lost-customizations"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/theme-update-wiped-changes/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/theme-update-wiped-changes/",
+      "demo": {
+        "status": "verified",
+        "kind": "WordPress Playground",
+        "url_in": "theme-update-wiped-changes/README.md"
+      }
+    },
+    {
+      "folder": "contact-form-to-sheet-and-email",
+      "problem": "Form entries should land in a sheet and my inbox",
+      "result": "I confirmed one matching SQLite row and one received Mailpit message, with interrupted deliveries saved for replay.",
+      "tags": [
+        "wordpress",
+        "forms",
+        "n8n",
+        "sqlite",
+        "email",
+        "retries"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/contact-form-to-sheet-and-email/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/contact-form-to-sheet-and-email/",
+      "demo": {
+        "status": "docker-verified",
+        "kind": "WordPress Playground",
+        "url_in": "contact-form-to-sheet-and-email/README.md"
+      }
+    },
+    {
+      "folder": "external-api-in-wordpress",
+      "problem": "Show data from an outside service on my site",
+      "result": "Raw provider data replaced with 2 readable rates, an hourly cache and a useful outage message",
+      "tags": [
+        "wordpress",
+        "api",
+        "caching",
+        "fallback"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/external-api-in-wordpress/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/external-api-in-wordpress/",
+      "demo": {
+        "status": "verified-inline-playground"
+      }
+    },
+    {
+      "folder": "booking-system-setup",
+      "problem": "Customers should book online",
+      "result": "I restored online booking and kept each slot to one appointment across nine simultaneous-request tests, with matching confirmation mail.",
+      "tags": [
+        "WordPress",
+        "Online booking",
+        "Availability",
+        "Confirmation mail"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/booking-system-setup/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/booking-system-setup/",
+      "demo": {
+        "status": "unverified-docker-fallback",
+        "kind": "WordPress Playground",
+        "url_in": "booking-system-setup/README.md"
+      }
+    },
+    {
+      "folder": "hacked-site-cleanup",
+      "problem": "My site was hacked",
+      "result": "6 planted indicators found and removed, approved content kept, hardening tested, repeat scan clean",
+      "tags": [
+        "wordpress",
+        "security",
+        "malware-cleanup",
+        "hardening"
+      ],
+      "readme_url": "https://github.com/Ardholt/wordpress-fixes/blob/main/hacked-site-cleanup/README.md",
+      "pages_url": "https://ardholt.github.io/wordpress-fixes/hacked-site-cleanup/",
+      "demo": {
+        "status": "docker"
+      }
+    }
+  ]
+}
