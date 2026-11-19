@@ -61,3 +61,9 @@ The browser image already contains Chromium and its system libraries; its build 
 `run.sh` prints each stage name, limit and elapsed time. Image builds, startup, browser checks and image rendering have separate deadlines. The complete run has a 30-minute limit, with a 40-minute workflow budget allowing runner setup, cleanup and artifact upload. On failure, the log names the failed or timed-out stage. Fresh downloads depend on network speed; the recorded run time is in `proof/run.json`.
 
 The [cold-run record](proof/cold-run.json) links the empty-cache preflight, stage timings and full output. [Timeout checks](proof/timeout-checks.txt) show a named stalled stage returning exit 124 and an ordinary failure preserving exit 7.
+
+## Deterministic PHP version changes
+
+This run replaces plugin files repeatedly. The reproduction environment disables OPcache using `zz-case-runtime.ini`, loaded after the base image’s `opcache-recommended.ini`, so Apache executes the current file bytes on every request. This setting makes state changes repeatable; the plugin repair remains the replacement of the removed function call.
+
+The earlier `case.ini` setting loaded before the base image’s recommended settings, leaving a two-second revalidation interval active. See the [configuration order](proof/cache-config-before.txt) and [stale-code reproduction](proof/cache-transition-before.json). The [HTTP regression check](tests/cache-transition.php) warms a temporary PHP endpoint, replaces its literal while preserving size and timestamp, and immediately requests it again. The [current result](proof/cache-transition.json) must show the new value through Apache with opcode caching disabled. The temporary endpoint is removed afterward. The existing critical-error, rollback and calculator checks remain required.

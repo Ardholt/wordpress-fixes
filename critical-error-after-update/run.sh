@@ -43,6 +43,8 @@ setup() {
  wp db export /tmp/pre-update.sql >/dev/null
  stage 60 'save database backup' docker compose exec -T wordpress cp /tmp/pre-update.sql /case/.private/pre-update.sql
  echo 'PASS pre-update plugin archive and database backup created'
+ stage 30 'wait for Apache HTTP readiness' docker compose exec -T wordpress curl -fsS --retry 10 --retry-connrefused --retry-delay 1 --max-time 2 'http://127.0.0.1/?pagename=about' > /dev/null
+ stage 30 'verify Apache reads replacement PHP immediately' docker compose exec -T wordpress php /case/tests/cache-transition.php > proof/cache-transition.json || { code=$?; cat proof/cache-transition.json >&2; return "$code"; }
 }
 broken() { install_plugin fixtures/estimate-1.1.0.php; clear_log
  if check health-probe > proof/healthy-check-broken.txt 2>&1; then

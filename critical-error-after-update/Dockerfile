@@ -8,4 +8,6 @@ RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.l
 RUN curl -fsSL --connect-timeout 15 --max-time 120 --retry 2 --retry-max-time 180 \
  https://github.com/wp-cli/wp-cli/releases/download/v2.12.0/wp-cli-2.12.0.phar -o /usr/local/bin/wp \
  && chmod +x /usr/local/bin/wp
-RUN printf 'opcache.revalidate_freq=0\n' > /usr/local/etc/php/conf.d/case.ini
+# This reproduction repeatedly replaces PHP files; read their current bytes on every request.
+# Load after the base image's opcache-recommended.ini. This is not the plugin repair.
+RUN printf 'opcache.enable=0\nopcache.enable_cli=0\n' > /usr/local/etc/php/conf.d/zz-case-runtime.ini

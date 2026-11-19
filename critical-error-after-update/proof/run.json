@@ -1,1 +1,1 @@
-{"environment":"Docker Compose; WordPress Apache; MariaDB; Chromium", "commands":["setup","baseline","broken","rollback","broken","fixed"],"elapsed_seconds":163,"outcomes":{"broken":500,"rollback":200,"fixed":200},"date_utc":"2026-11-19T08:07:42Z"}
+{"environment":"Docker Compose; WordPress Apache; MariaDB; Chromium", "commands":["setup","baseline","broken","rollback","broken","fixed"],"elapsed_seconds":188,"outcomes":{"broken":500,"rollback":200,"fixed":200},"date_utc":"2026-11-19T09:30:34Z"}

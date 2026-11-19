@@ -213,6 +213,31 @@
           "locator": "timeout check and exit-code check"
         }
       ]
+    },
+    {
+      "claim": "Apache executes replacement PHP immediately, including replacements with unchanged file size and timestamp; the previous OPcache configuration served stale code.",
+      "evidence": [
+        {
+          "path": "proof/cache-config-before.txt",
+          "locator": "revalidate_freq and INI load order"
+        },
+        {
+          "path": "proof/cache-transition-before.json",
+          "locator": "before.value, after.value, after.opcache_enabled, passed"
+        },
+        {
+          "path": "proof/cache-transition.json",
+          "locator": "before.value, after.value, after.sapi, after.opcache_enabled, passed"
+        },
+        {
+          "path": "tests/cache-transition.php",
+          "locator": "HTTP requests before and after file replacement"
+        },
+        {
+          "path": "Dockerfile",
+          "locator": "zz-case-runtime.ini"
+        }
+      ]
     }
   ]
 }

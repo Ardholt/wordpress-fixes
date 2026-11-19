@@ -1,3 +1,3 @@
 STAGE START: browser checks: health-probe (limit 120s)
 PASS healthy estimate page
-STAGE PASS: browser checks: health-probe (2s)
+STAGE PASS: browser checks: health-probe (3s)

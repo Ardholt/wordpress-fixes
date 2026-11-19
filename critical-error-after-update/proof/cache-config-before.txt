@@ -1,0 +1,13 @@
+revalidate_freq=2
+/usr/local/etc/php/conf.d/case.ini,
+/usr/local/etc/php/conf.d/docker-php-ext-bcmath.ini,
+/usr/local/etc/php/conf.d/docker-php-ext-exif.ini,
+/usr/local/etc/php/conf.d/docker-php-ext-gd.ini,
+/usr/local/etc/php/conf.d/docker-php-ext-imagick.ini,
+/usr/local/etc/php/conf.d/docker-php-ext-intl.ini,
+/usr/local/etc/php/conf.d/docker-php-ext-mysqli.ini,
+/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini,
+/usr/local/etc/php/conf.d/docker-php-ext-sodium.ini,
+/usr/local/etc/php/conf.d/docker-php-ext-zip.ini,
+/usr/local/etc/php/conf.d/error-logging.ini,
+/usr/local/etc/php/conf.d/opcache-recommended.ini

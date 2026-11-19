@@ -1,0 +1,16 @@
+{
+    "method": "Warm a PHP endpoint, replace its literal without changing file size or mtime, then immediately request it again through Apache.",
+    "before": {
+        "value": "old",
+        "sapi": "apache2handler",
+        "opcache_enabled": "1",
+        "revalidate_freq": "2"
+    },
+    "after": {
+        "value": "old",
+        "sapi": "apache2handler",
+        "opcache_enabled": "1",
+        "revalidate_freq": "2"
+    },
+    "passed": false
+}
