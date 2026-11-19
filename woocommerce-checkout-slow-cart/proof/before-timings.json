@@ -1,0 +1,65 @@
+{
+  "state": "before",
+  "browser": "141.0.7390.37",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "runs": [
+    {
+      "iteration": 1,
+      "cartMs": 3439,
+      "checkoutMs": 2036,
+      "checkoutHttpStatus": 200,
+      "result": "failure",
+      "deliveryRequestsDuringCart": 6,
+      "deliveryRequestsCumulative": 10,
+      "error": "Delivery could not be confirmed. Please try again."
+    },
+    {
+      "iteration": 2,
+      "cartMs": 3171,
+      "checkoutMs": 2122,
+      "checkoutHttpStatus": 200,
+      "result": "failure",
+      "deliveryRequestsDuringCart": 6,
+      "deliveryRequestsCumulative": 20,
+      "error": "Delivery could not be confirmed. Please try again."
+    },
+    {
+      "iteration": 3,
+      "cartMs": 3538,
+      "checkoutMs": 2268,
+      "checkoutHttpStatus": 200,
+      "result": "failure",
+      "deliveryRequestsDuringCart": 6,
+      "deliveryRequestsCumulative": 30,
+      "error": "Delivery could not be confirmed. Please try again."
+    },
+    {
+      "iteration": 4,
+      "cartMs": 3380,
+      "checkoutMs": 2201,
+      "checkoutHttpStatus": 200,
+      "result": "failure",
+      "deliveryRequestsDuringCart": 6,
+      "deliveryRequestsCumulative": 40,
+      "error": "Delivery could not be confirmed. Please try again."
+    },
+    {
+      "iteration": 5,
+      "cartMs": 3272,
+      "checkoutMs": 2125,
+      "checkoutHttpStatus": 200,
+      "result": "failure",
+      "deliveryRequestsDuringCart": 6,
+      "deliveryRequestsCumulative": 50,
+      "error": "Delivery could not be confirmed. Please try again."
+    }
+  ],
+  "assertions": [
+    "Product and quantity retained",
+    "GBP 48.00 merchandise + GBP 4.50 shipping = GBP 52.50",
+    "Original delivery error reproduced"
+  ]
+}

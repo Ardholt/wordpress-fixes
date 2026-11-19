@@ -1,0 +1,66 @@
+{
+  "method": "Offline rendering with the shared casebook preview script and styles. This is a layout check, not a hosted GitHub or Pages verification.",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "mode": "github",
+      "width": 390,
+      "height": 844,
+      "geometry": {
+        "top": 535.59375,
+        "width": 324,
+        "height": 318.046875,
+        "naturalWidth": 1200,
+        "naturalHeight": 1178,
+        "afterNoteBottom": 694.35375,
+        "afterPanelBottom": 803.4337499999999
+      },
+      "horizontalOverflow": false
+    },
+    {
+      "mode": "github",
+      "width": 1366,
+      "height": 768,
+      "geometry": {
+        "top": 398.59375,
+        "width": 600,
+        "height": 589,
+        "naturalWidth": 1200,
+        "naturalHeight": 1178,
+        "afterNoteBottom": 692.59375,
+        "afterPanelBottom": 894.59375
+      },
+      "horizontalOverflow": false
+    },
+    {
+      "mode": "pages",
+      "width": 390,
+      "height": 844,
+      "geometry": {
+        "top": 173.78125,
+        "width": 350,
+        "height": 343.578125,
+        "naturalWidth": 1200,
+        "naturalHeight": 1178,
+        "afterNoteBottom": 345.28125,
+        "afterPanelBottom": 463.1145833333333
+      },
+      "horizontalOverflow": false
+    },
+    {
+      "mode": "pages",
+      "width": 1366,
+      "height": 768,
+      "geometry": {
+        "top": 174.671875,
+        "width": 600,
+        "height": 589,
+        "naturalWidth": 1200,
+        "naturalHeight": 1178,
+        "afterNoteBottom": 468.671875,
+        "afterPanelBottom": 670.671875
+      },
+      "horizontalOverflow": false
+    }
+  ]
+}

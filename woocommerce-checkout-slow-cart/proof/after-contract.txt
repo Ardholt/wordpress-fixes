@@ -1,0 +1,3 @@
+PASS: validCheckouts
+PASS: cartBudget
+PASS: valid checkout, cart budget, repeated timings, cache, invalid input.

@@ -1,0 +1,14 @@
+{
+  "selector": ".woocommerce-error",
+  "clip": {
+    "x": 106,
+    "y": 84.1875,
+    "width": 724,
+    "height": 230
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "billingValuesVisible": false
+}

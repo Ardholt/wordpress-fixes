@@ -1,0 +1,9 @@
+.env
+runtime/
+proof/videos/
+proof/debug*
+node_modules/
+proof/*.webm
+.run-console.txt
+.preview/
+.run-lock/

@@ -1,0 +1,1 @@
+PASS: warm cache, five-minute expiry, refresh, timeout and malformed-response rejection.

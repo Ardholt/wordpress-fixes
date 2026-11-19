@@ -1,0 +1,40 @@
+<?php
+update_option('blogname', 'Velquorra Kiln');
+update_option('woocommerce_store_address', '');
+update_option('woocommerce_store_city', '');
+update_option('woocommerce_default_country', 'GB');
+update_option('woocommerce_currency', 'GBP');
+update_option('woocommerce_calc_taxes', 'no');
+update_option('woocommerce_allowed_countries', 'specific');
+update_option('woocommerce_specific_allowed_countries', ['GB']);
+update_option('woocommerce_ship_to_countries', 'specific');
+update_option('woocommerce_specific_ship_to_countries', ['GB']);
+update_option('woocommerce_ship_to_destination', 'billing');
+update_option('woocommerce_enable_guest_checkout', 'yes');
+update_option('woocommerce_cheque_settings', ['enabled'=>'yes','title'=>'Local test payment','description'=>'No payment is taken. The order is held for review.','instructions'=>'No payment is taken.']);
+update_option('woocommerce_cod_settings', ['enabled'=>'no']);
+update_option('woocommerce_email_enabled_new_order', 'no');
+add_filter('pre_wp_mail', '__return_false');
+$product = new WC_Product_Simple();
+$product->set_name('Breakfast cup');
+$product->set_regular_price('24.00');
+$product->set_sku('VK-CUP');
+$product->set_status('publish');
+$product->set_stock_status('instock');
+$product->set_weight('0.4');
+$id = $product->save();
+$zone = new WC_Shipping_Zone();
+$zone->set_zone_name('United Kingdom');
+$zone->add_location('GB','country');
+$zone->save();
+$method = $zone->add_shipping_method('flat_rate');
+update_option('woocommerce_flat_rate_'.$method.'_settings', ['title'=>'UK delivery','cost'=>'4.50','tax_status'=>'none']);
+foreach(['cart'=>'[woocommerce_cart]', 'checkout'=>'[woocommerce_checkout]'] as $slug=>$content) {
+    $page = get_page_by_path($slug);
+    $pid = wp_insert_post(['ID'=>$page ? $page->ID : 0,'post_title'=>ucfirst($slug),'post_name'=>$slug,'post_content'=>$content,'post_status'=>'publish','post_type'=>'page']);
+    update_option('woocommerce_'.$slug.'_page_id',$pid);
+}
+$home = wp_insert_post(['post_title'=>'Shop','post_name'=>'collection','post_type'=>'page','post_status'=>'publish','post_content'=>'<div class="product-card"><div class="vessel">◒</div><div><h2>Breakfast cup</h2><p>Stoneware cup with a handle.</p><p>£24.00 · UK delivery £4.50</p><a class="button" href="/cart/?add-to-cart='.$id.'">Add to basket</a></div></div>']);
+update_option('show_on_front','page');update_option('page_on_front',$home);
+flush_rewrite_rules();
+echo "Shop configured: Breakfast cup; GBP 24.00; UK delivery GBP 4.50; cheque gateway.\n";

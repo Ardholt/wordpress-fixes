@@ -1,0 +1,251 @@
+{
+  "scope": "README.md, media/hero.png and docs/reproduction.md",
+  "conditions": {
+    "path": "proof/run.json",
+    "locator": "method and environment"
+  },
+  "claims": [
+    {
+      "claim": "Five saved orders; rejected original checkout; repaired checkout reaches receipt",
+      "evidence": [
+        {
+          "path": "proof/before-orders.json",
+          "locator": "count = 0"
+        },
+        {
+          "path": "proof/after-orders.json",
+          "locator": "count = 5; orders[*].status = on-hold"
+        },
+        {
+          "path": "proof/before-timings.json",
+          "locator": "runs[*].result = failure; runs[*].error"
+        },
+        {
+          "path": "proof/after-timings.json",
+          "locator": "runs[*].result = success"
+        },
+        {
+          "path": "proof/after.png",
+          "locator": "Order received notice"
+        }
+      ]
+    },
+    {
+      "claim": "Cart and checkout medians and ranges; five runs per state",
+      "evidence": [
+        {
+          "path": "proof/summary.json",
+          "locator": "before and after: cartMs and checkoutMs: median, min, max, runs; README seconds are milliseconds / 1000 rounded to two decimals"
+        },
+        {
+          "path": "proof/before-timings.json",
+          "locator": "runs[0..4].cartMs and checkoutMs"
+        },
+        {
+          "path": "proof/after-timings.json",
+          "locator": "runs[0..4].cartMs and checkoutMs"
+        }
+      ]
+    },
+    {
+      "claim": "The snippet repeats HTTP requests during cart calculation and reads an outdated field",
+      "evidence": [
+        {
+          "path": "source/delivery-before.php",
+          "locator": "velquorra_delivery_countries(): wp_remote_get and countries; woocommerce_before_calculate_totals hook"
+        },
+        {
+          "path": "fixtures/server.py",
+          "locator": "Handler.do_GET: schema 2, destinations GB"
+        },
+        {
+          "path": "proof/before-timings.json",
+          "locator": "runs[*].deliveryRequestsDuringCart"
+        }
+      ]
+    },
+    {
+      "claim": "Validated current response schema and a five-minute shared cache remove repeated remote requests",
+      "evidence": [
+        {
+          "path": "fix/delivery-after.php",
+          "locator": "velquorra_delivery_countries(): schema check, destinations, get_transient and set_transient"
+        },
+        {
+          "path": "proof/after-timings.json",
+          "locator": "runs[1..4].deliveryRequestsDuringCart = 0"
+        },
+        {
+          "path": "proof/cache-contract.txt",
+          "locator": "PASS line"
+        }
+      ]
+    },
+    {
+      "claim": "Two breakfast cups at GBP 24 each; GBP 48 merchandise plus GBP 4.50 shipping equals GBP 52.50; local cheque method, no payment taken",
+      "evidence": [
+        {
+          "path": "proof/after-orders.json",
+          "locator": "orders[*]: currency, payment, status, shipping, total, items[0].product, quantity and total"
+        },
+        {
+          "path": "fixtures/setup.php",
+          "locator": "set_regular_price; woocommerce_cheque_settings; woocommerce_cod_settings"
+        },
+        {
+          "path": "source/theme/index.php",
+          "locator": "Velquorra Kiln storefront header"
+        }
+      ]
+    },
+    {
+      "claim": "Invalid email and postcode are rejected without additional orders",
+      "evidence": [
+        {
+          "path": "proof/after-timings.json",
+          "locator": "invalid.emailRejected and invalid.postcodeRejected"
+        },
+        {
+          "path": "proof/orders-contract.txt",
+          "locator": "PASS line"
+        },
+        {
+          "path": "tests/flow.mjs",
+          "locator": "after-state invalid checkout submission"
+        }
+      ]
+    },
+    {
+      "claim": "Same acceptance contract fails before and passes after; fixed cart has a 1500 ms budget and must improve by at least 50 percent",
+      "evidence": [
+        {
+          "path": "proof/before-contract.txt",
+          "locator": "AssertionError: Every valid checkout must succeed"
+        },
+        {
+          "path": "proof/after-contract.txt",
+          "locator": "PASS line"
+        },
+        {
+          "path": "tests/acceptance.mjs",
+          "locator": "all assertions"
+        }
+      ]
+    },
+    {
+      "claim": "Fresh browser contexts, identical basket and viewport, controlled 900 ms delivery latency, all observations retained",
+      "evidence": [
+        {
+          "path": "proof/run.json",
+          "locator": "method and environment.viewport"
+        },
+        {
+          "path": "tests/flow.mjs",
+          "locator": "five-iteration loop and browser.newContext"
+        },
+        {
+          "path": "fixtures/server.py",
+          "locator": "time.sleep(0.9)"
+        }
+      ]
+    },
+    {
+      "claim": "Warm cache, expiry and refresh work; failed and malformed responses fail closed",
+      "evidence": [
+        {
+          "path": "proof/cache-contract.txt",
+          "locator": "PASS line"
+        },
+        {
+          "path": "fixtures/cache-check.php",
+          "locator": "expiry, timeout and malformed mode assertions"
+        }
+      ]
+    },
+    {
+      "claim": "Before and after recordings show actual checkout flow, final seven seconds of first iteration; matching viewport screenshots",
+      "evidence": [
+        {
+          "path": "proof/before-checkout.mp4",
+          "locator": "0\u20137 seconds"
+        },
+        {
+          "path": "proof/after-checkout.mp4",
+          "locator": "0\u20137 seconds"
+        },
+        {
+          "path": "tests/flow.mjs",
+          "locator": "recordVideo and first-iteration screenshot branches"
+        },
+        {
+          "path": "tools/render.sh",
+          "locator": "ffmpeg -sseof -7; metadata stripping"
+        },
+        {
+          "path": "proof/before-media.json",
+          "locator": "format.duration (rounded to seconds), format.size and streams[0].width/height"
+        },
+        {
+          "path": "proof/after-media.json",
+          "locator": "format.duration (rounded to seconds), format.size and streams[0].width/height"
+        }
+      ]
+    },
+    {
+      "claim": "Pinned application versions, separate browser container, local credentials and automatic full-run cleanup",
+      "evidence": [
+        {
+          "path": "proof/run.json",
+          "locator": "environment"
+        },
+        {
+          "path": "compose.yaml",
+          "locator": "services"
+        },
+        {
+          "path": "run.sh",
+          "locator": "runtime credential generation and EXIT trap"
+        }
+      ]
+    },
+    {
+      "claim": "No hosted Playground flow is advertised; Docker is the verified fallback",
+      "evidence": [
+        {
+          "path": "proof/demo.json",
+          "locator": "status, observation, limitation and fallback"
+        }
+      ]
+    },
+    {
+      "claim": "The case CI definition executes the full runner and preserves artifacts",
+      "evidence": [
+        {
+          "path": ".ci/workflow.yml",
+          "locator": "jobs.checkout.steps"
+        }
+      ]
+    },
+    {
+      "claim": "Hero and result image are crops of actual checkout notices; generated billing text is not visible in captured media",
+      "evidence": [
+        {
+          "path": "proof/before-capture.json",
+          "locator": "selector, clip, billingValuesVisible"
+        },
+        {
+          "path": "proof/after-capture.json",
+          "locator": "selector, clip, billingValuesVisible"
+        },
+        {
+          "path": "tests/flow.mjs",
+          "locator": "captureNotice and capture-privacy stylesheet"
+        },
+        {
+          "path": "docs/content-origin.md",
+          "locator": "Content and checkout data"
+        }
+      ]
+    }
+  ]
+}

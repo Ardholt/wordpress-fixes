@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-19T06:35:20.628Z",
+  "environment": {
+    "wordpress": "6.8.3",
+    "woocommerce": "10.3.5",
+    "php": "8.3.28",
+    "cliPhp": "8.3.36",
+    "database": "MariaDB 11.4.5",
+    "browser": "141.0.7390.37",
+    "runner": "Docker Compose on a shared machine; Chromium in a separate container",
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    }
+  },
+  "commands": [
+    "./run.sh",
+    "node tests/flow.mjs before",
+    "node tests/acceptance.mjs before (expected nonzero)",
+    "node tests/flow.mjs after",
+    "node tests/acceptance.mjs after",
+    "node tests/orders.mjs"
+  ],
+  "method": {
+    "repetitions": 5,
+    "cache": "Fresh browser context per repetition; normal in-session browser caching; shared server cache; no page cache; first fixed run starts with empty delivery transient; subsequent runs use its five-minute lifetime",
+    "cart": "Monotonic browser-driver wall time: click Update cart through updated GBP 52.50 total and unblocked UI",
+    "checkout": "Click Place order through complete WooCommerce checkout AJAX JSON response; read-only XMLHttpRequest observer retains the native browser response before redirect; receipt and persisted order checked separately",
+    "network": "Local Docker network, no throttling; delivery fixture responds after 900 ms in both states",
+    "order": "Breakfast cup, quantity 2; GBP 48.00 + GBP 4.50 UK delivery; GBP 52.50; local cheque method"
+  },
+  "observed": {
+    "before": "5/5 rejected, 0 orders",
+    "after": "5/5 accepted, 5 on-hold orders",
+    "invalid": "Invalid email and postcode rejected; order count unchanged"
+  },
+  "elapsedBeforeRenderingSeconds": 225
+}

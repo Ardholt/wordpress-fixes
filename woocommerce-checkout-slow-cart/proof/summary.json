@@ -1,0 +1,30 @@
+{
+  "before": {
+    "cartMs": {
+      "median": 3380,
+      "min": 3171,
+      "max": 3538,
+      "runs": 5
+    },
+    "checkoutMs": {
+      "median": 2125,
+      "min": 2036,
+      "max": 2268,
+      "runs": 5
+    }
+  },
+  "after": {
+    "cartMs": {
+      "median": 348,
+      "min": 307,
+      "max": 568,
+      "runs": 5
+    },
+    "checkoutMs": {
+      "median": 832,
+      "min": 675,
+      "max": 1217,
+      "runs": 5
+    }
+  }
+}

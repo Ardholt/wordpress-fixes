@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-19T06:26:08.966Z",
+  "browser": "141.0.7390.37",
+  "url": "https://playground.wordpress.net/",
+  "blueprint": "blueprint.json",
+  "status": "unverified",
+  "supportedInteraction": "WordPress and WooCommerce loaded; empty cart displayed.",
+  "fallback": "./run.sh; proof/before-checkout.mp4; proof/after-checkout.mp4",
+  "limitation": "The delivery service is a private Compose service; this blueprint cannot reproduce its HTTP latency or reach its regions endpoint in hosted Playground.",
+  "httpStatus": 200,
+  "cartTotal": "GBP 52.50",
+  "observation": "locator.waitFor: Timeout 20000ms exceeded."
+}

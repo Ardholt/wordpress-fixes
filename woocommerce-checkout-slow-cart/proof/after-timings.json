@@ -1,0 +1,70 @@
+{
+  "state": "after",
+  "browser": "141.0.7390.37",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "runs": [
+    {
+      "iteration": 1,
+      "cartMs": 568,
+      "checkoutMs": 1217,
+      "checkoutHttpStatus": 200,
+      "result": "success",
+      "deliveryRequestsDuringCart": 1,
+      "deliveryRequestsCumulative": 51,
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "cartMs": 379,
+      "checkoutMs": 728,
+      "checkoutHttpStatus": 200,
+      "result": "success",
+      "deliveryRequestsDuringCart": 0,
+      "deliveryRequestsCumulative": 51,
+      "error": null
+    },
+    {
+      "iteration": 3,
+      "cartMs": 308,
+      "checkoutMs": 857,
+      "checkoutHttpStatus": 200,
+      "result": "success",
+      "deliveryRequestsDuringCart": 0,
+      "deliveryRequestsCumulative": 51,
+      "error": null
+    },
+    {
+      "iteration": 4,
+      "cartMs": 348,
+      "checkoutMs": 675,
+      "checkoutHttpStatus": 200,
+      "result": "success",
+      "deliveryRequestsDuringCart": 0,
+      "deliveryRequestsCumulative": 51,
+      "error": null
+    },
+    {
+      "iteration": 5,
+      "cartMs": 307,
+      "checkoutMs": 832,
+      "checkoutHttpStatus": 200,
+      "result": "success",
+      "deliveryRequestsDuringCart": 0,
+      "deliveryRequestsCumulative": 51,
+      "error": null
+    }
+  ],
+  "assertions": [
+    "Product and quantity retained",
+    "GBP 48.00 merchandise + GBP 4.50 shipping = GBP 52.50",
+    "Original delivery error absent; receipt reached"
+  ],
+  "invalid": {
+    "result": "failure",
+    "emailRejected": true,
+    "postcodeRejected": true
+  }
+}

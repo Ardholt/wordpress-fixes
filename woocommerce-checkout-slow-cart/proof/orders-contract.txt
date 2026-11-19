@@ -1,0 +1,1 @@
+PASS: 0 rejected orders; 5 persisted on-hold orders, quantity 2, shipping GBP 4.50, total GBP 52.50.

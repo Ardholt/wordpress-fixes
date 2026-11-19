@@ -1,0 +1,36 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "6.8"
+  },
+  "features": {
+    "networking": true
+  },
+  "landingPage": "/cart/",
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://downloads.wordpress.org/plugin/woocommerce.10.3.5.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/mu-plugins"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/mu-plugins/delivery.php",
+      "data": "<?php\n/** Plugin Name: Velquorra delivery eligibility */\nfunction velquorra_delivery_countries() {\n    $cached = get_transient('velquorra_delivery_regions_v2');\n    if (is_array($cached)) return $cached;\n    $response = wp_remote_get('http://delivery:8000/regions', ['timeout' => 4]);\n    if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) return [];\n    $body = json_decode(wp_remote_retrieve_body($response), true);\n    if (($body['schema'] ?? null) !== 2 || !is_array($body['destinations'] ?? null)) return [];\n    $countries = array_values(array_filter($body['destinations'], function ($country) {\n        return is_string($country) && preg_match('/^[A-Z]{2}$/D', $country);\n    }));\n    if (!$countries) return [];\n    set_transient('velquorra_delivery_regions_v2', $countries, 5 * MINUTE_IN_SECONDS);\n    return $countries;\n}\nadd_action('woocommerce_before_calculate_totals', function () {\n    // The delivery notice and checkout use the same eligibility lookup.\n    $GLOBALS['velquorra_destinations'] = velquorra_delivery_countries();\n});\nadd_action('woocommerce_after_checkout_validation', function ($data, $errors) {\n    if (!in_array($data['shipping_country'] ?: $data['billing_country'], velquorra_delivery_countries(), true)) {\n        $errors->add('delivery_region', 'Delivery could not be confirmed. Please try again.');\n    }\n}, 10, 2);\nadd_action('woocommerce_before_cart', function () {\n    if (in_array('GB', velquorra_delivery_countries(), true)) {\n        echo '<p class=\"delivery-note\">UK delivery available \u00b7 Flat rate \u00a34.50</p>';\n    }\n});\n"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require_once '/wordpress/wp-load.php';\nupdate_option('blogname', 'Velquorra Kiln');\nupdate_option('woocommerce_store_address', '');\nupdate_option('woocommerce_store_city', '');\nupdate_option('woocommerce_default_country', 'GB');\nupdate_option('woocommerce_currency', 'GBP');\nupdate_option('woocommerce_calc_taxes', 'no');\nupdate_option('woocommerce_allowed_countries', 'specific');\nupdate_option('woocommerce_specific_allowed_countries', ['GB']);\nupdate_option('woocommerce_ship_to_countries', 'specific');\nupdate_option('woocommerce_specific_ship_to_countries', ['GB']);\nupdate_option('woocommerce_ship_to_destination', 'billing');\nupdate_option('woocommerce_enable_guest_checkout', 'yes');\nupdate_option('woocommerce_cheque_settings', ['enabled'=>'yes','title'=>'Local test payment','description'=>'No payment is taken. The order is held for review.','instructions'=>'No payment is taken.']);\nupdate_option('woocommerce_cod_settings', ['enabled'=>'no']);\nupdate_option('woocommerce_email_enabled_new_order', 'no');\nadd_filter('pre_wp_mail', '__return_false');\n$product = new WC_Product_Simple();\n$product->set_name('Breakfast cup');\n$product->set_regular_price('24.00');\n$product->set_sku('VK-CUP');\n$product->set_status('publish');\n$product->set_stock_status('instock');\n$product->set_weight('0.4');\n$id = $product->save();\n$zone = new WC_Shipping_Zone();\n$zone->set_zone_name('United Kingdom');\n$zone->add_location('GB','country');\n$zone->save();\n$method = $zone->add_shipping_method('flat_rate');\nupdate_option('woocommerce_flat_rate_'.$method.'_settings', ['title'=>'UK delivery','cost'=>'4.50','tax_status'=>'none']);\nforeach(['cart'=>'[woocommerce_cart]', 'checkout'=>'[woocommerce_checkout]'] as $slug=>$content) {\n    $page = get_page_by_path($slug);\n    $pid = wp_insert_post(['ID'=>$page ? $page->ID : 0,'post_title'=>ucfirst($slug),'post_name'=>$slug,'post_content'=>$content,'post_status'=>'publish','post_type'=>'page']);\n    update_option('woocommerce_'.$slug.'_page_id',$pid);\n}\n$home = wp_insert_post(['post_title'=>'Shop','post_name'=>'collection','post_type'=>'page','post_status'=>'publish','post_content'=>'<div class=\"product-card\"><div class=\"vessel\">\u25d2</div><div><h2>Breakfast cup</h2><p>Stoneware cup with a handle.</p><p>\u00a324.00 \u00b7 UK delivery \u00a34.50</p><a class=\"button\" href=\"/cart/?add-to-cart='.$id.'\">Add to basket</a></div></div>']);\nupdate_option('show_on_front','page');update_option('page_on_front',$home);\nflush_rewrite_rules();\necho \"Shop configured: Breakfast cup; GBP 24.00; UK delivery GBP 4.50; cheque gateway.\\n\";\n"
+    }
+  ]
+}

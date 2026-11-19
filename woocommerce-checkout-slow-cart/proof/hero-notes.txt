@@ -1,0 +1,2 @@
+Checkout blocked. Cart 3.38 s.
+Order received. Cart 0.35 s.
