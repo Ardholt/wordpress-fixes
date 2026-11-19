@@ -1,14 +1,14 @@
 # My site was hacked
 
 <p align="center">
-  <a href="proof/cleanup-report.md"><img src="media/hero.png" width="420" alt="Before: an unwanted advert, account, upload, setting, changed file and scheduled task. After: all six dealt with, the page and download working, and none found on the repeat check."></a>
+  <a href="https://ardholt.github.io/wordpress-fixes/hacked-site-cleanup/proof/cleanup-report.html"><img src="media/hero.png" width="420" alt="Before: an unwanted advert, account, upload, setting, changed file and scheduled task. After: all six dealt with, the page and download working, and none found on the repeat check."></a>
 </p>
 
 **I removed the unwanted changes and kept the original page and download working.**
 
 <p align="center"><a href="media/cleanup-before-after.mp4"><img src="media/cleanup-before-after.gif" width="600" alt="A 13-second comparison of two screenshots from one cleanup run. A divider sweeps across the page: before, an unwanted promotion above the furniture care notes; after, the promotion is gone and the download link remains. Then the six checked items: advert, unknown admin, extra upload, unwanted setting, changed site file and unwanted task, each removed or restored and absent or verified on the repeat check."></a></p>
 
-**Watch the comparison:** [play the MP4](media/cleanup-before-after.mp4) (or the [looping GIF](media/cleanup-before-after.gif)). It is a short comparison made from two actual screenshots of this run, with the six results from the [cleanup report](proof/cleanup-report.md). It is not a recording of the cleanup happening, and [the edit](proof/comparison-edit.json) is documented.
+**Watch the comparison:** [play the MP4](media/cleanup-before-after.mp4) (or the [looping GIF](media/cleanup-before-after.gif)). It is a short comparison made from two actual screenshots of this run, with the six results from the [cleanup report](https://ardholt.github.io/wordpress-fixes/hacked-site-cleanup/proof/cleanup-report.html). It is not a recording of the cleanup happening, and [the edit](proof/comparison-edit.json) is documented.
 
 <sub>Case 10 of 10 in [WordPress Fixes](../README.md)</sub>
 
@@ -27,7 +27,7 @@
 
 ## Proof
 
-[Read the six checks and their evidence](proof/cleanup-report.md). The picture below shows the page before and after; the record above also covers the changes visitors could not see.
+[Read the six checks and their evidence](https://ardholt.github.io/wordpress-fixes/hacked-site-cleanup/proof/cleanup-report.html). The picture below shows the page before and after; the record above also covers the changes visitors could not see.
 
 <p align="center"><img src="media/page-before-after.png" width="600" alt="Before: an unwanted advert interrupts the furniture care page. After: the advert is gone; the original page and download link remain."></p>
 
